@@ -2,14 +2,14 @@
 "use client";
 
 import React from "react";
-import { FaReact, FaNodeJs, FaJsSquare, FaDatabase, FaCss3Alt } from "react-icons/fa";
+import { FaReact, FaNodeJs, FaJsSquare, FaCss3Alt } from "react-icons/fa";
 import { SiNextdotjs, SiTailwindcss, SiTypescript, SiFirebase } from "react-icons/si";
 
 const skills = [
   { icon: <FaReact className="text-blue-500" />, name: "React", percentage: 90 },
   { icon: <SiNextdotjs className="text-black dark:text-white" />, name: "Next.js", percentage: 85 },
   { icon: <FaNodeJs className="text-green-600" />, name: "Node.js", percentage: 80 },
-  { icon: <SiTailwindcss className="text-blue-400" />, name: "Tailwind CSS", percentage: 75 },
+  { icon: <SiTailwindcss className="text-blue-400" />, name: "Tailwind CSS", percentage: 83 },
   { icon: <SiTypescript className="text-blue-700" />, name: "TypeScript", percentage: 85 },
   { icon: <FaJsSquare className="text-yellow-500" />, name: "JavaScript", percentage: 95 },
   { icon: <SiFirebase className="text-yellow-400" />, name: "Firebase", percentage: 65 },
