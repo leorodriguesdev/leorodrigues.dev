@@ -1,0 +1,29 @@
+// components/Hero.tsx
+"use client";
+
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+
+const Hero = () => {
+  return (
+    <section className="relative flex flex-col h-[90vh] justify-center items-center text-center p-10 bg-[var(--bg-color)] text-[var(--text-color)]">
+      {/* Hero Content */}
+      <div className="max-w-4xl mx-auto space-y-6">
+        <h1 className="text-5xl md:text-7xl font-extrabold leading-tight tracking-tight">
+          Olá, Eu Sou <span className="text-[var(--primary-color)]">Leonardo Rodrigues</span>
+        </h1>
+        <p className="mt-4 text-lg md:text-xl text-[var(--text-color)] max-w-3xl mx-auto">
+          Desenvolvedor Full Stack especializado em criar experiências digitais dinâmicas e modernas com tecnologias como <span className="text-[var(--primary-color)]">React, Next.js</span> e <span className="text-[var(--primary-color)]">Tailwind CSS</span>. <br />Vamos transformar suas ideias em realidade?
+        </p>
+        <Link href="#contact">
+          <span className="mt-6 inline-block bg-[var(--primary-color)] text-white px-6 py-3 rounded-full text-lg font-semibold transition-all duration-300 hover:bg-opacity-90 cursor-pointer">
+            Bora Conversar
+          </span>
+        </Link>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
