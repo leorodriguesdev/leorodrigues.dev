@@ -35,7 +35,7 @@ const Skills = () => {
           {skills.map((skill, index) => (
             <div
               key={index}
-              className="relative h-[176] flex flex-col items-center space-y-5 bg-[var(--bg-card)] p-8 rounded-2xl shadow-xl transition-transform transform hover:scale-105 hover:rotate-2 duration-500 hover:shadow-[var(--primary-color)] group"
+              className="relative min-w-[252] min-h-[176] flex flex-col items-center space-y-5 bg-[var(--bg-card)] p-8 rounded-2xl shadow-xl transition-transform transform hover:scale-105 hover:rotate-2 duration-500 hover:shadow-[var(--primary-color)] group"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Ícone da habilidade */}
