@@ -24,7 +24,7 @@ const Skills = () => {
       className="min-h-screen flex flex-col justify-center items-center bg-[var(--bg-color)] text-[var(--text-color)] py-20 px-4"
     >
       <div className="container mx-auto text-center">
-        <h2 className="text-5xl font-bold mb-12 text-[var(--primary-color)]">
+        <h2 className="text-5xl font-bold mb-12 text-[var(--primary-color)] font-audiowide">
           Habilidades e Tecnologias
         </h2>
         <p className="mb-16 text-xl max-w-3xl mx-auto">
@@ -39,7 +39,7 @@ const Skills = () => {
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Ícone da habilidade */}
-              <div className="text-6xl transition-transform transform duration-500 group-hover:scale-110 group-hover:rotate-6 group-hover:absolute group-hover:left-4 group-hover:text-9xl">
+              <div className=" text-6xl transition-transform transform duration-500 group-hover:scale-110 group-hover:rotate-6 group-hover:absolute group-hover:text-9xl group-hover:left-14  md:group-hover:left-4">
                 {skill.icon}
               </div>
 
@@ -49,11 +49,12 @@ const Skills = () => {
               </h3>
 
               {/* Barra de Progresso e Porcentagem */}
-              <div className="absolute top-0 right-1 flex opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <div className="absolute top-0 right-10 md:right-1 flex flex-col opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+
                 <div className="relative w-24 h-24 flex items-center justify-center rounded-full bg-black bg-opacity-70">
                   {/* Porcentagem */}
                   <span className="text-2xl font-bold text-white z-10">{skill.percentage}%</span>
-                  
+
                   {/* Barra de Progresso Circular */}
                   <svg className="absolute top-0 left-0 w-full h-full">
                     <circle
@@ -81,6 +82,9 @@ const Skills = () => {
                     />
                   </svg>
                 </div>
+                <p className="font-audiowide text-xs text-[var(--text-color)]  mt-2">
+                  Expertise
+                </p>
               </div>
             </div>
           ))}

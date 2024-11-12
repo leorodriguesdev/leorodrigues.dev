@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="flex flex-col items-center text-center py-8 bg-[var(--bg-card)] text-[var(--text-color)] border-t border-gray-700 space-y-4">
       {/* Logo e texto de assinatura */}
-      <div className="text-2xl font-semibold text-[var(--primary-color)] tracking-wider">
+      <div className="text-2xl font-semibold text-[var(--primary-color)] tracking-wider font-audiowide">
         Leonardo.dev
       </div>
       <p className="text-sm max-w-md mx-auto text-gray-400">
@@ -31,7 +31,7 @@ const Footer = () => {
 
       {/* Copyright */}
       <div className="text-xs text-gray-500">
-        &copy; {new Date().getFullYear()} Leonardo.dev. Todos os direitos reservados.
+        &copy; {new Date().getFullYear()} <span className="text-[var(--primary-color)] font-audiowide">Leonardo.dev</span>. Todos os direitos reservados.
       </div>
     </footer>
   );

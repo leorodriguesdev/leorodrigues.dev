@@ -6,22 +6,22 @@ import { FaCertificate, FaGraduationCap } from "react-icons/fa";
 
 const educationData = [
   {
-    title: "Bacharelado em Ciência da Computação",
-    institution: "Universidade XYZ",
-    year: "2016 - 2020",
-    description: "Estudos em algoritmos, estruturas de dados, e desenvolvimento de software.",
+    title: "Especialização em Desenvolvimento de Software com React, React Native e NodeJs",
+    institution: "Rocketseat",
+    year: "2023",
+    description: "Especialização em desenvolvimento web com React, desenvolvimento de aplicações móveis em React native e node js como tecnologia para o backend.",
   },
   {
-    title: "Certificação em React.js",
-    institution: "Certificadora ABC",
-    year: "2021",
+    title: "Tecnólogo, Análise e desenvolvimento de sistemas",
+    institution: "Universidade Estácio de Sá",
+    year: "2022",
     description: "Certificação avançada em desenvolvimento de aplicações React.",
   },
   {
-    title: "Certificação em Node.js",
-    institution: "Certificadora DEF",
-    year: "2022",
-    description: "Domínio em desenvolvimento de APIs e microsserviços com Node.js.",
+    title: "Programação Web",
+    institution: "IFRS - Instituto Federal do Rio Grande do Sul",
+    year: "2020",
+    description: "Atividades e grupos: Desenvolve e mantém projetos para a web. Utiliza linguagens de programação, banco de dados e recursos para a segurança da informação. Utiliza recursos de imagens, vídeos, animações, linguagens de marcação e folha de estilo para desenvolvimento web.",
   },
 ];
 
@@ -32,7 +32,7 @@ const Education = () => {
       className="min-h-screen flex flex-col justify-center items-center bg-[var(--bg-color)] text-[var(--text-color)] py-20 px-4"
     >
       <div className="container mx-auto text-center">
-        <h2 className="text-5xl font-bold mb-12 text-[var(--primary-color)]">
+        <h2 className="text-5xl font-bold mb-12 text-[var(--primary-color)] font-audiowide">
           Educação e Certificações
         </h2>
         <p className="mb-16 text-xl max-w-3xl mx-auto">

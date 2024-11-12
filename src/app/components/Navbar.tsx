@@ -3,14 +3,6 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import localFont from 'next/font/local';
-
-// Carregar a fonte Audiowide
-const audiowide = localFont({
-  src: "../fonts/Audiowide-Regular.ttf",
-  variable: "--font-audiowide",
-});
-
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -32,8 +24,8 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex justify-between items-center px-6 py-4">
         {/* Logo com a fonte Audiowide */}
-        <div className={`${audiowide.variable} text-xl font-bold text-[var(--primary-color)] hover:text-[var(--accent-color)] transition-colors`}>
-          <Link  className={`${audiowide.variable} text-xl font-bold text-[var(--primary-color)] hover:text-[var(--accent-color)] transition-colors`} href="/">DevPortfolio</Link>
+        <div className="text-xl font-bold text-[var(--primary-color)] hover:text-[var(--accent-color)] transition-colors">
+          <Link  className="font-audiowide text-xl font-bold text-[var(--primary-color)] hover:text-[var(--accent-color)] transition-colors no-underline" href="/">Leonardo.dev</Link>
         </div>
         
         {/* Botão de Menu para Mobile */}

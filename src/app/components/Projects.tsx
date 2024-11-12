@@ -42,7 +42,7 @@ const Projects = () => {
   return (
     <section id="projects" className="min-h-screen flex flex-col justify-center items-center bg-[var(--bg-color)] text-[var(--text-color)] py-20 px-4">
       <div className="container mx-auto text-center">
-        <h2 className="text-5xl font-bold mb-10 text-[var(--primary-color)]">
+        <h2 className="text-5xl font-bold mb-10 text-[var(--primary-color)] font-audiowide">
           Projetos Destacados
         </h2>
         <p className="mb-16 text-xl max-w-3xl mx-auto">

@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        audiowide: ['var(--font-audiowide)'],
+      },
       colors: {
         dark: {
           background: '#121212',

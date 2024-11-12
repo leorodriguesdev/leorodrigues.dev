@@ -6,36 +6,57 @@ import { FaFire, FaBriefcase, FaCalendarAlt, FaCheckCircle } from "react-icons/f
 
 const experiences = [
   {
-    title: "Analista de Sistemas Pleno - FIERGS",
-    duration: "2022 - Presente",
-    description: "Desenvolvimento front-end e mobile, modernizando aplicativos e otimizando processos.",
+    title: "Analista de Sistemas Pleno - Sistema FIERGS",
+    duration: "Abr 2023 - Presente",
+    description: "Desenvolvedor mobile utilizando React Native, mantendo a sustentação de sistemas legados em HTML, CSS, JS e Angular.",
     achievements: [
-      "Modernização de aplicativos críticos, reduzindo o tempo de resposta em 30%.",
-      "Implementação de boas práticas de UI/UX, aprimorando a experiência do usuário.",
-      "Colaboração com equipes multidisciplinares em metodologias ágeis.",
+      "React Native",
+      "JavaScript",
+      "5+ competências adicionais"
     ],
   },
   {
-    title: "Desenvolvedor Freelance",
-    duration: "2019 - Presente",
-    description: "Desenvolvimento web e mobile com React, Node.js e tecnologias diversas.",
+    title: "Desenvolvedor Mobile - IBM (Banco do Brasil)",
+    duration: "Dez 2021 - Mar 2023 · 1 ano 4 meses",
+    description: "Desenvolvimento mobile na conta do Banco do Brasil, com especialização no desenvolvimento do app de investimentos.",
     achievements: [
-      "Realização de mais de 50 projetos para clientes individuais e startups.",
-      "Foco em soluções responsivas e escaláveis, alinhadas às necessidades do cliente.",
-      "Desenvolvimento de APIs RESTful seguras e eficientes.",
+      "Jest",
+      "Desenvolvimento de front-end",
+      "1+ competência adicional"
     ],
   },
   {
-    title: "Desenvolvedor Júnior - XYZ Solutions",
-    duration: "2017 - 2019",
-    description: "Implementação de funcionalidades em projetos de médio porte, contribuindo para equipes ágeis.",
+    title: "QA Tester - Sicredi",
+    duration: "Ago 2021 - Nov 2021 · 4 meses",
+    description: "QA em projeto para o banco Sicredi, envolvendo o sistema de carteiras de usuários para respectivos gerentes. Utilizou ferramentas como Kafka, PostgreSQL, RestAssured e Salesforce.",
     achievements: [
-      "Desenvolvimento de funcionalidades para aplicativos de comércio eletrônico.",
-      "Aprimoramento de código com boas práticas de Clean Code e Design Patterns.",
-      "Colaboração com equipes de desenvolvimento para entregar projetos dentro do prazo.",
+      "PostgreSQL",
+      "Salesforce",
+      "Automação de testes"
+    ],
+  },
+  {
+    title: "Desenvolvedor Full Stack - IBM",
+    duration: "Mar 2021 - Ago 2021 · 6 meses",
+    description: "Desenvolvimento full-stack em projeto de controle de estágios na IBM, utilizando Angular, Java com Spring e PostgreSQL.",
+    achievements: [
+      "Desenvolvimento de front-end",
+      "Java com Spring",
+      "PostgreSQL"
+    ],
+  },
+  {
+    title: "Suporte ao Cliente - Nitronnews Email Marketing",
+    duration: "Jun 2020 - Mar 2021 · 10 meses",
+    description: "Suporte técnico aos clientes da ferramenta Nitronnews por meio de diversos canais e produção de conteúdo técnico.",
+    achievements: [
+      "Suporte técnico",
+      "Documentação",
+      "Produção de conteúdo"
     ],
   },
 ];
+
 
 const Experience = () => {
   return (
@@ -44,7 +65,7 @@ const Experience = () => {
       className="min-h-screen flex flex-col justify-center items-center bg-[var(--bg-color)] text-[var(--text-color)] py-20 px-4"
     >
       <div className="container mx-auto text-center">
-        <h2 className="text-5xl font-bold mb-12 text-[var(--primary-color)]">
+        <h2 className="text-5xl font-bold mb-12 text-[var(--primary-color)] font-audiowide">
           Experiência Profissional
         </h2>
         <p className="mb-16 text-xl max-w-3xl mx-auto">
