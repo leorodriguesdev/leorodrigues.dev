@@ -97,7 +97,7 @@ const Experience = () => {
                 <h4 className="text-lg font-semibold text-[var(--primary-color)]">Conquistas:</h4>
                 <ul className="space-y-1">
                   {experience.achievements.map((achievement, i) => (
-                    <li key={i} className="flex items-center space-x-2 text-gray-700 dark:text-gray-300">
+                    <li key={i} className="flex items-center space-x-2 text-[var(--text-color)]">
                       <FaCheckCircle className="text-[var(--primary-color)]" />
                       <span>{achievement}</span>
                     </li>

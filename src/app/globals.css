@@ -136,3 +136,17 @@ body:not(.fade-transition) {
   opacity: 1;
   transition: opacity 0.5s ease, background-color 0.5s ease, color 0.5s ease;
 }
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  display: inline-flex;
+  animation: scroll 30s linear infinite;
+}
