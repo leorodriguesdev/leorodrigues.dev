@@ -54,7 +54,7 @@ const Contact = () => {
         <div className="flex justify-center space-x-6 mb-6">
           <button
             onClick={() => handleTabChange("email")}
-            className={`px-6 py-2 rounded-lg font-bold ${
+            className={`min-w-[150px] px-6 py-2 rounded-lg font-bold ${
               activeTab === "email"
                 ? "bg-[var(--primary-color)] text-white"
                 : "bg-[var(--bg-card)] text-[var(--text-color)]"
@@ -120,7 +120,7 @@ const Contact = () => {
           ) : (
             <div className="space-y-6">
               <div className="flex flex-col">
-                <label htmlFor="whatsappMessage" className="text-lg font-medium mb-2 text-left">Mensagem para WhatsApp</label>
+                <label htmlFor="whatsappMessage" className="text-lg font-medium mb-2 text-left">Mensagem via WhatsApp</label>
                 <textarea
                   id="whatsappMessage"
                   rows={3}

@@ -26,7 +26,7 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center px-6 py-4">
         {/* Logo com a fonte Audiowide */}
         <div className="text-xl font-bold text-[var(--primary-color)] hover:text-[var(--accent-color)] transition-colors">
-          <Link className="font-audiowide text-xl font-bold text-[var(--primary-color)] hover:text-[var(--accent-color)] transition-colors no-underline" href="/">Leonardo.dev</Link>
+          <Link className="font-audiowide text-xl font-bold text-[var(--primary-color)] hover:text-[var(--accent-color)] transition-colors no-underline" href="/">Leorodrigues.dev</Link>
         </div>
 
         {/* Botão de Menu para Mobile */}
@@ -57,7 +57,7 @@ const Navbar = () => {
           {/* Título no menu mobile */}
           {isMenuOpen && (
             <div className="mb-4 text-lg font-bold text-[var(--primary-color)] text-center">
-                        <Link className="font-audiowide text-xl font-bold text-[var(--primary-color)] hover:text-[var(--accent-color)] transition-colors no-underline" href="/">Leonardo.dev</Link>
+                        <Link className="font-audiowide text-xl font-bold text-[var(--primary-color)] hover:text-[var(--accent-color)] transition-colors no-underline" href="/">Leorodrigues.dev</Link>
 
             </div>
           )}

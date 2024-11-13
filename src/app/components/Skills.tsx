@@ -49,7 +49,7 @@ const Skills = () => {
               </h3>
 
               {/* Barra de Progresso e Porcentagem */}
-              <div className="absolute top-4 lg:top-6 right-12 md:-right-16 md:-right-18 -translate-x-3/4 flex flex-col opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <div className="absolute top-4 lg:top-6 -right-16 md:-right-16 -translate-x-3/4 flex flex-col opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 <div className="relative w-24 h-24 flex items-center justify-center rounded-full bg-black bg-opacity-70">
                   {/* Porcentagem */}
                   <span className="text-2xl font-bold text-white z-10">{skill.percentage}%</span>

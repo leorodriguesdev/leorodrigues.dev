@@ -72,7 +72,7 @@ export default function RootLayout({
       <div className="fixed inset-0 flex items-center justify-center bg-[--bg-color] z-50">
         <h1 className="sm:text-6xl text-4xl font-bold text-[--primary-color] font-audiowide">
           <Typewriter
-            words={["Leonardo.dev"]}
+            words={["Leorodrigues.dev"]}
             loop={1}
             cursor
             cursorStyle="|"

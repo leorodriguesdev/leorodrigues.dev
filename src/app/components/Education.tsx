@@ -9,21 +9,22 @@ const educationData = [
     title: "Especialização em Desenvolvimento de Software com React, React Native e NodeJs",
     institution: "Rocketseat",
     year: "2023",
-    description: "Especialização em desenvolvimento web com React, desenvolvimento de aplicações móveis em React native e node js como tecnologia para o backend.",
+    description: "Me especializei em desenvolvimento de aplicações modernas e de alta performance, com um foco prático em todo o processo de criação. No front-end, desenvolvi interfaces interativas e responsivas com React, enquanto no desenvolvimento de aplicações móveis, utilizei React Native para proporcionar uma experiência nativa e fluida. No back-end, aprofundei meus conhecimentos em Node.js, criando APIs escaláveis e seguras, o que me capacitou a construir soluções completas e inovadoras.",
   },
   {
-    title: "Tecnólogo, Análise e desenvolvimento de sistemas",
+    title: "Tecnólogo, Análise e Desenvolvimento de Sistemas",
     institution: "Universidade Estácio de Sá",
     year: "2022",
-    description: "Certificação avançada em desenvolvimento de aplicações React.",
+    description: "Concluí o curso superior em Análise e Desenvolvimento de Sistemas, onde aprendi a dominar conceitos avançados de desenvolvimento com uma ênfase prática em aplicações web com React. Esta formação me permitiu adquirir uma base técnica sólida para arquitetar, desenvolver e manter sistemas eficientes e robustos, sempre alinhados às boas práticas e inovações do mercado.",
   },
   {
-    title: "Programação Web",
+    title: "Curso Técnico em Programação Web",
     institution: "IFRS - Instituto Federal do Rio Grande do Sul",
     year: "2020",
-    description: "Atividades e grupos: Desenvolve e mantém projetos para a web. Utiliza linguagens de programação, banco de dados e recursos para a segurança da informação. Utiliza recursos de imagens, vídeos, animações, linguagens de marcação e folha de estilo para desenvolvimento web.",
+    description: "Realizei minha formação técnica em Programação Web, onde desenvolvi habilidades fundamentais para criar projetos completos. Aprendi linguagens de programação, banco de dados e princípios de segurança da informação. Também explorei o uso de recursos visuais, como imagens, vídeos e animações, aliados ao domínio de HTML, CSS e outras tecnologias essenciais para desenvolver interfaces atraentes e experiências web de alto nível.",
   },
 ];
+
 
 const Education = () => {
   return (
