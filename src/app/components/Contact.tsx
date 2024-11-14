@@ -1,4 +1,3 @@
-// components/Contact.tsx
 "use client";
 
 import React, { useState } from "react";
@@ -9,24 +8,74 @@ import "react-toastify/dist/ReactToastify.css";
 const Contact = () => {
   const [activeTab, setActiveTab] = useState("email");
   const [whatsappMessage, setWhatsappMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleTabChange = (tab: string) => {
     setActiveTab(tab);
   };
 
-  const handleSubmitEmail = (e: React.FormEvent) => {
+  const handleSubmitEmail = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simula envio do formulário
-    toast.success("Mensagem enviada com sucesso!", {
-      position: "bottom-right",
-      autoClose: 3000,
-      hideProgressBar: true,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
-    });
+    setIsLoading(true); // Ativa o estado de carregamento
+
+    const formData = {
+      name: (document.getElementById("name") as HTMLInputElement).value,
+      email: (document.getElementById("email") as HTMLInputElement).value,
+      message: (document.getElementById("message") as HTMLTextAreaElement).value,
+    };
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        toast.success("Mensagem enviada com sucesso!", {
+          position: "bottom-right",
+          autoClose: 3000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
+
+        // Limpa os campos do formulário
+        (document.getElementById("name") as HTMLInputElement).value = "";
+        (document.getElementById("email") as HTMLInputElement).value = "";
+        (document.getElementById("message") as HTMLTextAreaElement).value = "";
+      } else {
+        toast.error("Erro ao enviar mensagem. Tente novamente mais tarde.", {
+          position: "bottom-right",
+          autoClose: 3000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
+      }
+    } catch (error) {
+      console.error("Erro ao enviar mensagem:", error);
+      toast.error("Erro ao enviar mensagem. Tente novamente mais tarde.", {
+        position: "bottom-right",
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+    } finally {
+      setIsLoading(false); // Desativa o estado de carregamento
+    }
   };
 
   const handleWhatsappSend = () => {
@@ -112,9 +161,14 @@ const Contact = () => {
               </div>
               <button
                 type="submit"
-                className="w-full bg-[var(--primary-color)] text-white py-3 rounded-lg font-bold hover:bg-opacity-90 transition duration-300"
+                disabled={isLoading}
+                className={`w-full py-3 rounded-lg font-bold transition duration-300 ${
+                  isLoading
+                    ? "bg-gray-400 text-gray-700 cursor-not-allowed"
+                    : "bg-[var(--primary-color)] text-white hover:bg-opacity-90"
+                }`}
               >
-                Enviar Mensagem
+                {isLoading ? "Enviando..." : "Enviar Mensagem"}
               </button>
             </form>
           ) : (
