@@ -9,7 +9,7 @@ export default async function handler(req, res) {
   if (req.method === "GET") {
     // Método GET para listar projetos
     try {
-      const { data, error } = await supabase.from("projects").select("*");
+      const { data, error } = await supabase.from("skills").select("*");
 
       if (error) {
         return res.status(500).json({ error: "Erro ao buscar os projetos." });

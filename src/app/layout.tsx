@@ -88,9 +88,8 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`theme-${theme}`}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${audiowide.variable} antialiased transition-colors duration-500 ${
-          isTransitioning ? "fade-transition" : ""
-        }`}
+        className={`${geistSans.variable} ${geistMono.variable} ${audiowide.variable} antialiased transition-colors duration-500 ${isTransitioning ? "fade-transition" : ""
+          }`}
       >
         {isLoading ? (
           <LoadingScreen />
@@ -98,15 +97,17 @@ export default function RootLayout({
           <>
             {/* Seletor de Tema com transição */}
             <div
-              className={`fixed top-20 right-0 z-50 transition-transform duration-500 ${
-                isSelectorVisible ? "translate-x-0" : "translate-x-full"
-              }`}
+              className={`fixed top-20 right-0 z-50 transition-transform duration-500 ${isSelectorVisible ? "translate-x-0" : "translate-x-full"
+                }`}
             >
               <button
                 onClick={() => setIsSelectorVisible(!isSelectorVisible)}
                 className="absolute -left-10 top-1/2 transform -translate-y-1/2 bg-[--primary-color] text-white p-3 rounded-l-full  focus:outline-none"
                 aria-label="Abrir seletor de tema"
               >
+                <span className="absolute h-6 w-6 top-3 left-0">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-45"></span>
+                </span>
                 <FaPalette className="text-2xl" />
               </button>
 
@@ -123,11 +124,10 @@ export default function RootLayout({
                     <button
                       key={themeOption.id}
                       onClick={() => handleThemeChange(themeOption.id)}
-                      className={`flex items-center text-xs p-1 w-full rounded-lg transition-colors ${
-                        theme === themeOption.id
-                          ? "bg-[--primary-color] text-white border-2 hover:bg-[--primary-color]"
-                          : "bg-[--bg-color] text-[--text-color] hover:bg-[--secondary-color] hover:text-white border-2 "
-                      }`}
+                      className={`flex items-center text-xs p-1 w-full rounded-lg transition-colors ${theme === themeOption.id
+                        ? "bg-[--primary-color] text-white border-2 hover:bg-[--primary-color]"
+                        : "bg-[--bg-color] text-[--text-color] hover:bg-[--secondary-color] hover:text-white border-2 "
+                        }`}
                     >
                       <Image
                         src={themeOption.icon}
@@ -138,7 +138,7 @@ export default function RootLayout({
                       />
                       {themeOption.name}
                     </button>
-                  ))} 
+                  ))}
                 </div>
               </div>
             </div>
