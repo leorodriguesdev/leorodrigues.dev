@@ -1,4 +1,3 @@
-import { NextApiRequest, NextApiResponse } from "next";
 import { createClient } from "@supabase/supabase-js";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
@@ -6,7 +5,7 @@ const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
 
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(req, res) {
   if (req.method === "GET") {
     // Método GET para listar projetos
     try {
@@ -59,10 +58,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         return res.status(500).json({ error: "Erro ao deletar o projeto." });
       }
 
-      // if (data.length === 0) {
-      //   return res.status(404).json({ error: "Projeto não encontrado." });
-      // }
-
       res.status(200).json({ message: "Projeto deletado com sucesso.", data });
     } catch (error) {
       res.status(500).json({ error: "Erro interno do servidor." });
@@ -81,7 +76,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         return res.status(400).json({ error: "Pelo menos um dos campos deve ser fornecido para atualização." });
       }
 
-      const updates: Record<string, any> = {};
+      const updates = {};
       if (title) updates.title = title;
       if (description) updates.description = description;
       if (image) updates.image = image;
@@ -95,10 +90,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       if (error) {
         return res.status(500).json({ error: "Erro ao atualizar o projeto." });
       }
-
-      // if (data.length === 0) {
-      //   return res.status(404).json({ error: "Projeto não encontrado." });
-      // }
 
       res.status(200).json({ message: "Projeto atualizado com sucesso.", data });
     } catch (error) {

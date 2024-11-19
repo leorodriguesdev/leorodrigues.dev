@@ -1,6 +1,12 @@
+/* eslint-disable no-console */
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
+/* eslint-disable consistent-return */
+/* eslint-disable no-undef */
+
+// src/pages/api/education/index.js
 
 
-import { NextApiRequest, NextApiResponse } from "next";
 import { createClient } from "@supabase/supabase-js";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
@@ -8,7 +14,7 @@ const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
 
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(req, res) {
   if (req.method === "GET") {
     // Método GET para obter os dados
     try {
@@ -61,10 +67,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         return res.status(500).json({ error: "Erro ao deletar o registro." });
       }
 
-      // if (data.length === 0) {
-      //   return res.status(404).json({ error: "Registro não encontrado." });
-      // }
-
       res.status(200).json({ message: "Registro deletado com sucesso.", data });
     } catch (error) {
       res.status(500).json({ error: "Erro interno do servidor." });
@@ -79,7 +81,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         return res.status(400).json({ error: "ID é obrigatório para atualizar um registro." });
       }
 
-      const updates: Record<string, any> = {};
+      const updates = {};
       if (title) updates.title = title;
       if (institution) updates.institution = institution;
       if (year) updates.year = year;
@@ -93,10 +95,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       if (error) {
         return res.status(500).json({ error: "Erro ao atualizar o registro." });
       }
-
-      // if (data.length === 0) {
-      //   return res.status(404).json({ error: "Registro não encontrado." });
-      // }
 
       res.status(200).json({ message: "Registro atualizado com sucesso.", data });
     } catch (error) {

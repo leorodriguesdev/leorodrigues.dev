@@ -1,7 +1,3 @@
-
-
-
-import { NextApiRequest, NextApiResponse } from "next";
 import { createClient } from "@supabase/supabase-js";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
@@ -9,7 +5,7 @@ const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
 
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(req, res) {
   if (req.method === "GET") {
     // Método GET para listar experiências
     try {
@@ -29,7 +25,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const { title, duration, description, achievements } = req.body;
 
       if (!title || !duration || !description || !achievements) {
-        return res.status(400).json({ error: "Todos os campos são obrigatórios." });
+        return res
+          .status(400)
+          .json({ error: "Todos os campos são obrigatórios." });
       }
 
       const { data, error } = await supabase
@@ -40,7 +38,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         return res.status(500).json({ error: "Erro ao inserir os dados." });
       }
 
-      res.status(201).json({ message: "Experiência adicionada com sucesso.", data });
+      res
+        .status(201)
+        .json({ message: "Experiência adicionada com sucesso.", data });
     } catch (error) {
       res.status(500).json({ error: "Erro interno do servidor." });
     }
@@ -50,7 +50,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const { id } = req.query;
 
       if (!id) {
-        return res.status(400).json({ error: "ID é obrigatório para deletar um registro." });
+        return res
+          .status(400)
+          .json({ error: "ID é obrigatório para deletar um registro." });
       }
 
       const { data, error } = await supabase
@@ -62,11 +64,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         return res.status(500).json({ error: "Erro ao deletar o registro." });
       }
 
-      // if (data.length === 0) {
-      //   return res.status(404).json({ error: "Registro não encontrado." });
-      // }
-
-      res.status(200).json({ message: "Experiência deletada com sucesso.", data });
+      res
+        .status(200)
+        .json({ message: "Experiência deletada com sucesso.", data });
     } catch (error) {
       res.status(500).json({ error: "Erro interno do servidor." });
     }
@@ -77,10 +77,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const { title, duration, description, achievements } = req.body;
 
       if (!id) {
-        return res.status(400).json({ error: "ID é obrigatório para atualizar um registro." });
+        return res
+          .status(400)
+          .json({ error: "ID é obrigatório para atualizar um registro." });
       }
 
-      const updates: Record<string, any> = {};
+      const updates = {};
       if (title) updates.title = title;
       if (duration) updates.duration = duration;
       if (description) updates.description = description;
@@ -95,11 +97,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         return res.status(500).json({ error: "Erro ao atualizar o registro." });
       }
 
-      // if (data.length === 0) {
-      //   return res.status(404).json({ error: "Registro não encontrado." });
-      // }
-
-      res.status(200).json({ message: "Experiência atualizada com sucesso.", data });
+      res
+        .status(200)
+        .json({ message: "Experiência atualizada com sucesso.", data });
     } catch (error) {
       res.status(500).json({ error: "Erro interno do servidor." });
     }
