@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="text-2xl font-semibold text-[var(--primary-color)] tracking-wider font-audiowide">
         Leorodrigues.dev
       </div>
-      <p className="text-sm max-w-md mx-auto text-gray-400">
+      <p className="text-sm max-w-md mx-auto text-gray-400 px-3">
         Construindo experiências digitais inovadoras, uma linha de código por vez.
       </p>
 
