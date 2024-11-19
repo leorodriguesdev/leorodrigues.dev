@@ -13,8 +13,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Conta Dev</title>
-        <meta name="description" content="Cuide do software. A gente cuida da contabilidade!" />
+        <title>Leorodrigues.dev</title>
+        <meta name="description" content="Leorodrigues.dev - Portifólio" />
       </Head>
       <div className="min-h-screen bg-[var(--bg-color)] text-[var(--text-color)]">
         <Navbar />
