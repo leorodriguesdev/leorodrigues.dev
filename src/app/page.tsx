@@ -11,22 +11,16 @@ import Contact from "./components/Contact";
 
 export default function Home() {
   return (
-    <>
-      <Head>
-        <title>Leorodrigues.dev</title>
-        <meta name="description" content="Leorodrigues.dev - Portifólio" />
-      </Head>
-      <div className="min-h-screen bg-[var(--bg-color)] text-[var(--text-color)]">
-        <Navbar />
-        <Hero />
-        <Skills />
-        <Projects />
-        <Experience />
-        <Education />
-        <Contact />
+    <div className="min-h-screen bg-[var(--bg-color)] text-[var(--text-color)]">
+      <Navbar />
+      <Hero />
+      <Skills />
+      <Projects />
+      <Experience />
+      <Education />
+      <Contact />
 
-        <Footer />
-      </div>
-    </>
+      <Footer />
+    </div>
   );
 }

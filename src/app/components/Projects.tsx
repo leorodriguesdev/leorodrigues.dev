@@ -1,49 +1,45 @@
 // components/Projects.tsx
 "use client";
 
-import React, { useContext, useMemo, useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-import { AppContext } from "@/context/AppContext";
 
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  link?: string; // Se houver um link
-}
+const projects = [
+  {
+    title: "Aplicativo Bancário Modernizado",
+    description: "Modernização com React Native e Node.js, reduzindo o tempo de carregamento em 30%.",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGRhdGF8ZW58MHx8fHwxNjg3NzkxOTU3&ixlib=rb-1.2.1&q=80&w=400",
+  },
+  {
+    title: "Sistema de Integração com APIs",
+    description: "Desenvolvido em Next.js e Node.js, integrando front-end e back-end com alta segurança.",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGRhdGF8ZW58MHx8fHwxNjg3NzkxOTU3&ixlib=rb-1.2.1&q=80&w=400",
+  },
+  {
+    title: "Portal de Atendimento",
+    description: "Criado com Next.js e Tailwind CSS, proporcionando uma experiência fluida.",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGRhdGF8ZW58MHx8fHwxNjg3NzkxOTU3&ixlib=rb-1.2.1&q=80&w=400",
+  },
+  {
+    title: "Sistema de Agendamentos Online",
+    description: "Desenvolvido com React Native e Node.js, agendamentos eficientes e personalizados.",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGRhdGF8ZW58MHx8fHwxNjg3NzkxOTU3&ixlib=rb-1.2.1&q=80&w=400",
+  },
+  {
+    title: "Sistema de Controle de Estoque",
+    description: "Desenvolvido com React Native e Node.js, proporcionando uma gestão eficiente de estoque.",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGRhdGF8ZW58MHx8fHwxNjg3Nzkx&ixlib=rb-1.2.1&q=80&w=400",
+  },
+];
 
 const Projects = () => {
-  const context = useContext(AppContext);
-
-  if (!context) {
-    return <p>Carregando...</p>;
-  }
-
-  const { projects, loading, error } = context;
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
-  if (loading) {
-    return <p>Carregando projetos...</p>;
-  }
-
-  if (error) {
-    return <p>Ocorreu um erro ao carregar os projetos: {error}</p>;
-  }
-
-  // Ordenar os projetos se necessário (por exemplo, por data ou outro critério)
-  const sortedProjects = useMemo(() => {
-    return projects.slice().sort((a, b) => b.id - a.id); // Exemplo: ordenação decrescente por ID
-  }, [projects]);
-
   return (
-    <section
-      id="projects"
-      className="min-h-screen flex flex-col justify-center items-center bg-[var(--bg-color)] text-[var(--text-color)] py-20 px-4"
-    >
+    <section id="projects" className="min-h-screen flex flex-col justify-center items-center bg-[var(--bg-color)] text-[var(--text-color)] py-20 px-4">
       <div className="container mx-auto text-center">
         <h2 className="text-5xl font-bold mb-10 text-[var(--primary-color)] font-audiowide">
           Projetos Destacados
@@ -53,9 +49,9 @@ const Projects = () => {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
-          {sortedProjects.map((project: Project) => (
+          {projects.map((project, index) => (
             <div
-              key={project.id}
+              key={index}
               className="relative group bg-[var(--bg-card)] rounded-2xl shadow-lg overflow-hidden transition-transform transform hover:-translate-y-3 hover:shadow-2xl hover:shadow-[var(--primary-color)] duration-500"
             >
               {/* Imagem e Título do Projeto */}
@@ -76,10 +72,7 @@ const Projects = () => {
               <div className="absolute inset-0 bg-[var(--bg-color)] border-4 border-[var(--primary-color)] rounded-2xl bg-opacity-80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-center items-center p-6 text-center">
                 <h3 className="text-2xl font-semibold text-[var(--primary-color)] mb-4">{project.title}</h3>
                 <p className="text-lg mb-4 text-[var(--text-color)]">{project.description}</p>
-                <button
-                  onClick={openModal}
-                  className="inline-block bg-[var(--primary-color)] text-white px-4 py-2 rounded-full text-lg font-bold hover:bg-opacity-90 transition-all duration-300 cursor-pointer"
-                >
+                <button onClick={openModal} className="inline-block bg-[var(--primary-color)] text-white px-4 py-2 rounded-full text-lg font-bold hover:bg-opacity-90 transition-all duration-300 cursor-pointer">
                   Ver Mais &rarr;
                 </button>
               </div>
@@ -92,9 +85,7 @@ const Projects = () => {
       {isModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div className="bg-[var(--bg-card)] p-6 rounded-lg max-w-lg mx-auto text-center shadow-lg">
-            <h3 className="text-2xl font-bold mb-4 text-[var(--primary-color)]">
-              Detalhes em Desenvolvimento
-            </h3>
+            <h3 className="text-2xl font-bold mb-4 text-[var(--primary-color)]">Detalhes em Desenvolvimento</h3>
             <p className="text-lg text-[var(--text-color)]">
               Os detalhes deste projeto ainda estão em desenvolvimento. Em breve, mais informações estarão disponíveis.
             </p>

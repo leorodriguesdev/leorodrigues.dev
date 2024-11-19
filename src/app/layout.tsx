@@ -8,7 +8,7 @@ import { Typewriter } from "react-simple-typewriter";
 import Image from "next/image";
 import { FaPalette } from "react-icons/fa"; // Ícone de paleta para o botão de seletor de tema
 import "./globals.css";
-import { AppProvider } from "../context/AppContext"; // Importar o AppProvider
+import Head from "next/head";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -88,72 +88,71 @@ export default function RootLayout({
   };
 
   return (
-    <AppProvider>
-      <html lang="pt-BR" className={`theme-${theme}`}>
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} ${audiowide.variable} antialiased transition-colors duration-500 ${
-            isTransitioning ? "fade-transition" : ""
+    <html lang="pt-BR" className={`theme-${theme}`}>
+      <Head>
+        <title>Leorodrigues.dev</title>
+        <meta name="description" content="Leorodrigues.dev - Portifólio" />
+      </Head>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} ${audiowide.variable} antialiased transition-colors duration-500 ${isTransitioning ? "fade-transition" : ""
           }`}
-        >
-          {isLoading ? (
-            <LoadingScreen />
-          ) : (
-            <>
-              {/* Seletor de Tema com transição */}
-              <div
-                className={`fixed top-20 right-0 z-50 transition-transform duration-500 ${
-                  isSelectorVisible ? "translate-x-0" : "translate-x-full"
+      >
+        {isLoading ? (
+          <LoadingScreen />
+        ) : (
+          <>
+            {/* Seletor de Tema com transição */}
+            <div
+              className={`fixed top-20 right-0 z-50 transition-transform duration-500 ${isSelectorVisible ? "translate-x-0" : "translate-x-full"
                 }`}
+            >
+              <button
+                onClick={() => setIsSelectorVisible(!isSelectorVisible)}
+                className="absolute -left-10 top-1/2 transform -translate-y-1/2 bg-[--primary-color] text-white p-3 rounded-l-full focus:outline-none"
+                aria-label="Abrir seletor de tema"
               >
-                <button
-                  onClick={() => setIsSelectorVisible(!isSelectorVisible)}
-                  className="absolute -left-10 top-1/2 transform -translate-y-1/2 bg-[--primary-color] text-white p-3 rounded-l-full focus:outline-none"
-                  aria-label="Abrir seletor de tema"
-                >
-                  <span className="absolute h-6 w-6 top-3 left-0">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-45"></span>
-                  </span>
-                  <FaPalette className="text-2xl" />
-                </button>
+                <span className="absolute h-6 w-6 top-3 left-0">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-45"></span>
+                </span>
+                <FaPalette className="text-2xl" />
+              </button>
 
-                <div
-                  className="w-40 bg-[--primary-color] text-[--text-color] p-4 rounded-l-lg shadow-lg"
-                  onMouseEnter={() => setIsSelectorVisible(true)}
-                  onMouseLeave={() => setIsSelectorVisible(false)}
-                >
-                  <label htmlFor="themeSelector" className="block mb-2 font-semibold text-xs">
-                    Selecione o Tema
-                  </label>
-                  <div className="space-y-2">
-                    {themes.map((themeOption) => (
-                      <button
-                        key={themeOption.id}
-                        onClick={() => handleThemeChange(themeOption.id)}
-                        className={`flex items-center text-xs p-1 w-full rounded-lg transition-colors ${
-                          theme === themeOption.id
-                            ? "bg-[--primary-color] text-white border-2 hover:bg-[--primary-color]"
-                            : "bg-[--bg-color] text-[--text-color] hover:bg-[--secondary-color] hover:text-white border-2 "
+              <div
+                className="w-40 bg-[--primary-color] text-[--text-color] p-4 rounded-l-lg shadow-lg"
+                onMouseEnter={() => setIsSelectorVisible(true)}
+                onMouseLeave={() => setIsSelectorVisible(false)}
+              >
+                <label htmlFor="themeSelector" className="block mb-2 font-semibold text-xs">
+                  Selecione o Tema
+                </label>
+                <div className="space-y-2">
+                  {themes.map((themeOption) => (
+                    <button
+                      key={themeOption.id}
+                      onClick={() => handleThemeChange(themeOption.id)}
+                      className={`flex items-center text-xs p-1 w-full rounded-lg transition-colors ${theme === themeOption.id
+                          ? "bg-[--primary-color] text-white border-2 hover:bg-[--primary-color]"
+                          : "bg-[--bg-color] text-[--text-color] hover:bg-[--secondary-color] hover:text-white border-2 "
                         }`}
-                      >
-                        <Image
-                          src={themeOption.icon}
-                          alt={themeOption.name}
-                          width={20}
-                          height={20}
-                          className="mr-3"
-                        />
-                        {themeOption.name}
-                      </button>
-                    ))}
-                  </div>
+                    >
+                      <Image
+                        src={themeOption.icon}
+                        alt={themeOption.name}
+                        width={20}
+                        height={20}
+                        className="mr-3"
+                      />
+                      {themeOption.name}
+                    </button>
+                  ))}
                 </div>
               </div>
+            </div>
 
-              {children}
-            </>
-          )}
-        </body>
-      </html>
-    </AppProvider>
+            {children}
+          </>
+        )}
+      </body>
+    </html>
   );
 }

@@ -1,50 +1,24 @@
 // components/Skills.tsx
 "use client";
 
-import React, { useContext, useMemo } from "react";
-import { FaReact, FaNodeJs, FaJsSquare, FaCss3Alt } from "react-icons/fa";
-import { SiNextdotjs, SiTailwindcss, SiTypescript } from "react-icons/si";
-import { AppContext } from "@/context/AppContext";
+import React from "react";
+import { FaReact, FaNodeJs, FaJsSquare } from "react-icons/fa";
+import { SiNextdotjs, SiTailwindcss, SiTypescript, SiExpo } from "react-icons/si";
 
-interface Skill {
-  id: number;
-  name: string;
-  percentage: number;
-}
+const skills = [
+  { icon: <FaReact className="text-blue-500" />, name: "React", percentage: 96 },
+  { icon: <SiNextdotjs className="text-black dark:text-white" />, name: "Next.js", percentage: 89 },
+  { icon: <FaReact className="text-blue-700" />, name: "React Native", percentage: 97 },
+  { icon: <SiExpo className="text-black dark:text-white" />, name: "Expo", percentage: 90 },
+  { icon: <FaJsSquare className="text-yellow-500" />, name: "JavaScript", percentage: 95 },
+  { icon: <FaNodeJs className="text-green-600" />, name: "Node.js", percentage: 81 },
+  { icon: <SiTypescript className="text-blue-700" />, name: "TypeScript", percentage: 85 },
+  { icon: <SiTailwindcss className="text-blue-400" />, name: "Tailwind CSS", percentage: 87 },
 
-const skillIcons: Record<string, JSX.Element> = {
-  "React": <FaReact className="text-blue-500" />,
-  "Next.js": <SiNextdotjs className="text-black dark:text-white" />,
-  "Node.js": <FaNodeJs className="text-green-600" />,
-  "Tailwind CSS": <SiTailwindcss className="text-blue-400" />,
-  "TypeScript": <SiTypescript className="text-blue-700" />,
-  "JavaScript": <FaJsSquare className="text-yellow-500" />,
-  "CSS3": <FaCss3Alt className="text-blue-600" />,
-  "React Native": <FaReact className="text-blue-500" />,
-};
+
+];
 
 const Skills = () => {
-  const context = useContext(AppContext);
-
-  if (!context) {
-    return <p>Carregando...</p>;
-  }
-
-  const { skills, loading, error } = context;
-
-  if (loading) {
-    return <p>Carregando habilidades...</p>;
-  }
-
-  if (error) {
-    return <p>Ocorreu um erro ao carregar as habilidades: {error}</p>;
-  }
-
-  // Ordenar as habilidades se necessário (por exemplo, por porcentagem)
-  const sortedSkills = useMemo(() => {
-    return skills.slice().sort((a, b) => b.percentage - a.percentage);
-  }, [skills]);
-
   return (
     <section
       id="skills"
@@ -59,15 +33,15 @@ const Skills = () => {
         </p>
 
         <div className="grid grid-cols-1 px-10 md:px-0 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-12 max-w-6xl mx-auto">
-          {sortedSkills.map((skill, index) => (
+          {skills.map((skill, index) => (
             <div
-              key={skill.id}
+              key={index}
               className="relative min-w-[255px] min-h-[176px] flex flex-col items-center space-y-5 bg-[var(--bg-card)] p-8 rounded-2xl shadow-xl transition-transform transform hover:scale-105 hover:rotate-2 duration-500 hover:shadow-[var(--primary-color)] group"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Ícone da habilidade */}
               <div className="text-6xl transition-transform duration-500 group-hover:scale-110 group-hover:text-9xl md:group-hover:text-8xl lg:group-hover:text-9xl group-hover:rotate-6 group-hover:absolute group-hover:top-5 md:group-hover:top-8 group-hover:left-34 lg:group-hover:left-20 group-hover:-translate-x-1/2">
-                {skillIcons[skill.name] || <FaJsSquare className="text-gray-400" />}
+                {skill.icon}
               </div>
 
               {/* Nome da habilidade */}
