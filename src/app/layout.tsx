@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import localFont from "next/font/local";
 import { Typewriter } from "react-simple-typewriter";
 import Image from "next/image";
-import { FaPalette } from "react-icons/fa"; // Ícone de paleta para o botão de seletor de tema
+import { FaPalette } from "react-icons/fa";
 import "./globals.css";
 import Head from "next/head";
 
@@ -55,7 +55,7 @@ export default function RootLayout({
       setTheme(newTheme);
       localStorage.setItem("theme", newTheme);
       setIsTransitioning(false);
-      setIsSelectorVisible(false); // Fecha o seletor ao selecionar um tema
+      setIsSelectorVisible(false);
     }, 500);
   };
 
@@ -101,7 +101,6 @@ export default function RootLayout({
           <LoadingScreen />
         ) : (
           <>
-            {/* Seletor de Tema com transição */}
             <div
               className={`fixed top-20 right-0 z-50 transition-transform duration-500 ${isSelectorVisible ? "translate-x-0" : "translate-x-full"
                 }`}
