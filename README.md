@@ -56,7 +56,7 @@ Com uma interface moderna e responsiva, este portfólio destaca meus projetos ma
 ---
 
 <h1 align="center">
-  <img alt="Pré-visualização do Portfólio" title="#preview" src="src/assets/print.png" />
+  <img alt="Pré-visualização do Portfólio" title="#preview" src="public/fullprint.png" />
 </h1>
 
 ## 📋 Pré-requisitos
