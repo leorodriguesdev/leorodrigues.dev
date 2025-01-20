@@ -1,5 +1,3 @@
-// src/app/layout.tsx
-
 "use client";
 
 import { useEffect, useState } from "react";
@@ -8,7 +6,30 @@ import { Typewriter } from "react-simple-typewriter";
 import Image from "next/image";
 import { FaPalette } from "react-icons/fa";
 import "./globals.css";
-import Head from "next/head";
+
+/**
+ * 1) Em vez de usar 'Head', vamos exportar o objeto "metadata".
+ *    O Next vai gerar as <head> tags automaticamente.
+ */
+export const metadata = {
+  title: "Leorodrigues.dev",
+  description: "Leorodrigues.dev - Portfólio",
+  openGraph: {
+    title: "Leorodrigues.dev - Portfólio",
+    description: `O desenvolvedor que vai fortalecer sua presença online e impulsionar resultados através de sites, aplicativos móveis e sistemas web.
+Quer transformar suas ideias em realidade?`,
+    url: "https://leorodrigues.dev",
+    images: ["https://leorodrigues.dev/print.png"],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Leorodrigues.dev - Portfólio",
+    description: `O desenvolvedor que vai fortalecer sua presença online e impulsionar resultados através de sites, aplicativos móveis e sistemas web.
+Quer transformar suas ideias em realidade?`,
+    images: ["https://leorodrigues.dev/print.png"],
+  },
+};
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -20,7 +41,6 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
-
 const audiowide = localFont({
   src: "./fonts/Audiowide-Regular.ttf",
   variable: "--font-audiowide",
@@ -69,69 +89,46 @@ export default function RootLayout({
     { id: "retroGreen", name: "Retro Green", icon: "/RetroGreen.svg" },
   ];
 
-  const LoadingScreen = () => {
-    return (
-      <div className="fixed inset-0 flex items-center justify-center bg-[--bg-color] z-50">
-        <h1 className="sm:text-6xl text-4xl font-bold text-[--primary-color] font-audiowide">
-          <Typewriter
-            words={["Leorodrigues.dev"]}
-            loop={1}
-            cursor
-            cursorStyle="|"
-            typeSpeed={100}
-            deleteSpeed={50}
-            delaySpeed={1000}
-          />
-        </h1>
-      </div>
-    );
-  };
+  const LoadingScreen = () => (
+    <div className="fixed inset-0 flex items-center justify-center bg-[--bg-color] z-50">
+      <h1 className="sm:text-6xl text-4xl font-bold text-[--primary-color] font-audiowide">
+        <Typewriter
+          words={["Leorodrigues.dev"]}
+          loop={1}
+          cursor
+          cursorStyle="|"
+          typeSpeed={100}
+          deleteSpeed={50}
+          delaySpeed={1000}
+        />
+      </h1>
+    </div>
+  );
 
   return (
     <html lang="pt-BR" className={`theme-${theme}`}>
-      <Head>
-        {/* MANTENDO O QUE JÁ TINHA */}
-        <title>Leorodrigues.dev</title>
-        <meta name="description" content="Leorodrigues.dev - Portifólio" />
-
-        {/* NOVAS METAS PARA PRÉVIA (Open Graph) */}
-        <meta property="og:title" content="Leorodrigues.dev - Portfólio" />
-        <meta
-          property="og:description"
-          content="O desenvolvedor que vai fortalecer sua presença online e impulsionar resultados através de sites, aplicativos móveis e sistemas web.
-Quer transformar suas ideias em realidade?"
-        />
-        <meta property="og:image" content="https://leorodrigues.dev/print.png" />
-        <meta property="og:url" content="https://leorodrigues.dev" />
-        <meta property="og:type" content="website" />
-
-        {/* METAS PARA O TWITTER */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Leorodrigues.dev - Portfólio" />
-        <meta
-          name="twitter:description"
-          content="O desenvolvedor que vai fortalecer sua presença online e impulsionar resultados através de sites, aplicativos móveis e sistemas web.
-Quer transformar suas ideias em realidade?"
-        />
-        <meta
-          name="twitter:image"
-          content="https://leorodrigues.dev/print.png"
-        />
-      </Head>
-
+      {/*
+        2) Removemos <Head>. Agora o Next cria <head> automaticamente
+           com base no 'metadata' que exportamos acima.
+      */}
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${audiowide.variable} antialiased transition-colors duration-500 ${
-          isTransitioning ? "fade-transition" : ""
-        }`}
+        className={`
+          ${geistSans.variable} ${geistMono.variable} ${audiowide.variable}
+          antialiased transition-colors duration-500
+          ${isTransitioning ? "fade-transition" : ""}
+        `}
       >
         {isLoading ? (
           <LoadingScreen />
         ) : (
           <>
+            {/* Botão / Drawer de seleção de tema */}
             <div
-              className={`fixed top-20 right-0 z-50 transition-transform duration-500 ${
-                isSelectorVisible ? "translate-x-0" : "translate-x-full"
-              }`}
+              className={`
+                fixed top-20 right-0 z-50
+                transition-transform duration-500
+                ${isSelectorVisible ? "translate-x-0" : "translate-x-full"}
+              `}
             >
               <button
                 onClick={() => setIsSelectorVisible(!isSelectorVisible)}
@@ -160,11 +157,15 @@ Quer transformar suas ideias em realidade?"
                     <button
                       key={themeOption.id}
                       onClick={() => handleThemeChange(themeOption.id)}
-                      className={`flex items-center text-xs p-1 w-full rounded-lg transition-colors ${
-                        theme === themeOption.id
-                          ? "bg-[--primary-color] text-white border-2 hover:bg-[--primary-color]"
-                          : "bg-[--bg-color] text-[--text-color] hover:bg-[--secondary-color] hover:text-white border-2 "
-                      }`}
+                      className={`
+                        flex items-center text-xs p-1 w-full
+                        rounded-lg transition-colors
+                        ${
+                          theme === themeOption.id
+                            ? "bg-[--primary-color] text-white border-2 hover:bg-[--primary-color]"
+                            : "bg-[--bg-color] text-[--text-color] hover:bg-[--secondary-color] hover:text-white border-2"
+                        }
+                      `}
                     >
                       <Image
                         src={themeOption.icon}
