@@ -90,20 +90,48 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`theme-${theme}`}>
       <Head>
+        {/* MANTENDO O QUE JÁ TINHA */}
         <title>Leorodrigues.dev</title>
         <meta name="description" content="Leorodrigues.dev - Portifólio" />
+
+        {/* NOVAS METAS PARA PRÉVIA (Open Graph) */}
+        <meta property="og:title" content="Leorodrigues.dev - Portfólio" />
+        <meta
+          property="og:description"
+          content="O desenvolvedor que vai fortalecer sua presença online e impulsionar resultados através de sites, aplicativos móveis e sistemas web.
+Quer transformar suas ideias em realidade?"
+        />
+        <meta property="og:image" content="https://leorodrigues.dev/print.png" />
+        <meta property="og:url" content="https://leorodrigues.dev" />
+        <meta property="og:type" content="website" />
+
+        {/* METAS PARA O TWITTER */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Leorodrigues.dev - Portfólio" />
+        <meta
+          name="twitter:description"
+          content="O desenvolvedor que vai fortalecer sua presença online e impulsionar resultados através de sites, aplicativos móveis e sistemas web.
+Quer transformar suas ideias em realidade?"
+        />
+        <meta
+          name="twitter:image"
+          content="https://leorodrigues.dev/print.png"
+        />
       </Head>
+
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${audiowide.variable} antialiased transition-colors duration-500 ${isTransitioning ? "fade-transition" : ""
-          }`}
+        className={`${geistSans.variable} ${geistMono.variable} ${audiowide.variable} antialiased transition-colors duration-500 ${
+          isTransitioning ? "fade-transition" : ""
+        }`}
       >
         {isLoading ? (
           <LoadingScreen />
         ) : (
           <>
             <div
-              className={`fixed top-20 right-0 z-50 transition-transform duration-500 ${isSelectorVisible ? "translate-x-0" : "translate-x-full"
-                }`}
+              className={`fixed top-20 right-0 z-50 transition-transform duration-500 ${
+                isSelectorVisible ? "translate-x-0" : "translate-x-full"
+              }`}
             >
               <button
                 onClick={() => setIsSelectorVisible(!isSelectorVisible)}
@@ -121,7 +149,10 @@ export default function RootLayout({
                 onMouseEnter={() => setIsSelectorVisible(true)}
                 onMouseLeave={() => setIsSelectorVisible(false)}
               >
-                <label htmlFor="themeSelector" className="block mb-2 font-semibold text-xs">
+                <label
+                  htmlFor="themeSelector"
+                  className="block mb-2 font-semibold text-xs"
+                >
                   Selecione o Tema
                 </label>
                 <div className="space-y-2">
@@ -129,10 +160,11 @@ export default function RootLayout({
                     <button
                       key={themeOption.id}
                       onClick={() => handleThemeChange(themeOption.id)}
-                      className={`flex items-center text-xs p-1 w-full rounded-lg transition-colors ${theme === themeOption.id
+                      className={`flex items-center text-xs p-1 w-full rounded-lg transition-colors ${
+                        theme === themeOption.id
                           ? "bg-[--primary-color] text-white border-2 hover:bg-[--primary-color]"
                           : "bg-[--bg-color] text-[--text-color] hover:bg-[--secondary-color] hover:text-white border-2 "
-                        }`}
+                      }`}
                     >
                       <Image
                         src={themeOption.icon}

@@ -69,7 +69,7 @@ const Projects = () => {
               </div>
 
               {/* Overlay animado com conteúdo */}
-              <div className="absolute inset-0 bg-[var(--bg-color)] border-4 border-[var(--primary-color)] rounded-2xl bg-opacity-80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-center items-center p-6 text-center">
+              <div className="absolute inset-0 bg-[var(--bg-color)] border-4 border-[var(--primary-color)] rounded-2xl bg-opacity-80 opacity-0 group-hover:opacity-90 transition-opacity duration-500 flex flex-col justify-center items-center p-6 text-center">
                 <h3 className="text-2xl font-semibold text-[var(--primary-color)] mb-4">{project.title}</h3>
                 <p className="text-lg mb-4 text-[var(--text-color)]">{project.description}</p>
                 <button onClick={openModal} className="inline-block bg-[var(--primary-color)] text-white px-4 py-2 rounded-full text-lg font-bold hover:bg-opacity-90 transition-all duration-300 cursor-pointer">
