@@ -1,5 +1,4 @@
 // src/app/page.tsx
-import Head from "next/head";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Skills from "./components/Skills";
@@ -19,7 +18,6 @@ export default function Home() {
       <Experience />
       <Education />
       <Contact />
-
       <Footer />
     </div>
   );
