@@ -23,7 +23,7 @@ const experiences = [
     title: "QA Tester - Sicredi",
     duration: "Ago 2021 - Nov 2021 · 4 meses",
     description:
-      "QA em projeto para o banco Sicredi, envolvendo o sistema de carteiras de usuários para respectivos gerentes. Utilizou ferramentas como Kafka, PostgreSQL, RestAssured e Salesforce.",
+      "QA em projeto para o banco Sicredi, envolvendo o sistema de carteiras de usuários para respectivos gerentes. Utilizei ferramentas como Kafka, PostgreSQL, RestAssured e Salesforce.",
     achievements: ["PostgreSQL", "Salesforce", "Automação de testes"],
   },
   {
