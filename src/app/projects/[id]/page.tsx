@@ -1,41 +1,28 @@
-// src/app/projects/[id]/page.tsx
+import { notFound } from "next/navigation";
+import { projectsData } from "@/data/projectsData";
 import React from "react";
 import Navbar from "../../components/layout/Navbar";
 import Footer from "../../components/layout/Footer";
-import { projectsData } from "@/data/projectsData";
-import { notFound } from "next/navigation";
 
-type ProjectDetailProps = {
-  params: {
-    id: string;
-  };
-};
-
-// É importante usar uma função server ou default export
-export default function ProjectDetailPage({  params,}: {  params: { id: string };}) {
-  // O "id" vem como string. Convertendo para número (se seus IDs são number)
+export default function Page({ params }: { params: { id: string } }) {
+  // Converte o valor de 'id' (string) para número
   const projectId = parseInt(params.id, 10);
 
-  // Tenta encontrar o projeto com base no ID
+  // Busca o projeto correspondente no array de dados
   const project = projectsData.find((p) => p.id === projectId);
-
-  // Se não encontrou, redireciona para 404
   if (!project) {
-    // Podemos usar notFound() para gerar a página de 404 do Next
     notFound();
   }
 
   return (
     <div className="min-h-screen bg-[var(--bg-color)] text-[var(--text-color)]">
       <Navbar />
-
       <main className="container mx-auto px-4 py-24">
         <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[var(--primary-color)] font-audiowide">
           {project.title}
         </h1>
 
         <p className="mb-8 text-lg text-gray-400">
-          {/* Mostrando o tipo e a data, por exemplo */}
           {project.type === "website" ? "Site / Web" : "App / Mobile"} |{" "}
           <span className="opacity-80">
             {new Date(project.date).toLocaleDateString("pt-BR", {
@@ -90,7 +77,6 @@ export default function ProjectDetailPage({  params,}: {  params: { id: string }
           </div>
         </div>
       </main>
-
       <Footer />
     </div>
   );
