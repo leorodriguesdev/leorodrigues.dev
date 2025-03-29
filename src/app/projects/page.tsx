@@ -2,8 +2,9 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { useMediaQuery } from "react-responsive"; // Importando react-responsive
-import { projectsData } from "@/data/projectsData"; 
+import Image from "next/image";
+import { useMediaQuery } from "react-responsive";
+import { projectsData, Project } from "@/data/projectsData"; 
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 
@@ -34,7 +35,7 @@ export default function AllProjectsPage() {
   });
 
   // Renderiza cada projeto em formato “card” (bloco)
-  const renderProjectAsCard = (project: any) => (
+  const renderProjectAsCard = (project: Project) => (
     <div
       key={project.id}
       className="bg-[var(--bg-card)] rounded-xl shadow-lg p-6 hover:shadow-[var(--primary-color)] hover:-translate-y-2 transition-transform"
@@ -42,7 +43,7 @@ export default function AllProjectsPage() {
       <Link href={`/projects/${project.id}`} className="no-underline hover:no-underline">
         <div className="flex flex-col items-center cursor-pointer">
           <div className="relative w-full h-48 mb-4 overflow-hidden rounded-md">
-            <img
+            <Image
               src={project.image}
               alt={project.title}
               className="w-full h-full object-cover hover:scale-110 transition-transform"
@@ -66,20 +67,15 @@ export default function AllProjectsPage() {
   );
 
   // Renderiza cada projeto no estilo lista (imagem esquerda, texto à direita)
-  // Em telas pequenas: flex-col (imagem em cima), em telas md+ flex-row
-  const renderProjectAsList = (project: any) => (
+  const renderProjectAsList = (project: Project) => (
     <div
       key={project.id}
-      className="
-        bg-[var(--bg-card)] rounded-xl shadow-lg hover:shadow-[var(--primary-color)]
-        hover:-translate-y-2 transition-transform overflow-hidden
-        w-full md:w-2/3 min-w-[300px]
-      "
+      className="bg-[var(--bg-card)] rounded-xl shadow-lg hover:shadow-[var(--primary-color)] hover:-translate-y-2 transition-transform overflow-hidden w-full md:w-2/3 min-w-[300px]"
     >
       <Link href={`/projects/${project.id}`} className="no-underline hover:no-underline">
         <div className="flex flex-col md:flex-row w-full h-full">
           <div className="relative overflow-hidden w-full md:w-1/2 h-48 md:h-auto">
-            <img
+            <Image
               src={project.image}
               alt={project.title}
               className="w-full h-full object-cover transition-transform hover:scale-110"
@@ -107,15 +103,12 @@ export default function AllProjectsPage() {
   // Decide como renderizar os projetos com base no layout
   const renderProjects = () => {
     if (layout === "list") {
-      // Exibe em modo lista
       return (
         <div className="flex flex-col items-center gap-6">
           {filteredData.map(renderProjectAsList)}
         </div>
       );
     } else {
-      // layout === "card"
-      // Exibe em modo blocos (grid responsivo)
       return (
         <div className="w-full mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredData.map(renderProjectAsCard)}
@@ -127,7 +120,6 @@ export default function AllProjectsPage() {
   return (
     <div className="min-h-screen bg-[var(--bg-color)] text-[var(--text-color)]">
       <Navbar />
-
       <main className="container mx-auto py-16 px-4">
         <h1 className="text-5xl font-bold mb-8 text-[var(--primary-color)] font-audiowide text-center">
           Todos os Projetos
@@ -135,10 +127,8 @@ export default function AllProjectsPage() {
         <p className="mb-8 text-xl max-w-3xl mx-auto text-center">
           Conheça todos os projetos desenvolvidos, sejam eles websites ou aplicativos mobile, cada um com suas particularidades, tecnologias e destaques.
         </p>
-
         {/* Barra de opções (Filtro e Layout) */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-12 px-2">
-          
           {/* Filtro */}
           <div className="flex items-center gap-2">
             <button
@@ -172,7 +162,6 @@ export default function AllProjectsPage() {
               Apps
             </button>
           </div>
-
           {/* Layout (só aparece se NÃO for mobile) */}
           {!isMobile && (
             <div className="flex items-center gap-2">
@@ -209,11 +198,9 @@ export default function AllProjectsPage() {
             </div>
           )}
         </div>
-
         {/* Renderiza projetos de acordo com o layout */}
         {renderProjects()}
       </main>
-
       <Footer />
     </div>
   );

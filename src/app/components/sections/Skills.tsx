@@ -95,9 +95,11 @@ const Skills = () => {
   useEffect(() => {
     if (!cardRefs.current.length) return;
 
+    const currentRefs = [...cardRefs.current]; // copia o array atual
+
     const viewportHeight = window.innerHeight;
     const halfHeight = viewportHeight / 2;
-    const halfStrip = 30; // total de 50px
+    const halfStrip = 30;
     const marginValue = halfHeight - halfStrip;
     const rootMarginString = `-${marginValue}px 0px -${marginValue}px 0px`;
 
@@ -106,16 +108,14 @@ const Skills = () => {
         entries.forEach((entry) => {
           const index = Number(entry.target.getAttribute("data-index"));
           if (entry.isIntersecting) {
-            // MOBILE => "hover automático"
             if (isMobile) {
               setActiveIndices((prev) => {
                 if (!prev.includes(index)) return [...prev, index];
                 return prev;
               });
-              setFocusedSkillIndex(index); // exibe toast no mobile
+              setFocusedSkillIndex(index);
             }
           } else {
-            // sai do centro
             if (isMobile) {
               setActiveIndices((prev) => prev.filter((i) => i !== index));
               if (focusedSkillIndex === index) {
@@ -131,13 +131,13 @@ const Skills = () => {
         threshold: 0,
       }
     );
-
-    cardRefs.current.forEach((ref) => {
+  
+    currentRefs.forEach((ref) => {
       if (ref) observer.observe(ref);
     });
-
+  
     return () => {
-      cardRefs.current.forEach((ref) => {
+      currentRefs.forEach((ref) => {
         if (ref) observer.unobserve(ref);
       });
     };
