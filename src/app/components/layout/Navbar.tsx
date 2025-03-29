@@ -63,22 +63,22 @@ const Navbar = () => {
           )}
 
           {/* Itens do menu */}
-          <Link href="#home" className="block px-4 py-2 md:px-0 text-[var(--text-color)] hover:text-[var(--primary-color)] transition-colors no-underline" onClick={closeMenu}>
+          <Link href="/" className="block px-4 py-2 md:px-0 text-[var(--text-color)] hover:text-[var(--primary-color)] transition-colors no-underline" onClick={closeMenu}>
             Home
           </Link>
-          <Link href="#skills" className="block px-4 py-2 md:px-0 text-[var(--text-color)] hover:text-[var(--primary-color)] transition-colors no-underline" onClick={closeMenu}>
+          <Link href="/#skills" className="block px-4 py-2 md:px-0 text-[var(--text-color)] hover:text-[var(--primary-color)] transition-colors no-underline" onClick={closeMenu}>
             Habilidades
           </Link>
-          <Link href="#projects" className="block px-4 py-2 md:px-0 text-[var(--text-color)] hover:text-[var(--primary-color)] transition-colors no-underline" onClick={closeMenu}>
+          <Link href="/#projects" className="block px-4 py-2 md:px-0 text-[var(--text-color)] hover:text-[var(--primary-color)] transition-colors no-underline" onClick={closeMenu}>
             Projetos
           </Link>
-          <Link href="#experience" className="block px-4 py-2 md:px-0 text-[var(--text-color)] hover:text-[var(--primary-color)] transition-colors no-underline" onClick={closeMenu}>
+          <Link href="/#experience" className="block px-4 py-2 md:px-0 text-[var(--text-color)] hover:text-[var(--primary-color)] transition-colors no-underline" onClick={closeMenu}>
             Experiência
           </Link>
-          <Link href="#education" className="block px-4 py-2 md:px-0 text-[var(--text-color)] hover:text-[var(--primary-color)] transition-colors no-underline" onClick={closeMenu}>
+          <Link href="/#education" className="block px-4 py-2 md:px-0 text-[var(--text-color)] hover:text-[var(--primary-color)] transition-colors no-underline" onClick={closeMenu}>
             Certificações
           </Link>
-          <Link href="#contact" className="block px-4 py-2 md:px-0 text-[var(--text-color)] hover:text-[var(--primary-color)] transition-colors no-underline" onClick={closeMenu}>
+          <Link href="/#contact" className="block px-4 py-2 md:px-0 text-[var(--text-color)] hover:text-[var(--primary-color)] transition-colors no-underline" onClick={closeMenu}>
             Contato
           </Link>
         </nav>
