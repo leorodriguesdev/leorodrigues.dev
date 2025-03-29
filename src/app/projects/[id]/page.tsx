@@ -12,7 +12,7 @@ type ProjectDetailProps = {
 };
 
 // É importante usar uma função server ou default export
-export default function ProjectDetailPage({ params }: ProjectDetailProps) {
+export default function ProjectDetailPage({  params,}: {  params: { id: string };}) {
   // O "id" vem como string. Convertendo para número (se seus IDs são number)
   const projectId = parseInt(params.id, 10);
 
