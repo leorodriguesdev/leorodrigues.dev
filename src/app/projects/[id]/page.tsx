@@ -45,8 +45,9 @@ export default async function Page({
           <Image
             src={project.image}
             alt={project.title}
-            className="w-full h-full object-cover object-center"
-          />
+            layout="fill"
+            objectFit="cover"
+            className="hover:scale-110 transition-transform"          />
         </div>
         {/* Descrição detalhada */}
         <div className="max-w-4xl mx-auto text-center md:text-left">

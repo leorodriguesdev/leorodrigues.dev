@@ -46,8 +46,9 @@ export default function AllProjectsPage() {
             <Image
               src={project.image}
               alt={project.title}
-              className="w-full h-full object-cover hover:scale-110 transition-transform"
-            />
+              layout="fill"
+              objectFit="cover"
+              className="hover:scale-110 transition-transform"            />
           </div>
           <h2 className="text-xl font-bold text-[var(--primary-color)] mb-2 font-audiowide">
             {project.title}
@@ -78,8 +79,9 @@ export default function AllProjectsPage() {
             <Image
               src={project.image}
               alt={project.title}
-              className="w-full h-full object-cover transition-transform hover:scale-110"
-            />
+              layout="fill"
+              objectFit="cover"
+              className="hover:scale-110 transition-transform"            />
           </div>
           <div className="flex flex-col justify-center p-4 w-full md:w-1/2">
             <h2 className="text-xl font-bold text-[var(--primary-color)] mb-2 font-audiowide">
