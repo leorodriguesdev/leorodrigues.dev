@@ -5,10 +5,19 @@ export interface Project {
     title: string;
     type: "website" | "mobile";
     description: string;
-    image: string;
+    image: string;          // Imagem principal
+    images?: string[];      // Outras imagens do projeto
+    companyLogo?: string;   // Logo da empresa/cliente
     techStack: string[];
     highlights: string[];
     date: string;
+    links?: {
+        website?: string;   // Link para o site
+        playStore?: string; // Link para a Play Store
+        appStore?: string;  // Link para a App Store        
+    };
+    status: string;       // Status do projeto (Online, Em produção, etc.)
+    sourceCodeUrl?: string; // URL do repositório do projeto no GitHub
 }
 
 export const projectsData: Project[] = [
@@ -16,108 +25,49 @@ export const projectsData: Project[] = [
         id: 1,
         title: "Landing Page para Startup",
         type: "website",
-        description:
-            "Landing page responsiva com React e Next.js, focada em conversões e design moderno.",
-        image:
-            "https://images.unsplash.com/photo-1519337265831-281ec6cc8514?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
+        description: "Landing page responsiva...",
+        image: "/site1.png",
+        images: [
+            "/site2.png",
+            "/site3.png",
+            "/site2.png",
+            "/site3.png",
+        ],
+        companyLogo: "/iconeSite.png",
         techStack: ["React", "Next.js", "Tailwind CSS", "TypeScript"],
         highlights: ["Otimização de SEO", "Animações leves com Framer Motion"],
         date: "2023-01-10",
+        // Links específicos para site
+        links: {
+            website: "https://www.minha-startup.com",
+        },
+        // Novos campos
+        status: "Online",
+        sourceCodeUrl: "https://github.com/seu-usuario/landing-startup",
     },
     {
         id: 2,
         title: "Aplicativo de Pedidos Delivery",
         type: "mobile",
-        description:
-            "App React Native integrado com APIs de geolocalização e métodos de pagamento, melhorando o fluxo de entregas.",
-        image:
-            "https://images.unsplash.com/photo-1519337265831-281ec6cc8514?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
+        description: "App React Native para entregas...",
+        image: "/mobile1.jpeg",
+        images: [
+            "/mobile2.jpg",
+            "/mobile3.png",
+            "/mobile2.jpg",
+            "/mobile3.png",
+        ],
+        companyLogo: "/iconeMobile.png",
         techStack: ["React Native", "Node.js", "Expo", "Stripe API"],
         highlights: ["Push Notifications", "Integração com mapas"],
         date: "2022-12-02",
+        // Links específicos para mobile
+        links: {
+            playStore: "https://play.google.com/store/apps/details?id=deliveryapp",
+            appStore: "https://apps.apple.com/us/app/deliveryapp/id1234567890",
+        },
+        status: "Em produção",
+        sourceCodeUrl: "https://github.com/seu-usuario/delivery-app",
     },
-    {
-        id: 3,
-        title: "E-commerce Completo",
-        type: "website",
-        description:
-            "Plataforma de vendas online com autenticação, carrinho de compras e dashboard de vendas.",
-        image:
-            "https://images.unsplash.com/photo-1519389950473-47ba0277781c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
-        techStack: ["Next.js", "Tailwind CSS", "Node.js", "MongoDB"],
-        highlights: ["Checkout com PayPal", "Recomendação de produtos"],
-        date: "2022-11-15",
-    },
-    {
-        id: 4,
-        title: "Sistema de Agendamentos Online",
-        type: "website",
-        description:
-            "Plataforma de agendamentos online com autenticação, calendário e dashboard de agendamentos.",
-        image:
-            "https://images.unsplash.com/photo-1519337265831-281ec6cc8514?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
-        techStack: ["Next.js", "Tailwind CSS", "Node.js", "MongoDB"],
-        highlights: ["Checkout com PayPal", "Recomendação de produtos"],
-        date: "2022-11-15",
-    },
-    {
-        id: 5,
-        title: "Sistema de Controle de Estoque",
-        type: "mobile",
-        description:
-            "App React Native integrado com APIs de geolocalização e métodos de pagamento, melhorando o fluxo de entregas.",
-        image:
-            "https://images.unsplash.com/photo-1519337265831-281ec6cc8514?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
-        techStack: ["React Native", "Node.js", "Expo", "Stripe API"],
-        highlights: ["Push Notifications", "Integração com mapas"],
-        date: "2022-12-02",
-    },
-    {
-        id: 6,
-        title: "Sistema de Controle de Estoque",
-        type: "website",
-        description:
-            "Plataforma de vendas online com autenticação, carrinho de compras e dashboard de vendas.",
-        image:
-            "https://images.unsplash.com/photo-1519389950473-47ba0277781c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
-        techStack: ["Next.js", "Tailwind CSS", "Node.js", "MongoDB"],
-        highlights: ["Checkout com PayPal", "Recomendação de produtos"],
-        date: "2022-11-15",
-    },
-    {
-        id: 7,
-        title: "Sistema de Controle de Estoque",
-        type: "website",
-        description:
-            "Plataforma de vendas online com autenticação, carrinho de compras e dashboard de vendas.",
-        image:
-            "https://images.unsplash.com/photo-1519389950473-47ba0277781c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
-        techStack: ["Next.js", "Tailwind CSS", "Node.js", "MongoDB"],
-        highlights: ["Checkout com PayPal", "Recomendação de produtos"],
-        date: "2022-11-15",
-    },
-    {
-        id: 8,
-        title: "Sistema de Controle de Estoque",
-        type: "website",
-        description:
-            "Plataforma de vendas online com autenticação, carrinho de compras e dashboard de vendas.",
-        image:
-            "https://images.unsplash.com/photo-1519389950473-47ba0277781c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
-        techStack: ["Next.js", "Tailwind CSS", "Node.js", "MongoDB"],
-        highlights: ["Checkout com PayPal", "Recomendação de produtos"],
-        date: "2022-11-15",
-    },
-    {
-        id: 9,
-        title: "Sistema de Controle de Estoque",
-        type: "website",
-        description: "Plataforma de vendas online com autenticação, carrinho de compras e dashboard de vendas.",
-        image:
-            "https://images.unsplash.com/photo-1519389950473-47ba0277781c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400",
-        techStack: ["Next.js", "Tailwind CSS", "Node.js", "MongoDB"],
-        highlights: ["Checkout com PayPal", "Recomendação de produtos"],
-        date: "2022-11-15",
-    },
-
+    // ... etc. nos demais
 ];
