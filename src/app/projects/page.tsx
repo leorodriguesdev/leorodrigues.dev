@@ -1,208 +1,204 @@
-"use client";
+// src/app/projects/page.tsx
+'use client';
 
-import React, { useState, useEffect } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { useMediaQuery } from "react-responsive";
-import { projectsData, Project } from "@/data/projectsData"; 
-import Navbar from "../components/layout/Navbar";
-import Footer from "../components/layout/Footer";
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import Tilt from 'react-parallax-tilt';
+import { useMediaQuery } from 'react-responsive';
 
-type LayoutOption = "list" | "card";
-type FilterOption = "all" | "website" | "mobile";
+import { projectsData, Project } from '@/data/projectsData';
+import Navbar from '@/app/components/layout/Navbar';
+import Footer from '@/app/components/layout/Footer';
+
+/* ------------------------------------------------------------- */
+/* animações utilitárias                                         */
+const fadeUp = { hidden:{opacity:0,y:40}, show:{opacity:1,y:0} };
+const stagger = { show:{transition:{staggerChildren:0.1}} };
+
+type LayoutOption  = 'list' | 'card';
+type FilterOption  = 'all'  | 'website' | 'mobile';
+/* ------------------------------------------------------------- */
 
 export default function AllProjectsPage() {
-  // Filtro de projetos
-  const [filter, setFilter] = useState<FilterOption>("all");
+  /* estado ---------------------------------------------------------------- */
+  const [filter , setFilter ] = useState<FilterOption>('all');
+  const [layout , setLayout ] = useState<LayoutOption>('card');
+  const  isMobile            = useMediaQuery({ maxWidth: 767 });
 
-  // Layout atual
-  const [layout, setLayout] = useState<LayoutOption>("card");
+  useEffect(()=>{ if (isMobile) setLayout('list'); },[isMobile]);
 
-  // Verifica se a tela é mobile (<= 767px)
-  const isMobile = useMediaQuery({ maxWidth: 767 });
+  const filtered = projectsData.filter(p => filter==='all' ? true : p.type===filter);
 
-  // Sempre que for mobile, forçamos "lista"
-  useEffect(() => {
-    if (isMobile) {
-      setLayout("list");
-    }
-  }, [isMobile]);
-
-  // Filtra os projetos de acordo com o estado `filter`
-  const filteredData = projectsData.filter((project) => {
-    if (filter === "all") return true;
-    return project.type === filter;
-  });
-
-  // Renderiza cada projeto em formato “card” (bloco)
-  const renderProjectAsCard = (project: Project) => (
-    <div
-      key={project.id}
-      className="bg-[var(--bg-card)] rounded-xl shadow-lg p-6 hover:shadow-[var(--primary-color)] hover:-translate-y-2 transition-transform"
+  /* helpers de render ------------------------------------------------------ */
+  const Card = (p:Project)=>(
+    <motion.div
+      variants={fadeUp}
+      className="bg-[var(--bg-card)] rounded-3xl overflow-hidden shadow-lg hover:shadow-[var(--primary-color)] transition"
     >
-      <Link href={`/projects/${project.id}`} className="no-underline hover:no-underline">
-        <div className="flex flex-col items-center cursor-pointer">
-          <div className="relative w-full h-48 mb-4 overflow-hidden rounded-md">
+      <Link href={`/projects/${p.id}`} className="no-underline">
+        <Tilt tiltMaxAngleX={6} tiltMaxAngleY={6} glareEnable>
+          <div className="relative w-full h-48">
             <Image
-              src={project.image}
-              alt={project.title}
-              layout="fill"
-              objectFit="cover"
-              className="hover:scale-110 transition-transform"            />
+              src={p.image}
+              alt={p.title}
+              fill
+              className="object-cover hover:scale-110 transition-transform duration-500"
+            />
           </div>
-          <h2 className="text-xl font-bold text-[var(--primary-color)] mb-2 font-audiowide">
-            {project.title}
-          </h2>
-          <span className="text-sm mb-2 font-medium text-[var(--text-color)] opacity-70">
-            {project.type === "website" ? "Site / Web" : "App / Mobile"}
+        </Tilt>
+
+        <div className="p-6 text-center">
+          <h3 className="text-xl font-bold font-audiowide text-[var(--primary-color)] mb-1">
+            {p.title}
+          </h3>
+          <span className="text-xs opacity-70">
+            {p.type==='website' ? 'Site / Web' : 'App / Mobile'}
           </span>
-          <p className="text-sm text-[var(--text-color)] mb-4 line-clamp-3">
-            {project.description}
-          </p>
-          <span className="text-sm font-semibold text-[var(--primary-color)]">
-            Ver Detalhes
-          </span>
+
+          <p className="mt-4 text-sm line-clamp-3">{p.description}</p>
+
+          <motion.span
+            whileHover={{scale:1.05}}
+            className="inline-block mt-6 text-sm font-semibold text-[var(--primary-color)]"
+          >
+            Ver Detalhes →
+          </motion.span>
         </div>
       </Link>
-    </div>
+    </motion.div>
   );
 
-  // Renderiza cada projeto no estilo lista (imagem esquerda, texto à direita)
-  const renderProjectAsList = (project: Project) => (
-    <div
-      key={project.id}
-      className="bg-[var(--bg-card)] rounded-xl shadow-lg hover:shadow-[var(--primary-color)] hover:-translate-y-2 transition-transform overflow-hidden w-full md:w-2/3 min-w-[300px]"
+  const ListItem = (p:Project)=>(
+    <motion.div
+      variants={fadeUp}
+      className="bg-[var(--bg-card)] rounded-3xl shadow-lg hover:shadow-[var(--primary-color)] transition overflow-hidden w-full md:w-4/5"
     >
-      <Link href={`/projects/${project.id}`} className="no-underline hover:no-underline">
-        <div className="flex flex-col md:flex-row w-full h-full">
-          <div className="relative overflow-hidden w-full md:w-1/2 h-48 md:h-auto">
-            <Image
-              src={project.image}
-              alt={project.title}
-              layout="fill"
-              objectFit="cover"
-              className="hover:scale-110 transition-transform"            />
+      <Link href={`/projects/${p.id}`} className="no-underline">
+        <div className="flex flex-col md:flex-row">
+          <div className="relative w-full md:w-1/2 h-48 md:h-auto">
+            <Image src={p.image} alt={p.title} fill className="object-cover" />
           </div>
-          <div className="flex flex-col justify-center p-4 w-full md:w-1/2">
-            <h2 className="text-xl font-bold text-[var(--primary-color)] mb-2 font-audiowide">
-              {project.title}
-            </h2>
-            <span className="text-sm mb-2 font-medium text-[var(--text-color)] opacity-70">
-              {project.type === "website" ? "Site / Web" : "App / Mobile"}
+
+          <div className="p-6 flex flex-col justify-center gap-2">
+            <h3 className="text-xl font-bold font-audiowide text-[var(--primary-color)]">
+              {p.title}
+            </h3>
+            <span className="text-xs opacity-70">
+              {p.type==='website' ? 'Site / Web' : 'App / Mobile'}
             </span>
-            <p className="text-sm text-[var(--text-color)] mb-4 line-clamp-3">
-              {project.description}
-            </p>
-            <span className="text-sm font-semibold text-[var(--primary-color)]">
-              Ver Detalhes
-            </span>
+            <p className="text-sm line-clamp-3">{p.description}</p>
+
+            <motion.span
+              whileHover={{scale:1.05}}
+              className="text-sm font-semibold text-[var(--primary-color)] mt-2"
+            >
+              Ver Detalhes →
+            </motion.span>
           </div>
         </div>
       </Link>
-    </div>
+    </motion.div>
   );
 
-  // Decide como renderizar os projetos com base no layout
-  const renderProjects = () => {
-    if (layout === "list") {
-      return (
-        <div className="flex flex-col items-center gap-6">
-          {filteredData.map(renderProjectAsList)}
-        </div>
-      );
-    } else {
-      return (
-        <div className="w-full mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredData.map(renderProjectAsCard)}
-        </div>
-      );
-    }
-  };
-
+  /* JSX -------------------------------------------------------------------- */
   return (
     <div className="min-h-screen bg-[var(--bg-color)] text-[var(--text-color)]">
       <Navbar />
-      <main className="container mx-auto py-16 px-4">
-        <h1 className="text-5xl font-bold mb-8 text-[var(--primary-color)] font-audiowide text-center">
-          Todos os Projetos
-        </h1>
-        <p className="mb-8 text-xl max-w-3xl mx-auto text-center">
-          Conheça todos os projetos desenvolvidos, sejam eles websites ou aplicativos mobile, cada um com suas particularidades, tecnologias e destaques.
-        </p>
-        {/* Barra de opções (Filtro e Layout) */}
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-12 px-2">
-          {/* Filtro */}
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => setFilter("all")}
-              className={`px-4 py-2 rounded-md border text-sm ${
-                filter === "all"
-                  ? "bg-[var(--primary-color)] text-white border-[var(--primary-color)]"
-                  : "bg-transparent border-[var(--primary-color)] text-[var(--text-color)]"
-              }`}
-            >
-              Todos
-            </button>
-            <button
-              onClick={() => setFilter("website")}
-              className={`px-4 py-2 rounded-md border text-sm ${
-                filter === "website"
-                  ? "bg-[var(--primary-color)] text-white border-[var(--primary-color)]"
-                  : "bg-transparent border-[var(--primary-color)] text-[var(--text-color)]"
-              }`}
-            >
-              Websites
-            </button>
-            <button
-              onClick={() => setFilter("mobile")}
-              className={`px-4 py-2 rounded-md border text-sm ${
-                filter === "mobile"
-                  ? "bg-[var(--primary-color)] text-white border-[var(--primary-color)]"
-                  : "bg-transparent border-[var(--primary-color)] text-[var(--text-color)]"
-              }`}
-            >
-              Apps
-            </button>
-          </div>
-          {/* Layout (só aparece se NÃO for mobile) */}
-          {!isMobile && (
-            <div className="flex items-center gap-2">
-              <div className="inline-flex items-center" role="group">
-                <button
-                  onClick={() => setLayout("list")}
-                  className={`
-                    px-4 py-2 text-sm font-medium border border-[var(--primary-color)]
-                    ${
-                      layout === "list"
-                        ? "bg-[var(--primary-color)] text-white"
-                        : "bg-transparent text-[var(--text-color)]"
-                    }
-                    rounded-l-md focus:z-10 focus:outline-none
-                  `}
-                >
-                  Lista
-                </button>
-                <button
-                  onClick={() => setLayout("card")}
-                  className={`
-                    px-4 py-2 text-sm font-medium border border-[var(--primary-color)] border-l-0
-                    ${
-                      layout === "card"
-                        ? "bg-[var(--primary-color)] text-white"
-                        : "bg-transparent text-[var(--text-color)]"
-                    }
-                    rounded-r-md focus:z-10 focus:outline-none
-                  `}
-                >
-                  Grade
-                </button>
-              </div>
-            </div>
-          )}
+
+      {/* swirl neon atrás do título */}
+      <div className="relative pt-32 pb-20">
+        <div className="absolute inset-0 flex justify-center -z-10">
+          <motion.div
+            initial={{opacity:0,scale:0.3}}
+            animate={{opacity:0.12,scale:2.2,rotate:360}}
+            transition={{duration:20,repeat:Infinity,ease:'linear'}}
+            className="w-96 h-96 rounded-full bg-[var(--primary-color)] blur-3xl"
+          />
         </div>
-        {/* Renderiza projetos de acordo com o layout */}
-        {renderProjects()}
-      </main>
+
+        <motion.header
+          variants={stagger}
+          initial="hidden"
+          animate="show"
+          className="container mx-auto px-4 text-center"
+        >
+          <motion.h1 variants={fadeUp}
+            className="text-5xl font-extrabold mb-6 font-audiowide text-[var(--primary-color)]">
+            Todos os Projetos
+          </motion.h1>
+
+          <motion.p variants={fadeUp}
+            className="mx-auto max-w-3xl text-xl mb-14">
+            Conheça websites e apps desenvolvidos – cada um com desafios,
+            tecnologias e resultados únicos.
+          </motion.p>
+        </motion.header>
+      </div>
+
+      {/* controles ---------------------------------------------------------- */}
+      <motion.div
+        variants={stagger} initial="hidden" animate="show"
+        className="container mx-auto px-4 mb-12 flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+      >
+        {/* filtro */}
+        <motion.div variants={fadeUp} className="flex gap-2">
+          {(['all','website','mobile'] as FilterOption[]).map(btn=>(
+            <button key={btn}
+              onClick={()=>setFilter(btn)}
+              className={`
+                px-4 py-2 text-sm rounded-md border
+                ${ filter===btn
+                  ? 'bg-[var(--primary-color)] text-white border-[var(--primary-color)]'
+                  : 'border-[var(--primary-color)]'
+                }`}
+            >
+              {btn==='all'?'Todos':btn==='website'?'Websites':'Apps'}
+            </button>
+          ))}
+        </motion.div>
+
+        {/* layout toggle (desktop) */}
+        {!isMobile && (
+          <motion.div variants={fadeUp} className="inline-flex" role="group">
+            {(['list','card'] as LayoutOption[]).map(btn=>(
+              <button key={btn}
+                onClick={()=>setLayout(btn)}
+                className={`
+                  px-4 py-2 text-sm font-medium border border-[var(--primary-color)]
+                  ${layout===btn
+                    ? 'bg-[var(--primary-color)] text-white'
+                    : 'bg-transparent'
+                  }
+                  ${btn==='list' ? 'rounded-l-md' : 'rounded-r-md -ml-px'}
+                `}
+              >
+                {btn==='list'?'Lista':'Grade'}
+              </button>
+            ))}
+          </motion.div>
+        )}
+      </motion.div>
+
+      {/* grid/lista de projetos ------------------------------------------- */}
+      <motion.section
+        variants={stagger}
+        initial="hidden"
+        animate="show"
+        className="container mx-auto px-4 pb-24"
+      >
+        {layout==='list' ? (
+          <div className="flex flex-col items-center gap-8">
+            {filtered.map(ListItem)}
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filtered.map(Card)}
+          </div>
+        )}
+      </motion.section>
+
       <Footer />
     </div>
   );
