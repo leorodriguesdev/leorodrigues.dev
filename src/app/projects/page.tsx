@@ -9,8 +9,8 @@ import Tilt from 'react-parallax-tilt';
 import { useMediaQuery } from 'react-responsive';
 
 import { projectsData, Project } from '@/data/projectsData';
-import Navbar from '@/app/components/layout/Navbar';
-import Footer from '@/app/components/layout/Footer';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
 
 /* ------------------------------------------------------------- */
 /* animações utilitárias                                         */
@@ -18,7 +18,7 @@ const fadeUp = { hidden:{opacity:0,y:40}, show:{opacity:1,y:0} };
 const stagger = { show:{transition:{staggerChildren:0.1}} };
 
 type LayoutOption  = 'list' | 'card';
-type FilterOption  = 'all'  | 'website' | 'mobile';
+type FilterOption  = 'all'  | 'website' | 'mobile' | 'api';
 /* ------------------------------------------------------------- */
 
 export default function AllProjectsPage() {
@@ -29,7 +29,7 @@ export default function AllProjectsPage() {
 
   useEffect(()=>{ if (isMobile) setLayout('list'); },[isMobile]);
 
-  const filtered = projectsData.filter(p => filter==='all' ? true : p.type===filter);
+  const filtered = projectsData.filter(p => filter==='all' ? true : p.type===filter).reverse();
 
   /* helpers de render ------------------------------------------------------ */
   const Card = (p:Project)=>(
@@ -54,7 +54,7 @@ export default function AllProjectsPage() {
             {p.title}
           </h3>
           <span className="text-xs opacity-70">
-            {p.type==='website' ? 'Site / Web' : 'App / Mobile'}
+            {p.type==='website' ? 'Site / Web' : p.type==='api' ? 'Sistema / API' :'App / Mobile'}
           </span>
 
           <p className="mt-4 text-sm line-clamp-3">{p.description}</p>
@@ -90,12 +90,11 @@ export default function AllProjectsPage() {
             </span>
             <p className="text-sm line-clamp-3">{p.description}</p>
 
-            <motion.span
-              whileHover={{scale:1.05}}
+            <span
               className="text-sm font-semibold text-[var(--primary-color)] mt-2"
             >
               Ver Detalhes →
-            </motion.span>
+            </span>
           </div>
         </div>
       </Link>
@@ -144,7 +143,7 @@ export default function AllProjectsPage() {
       >
         {/* filtro */}
         <motion.div variants={fadeUp} className="flex gap-2">
-          {(['all','website','mobile'] as FilterOption[]).map(btn=>(
+          {(['all','website','mobile','api'] as FilterOption[]).map(btn=>(
             <button key={btn}
               onClick={()=>setFilter(btn)}
               className={`
@@ -154,7 +153,7 @@ export default function AllProjectsPage() {
                   : 'border-[var(--primary-color)]'
                 }`}
             >
-              {btn==='all'?'Todos':btn==='website'?'Websites':'Apps'}
+              {btn==='all'?'Todos':btn==='website'?'Websites':btn==='api'?'API':'Apps'}
             </button>
           ))}
         </motion.div>

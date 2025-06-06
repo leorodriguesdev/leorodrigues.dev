@@ -23,7 +23,8 @@
     "react-simple-typewriter": "^5.0.1",
     "react-slick": "^0.30.2",
     "react-toastify": "^10.0.6",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "yet-another-react-lightbox": "^3.23.0"
   },
   "devDependencies": {
     "@types/node": "^20",

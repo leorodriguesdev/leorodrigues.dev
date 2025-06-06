@@ -4,10 +4,10 @@
 import { motion } from 'framer-motion';
 import Tilt from 'react-parallax-tilt';
 import Image from 'next/image';
-import Navbar from '@/app/components/layout/Navbar';
-import Footer from '@/app/components/layout/Footer';
-import Experience from '@/app/components/sections/Experience';
-import Education   from '@/app/components/sections/Education';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
+import Experience from '@/components/sections/Experience';
+import Education   from '@/components/sections/Education';
 
 export default function AboutPage() {
   /* animações reutilizáveis */
@@ -20,7 +20,7 @@ export default function AboutPage() {
 
       {/* HERO – Foto + Texto ------------------------------------------------ */}
       <section className="min-h-screen relative flex flex-col justify-center items-center">
-        {/* swirl animado sutil atrás da foto */}
+        {/* swirl animado sutil atrás da foto */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <motion.div
             initial={{opacity:0, scale:0.4}}
@@ -63,13 +63,10 @@ export default function AboutPage() {
             </h1>
 
             <p className="text-lg leading-relaxed mb-8 mx-3">
-              Sou <strong>Leonardo Rodrigues</strong>, desenvolvedor full‑stack especializado
-              em&nbsp;
-              <span className="text-[var(--primary-color)]">React / Next.js</span> &
-              <span className="text-[var(--primary-color)]"> React Native / Expo </span>.  
-              Amo transformar ideias em experiências digitais <em>fora da curva</em>,
-              misturando código limpo, UI de alto impacto e performance fina — seja
-              em <u>apps mobile</u> ou plataformas web escaláveis.
+              Olá! Meu nome é <strong>Leonardo Rodrigues</strong> e sou um desenvolvedor full stack apaixonado por transformar ideias em soluções digitais robustas e eficientes. Com <span className="text-[var(--primary-color)]">mais de 5 anos de experiência</span> no mercado, atuo com foco em desenvolvimento web e mobile, utilizando as mais modernas tecnologias para construir produtos de alta qualidade.
+            </p>
+            <p className="text-lg leading-relaxed mb-8 mx-3">
+              Minha jornada profissional inclui passagens por empresas como a <span className="text-[var(--primary-color)]">Tivit</span> e atualmente, contribuo para o <span className="text-[var(--primary-color)]">Sistema FERGS</span>, onde tenho a oportunidade de participar de <span className="text-[var(--primary-color)]">todo o ciclo de desenvolvimento de projetos</span>, desde a concepção e prototipagem até o deploy e manutenção. Essa experiência me proporcionou uma visão 360º do processo de desenvolvimento, me permitindo entregar soluções completas e eficazes.
             </p>
 
             {/* CTA ---------------------------------------------------------- */}

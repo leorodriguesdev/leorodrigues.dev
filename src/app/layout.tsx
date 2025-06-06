@@ -1,6 +1,6 @@
 
 import type { Metadata } from "next";
-import ThemeProvider from "./theme/ThemeProvider"; 
+import ThemeProvider from "@/app/theme/ThemeProvider"; 
 
 export const metadata: Metadata = {
   title: "Leorodrigues.dev",
