@@ -262,7 +262,7 @@ export const projectsData: Project[] = [
             "/projects/dev-finances/mobile.png",
         ],
         companyLogo: "/projects/dev-finances/icon.png",
-        techStack: ["HTML", "CSS", "JavaScript"],
+        techStack: ["HTML", "CSS", "JavaScript"], 
         highlights: [
             "Modal de nova transação com interação via DOM",
             "Visualização dinâmica de entradas, saídas e total",
@@ -274,6 +274,35 @@ export const projectsData: Project[] = [
         },
         status: "Concluído",
         sourceCodeUrl: "https://github.com/leorodriguesdev/dev.finances",
+    },
+    {
+        id: 13,
+        title: "Pomo - Aplicação Pomodoro com Gamificação",
+        type: "website",
+        description: "Aplicação web inspirada na técnica Pomodoro que combina produtividade com exercícios físicos e cuidados com a saúde. Durante as pausas, o usuário recebe desafios de exercícios físicos e para os olhos, ganhando experiência (XP) ao completá-los e subindo de nível.",
+        image: "/projects/pomo/home.png",
+        images: [
+            "/projects/pomo/home.png",
+            "/projects/pomo/tempo.png",
+            "/projects/pomo/fimdotempo.png",
+            "/projects/pomo/mobile.png"
+        ],
+        companyLogo: "/projects/pomo/logo.png",
+        techStack: ["Next.js", "TypeScript", "React", "CSS Modules", "Context API"],
+        highlights: [
+            "Timer Pomodoro de 25 minutos para sessões de foco",
+            "Sistema de desafios com exercícios físicos e para os olhos",
+            "Gamificação com XP, níveis e conquistas",
+            "Notificações sonoras e do navegador",
+            "Persistência de dados em cookies",
+            "Interface responsiva e moderna"
+        ],
+        date: "2024-03-15",
+        links: {
+            website: "https://pomo-puce.vercel.app/",
+        },
+        status: "Online",
+        sourceCodeUrl: "https://github.com/leorodriguesdev/pomo",
     },
 
 ];

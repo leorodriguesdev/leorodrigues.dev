@@ -36,7 +36,7 @@ const Hero = () => {
   </p>
 
   <Link href="#contact">
-    <span className="mt-6 inline-block bg-[var(--primary-color)] text-white px-6 py-3 rounded-full text-lg font-semibold transition-all duration-300 hover:bg-opacity-90 cursor-pointer">
+    <span className="mt-6 inline-block bg-[var(--primary-color)] text-white px-6 py-3 rounded-full text-lg font-semibold transition-all duration-300 hover:bg-opacity-90 hover:scale-105 hover:shadow-lg hover:shadow-[var(--primary-color)]/30 hover:-translate-y-1 cursor-pointer transform">
       Bora Conversar
     </span>
   </Link>
