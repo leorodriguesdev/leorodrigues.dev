@@ -6,7 +6,7 @@ import { projectsData, Project } from '@/data/projectsData';
 import ProjectDetailClient from './ProjectDetailClient';
 
 // @ts-ignore: Ignorar problemas de tipo temporariamente
-export default async function Page({ params }: any) {
+export default async function Page({ params, searchParams }: any) {
   const resolvedParams = await Promise.resolve(params); // Resolva params, se necessário
   const projectId = Number(resolvedParams.id);
 
@@ -20,11 +20,15 @@ export default async function Page({ params }: any) {
     notFound();
   }
 
-  return <ProjectDetailClient project={project as Project} />;
+  // Capturar o título da query string
+  const titleFromUrl = searchParams?.title;
+
+  return <ProjectDetailClient project={project as Project} titleFromUrl={titleFromUrl} />;
 }
 
 // @ts-ignore: Ignorar problemas de tipo temporariamente
-export async function generateMetadata({ params }: any) {
+export async function generateMetadata({ params, searchParams }: any) {
   const resolvedParams = await Promise.resolve(params); // Resolva params, se necessário
-  return { title: `Projeto ${resolvedParams.id}` };
+  const title = searchParams?.title || resolvedParams.title;
+  return { title: `Projeto ${title}` };
 }

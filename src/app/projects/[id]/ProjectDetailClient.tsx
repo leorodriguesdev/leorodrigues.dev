@@ -7,11 +7,21 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import ImageGallery from './components/ImagesGallery';
 import { Project } from '@/data/projectsData';
+import Link from 'next/link';
 
 const fadeUp = { hidden: { opacity: 0, y: 40 }, show: { opacity: 1, y: 0 } };
 const stagger = { show: { transition: { staggerChildren: 0.12 } } };
 
-export default function ProjectDetailClient({ project }: { project: Project }) {
+export default function ProjectDetailClient({ 
+  project, 
+  titleFromUrl 
+}: { 
+  project: Project; 
+  titleFromUrl?: string; 
+}) {
+  // Usar o título da URL se disponível, senão usar o título do projeto
+  const displayTitle = titleFromUrl || project.title;
+
   return (
     <div className="min-h-screen bg-[var(--bg-color)] text-[var(--text-color)]">
       <Navbar />
@@ -26,6 +36,28 @@ export default function ProjectDetailClient({ project }: { project: Project }) {
           />
         </div>
 
+        {/* botao para voltar */}
+        <motion.div
+          variants={fadeUp}
+          className="container mx-auto px-4 mb-8"
+        >
+          <Link 
+            href="/projects" 
+            className="inline-flex items-center gap-2 text-gray-400 hover:text-[var(--primary-color)] transition-all duration-300 transform hover:scale-105 hover:-translate-y-0.5 group"
+          >
+            <motion.svg 
+              className="w-5 h-5 transition-transform duration-300 group-hover:-translate-x-1" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+              whileHover={{ x: -2 }}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </motion.svg>
+            <span className="font-medium">Voltar aos Projetos</span>
+          </Link>
+        </motion.div>
+
         <motion.header
           variants={stagger}
           initial="hidden"
@@ -36,7 +68,7 @@ export default function ProjectDetailClient({ project }: { project: Project }) {
             variants={fadeUp}
             className="text-4xl md:text-5xl font-extrabold font-audiowide text-[var(--primary-color)]"
           >
-            {project.title}
+            {displayTitle}
           </motion.h1>
 
           {project.companyLogo && (
@@ -80,7 +112,7 @@ export default function ProjectDetailClient({ project }: { project: Project }) {
                   href={project.sourceCodeUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="underline text-[var(--primary-color)] hover:text-[var(--accent-color)]"
+                  className="underline text-[var(--primary-color)] hover:text-[var(--accent-color)] hover:scale-105 transition-all duration-300 transform inline-block"
                 >
                   ver repositório
                 </a>
@@ -98,7 +130,7 @@ export default function ProjectDetailClient({ project }: { project: Project }) {
       >
         <ImageGallery
           images={project.images?.length ? project.images : [project.image]}
-          projectTitle={project.title}
+          projectTitle={displayTitle}
         />
       </motion.section>
 
@@ -125,7 +157,7 @@ export default function ProjectDetailClient({ project }: { project: Project }) {
         </motion.ul>
 
         <motion.h2 variants={fadeUp} className="text-2xl font-semibold mb-4 text-[var(--primary-color)]">
-          Tech Stack
+          Tech Stack
         </motion.h2>
         <motion.div variants={fadeUp} className="flex flex-wrap gap-2 mb-12">
           {project.techStack.map((t, i) => (
@@ -150,18 +182,18 @@ function ProjectLinks({ project }: { project: Project }) {
   return (
     <motion.div variants={fadeUp} className="space-x-4 text-center">
       {website && (
-        <a href={website} target="_blank" rel="noreferrer" className="inline-block bg-[var(--primary-color)] text-white px-6 py-2 rounded-full font-bold hover:bg-opacity-90 hover:text-black transition">
+        <a href={website} target="_blank" rel="noreferrer" className="inline-block bg-[var(--primary-color)] text-white px-6 py-2 rounded-full font-bold hover:bg-opacity-90 hover:text-black hover:scale-105 hover:shadow-lg hover:shadow-[var(--primary-color)]/30 hover:-translate-y-1 transition-all duration-300 transform">
           Acessar Site
         </a>
       )}
       {playStore && (
-        <a href={playStore} target="_blank" rel="noreferrer" className="inline-block bg-green-500 px-6 py-2 rounded-full text-white font-bold hover:bg-green-600 transition">
-          Play Store
+        <a href={playStore} target="_blank" rel="noreferrer" className="inline-block bg-green-500 px-6 py-2 rounded-full text-white font-bold hover:bg-green-600 hover:scale-105 hover:shadow-lg hover:shadow-green-500/30 hover:-translate-y-1 transition-all duration-300 transform">
+          Play Store
         </a>
       )}
       {appStore && (
-        <a href={appStore} target="_blank" rel="noreferrer" className="inline-block bg-blue-500 px-6 py-2 rounded-full text-white font-bold hover:bg-blue-600 transition">
-          App Store
+        <a href={appStore} target="_blank" rel="noreferrer" className="inline-block bg-blue-500 px-6 py-2 rounded-full text-white font-bold hover:bg-blue-600 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 transform">
+          App Store
         </a>
       )}
     </motion.div>

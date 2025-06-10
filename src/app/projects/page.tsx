@@ -37,7 +37,7 @@ export default function AllProjectsPage() {
       variants={fadeUp}
       className="bg-[var(--bg-card)] rounded-3xl overflow-hidden shadow-lg hover:shadow-[var(--primary-color)] transition"
     >
-      <Link href={`/projects/${p.id}`} className="no-underline">
+      <Link href={`/projects/${p.id}?title=${p.title}`} className="no-underline">
         <Tilt tiltMaxAngleX={6} tiltMaxAngleY={6} glareEnable>
           <div className="relative w-full h-48">
             <Image
@@ -75,7 +75,8 @@ export default function AllProjectsPage() {
       variants={fadeUp}
       className="bg-[var(--bg-card)] rounded-3xl shadow-lg hover:shadow-[var(--primary-color)] transition overflow-hidden w-full md:w-4/5"
     >
-      <Link href={`/projects/${p.id}`} className="no-underline">
+      {/* passar o titulo do projeto como parametro  */}
+      <Link href={`/projects/${p.id}?title=${p.title}`} className="no-underline">
         <div className="flex flex-col md:flex-row">
           <div className="relative w-full md:w-1/2 h-48 md:h-auto">
             <Image src={p.image} alt={p.title} fill className="object-cover" />
@@ -130,7 +131,7 @@ export default function AllProjectsPage() {
 
           <motion.p variants={fadeUp}
             className="mx-auto max-w-3xl text-xl mb-14">
-            Conheça websites e apps desenvolvidos – cada um com desafios,
+            Conheça websites e apps desenvolvidos – cada um com desafios,
             tecnologias e resultados únicos.
           </motion.p>
         </motion.header>
@@ -147,10 +148,10 @@ export default function AllProjectsPage() {
             <button key={btn}
               onClick={()=>setFilter(btn)}
               className={`
-                px-4 py-2 text-sm rounded-md border
+                px-4 py-2 text-sm rounded-md border transition-all duration-300 transform hover:scale-105 hover:-translate-y-1
                 ${ filter===btn
-                  ? 'bg-[var(--primary-color)] text-white border-[var(--primary-color)]'
-                  : 'border-[var(--primary-color)]'
+                  ? 'bg-[var(--primary-color)] text-white border-[var(--primary-color)] hover:shadow-lg hover:shadow-[var(--primary-color)]/30'
+                  : 'border-[var(--primary-color)] hover:bg-[var(--primary-color)]/10 hover:shadow-lg'
                 }`}
             >
               {btn==='all'?'Todos':btn==='website'?'Websites':btn==='api'?'API':'Apps'}
@@ -165,10 +166,10 @@ export default function AllProjectsPage() {
               <button key={btn}
                 onClick={()=>setLayout(btn)}
                 className={`
-                  px-4 py-2 text-sm font-medium border border-[var(--primary-color)]
+                  px-4 py-2 text-sm font-medium border border-[var(--primary-color)] transition-all duration-300 transform hover:scale-105 hover:-translate-y-1
                   ${layout===btn
-                    ? 'bg-[var(--primary-color)] text-white'
-                    : 'bg-transparent'
+                    ? 'bg-[var(--primary-color)] text-white hover:shadow-lg hover:shadow-[var(--primary-color)]/30'
+                    : 'bg-transparent hover:bg-[var(--primary-color)]/10 hover:shadow-lg'
                   }
                   ${btn==='list' ? 'rounded-l-md' : 'rounded-r-md -ml-px'}
                 `}

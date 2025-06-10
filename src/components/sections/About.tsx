@@ -29,7 +29,7 @@ const About = () => {
         {/* Start About Section */}
 
         <Link href={`/about`}>
-          <button className="inline-block bg-[var(--primary-color)] text-white px-4 py-2 rounded-full text-lg font-bold hover:bg-opacity-90 transition-all duration-300 cursor-pointer">
+          <button className="inline-block bg-[var(--primary-color)] text-white px-4 py-2 rounded-full text-lg font-bold hover:bg-opacity-90 hover:scale-105 hover:shadow-lg hover:shadow-[var(--primary-color)]/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer transform">
             Saber mais &rarr;
           </button>
         </Link>

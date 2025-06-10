@@ -66,7 +66,7 @@ export default function AboutPage() {
               Olá! Meu nome é <strong>Leonardo Rodrigues</strong> e sou um desenvolvedor full stack apaixonado por transformar ideias em soluções digitais robustas e eficientes. Com <span className="text-[var(--primary-color)]">mais de 5 anos de experiência</span> no mercado, atuo com foco em desenvolvimento web e mobile, utilizando as mais modernas tecnologias para construir produtos de alta qualidade.
             </p>
             <p className="text-lg leading-relaxed mb-8 mx-3">
-              Minha jornada profissional inclui passagens por empresas como a <span className="text-[var(--primary-color)]">IBM, Banco do Brasil e Banco Sicredi</span>, atualmente contribuo para o <span className="text-[var(--primary-color)]">Sistema FERGS</span>, onde tenho a oportunidade de participar de <span className="text-[var(--primary-color)]">todo o ciclo de desenvolvimento de projetos</span>, desde a concepção e prototipagem até o deploy e manutenção. Essa experiência me proporcionou uma visão 360º do processo de desenvolvimento, me permitindo entregar soluções completas e eficazes.
+              Minha jornada profissional inclui passagens por empresas como a <span className="text-[var(--primary-color)]">IBM, Banco do Brasil e Banco Sicredi</span>, atualmente contribuo para o <span className="text-[var(--primary-color)]">Sistema FIERGS</span>, onde tenho a oportunidade de participar de <span className="text-[var(--primary-color)]">todo o ciclo de desenvolvimento de projetos</span>, desde a concepção e prototipagem até o deploy e manutenção. Essa experiência me proporcionou uma visão 360º do processo de desenvolvimento, me permitindo entregar soluções completas e eficazes.
             </p>
 
             {/* CTA ---------------------------------------------------------- */}
@@ -77,7 +77,7 @@ export default function AboutPage() {
             >
               <a
                 href="#experience"
-                className="flex px-8 py-3 no-underline rounded-full font-semibold bg-[var(--primary-color)] text-white hover:bg-opacity-90 hover:text-black transition"
+                className="flex px-8 py-3 no-underline rounded-full font-semibold bg-[var(--primary-color)] text-white hover:bg-opacity-90 hover:text-black hover:scale-105 hover:shadow-lg hover:shadow-[var(--primary-color)]/30 hover:-translate-y-1 transition-all duration-300 transform"
               >
                 Ver minha jornada <span className='pt-1 pl-1'><svg className="size-4 text-[var(--bg-color)] animate-bounce" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg></span>
               </a>

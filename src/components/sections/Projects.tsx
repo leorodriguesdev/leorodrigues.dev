@@ -6,19 +6,19 @@ import Link from "next/link";
 
 const projects = [
   {
+    title: "Pomo",
+    description: "Aplicação web inspirada na técnica Pomodoro que combina produtividade com exercícios físicos e...",
+    image: "/projects/pomo/home.png",
+  },
+  {
     title: "dev.finances",
-    description: "Aplicação de controle financeiro desenvolvida com HTML, CSS e JavaScript puro, permitindo registrar e visualizar entradas, saídas e saldo total.",
+    description: "Aplicação de controle financeiro desenvolvida com HTML, CSS e JavaScript puro, permitindo regist...",
     image: "/projects/dev-finances/web.png",
   },
   {
     title: "Clone Spotify",
-    description: "Landing page clone do Spotify desenvolvida com HTML, CSS e Bootstrap para treinar responsividade, carrossel de destaques e organização de seções promocionais.",
+    description: "Landing page clone do Spotify desenvolvida com HTML, CSS e Bootstrap para treinar responsividad...",
     image: "/projects/clonespotify/clone-spotify-desktop.png",
-  },
-  {
-    title: "Finans",
-    description: "Landing page moderna e responsiva para uma solução de finanças pessoais. Desenvolvido com HTML, CSS e Bootstrap para apresentar recursos e benefícios do produto de forma clara e atraente.",
-    image: "/projects/finans/finans-desktop.png",
   }
 ];
 
@@ -58,7 +58,7 @@ const Projects = () => {
                 <h3 className="text-2xl font-semibold text-[var(--primary-color)] mb-4">{project.title}</h3>
                 <p className="text-lg mb-4 text-[var(--text-color)]">{project.description}</p>
                 <Link href={`/projects`}>
-                <button className="inline-block bg-[var(--primary-color)] text-white px-4 py-2 rounded-full text-lg font-bold hover:bg-opacity-90 transition-all duration-300 cursor-pointer">
+                <button className="inline-block bg-[var(--primary-color)] text-white px-4 py-2 rounded-full text-lg font-bold hover:bg-opacity-90 hover:scale-105 hover:shadow-lg hover:shadow-[var(--primary-color)]/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer transform">
                   Ver Mais &rarr;
                 </button>
                 </Link>
@@ -66,6 +66,13 @@ const Projects = () => {
             </div>
           ))}
         </div>
+        {/* CTA ---------------------------------------------------------- */}
+        <Link href={`/projects`}>
+          <button className="inline-block bg-[var(--primary-color)] text-white px-4 py-2 mt-20 rounded-full text-lg font-bold hover:bg-opacity-90 hover:scale-105 hover:shadow-lg hover:shadow-[var(--primary-color)]/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer transform">
+            Ver todos os projetos &rarr;
+          </button>
+        </Link>
+
       </div>
 
     </section>
