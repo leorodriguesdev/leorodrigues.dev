@@ -304,5 +304,73 @@ export const projectsData: Project[] = [
         status: "Online",
         sourceCodeUrl: "https://github.com/leorodriguesdev/pomo",
     },
+    {
+        id: 14,
+        title: "UNES - Universidade de Excelência",
+        type: "website",
+        description: "Site institucional moderno e responsivo para uma universidade fictícia. Projeto que demonstra a evolução de um site legado com tabelas para uma versão moderna usando HTML5 semântico, CSS Grid/Flexbox e JavaScript ES6+. Inclui formulário funcional, animações suaves, SEO otimizado e design system completo.",
+        image: "/projects/unes-universidade/unes-home.png",
+        images: [
+            "/projects/unes-universidade/unes-home.png",
+            "/projects/unes-universidade/unes-quem-somos.png",
+            "/projects/unes-universidade/unes-contato.png",
+            "/projects/unes-universidade/unes-mobile.png"
+        ],
+        companyLogo: "/projects/unes-universidade/unes-logo.png",
+        techStack: ["HTML5", "CSS3", "JavaScript ES6+", "Font Awesome", "AOS Library", "Google Fonts"],
+        highlights: [
+            "Modernização completa de site legado com tabelas",
+            "Design responsivo com CSS Grid e Flexbox",
+            "Formulário de contato com validação em tempo real",
+            "Animações suaves e efeitos visuais elegantes",
+            "SEO otimizado com meta tags e structured data",
+            "Sistema de design com cores e tipografia profissional",
+            "FAQ interativo com accordion",
+            "Contadores animados de estatísticas",
+            "Performance otimizada com lazy loading",
+            "PWA Ready com Service Worker configurado"
+        ],
+        date: "2024-12-15",
+        links: {
+            website: "https://leorodriguesdev.github.io/unes-universidade/",
+        },
+        status: "Online",
+        sourceCodeUrl: "https://github.com/leorodriguesdev/unes-universidade",
+    },
+    {
+        id: 15,
+        title: "desaba.fei - Sistema de Comentários Moderno",
+        type: "website",
+        description: "Sistema de comentários moderno e interativo desenvolvido em React, com design responsivo e funcionalidades avançadas. Inclui busca em tempo real, filtros inteligentes, edição de comentários, avatares dinâmicos, validação em tempo real e persistência local. Interface moderna com gradientes sofisticados, animações suaves e suporte completo à acessibilidade.",
+        image: "/projects/desaba-fei/desaba-fei-home.png",
+        images: [
+            "/projects/desaba-fei/desaba-fei-home.png",
+            "/projects/desaba-fei/desaba-fei-comments.png",
+            "/projects/desaba-fei/desaba-fei-comments2.png",
+            "/projects/desaba-fei/desaba-fei-mobile.png"
+        ],
+        companyLogo: "/projects/desaba-fei/desaba-fei-logo.png",
+        techStack: ["React", "JavaScript", "CSS3", "HTML5", "date-fns", "LocalStorage API"],
+        highlights: [
+            "Sistema de comentários completo com CRUD",
+            "Busca avançada em tempo real por nome, email ou conteúdo",
+            "Filtros inteligentes por data e nome",
+            "Edição de comentários com validação em tempo real",
+            "Avatares dinâmicos com iniciais coloridas",
+            "Design responsivo com mobile-first approach",
+            "Persistência automática no localStorage",
+            "Animações suaves e efeitos shimmer",
+            "Suporte completo à acessibilidade (WCAG 2.1 AA)",
+            "Design system moderno com gradientes sofisticados",
+            "Estados interativos com feedback visual",
+            "Detecção automática de dark mode"
+        ],
+        date: "2024-12-20",
+        links: {
+            website: "https://desaba-fei.vercel.app/",
+        },
+        status: "Online",
+        sourceCodeUrl: "https://github.com/leorodriguesdev/desaba.fei",
+    },
 
 ];
