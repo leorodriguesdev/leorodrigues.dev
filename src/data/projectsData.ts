@@ -372,5 +372,88 @@ export const projectsData: Project[] = [
         status: "Online",
         sourceCodeUrl: "https://github.com/leorodriguesdev/desaba.fei",
     },
-
+    {
+        id: 16,
+        title: "MySkills - App de Cadastro de Skills",
+        type: "mobile",
+        description: "Aplicação mobile desenvolvida com React Native para cadastro e visualização de skills de desenvolvedores. O app permite adicionar novas habilidades, visualizar lista de skills cadastradas e inclui sistema de login/welcome. Projeto criado para praticar desenvolvimento mobile com React Native e Expo.",
+        image: "/projects/myskills/myskills-home.png",
+        images: [
+            "/projects/myskills/myskills-home.png",
+        ],
+        companyLogo: "/projects/myskills/myskills-logo.png",
+        techStack: ["React Native", "TypeScript", "Expo", "FlatList", "Hooks", "JSX"],
+        highlights: [
+            "Cadastro de entrada/saída das skills",
+            "Component Profile para exibição de perfil",
+            "Página de login/Welcome"
+        ],
+        date: "2024-01-15",
+        links: {
+        },
+        status: "Em construção",
+        sourceCodeUrl: "https://github.com/leorodriguesdev/MySkills",
+    },
+    {
+        id: 17,
+        title: "dtmoney - Controle de Finanças Pessoais",
+        type: "website",
+        description: "Aplicação web para controle pessoal de finanças desenvolvida durante o Chapter 1 do Ignite da Rocketseat. Permite cadastrar entradas e saídas de dinheiro organizadas por nome e categoria, com cálculo automático de saldo total.",
+        image: "/projects/dtmoney/dtmoney-home.png",
+        images: [
+            "/projects/dtmoney/dtmoney-home.png",
+            "/projects/dtmoney/dtmoney-transactions.png",
+            "/projects/dtmoney/dtmoney-mobile.png"
+        ],
+        companyLogo: "/projects/dtmoney/dtmoney-logo.png",
+        techStack: ["React", "TypeScript", "Styled Components", "MirageJS", "Axios", "Polished"],
+        highlights: [
+            "Cadastro de entradas e saídas de dinheiro",
+            "Cálculo automático de entrada, saída e total",
+            "Organização por nome e categoria",
+            "Interface moderna e responsiva",
+            "Simulação de API com MirageJS",
+            "Página de login integrada"
+        ],
+        date: "2023-06-15",
+        links: {
+            website: "https://dtmoney-ten-omega.vercel.app/",
+        },
+        status: "Online",
+        sourceCodeUrl: "https://github.com/leorodriguesdev/dtmoney",
+    },
+    {
+        id: 18,
+        title: "ig.news - Plataforma de Notícias React",
+        type: "website",
+        description: "Plataforma de notícias sobre o mundo React desenvolvida com Next.js, TypeScript e integração com Stripe para pagamentos. Sistema completo de autenticação com GitHub, assinatura premium e conteúdo exclusivo. Projeto full-stack com webhooks, API routes e design responsivo moderno.",
+        image: "/projects/ignews/ignews-home.png",
+        images: [
+            "/projects/ignews/ignews-home.png",
+            "/projects/ignews/ignews-home-logada.png",
+            "/projects/ignews/ignews-post.png",
+            "/projects/ignews/ignews-post-detail.png",
+            "/projects/ignews/ignews-mobile.png",
+            "/projects/ignews/ignews-checkout.png"
+        ],
+        companyLogo: "/projects/ignews/ignews-logo.png",
+        techStack: ["Next.js", "TypeScript", "React", "NextAuth.js", "Stripe", "Sass", "SCSS Modules"],
+        highlights: [
+            "Autenticação completa com GitHub via NextAuth.js",
+            "Sistema de assinatura premium integrado com Stripe",
+            "Webhooks para processamento de pagamentos",
+            "API Routes para checkout e webhooks",
+            "Design responsivo com SCSS Modules",
+            "Sistema de posts com preview para não assinantes",
+            "Interface moderna e elegante",
+            "Integração completa com Stripe Dashboard",
+            "Deploy otimizado na Vercel"
+        ],
+        date: "2024-12-25",
+        links: {
+            website: "https://ignews-snowy-sigma.vercel.app/",
+        },
+        status: "Online",
+        sourceCodeUrl: "https://github.com/leorodriguesdev/ignews",
+    },
 ];
