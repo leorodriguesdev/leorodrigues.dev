@@ -31,6 +31,14 @@ export default function AllProjectsPage() {
 
   const filtered = projectsData.filter(p => filter==='all' ? true : p.type===filter).reverse();
 
+  // Contagem de projetos por categoria
+  const projectCounts = {
+    all: projectsData.length,
+    website: projectsData.filter(p => p.type === 'website').length,
+    mobile: projectsData.filter(p => p.type === 'mobile').length,
+    api: projectsData.filter(p => p.type === 'api').length,
+  };
+
   /* helpers de render ------------------------------------------------------ */
   const Card = (p:Project)=>(
     <motion.div
@@ -79,7 +87,7 @@ export default function AllProjectsPage() {
       <Link href={`/projects/${p.id}?title=${p.title}`} className="no-underline">
         <div className="flex flex-col md:flex-row">
           <div className="relative w-full md:w-1/2 h-48 md:h-auto">
-            <Image src={p.image} alt={p.title} fill className="object-cover" />
+            <Image src={p.image} alt={p.title} fill className="object-contain" />
           </div>
 
           <div className="p-6 flex flex-col justify-center gap-2">
@@ -154,7 +162,7 @@ export default function AllProjectsPage() {
                   : 'border-[var(--primary-color)] hover:bg-[var(--primary-color)]/10 hover:shadow-lg'
                 }`}
             >
-              {btn==='all'?'Todos':btn==='website'?'Websites':btn==='api'?'API':'Apps'}
+              {btn==='all'?`Todos (${projectCounts.all})`:btn==='website'?`Websites (${projectCounts.website})`:btn==='api'?`API (${projectCounts.api})`:`Apps (${projectCounts.mobile})`}
             </button>
           ))}
         </motion.div>

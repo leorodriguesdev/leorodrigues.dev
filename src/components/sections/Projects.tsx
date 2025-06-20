@@ -2,7 +2,8 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-
+import { projectsData } from "@/data/projectsData";
+import { motion } from "framer-motion";
 
 const projects = [
   {
@@ -23,6 +24,17 @@ const projects = [
 ];
 
 const Projects = () => {
+
+  const projects = projectsData.reverse().slice(0, 3);
+
+  const truncateTitle = (title: string) => {
+    return title.length > 10 ? title.slice(0, 10) + "..." : title;
+  };
+
+  const truncateDescription = (description: string) => {
+    return description.length > 70 ? description.slice(0, 70) + "..." : description;
+  };
+
   return (
     <section id="projects" className="min-h-screen flex flex-col justify-center items-center bg-[var(--bg-color)] text-[var(--text-color)] py-20 px-4">
       <div className="container mx-auto text-center">
@@ -49,14 +61,14 @@ const Projects = () => {
                   className="transform transition-transform duration-700 group-hover:scale-110 group-hover:rotate-3"
                 />
                 <div className="absolute bottom-4 left-4 bg-[var(--bg-card)] bg-opacity-80 px-3 py-1 rounded-lg text-[var(--primary-color)] text-lg font-semibold shadow-md">
-                  {project.title}
+                  {truncateTitle(project.title)}
                 </div>
               </div>
 
               {/* Overlay animado com conteúdo */}
               <div className="absolute inset-0 bg-[var(--bg-color)] border-4 border-[var(--primary-color)] rounded-2xl bg-opacity-80 opacity-0 group-hover:opacity-90 transition-opacity duration-500 flex flex-col justify-center items-center p-6 text-center">
                 <h3 className="text-2xl font-semibold text-[var(--primary-color)] mb-4">{project.title}</h3>
-                <p className="text-lg mb-4 text-[var(--text-color)]">{project.description}</p>
+                <p className="text-lg mb-4 text-[var(--text-color)]">{truncateDescription(project.description)}</p>
                 <Link href={`/projects`}>
                 <button className="inline-block bg-[var(--primary-color)] text-white px-4 py-2 rounded-full text-lg font-bold hover:bg-opacity-90 hover:scale-105 hover:shadow-lg hover:shadow-[var(--primary-color)]/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer transform">
                   Ver Mais &rarr;
