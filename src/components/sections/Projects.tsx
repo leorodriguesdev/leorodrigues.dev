@@ -3,25 +3,6 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { projectsData } from "@/data/projectsData";
-import { motion } from "framer-motion";
-
-const projects = [
-  {
-    title: "Pomo",
-    description: "Aplicação web inspirada na técnica Pomodoro que combina produtividade com exercícios físicos e...",
-    image: "/projects/pomo/home.png",
-  },
-  {
-    title: "dev.finances",
-    description: "Aplicação de controle financeiro desenvolvida com HTML, CSS e JavaScript puro, permitindo regist...",
-    image: "/projects/dev-finances/web.png",
-  },
-  {
-    title: "Clone Spotify",
-    description: "Landing page clone do Spotify desenvolvida com HTML, CSS e Bootstrap para treinar responsividad...",
-    image: "/projects/clonespotify/clone-spotify-desktop.png",
-  }
-];
 
 const Projects = () => {
 
