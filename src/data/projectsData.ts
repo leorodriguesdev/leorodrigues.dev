@@ -377,7 +377,7 @@ export const projectsData: Project[] = [
         title: "MySkills - App de Cadastro de Skills",
         type: "mobile",
         description: "Aplicação mobile desenvolvida com React Native para cadastro e visualização de skills de desenvolvedores. O app permite adicionar novas habilidades, visualizar lista de skills cadastradas e inclui sistema de login/welcome. Projeto criado para praticar desenvolvimento mobile com React Native e Expo.",
-        image: "/projects/myskills/myskills-home.png",
+        image: "/projects/myskills/myskills-logo.png",
         images: [
             "/projects/myskills/myskills-home.png",
         ],
@@ -455,5 +455,32 @@ export const projectsData: Project[] = [
         },
         status: "Online",
         sourceCodeUrl: "https://github.com/leorodriguesdev/ignews",
+    },
+    {
+        id: 19,
+        title: "LalaMovie - App de Críticas de Filmes",
+        type: "mobile",
+        description: "Aplicação mobile desenvolvida em React Native para críticas e comentários de filmes. Projeto de estudo criado para aprender na prática React Native e preparar para desenvolvimento mobile. Inclui funcionalidades como navegação, sliders, cards de filmes, sistema de comentários e avaliações.",
+        image: "/projects/lalamovie/lalamovie-banner.png",
+        images: [
+            "/projects/lalamovie/lalamovie-home.png",
+        ],
+        companyLogo: "/projects/lalamovie/lalamovie-logo.png",
+        techStack: ["React Native", "TypeScript", "Node.js", "Hooks", "FlatList", "JavaScript"],
+        highlights: [
+            "Página Home com header e navegação",
+            "Slider de filmes em destaque",
+            "Cards de filmes com informações",
+            "Seções Top Rated e Lowest Rated",
+            "Página de detalhes do filme",
+            "Sistema de comentários e avaliações",
+            "Input para adicionar comentários",
+            "Lógica de persistência de comentários"
+        ],
+        date: "2024-01-20",
+        links: {
+        },
+        status: "Em construção",
+        sourceCodeUrl: "https://github.com/leorodriguesdev/lalamovie",
     },
 ];
