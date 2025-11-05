@@ -1,37 +1,97 @@
-// components/Footer.tsx
+"use client";
+
 import React from 'react';
-import { FaInstagram, FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa';
+import Link from 'next/link';
+import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col items-center text-center py-8 bg-[var(--bg-card)] text-[var(--text-color)] border-t border-gray-700 space-y-4">
-      {/* Logo e texto de assinatura */}
-      <div className="text-2xl font-semibold text-[var(--primary-color)] tracking-wider font-audiowide">
-        Leorodrigues.dev
-      </div>
-      <p className="text-sm max-w-md mx-auto text-gray-400 px-3">
-        Construindo experiências digitais inovadoras, uma linha de código por vez.
-      </p>
-
-      {/* Redes sociais com ícones */}
-      <div className="flex space-x-6 text-2xl">
-        <a href="https://instagram.com/leorodriguesdev" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--primary-color)] transition duration-300 transform hover:scale-110">
-          <FaInstagram />
-        </a>
-        <a href="https://linkedin.com/in/leorodriguesdev/" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--primary-color)] transition duration-300 transform hover:scale-110">
-          <FaLinkedin />
-        </a>
-        <a href="https://x.com/leorodriguesdev" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--primary-color)] transition duration-300 transform hover:scale-110">
-          <FaTwitter />
-        </a>
-        <a href="https://github.com/leorodriguesdev" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--primary-color)] transition duration-300 transform hover:scale-110">
-          <FaGithub />
-        </a>
-      </div>
-
-      {/* Copyright */}
-      <div className="text-xs text-gray-500">
-        &copy; {new Date().getFullYear()} <span className="text-[var(--primary-color)] font-audiowide">Leorodrigues.dev</span>. Todos os direitos reservados.
+    <footer className="py-12 px-6 border-t border-border bg-background">
+      <div className="container mx-auto max-w-6xl">
+        <div className="grid md:grid-cols-4 gap-8 mb-8">
+          <div className="space-y-4">
+            <div className="tracking-tight font-audiowide">
+              <span className="text-primary">Leo</span>
+              <span className="text-foreground">Rodrigues</span>
+              <span className="text-primary">.dev</span>
+            </div>
+            <p className="text-sm text-muted-foreground">
+              Desenvolvedor Full Stack criando experiências web modernas e de alta performance.
+            </p>
+          </div>
+          
+          <div className="space-y-3">
+            <h4 className="text-primary font-medium">Links Rápidos</h4>
+            <div className="space-y-2 text-sm">
+              <Link href="/" className="block text-muted-foreground hover:text-primary transition-colors">
+                Home
+              </Link>
+              <Link href="/about" className="block text-muted-foreground hover:text-primary transition-colors">
+                Sobre
+              </Link>
+              <Link href="/projects" className="block text-muted-foreground hover:text-primary transition-colors">
+                Projetos
+              </Link>
+              <Link href="/#contact" className="block text-muted-foreground hover:text-primary transition-colors">
+                Contato
+              </Link>
+            </div>
+          </div>
+          
+          <div className="space-y-3">
+            <h4 className="text-primary font-medium">Serviços</h4>
+            <div className="space-y-2 text-sm text-muted-foreground">
+              <p>Desenvolvimento Web</p>
+              <p>Consultoria Técnica</p>
+              <p>UI/UX Design</p>
+              <p>Otimização SEO</p>
+            </div>
+          </div>
+          
+          <div className="space-y-3">
+            <h4 className="text-primary font-medium">Social</h4>
+            <div className="flex gap-3">
+              <a
+                href="https://github.com/leorodriguesdev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 border border-border rounded hover:border-primary hover:text-primary transition-colors"
+                aria-label="GitHub"
+              >
+                <Github size={20} />
+              </a>
+              <a
+                href="https://linkedin.com/in/leorodriguesdev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 border border-border rounded hover:border-primary hover:text-primary transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin size={20} />
+              </a>
+              <a
+                href="https://x.com/leorodriguesdev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 border border-border rounded hover:border-primary hover:text-primary transition-colors"
+                aria-label="Twitter"
+              >
+                <Twitter size={20} />
+              </a>
+              <a
+                href="mailto:contato@leorodrigues.dev"
+                className="p-2 border border-border rounded hover:border-primary hover:text-primary transition-colors"
+                aria-label="Email"
+              >
+                <Mail size={20} />
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
+          <p>© {new Date().getFullYear()} LeoRodrigues.dev - Todos os direitos reservados | Desenvolvido com React & Next.js</p>
+        </div>
       </div>
     </footer>
   );

@@ -1,35 +1,35 @@
-// src/app/projects/page.tsx
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
-import Tilt from 'react-parallax-tilt';
-import { useMediaQuery } from 'react-responsive';
+import { motion } from 'motion/react';
+import { Code2, ExternalLink, Github, Calendar } from 'lucide-react';
 
-import { projectsData, Project } from '@/data/projectsData';
+import { projectsData } from '@/data/projectsData';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import { SEO } from '@/components/SEO';
 
-/* ------------------------------------------------------------- */
-/* animações utilitárias                                         */
-const fadeUp = { hidden:{opacity:0,y:40}, show:{opacity:1,y:0} };
-const stagger = { show:{transition:{staggerChildren:0.1}} };
-
-type LayoutOption  = 'list' | 'card';
-type FilterOption  = 'all'  | 'website' | 'mobile' | 'api';
-/* ------------------------------------------------------------- */
+type FilterOption = 'all' | 'website' | 'mobile' | 'api';
 
 export default function AllProjectsPage() {
-  /* estado ---------------------------------------------------------------- */
-  const [filter , setFilter ] = useState<FilterOption>('all');
-  const [layout , setLayout ] = useState<LayoutOption>('card');
-  const  isMobile            = useMediaQuery({ maxWidth: 767 });
+  const [filter, setFilter] = useState<FilterOption>('all');
+  const [selectedTag, setSelectedTag] = useState<string | null>(null);
 
-  useEffect(()=>{ if (isMobile) setLayout('list'); },[isMobile]);
+  // Get all unique tech stack tags
+  const allTechTags = Array.from(
+    new Set(projectsData.flatMap(p => p.techStack))
+  ).sort();
 
-  const filtered = projectsData.filter(p => filter==='all' ? true : p.type===filter).reverse();
+  // Filter projects by type and tag
+  const filtered = projectsData
+    .filter(p => {
+      const typeMatch = filter === 'all' ? true : p.type === filter;
+      const tagMatch = selectedTag ? p.techStack.includes(selectedTag) : true;
+      return typeMatch && tagMatch;
+    })
+    .reverse();
 
   // Contagem de projetos por categoria
   const projectCounts = {
@@ -39,173 +39,221 @@ export default function AllProjectsPage() {
     api: projectsData.filter(p => p.type === 'api').length,
   };
 
-  /* helpers de render ------------------------------------------------------ */
-  const Card = (p:Project)=>(
-    <motion.div
-      variants={fadeUp}
-      className="bg-[var(--bg-card)] rounded-3xl overflow-hidden shadow-lg hover:shadow-[var(--primary-color)] transition"
-    >
-      <Link href={`/projects/${p.id}?title=${p.title}`} className="no-underline">
-        <Tilt tiltMaxAngleX={6} tiltMaxAngleY={6} glareEnable>
-          <div className="relative w-full h-48">
-            <Image
-              src={p.image}
-              alt={p.title}
-              fill
-              className="object-cover hover:scale-110 transition-transform duration-500"
-            />
-          </div>
-        </Tilt>
-
-        <div className="p-6 text-center">
-          <h3 className="text-xl font-bold font-audiowide text-[var(--primary-color)] mb-1">
-            {p.title}
-          </h3>
-          <span className="text-xs opacity-70">
-            {p.type==='website' ? 'Site / Web' : p.type==='api' ? 'Sistema / API' :'App / Mobile'}
-          </span>
-
-          <p className="mt-4 text-sm line-clamp-3">{p.description}</p>
-
-          <motion.span
-            whileHover={{scale:1.05}}
-            className="inline-block mt-6 text-sm font-semibold text-[var(--primary-color)]"
-          >
-            Ver Detalhes →
-          </motion.span>
-        </div>
-      </Link>
-    </motion.div>
-  );
-
-  const ListItem = (p:Project)=>(
-    <motion.div
-      variants={fadeUp}
-      className="bg-[var(--bg-card)] rounded-3xl shadow-lg hover:shadow-[var(--primary-color)] transition overflow-hidden w-full md:w-4/5"
-    >
-      {/* passar o titulo do projeto como parametro  */}
-      <Link href={`/projects/${p.id}?title=${p.title}`} className="no-underline">
-        <div className="flex flex-col md:flex-row">
-          <div className="relative w-full md:w-1/2 h-48 md:h-auto">
-            <Image src={p.image} alt={p.title} fill className="object-contain" />
-          </div>
-
-          <div className="p-6 flex flex-col justify-center gap-2">
-            <h3 className="text-xl font-bold font-audiowide text-[var(--primary-color)]">
-              {p.title}
-            </h3>
-            <span className="text-xs opacity-70">
-              {p.type==='website' ? 'Site / Web' : 'App / Mobile'}
-            </span>
-            <p className="text-sm line-clamp-3">{p.description}</p>
-
-            <span
-              className="text-sm font-semibold text-[var(--primary-color)] mt-2"
-            >
-              Ver Detalhes →
-            </span>
-          </div>
-        </div>
-      </Link>
-    </motion.div>
-  );
-
-  /* JSX -------------------------------------------------------------------- */
   return (
-    <div className="min-h-screen bg-[var(--bg-color)] text-[var(--text-color)]">
+    <div className="min-h-screen bg-background text-foreground">
       <Navbar />
+      <SEO
+        title="Projetos | Leo Rodrigues"
+        description="Portfolio de projetos desenvolvidos por Leo Rodrigues. Aplicações web, mobile e sistemas full stack usando React, Next.js, TypeScript e Node.js."
+      />
 
-      {/* swirl neon atrás do título */}
-      <div className="relative pt-32 pb-20">
-        <div className="absolute inset-0 flex justify-center -z-10">
+      <div className="pt-24 pb-16">
+        <div className="container mx-auto max-w-6xl px-6">
+          {/* Header */}
           <motion.div
-            initial={{opacity:0,scale:0.3}}
-            animate={{opacity:0.12,scale:2.2,rotate:360}}
-            transition={{duration:20,repeat:Infinity,ease:'linear'}}
-            className="w-96 h-96 rounded-full bg-[var(--primary-color)] blur-3xl"
-          />
-        </div>
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center space-y-6 mb-16"
+          >
+            <h1 className="text-4xl md:text-5xl tracking-tight">
+              Meus <span className="text-primary">Projetos</span>
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Uma coleção dos projetos que desenvolvi, desde aplicações web completas até experimentações com novas tecnologias
+            </p>
+          </motion.div>
 
-        <motion.header
-          variants={stagger}
-          initial="hidden"
-          animate="show"
-          className="container mx-auto px-4 text-center"
-        >
-          <motion.h1 variants={fadeUp}
-            className="text-5xl font-extrabold mb-6 font-audiowide text-[var(--primary-color)]">
-            Todos os Projetos
-          </motion.h1>
-
-          <motion.p variants={fadeUp}
-            className="mx-auto max-w-3xl text-xl mb-14">
-            Conheça websites e apps desenvolvidos – cada um com desafios,
-            tecnologias e resultados únicos.
-          </motion.p>
-        </motion.header>
-      </div>
-
-      {/* controles ---------------------------------------------------------- */}
+          {/* Filter by Type */}
       <motion.div
-        variants={stagger} initial="hidden" animate="show"
-        className="container mx-auto px-4 mb-12 flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="mb-6"
       >
-        {/* filtro */}
-        <motion.div variants={fadeUp} className="flex gap-2">
-          {(['all','website','mobile','api'] as FilterOption[]).map(btn=>(
-            <button key={btn}
-              onClick={()=>setFilter(btn)}
-              className={`
-                px-4 py-2 text-sm rounded-md border transition-all duration-300 transform hover:scale-105 hover:-translate-y-1
-                ${ filter===btn
-                  ? 'bg-[var(--primary-color)] text-white border-[var(--primary-color)] hover:shadow-lg hover:shadow-[var(--primary-color)]/30'
-                  : 'border-[var(--primary-color)] hover:bg-[var(--primary-color)]/10 hover:shadow-lg'
+            <div className="flex flex-wrap gap-3 justify-center">
+              {(['all', 'website', 'mobile', 'api'] as FilterOption[]).map((btn) => (
+                <button
+                  key={btn}
+                  onClick={() => {
+                    setFilter(btn);
+                    setSelectedTag(null);
+                  }}
+                  className={`px-4 py-2 rounded-lg transition-colors ${
+                    filter === btn
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-secondary border border-border hover:border-primary"
                 }`}
             >
-              {btn==='all'?`Todos (${projectCounts.all})`:btn==='website'?`Websites (${projectCounts.website})`:btn==='api'?`API (${projectCounts.api})`:`Apps (${projectCounts.mobile})`}
+                  {btn === 'all'
+                    ? `Todos (${projectCounts.all})`
+                    : btn === 'website'
+                    ? `Websites (${projectCounts.website})`
+                    : btn === 'api'
+                    ? `API (${projectCounts.api})`
+                    : `Apps (${projectCounts.mobile})`}
             </button>
           ))}
+            </div>
         </motion.div>
 
-        {/* layout toggle (desktop) */}
-        {!isMobile && (
-          <motion.div variants={fadeUp} className="inline-flex" role="group">
-            {(['list','card'] as LayoutOption[]).map(btn=>(
-              <button key={btn}
-                onClick={()=>setLayout(btn)}
-                className={`
-                  px-4 py-2 text-sm font-medium border border-[var(--primary-color)] transition-all duration-300 transform hover:scale-105 hover:-translate-y-1
-                  ${layout===btn
-                    ? 'bg-[var(--primary-color)] text-white hover:shadow-lg hover:shadow-[var(--primary-color)]/30'
-                    : 'bg-transparent hover:bg-[var(--primary-color)]/10 hover:shadow-lg'
-                  }
-                  ${btn==='list' ? 'rounded-l-md' : 'rounded-r-md -ml-px'}
-                `}
+          {/* Filter by Tech Tags */}
+          {allTechTags.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="mb-12"
+            >
+              <div className="flex flex-wrap gap-3 justify-center">
+                <button
+                  onClick={() => setSelectedTag(null)}
+                  className={`px-4 py-2 rounded-lg transition-colors text-sm ${
+                    selectedTag === null
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-secondary border border-border hover:border-primary"
+                  }`}
+                >
+                  Todas as Tecnologias
+                </button>
+                {allTechTags.map((tag) => (
+                  <button
+                    key={tag}
+                    onClick={() => setSelectedTag(tag)}
+                    className={`px-4 py-2 rounded-lg transition-colors text-sm ${
+                      selectedTag === tag
+                        ? "bg-primary text-primary-foreground"
+                        : "bg-secondary border border-border hover:border-primary"
+                    }`}
               >
-                {btn==='list'?'Lista':'Grade'}
+                    {tag}
               </button>
             ))}
+              </div>
           </motion.div>
         )}
-      </motion.div>
 
-      {/* grid/lista de projetos ------------------------------------------- */}
-      <motion.section
-        variants={stagger}
-        initial="hidden"
-        animate="show"
-        className="container mx-auto px-4 pb-24"
-      >
-        {layout==='list' ? (
-          <div className="flex flex-col items-center gap-8">
-            {filtered.map(ListItem)}
+          {/* Projects Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filtered.map((project, index) => (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ y: -5 }}
+                className="group"
+              >
+                <div className="h-full bg-card border border-border rounded-lg overflow-hidden hover:border-primary transition-colors">
+                  {/* Project Image/Preview */}
+                  <div className="aspect-video relative bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center overflow-hidden">
+                    {project.image ? (
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                    ) : (
+                      <Code2 className="text-primary/40" size={48} />
+                    )}
+                  </div>
+
+                  {/* Project Info */}
+                  <div className="p-6 space-y-4">
+                    <div className="space-y-2">
+                      <h3 className="text-xl group-hover:text-primary transition-colors line-clamp-1">
+                        {project.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground flex items-center gap-1">
+                        <Calendar size={14} />
+                        {new Date(project.date).toLocaleDateString('pt-BR', {
+                          year: 'numeric',
+                          month: 'long',
+                          day: 'numeric'
+                        })}
+                      </p>
+                      <span className="text-xs text-muted-foreground">
+                        {project.type === 'website'
+                          ? 'Site / Web'
+                          : project.type === 'api'
+                          ? 'Sistema / API'
+                          : 'App / Mobile'}
+                      </span>
+                    </div>
+
+                    <p className="text-muted-foreground line-clamp-3 text-sm">
+                      {project.description}
+                    </p>
+
+                    {/* Tech Stack Tags */}
+                    <div className="flex flex-wrap gap-2">
+                      {project.techStack.slice(0, 3).map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-3 py-1 bg-secondary border border-border rounded text-sm"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                      {project.techStack.length > 3 && (
+                        <span className="px-3 py-1 bg-secondary border border-border rounded text-sm text-muted-foreground">
+                          +{project.techStack.length - 3}
+                        </span>
+                      )}
+                    </div>
+
+                    {/* Actions */}
+                    <div className="flex gap-3 pt-4">
+                      <Link
+                        href={`/projects/${project.id}?title=${project.title}`}
+                        className="flex-1 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors text-center"
+                      >
+                        Ver Detalhes
+                      </Link>
+                      {project.sourceCodeUrl && (
+                        <a
+                          href={project.sourceCodeUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 border border-border rounded-lg hover:border-primary hover:text-primary transition-colors"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <Github size={20} />
+                        </a>
+                      )}
+                      {project.links?.website && (
+                        <a
+                          href={project.links.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 border border-border rounded-lg hover:border-primary hover:text-primary transition-colors"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <ExternalLink size={20} />
+                        </a>
+                      )}
+                    </div>
+                  </div>
           </div>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filtered.map(Card)}
+              </motion.div>
+            ))}
           </div>
-        )}
-      </motion.section>
+
+          {/* No projects message */}
+          {filtered.length === 0 && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="text-center py-20"
+            >
+              <Code2 className="mx-auto mb-4 text-muted-foreground" size={48} />
+              <p className="text-muted-foreground">
+                Nenhum projeto encontrado com essa tecnologia.
+              </p>
+            </motion.div>
+          )}
+        </div>
+      </div>
 
       <Footer />
     </div>

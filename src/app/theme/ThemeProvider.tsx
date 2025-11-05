@@ -2,9 +2,9 @@
 
 import { ReactNode, useEffect, useState } from "react";
 import localFont from "next/font/local";
-import { FaPalette } from "react-icons/fa";
+import { Palette } from "lucide-react";
 import Image from "next/image";
-import { Typewriter } from "react-simple-typewriter";
+import { useAnalytics } from '@/hooks/useAnalytics';
 import "@/styles/globals.css";
 
 const geistSans = localFont({
@@ -28,15 +28,20 @@ type ThemeProviderProps = {
 };
 
 export default function ThemeProvider({ children }: ThemeProviderProps) {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("figmaNeon");
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [isSelectorVisible, setIsSelectorVisible] = useState(false);
+  const { trackThemeChange } = useAnalytics();
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme) {
       setTheme(savedTheme);
+    } else {
+      // Se não houver tema salvo, usar figmaNeon como padrão
+      setTheme("figmaNeon");
+      localStorage.setItem("theme", "figmaNeon");
     }
   }, []);
 
@@ -46,6 +51,7 @@ export default function ThemeProvider({ children }: ThemeProviderProps) {
   }, []);
 
   const handleThemeChange = (newTheme: string) => {
+    trackThemeChange(newTheme);
     setIsTransitioning(true);
     setTimeout(() => {
       setTheme(newTheme);
@@ -56,7 +62,8 @@ export default function ThemeProvider({ children }: ThemeProviderProps) {
   };
 
   const themes = [
-    { id: "dark", name: "Midnight Neon", icon: "/MidnightNeon.svg" },
+    { id: "figmaNeon", name: "Midnight Neon", icon: "/FigmaNeon.svg" },
+    { id: "dark", name: "Dark Green", icon: "/MidnightNeon.svg" },
     { id: "light", name: "Ocean Breeze", icon: "/OceanBreeze.svg" },
     { id: "minimalBlue", name: "Minimal Blue", icon: "/MinimalBlue.svg" },
     { id: "pastel", name: "Pastel Grey", icon: "/PastelGrey.svg" },
@@ -65,21 +72,72 @@ export default function ThemeProvider({ children }: ThemeProviderProps) {
     { id: "retroGreen", name: "Retro Green", icon: "/RetroGreen.svg" },
   ];
 
-  const LoadingScreen = () => (
-    <div className="fixed inset-0 flex items-center justify-center bg-[--bg-color] z-50">
-      <h1 className="sm:text-6xl text-4xl font-bold text-[--primary-color] font-audiowide">
-        <Typewriter
-          words={["Leorodrigues.dev"]}
-          loop={1}
-          cursor
-          cursorStyle="|"
-          typeSpeed={100}
-          deleteSpeed={50}
-          delaySpeed={1000}
-        />
-      </h1>
-    </div>
-  );
+  const LoadingScreen = () => {
+    const [displayText, setDisplayText] = useState("");
+    const fullText = "LeoRodrigues.dev";
+    const firstPart = "Leo";
+    const secondPart = "Rodrigues";
+    const firstPartEnd = firstPart.length;
+    const secondPartEnd = firstPartEnd + secondPart.length;
+
+    useEffect(() => {
+      let currentIndex = 0;
+      const typeInterval = setInterval(() => {
+        if (currentIndex <= fullText.length) {
+          setDisplayText(fullText.substring(0, currentIndex));
+          currentIndex++;
+        } else {
+          clearInterval(typeInterval);
+        }
+      }, 100);
+
+      return () => clearInterval(typeInterval);
+    }, []);
+
+    const renderText = () => {
+      const length = displayText.length;
+      const cursorColor = 
+        length <= firstPartEnd ? "var(--primary-color)" :
+        length <= secondPartEnd ? "var(--text-color)" :
+        "var(--primary-color)";
+
+      return (
+        <>
+          {/* Primeira parte: Leo */}
+          {length > 0 && (
+            <span style={{ color: "var(--primary-color)" }}>
+              {displayText.substring(0, Math.min(length, firstPartEnd))}
+            </span>
+          )}
+          
+          {/* Segunda parte: Rodrigues */}
+          {length > firstPartEnd && (
+            <span style={{ color: "var(--text-color)" }}>
+              {displayText.substring(firstPartEnd, Math.min(length, secondPartEnd))}
+            </span>
+          )}
+          
+          {/* Terceira parte: .dev */}
+          {length > secondPartEnd && (
+            <span style={{ color: "var(--primary-color)" }}>
+              {displayText.substring(secondPartEnd)}
+            </span>
+          )}
+          
+          {/* Cursor */}
+          <span style={{ color: cursorColor }}>|</span>
+        </>
+      );
+    };
+
+    return (
+      <div className="fixed inset-0 flex items-center justify-center bg-[--bg-color] z-50">
+        <h1 className="sm:text-6xl text-4xl font-bold font-audiowide">
+          {renderText()}
+        </h1>
+      </div>
+    );
+  };
 
   return (
     <html lang="pt-BR" className={`theme-${theme}`}>
@@ -109,7 +167,7 @@ export default function ThemeProvider({ children }: ThemeProviderProps) {
                 <span className="absolute h-6 w-6 top-3 left-0">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-45"></span>
                 </span>
-                <FaPalette className="text-2xl" />
+                <Palette size={24} />
               </button>
 
               <div

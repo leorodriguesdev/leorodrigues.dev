@@ -2,69 +2,196 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Tema Figma Neon (Principal) - Baseado no design do Figma */
+.theme-figmaNeon {
+  --bg-color: #0a0a0a;
+  --bg-card: #111;
+  --text-color: #f5f5f5;
+  --primary-color: #0f8;
+  --primary: #0f8;
+  --secondary-color: #1a1a1a;
+  --secondary: #1a1a1a;
+  --accent-color: #0f8;
+  --accent: #0f8;
+  --input-bg: #1a1a1a;
+  --input-border: #262626;
+  --shadow-color: rgba(0, 255, 136, 0.3);
+  --muted-foreground: #a3a3a3;
+  --border: #262626;
+  --background: #0a0a0a;
+  --foreground: #f5f5f5;
+  --card: #111;
+  --card-foreground: #f5f5f5;
+  --popover: #111;
+  --popover-foreground: #f5f5f5;
+  --primary-foreground: #0a0a0a;
+  --secondary-foreground: #f5f5f5;
+  --muted: #1a1a1a;
+  --destructive: oklch(.396 .141 25.723);
+  --destructive-foreground: oklch(.637 .237 25.331);
+  --input: transparent;
+  --ring: #0f8;
+  --radius: 0.625rem;
+}
+
 /* Tema Escuro */
 .theme-dark {
   --bg-color: #121212;
   --bg-card: #1f2937;
   --text-color: #FFFFFF;
   --primary-color: #1DB954;
+  --primary: #1DB954;
   --secondary-color: #535353;
+  --secondary: #535353;
   --accent-color: #F5F5F5;
+  --accent: #F5F5F5;
   --input-bg: #1c1c1c;
   --input-border: #333333;
   --shadow-color: rgba(0, 0, 0, 0.7);
+  --muted-foreground: #a3a3a3;
+  --border: #333333;
+  --background: #121212;
+  --foreground: #FFFFFF;
+  --card: #1f2937;
+  --card-foreground: #FFFFFF;
+  --popover: #1f2937;
+  --popover-foreground: #FFFFFF;
+  --primary-foreground: #FFFFFF;
+  --secondary-foreground: #FFFFFF;
+  --muted: #535353;
+  --destructive: oklch(.396 .141 25.723);
+  --destructive-foreground: oklch(.637 .237 25.331);
+  --input: transparent;
+  --ring: #1DB954;
+  --radius: 0.625rem;
 }
 
 /* Tema Claro */
 .theme-light {
   --bg-color: #FFFFFF;
-  --bg-card: #f1f1f1;
+  --bg-card: #f8f9fa;
   --text-color: #121212;
   --primary-color: #0077B6;
-  --secondary-color: #00B4D8;
+  --primary: #0077B6;
+  --secondary-color: #e9ecef;
+  --secondary: #e9ecef;
   --accent-color: #90E0EF;
+  --accent: #90E0EF;
   --input-bg: #FFFFFF;
   --input-border: #CCCCCC;
   --shadow-color: rgba(0, 0, 0, 0.1);
+  --muted-foreground: #717182;
+  --border: #dee2e6;
+  --background: #FFFFFF;
+  --foreground: #121212;
+  --card: #f8f9fa;
+  --card-foreground: #121212;
+  --popover: #FFFFFF;
+  --popover-foreground: #121212;
+  --primary-foreground: #FFFFFF;
+  --secondary-foreground: #121212;
+  --muted: #e9ecef;
+  --destructive: #d4183d;
+  --destructive-foreground: #FFFFFF;
+  --input: transparent;
+  --ring: #0077B6;
+  --radius: 0.625rem;
 }
 
 /* Tema Minimal Blue */
 .theme-minimalBlue {
   --bg-color: #FFFFFF;
-  --bg-card: #BDC3C7;
+  --bg-card: #e3f2fd;
   --text-color: #212121;
   --primary-color: #3498DB;
-  --secondary-color: #2980B9;
+  --primary: #3498DB;
+  --secondary-color: #bbdefb;
+  --secondary: #bbdefb;
   --accent-color: #2980B9;
+  --accent: #2980B9;
   --input-bg: #FFFFFF;
   --input-border: #CCCCCC;
   --shadow-color: rgba(0, 0, 0, 0.15);
+  --muted-foreground: #717182;
+  --border: #90caf9;
+  --background: #FFFFFF;
+  --foreground: #212121;
+  --card: #e3f2fd;
+  --card-foreground: #212121;
+  --popover: #FFFFFF;
+  --popover-foreground: #212121;
+  --primary-foreground: #FFFFFF;
+  --secondary-foreground: #212121;
+  --muted: #bbdefb;
+  --destructive: #d4183d;
+  --destructive-foreground: #FFFFFF;
+  --input: transparent;
+  --ring: #3498DB;
+  --radius: 0.625rem;
 }
 
 /* Tema Pastel */
 .theme-pastel {
   --bg-color: #F7F6F2;
-  --bg-card: #EDF2F4;
+  --bg-card: #ffffff;
   --text-color: #2B2D42;
   --primary-color: #8D99AE;
-  --secondary-color: #EF233C;
+  --primary: #8D99AE;
+  --secondary-color: #f0f0f0;
+  --secondary: #f0f0f0;
   --accent-color: #8D99AE;
+  --accent: #8D99AE;
   --input-bg: #FFFFFF;
   --input-border: #BBBBBB;
   --shadow-color: rgba(0, 0, 0, 0.1);
+  --muted-foreground: #717182;
+  --border: #d1d5db;
+  --background: #F7F6F2;
+  --foreground: #2B2D42;
+  --card: #ffffff;
+  --card-foreground: #2B2D42;
+  --popover: #FFFFFF;
+  --popover-foreground: #2B2D42;
+  --primary-foreground: #FFFFFF;
+  --secondary-foreground: #2B2D42;
+  --muted: #f0f0f0;
+  --destructive: #d4183d;
+  --destructive-foreground: #FFFFFF;
+  --input: transparent;
+  --ring: #8D99AE;
+  --radius: 0.625rem;
 }
 
 /* Tema Purple Mono */
 .theme-purpleMono {
   --bg-color: #F3F1F5;
-  --bg-card: #C06C84;
+  --bg-card: #ffffff;
   --text-color: #333333;
   --primary-color: #6C5B7B;
-  --secondary-color: #F67280;
+  --primary: #6C5B7B;
+  --secondary-color: #f0e8f5;
+  --secondary: #f0e8f5;
   --accent-color: #F67280;
+  --accent: #F67280;
   --input-bg: #F3F1F5;
   --input-border: #BBBBBB;
   --shadow-color: rgba(0, 0, 0, 0.15);
+  --muted-foreground: #717182;
+  --border: #d1c4e9;
+  --background: #F3F1F5;
+  --foreground: #333333;
+  --card: #ffffff;
+  --card-foreground: #333333;
+  --popover: #FFFFFF;
+  --popover-foreground: #333333;
+  --primary-foreground: #FFFFFF;
+  --secondary-foreground: #333333;
+  --muted: #f0e8f5;
+  --destructive: #d4183d;
+  --destructive-foreground: #FFFFFF;
+  --input: transparent;
+  --ring: #6C5B7B;
+  --radius: 0.625rem;
 }
 
 /* Tema Dark Yellow */
@@ -73,31 +200,76 @@
   --bg-card: #333333;
   --text-color: #FAFAFA;
   --primary-color: #FCA311;
+  --primary: #FCA311;
   --secondary-color: #F77F00;
+  --secondary: #F77F00;
   --accent-color: #F77F00;
+  --accent: #F77F00;
   --input-bg: #2C2C2C;
   --input-border: #555555;
   --shadow-color: rgba(0, 0, 0, 0.5);
+  --muted-foreground: #a3a3a3;
+  --border: #555555;
+  --background: #1E1E24;
+  --foreground: #FAFAFA;
+  --card: #333333;
+  --card-foreground: #FAFAFA;
+  --popover: #333333;
+  --popover-foreground: #FAFAFA;
+  --primary-foreground: #1E1E24;
+  --secondary-foreground: #FAFAFA;
+  --muted: #333333;
+  --destructive: oklch(.396 .141 25.723);
+  --destructive-foreground: oklch(.637 .237 25.331);
+  --input: transparent;
+  --ring: #FCA311;
+  --radius: 0.625rem;
 }
 
 /* Tema Retro Green */
 .theme-retroGreen {
   --bg-color: #FCF8E8;
-  --bg-card: #A3B18A;
+  --bg-card: #ffffff;
   --text-color: #2F2F2F;
   --primary-color: #3A5A40;
-  --secondary-color: #DDA15E;
+  --primary: #3A5A40;
+  --secondary-color: #f0f4e8;
+  --secondary: #f0f4e8;
   --accent-color: #DDA15E;
+  --accent: #DDA15E;
   --input-bg: #FCF8E8;
   --input-border: #B8B8A8;
   --shadow-color: rgba(0, 0, 0, 0.2);
+  --muted-foreground: #717182;
+  --border: #c9d5b8;
+  --background: #FCF8E8;
+  --foreground: #2F2F2F;
+  --card: #ffffff;
+  --card-foreground: #2F2F2F;
+  --popover: #FFFFFF;
+  --popover-foreground: #2F2F2F;
+  --primary-foreground: #FFFFFF;
+  --secondary-foreground: #2F2F2F;
+  --muted: #f0f4e8;
+  --destructive: #d4183d;
+  --destructive-foreground: #FFFFFF;
+  --input: transparent;
+  --ring: #3A5A40;
+  --radius: 0.625rem;
 }
 
 /* Aplicação de variáveis no layout */
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   transition: background-color 0.3s, color 0.3s;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code, pre, kbd, samp {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
 }
 
 .card {
@@ -117,11 +289,12 @@ input {
 
 a, .link {
   color: var(--accent-color);
-  text-decoration: underline;
+  text-decoration: none;
   transition: color 0.3s;
 }
 
-a:hover, .link:hover {
+a:hover:not([class*="bg-primary"]):not([class*="text-primary-foreground"]), 
+.link:hover:not([class*="bg-primary"]):not([class*="text-primary-foreground"]) {
   color: var(--primary-color);
 }
 
@@ -149,4 +322,24 @@ body:not(.fade-transition) {
 .animate-scroll {
   display: inline-flex;
   animation: scroll 30s linear infinite;
+}
+
+@keyframes neonGlow {
+  0%, 100% {
+    box-shadow: 
+      0 0 3px var(--primary-color),
+      0 0 6px var(--primary-color),
+      inset 0 0 5px var(--primary-color);
+  }
+  50% {
+    box-shadow: 
+      0 0 5px var(--primary-color),
+      0 0 10px var(--primary-color),
+      inset 0 0 8px var(--primary-color);
+  }
+}
+
+.neon-glow {
+  animation: neonGlow 2s ease-in-out infinite;
+  position: relative;
 }

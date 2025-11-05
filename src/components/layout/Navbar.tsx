@@ -1,90 +1,165 @@
-// components/Navbar.tsx
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
+import { motion } from "motion/react";
+import { AlignJustify, X } from "lucide-react";
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const closeMenu = () => setIsMenuOpen(false);
+  const navItems = [
+    { name: "Home", path: "/", hash: false },
+    { name: "Sobre", path: "/about", hash: false },
+    { name: "Habilidades", path: "/#skills", hash: true },
+    { name: "Projetos", path: "/projects", hash: false },
+    { name: "Contato", path: "/#contact", hash: true },
+  ];
 
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const handleHashClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+    if (path.includes('#')) {
+      e.preventDefault();
+      const [basePath, hash] = path.split('#');
+      
+      if (pathname !== basePath || pathname !== '/') {
+        router.push(path);
+        setTimeout(() => {
+          const element = document.querySelector(hash ? `#${hash}` : '');
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      } else {
+        const element = document.querySelector(hash ? `#${hash}` : '');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+      setMobileMenuOpen(false);
+    }
+  };
+
+  const isActive = (path: string, hash?: boolean) => {
+    if (hash) {
+      // Para links com hash, verificar se estamos na home e se o hash está visível
+      if (pathname === "/") {
+        const hashValue = path.split('#')[1];
+        if (hashValue) {
+          const element = document.querySelector(`#${hashValue}`);
+          if (element) {
+            const rect = element.getBoundingClientRect();
+            return rect.top >= 0 && rect.top <= window.innerHeight / 2;
+          }
+        }
+      }
+      return false;
+    }
+    if (path === "/") {
+      return pathname === "/";
+    }
+    return pathname === path || pathname.startsWith(path + "/");
+  };
 
   return (
-    <header
-      className={`fixed z-50 top-0 w-full z-20 transition-all duration-300 ${isScrolled ? 'bg-[var(--bg-card)] shadow-lg' : 'bg-transparent'
-        }`}
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border"
     >
-      <div className="container mx-auto flex justify-between items-center px-6 py-4">
-        {/* Logo com a fonte Audiowide */}
-        <div className="text-xl font-bold text-[var(--primary-color)] hover:text-[var(--accent-color)] transition-colors">
-          <Link className="font-audiowide text-xl font-bold text-[var(--primary-color)] hover:text-[var(--accent-color)] transition-colors no-underline" href="/">Leorodrigues.dev</Link>
+      <div className="container mx-auto px-6 py-4">
+        <div className="flex items-center justify-between">
+          <Link href="/">
+            <motion.div
+              className="tracking-tight font-audiowide"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <span className="text-primary">Leo</span>
+              <span className="text-foreground">Rodrigues</span>
+              <span className="text-primary">.dev</span>
+            </motion.div>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-8">
+            {navItems.map((item) => (
+              <Link
+                key={item.path}
+                href={item.path}
+                className="relative group"
+                onClick={(e) => {
+                  if (item.hash) {
+                    handleHashClick(e, item.path);
+                  } else {
+                    setMobileMenuOpen(false);
+                  }
+                }}
+              >
+                <span
+                  className={`transition-colors ${
+                    isActive(item.path, item.hash)
+                      ? "text-primary"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  {item.name}
+                </span>
+                {isActive(item.path, item.hash) && (
+                  <motion.div
+                    layoutId="activeNav"
+                    className="absolute -bottom-1 left-0 right-0 h-[2px] bg-primary"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+              </Link>
+            ))}
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden p-2 border border-border rounded-lg text-foreground hover:border-primary hover:text-secondary transition-all"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X size={20} /> : <AlignJustify size={20} />}
+          </button>
         </div>
 
-        {/* Botão de Menu para Mobile */}
-        <button
-          onClick={toggleMenu}
-          className="md:hidden text-[var(--text-color)] focus:outline-none z-30 p-1 rounded"
-          aria-label="Toggle menu"
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-
-        {/* Overlay */}
-        {isMenuOpen && (
-          <div
-            className="fixed inset-0 bg-black bg-opacity-50 z-10 md:hidden"
-            onClick={closeMenu}
-          ></div>
+        {/* Mobile Navigation */}
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden pt-4 pb-2"
+          >
+            {navItems.map((item) => (
+              <Link
+                key={item.path}
+                href={item.path}
+                onClick={(e) => {
+                  if (item.hash) {
+                    handleHashClick(e, item.path);
+                  } else {
+                    setMobileMenuOpen(false);
+                  }
+                }}
+                className={`block py-3 transition-colors ${
+                  isActive(item.path, item.hash)
+                    ? "text-primary"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </motion.div>
         )}
-
-        {/* Links de Navegação */}
-        <nav
-          className={`flex-col md:flex md:flex-row md:space-x-6 fixed md:relative top-0 left-0 h-full w-90 md:w-auto md:h-auto bg-[var(--bg-color)] md:bg-transparent p-6 md:p-0 transform md:transform-none transition-transform duration-300 z-20 ${isMenuOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'
-            }`}
-        >
-          {/* Título no menu mobile */}
-          {isMenuOpen && (
-            <div className="mb-4 text-lg font-bold text-[var(--primary-color)] text-center">
-              <Link className="font-audiowide text-xl font-bold text-[var(--primary-color)] hover:text-[var(--accent-color)] transition-colors no-underline" href="/">Leorodrigues.dev</Link>
-
-            </div>
-          )}
-
-          {/* Itens do menu */}
-          {/* <Link href="/" className="block px-4 py-2 md:px-0 text-[var(--text-color)] hover:text-[var(--primary-color)] transition-colors no-underline" onClick={closeMenu}>
-            Home
-          </Link> */}
-          <Link href="/#about" className="block px-4 py-2 md:px-0 text-[var(--text-color)] hover:text-[var(--primary-color)] transition-colors no-underline" onClick={closeMenu}>
-            Sobre
-          </Link>
-          <Link href="/#skills" className="block px-4 py-2 md:px-0 text-[var(--text-color)] hover:text-[var(--primary-color)] transition-colors no-underline" onClick={closeMenu}>
-            Habilidades
-          </Link>
-          <Link href="/#projects" className="block px-4 py-2 md:px-0 text-[var(--text-color)] hover:text-[var(--primary-color)] transition-colors no-underline" onClick={closeMenu}>
-            Projetos
-          </Link>
-          {/* <Link href="/#experience" className="block px-4 py-2 md:px-0 text-[var(--text-color)] hover:text-[var(--primary-color)] transition-colors no-underline" onClick={closeMenu}>
-            Experiência
-          </Link>
-          <Link href="/#education" className="block px-4 py-2 md:px-0 text-[var(--text-color)] hover:text-[var(--primary-color)] transition-colors no-underline" onClick={closeMenu}>
-            Certificações
-          </Link> */}
-          <Link href="/#contact" className="block px-4 py-2 md:px-0 text-[var(--text-color)] hover:text-[var(--primary-color)] transition-colors no-underline" onClick={closeMenu}>
-            Contato
-          </Link>
-        </nav>
       </div>
-    </header>
+    </motion.nav>
   );
 };
 

@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 export default {
+  darkMode: ["class"],
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,58 +10,49 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        audiowide: ['var(--font-audiowide)'],
+        sans: ['var(--font-geist-sans)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-geist-mono)', 'ui-monospace', 'monospace'],
+        audiowide: ['var(--font-audiowide)', 'sans-serif'],
       },
       colors: {
-        dark: {
-          background: '#121212',
-          text: '#E0E0E0',
-          primary: '#1DB954',
-          secondary: '#535353',
-          accent: '#F5F5F5',
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+        card: {
+          DEFAULT: "var(--card)",
+          foreground: "var(--card-foreground)",
         },
-        light: {
-          background: '#FFFFFF',
-          text: '#121212',
-          primary: '#0077B6',
-          secondary: '#00B4D8',
-          accent: '#90E0EF',
+        popover: {
+          DEFAULT: "var(--popover)",
+          foreground: "var(--popover-foreground)",
         },
-        minimalBlue: {
-          background: '#FFFFFF',
-          text: '#212121',
-          primary: '#3498DB',
-          secondary: '#BDC3C7',
-          accent: '#2980B9',
+        primary: {
+          DEFAULT: "var(--primary)",
+          foreground: "var(--primary-foreground)",
         },
-        pastel: {
-          background: '#F7F6F2',
-          text: '#2B2D42',
-          primary: '#8D99AE',
-          secondary: '#EDF2F4',
-          accent: '#EF233C',
+        secondary: {
+          DEFAULT: "var(--secondary)",
+          foreground: "var(--secondary-foreground)",
         },
-        purpleMono: {
-          background: '#F3F1F5',
-          text: '#333333',
-          primary: '#6C5B7B',
-          secondary: '#C06C84',
-          accent: '#F67280',
+        muted: {
+          DEFAULT: "var(--muted)",
+          foreground: "var(--muted-foreground)",
         },
-        darkYellow: {
-          background: '#1E1E24',
-          text: '#FAFAFA',
-          primary: '#FCA311',
-          secondary: '#E5E5E5',
-          accent: '#F77F00',
+        accent: {
+          DEFAULT: "var(--accent)",
+          foreground: "var(--accent-foreground)",
         },
-        retroGreen: {
-          background: '#FCF8E8',
-          text: '#2F2F2F',
-          primary: '#3A5A40',
-          secondary: '#A3B18A',
-          accent: '#DDA15E',
+        border: "var(--border)",
+        input: "var(--input)",
+        ring: "var(--ring)",
+        destructive: {
+          DEFAULT: "var(--destructive)",
+          foreground: "var(--destructive-foreground)",
         },
+        },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
     },
   },
