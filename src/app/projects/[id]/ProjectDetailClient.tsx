@@ -1,16 +1,15 @@
 'use client';
 
-import React from 'react';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
+import React, { useEffect } from 'react';
+import { motion } from 'motion/react';
+import { ArrowLeft, ExternalLink, Github, Calendar, CheckCircle2 } from 'lucide-react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import ImageGallery from './components/ImagesGallery';
-import { Project } from '@/data/projectsData';
+import { Project, projectsData } from '@/data/projectsData';
 import Link from 'next/link';
-
-const fadeUp = { hidden: { opacity: 0, y: 40 }, show: { opacity: 1, y: 0 } };
-const stagger = { show: { transition: { staggerChildren: 0.12 } } };
+import { SEO } from '@/components/SEO';
+import { useAnalytics } from '@/hooks/useAnalytics';
 
 export default function ProjectDetailClient({ 
   project, 
@@ -19,183 +18,257 @@ export default function ProjectDetailClient({
   project: Project; 
   titleFromUrl?: string; 
 }) {
-  // Usar o título da URL se disponível, senão usar o título do projeto
   const displayTitle = titleFromUrl || project.title;
+  const { trackProjectView, trackOutboundLink, trackProjectClick } = useAnalytics();
+
+  useEffect(() => {
+    trackProjectView(project.title);
+  }, [project.title, trackProjectView]);
+
+  // Get other projects for suggestions
+  const otherProjects = projectsData
+    .filter(p => p.id !== project.id)
+    .slice(0, 2);
 
   return (
-    <div className="min-h-screen bg-[var(--bg-color)] text-[var(--text-color)]">
+    <div className="min-h-screen bg-background text-foreground">
       <Navbar />
+      <SEO
+        title={`${displayTitle} - Leo Rodrigues Portfolio`}
+        description={project.description}
+        keywords={project.techStack.join(", ")}
+        type="article"
+      />
 
-      <div className="relative pt-32 pb-10">
-        <div className="absolute inset-0 -z-10 flex justify-center">
+      <div className="pt-24 pb-16">
+        <div className="container mx-auto max-w-5xl px-6">
+          {/* Back Button */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.3 }}
-            animate={{ opacity: 0.12, scale: 2.2, rotate: 360 }}
-            transition={{ duration: 22, repeat: Infinity, ease: 'linear' }}
-            className="w-[420px] h-[420px] rounded-full bg-[var(--primary-color)] blur-3xl"
-          />
-        </div>
-
-        {/* botao para voltar */}
-        <motion.div
-          variants={fadeUp}
-          className="container mx-auto px-4 mb-8"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="mb-8"
         >
           <Link 
             href="/projects" 
-            className="inline-flex items-center gap-2 text-gray-400 hover:text-[var(--primary-color)] transition-all duration-300 transform hover:scale-105 hover:-translate-y-0.5 group"
+              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
           >
-            <motion.svg 
-              className="w-5 h-5 transition-transform duration-300 group-hover:-translate-x-1" 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
-              whileHover={{ x: -2 }}
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-            </motion.svg>
-            <span className="font-medium">Voltar aos Projetos</span>
+              <ArrowLeft size={20} />
+              Voltar aos Projetos
           </Link>
         </motion.div>
 
-        <motion.header
-          variants={stagger}
-          initial="hidden"
-          animate="show"
-          className="container mx-auto px-4 flex flex-col md:flex-row md:items-center md:justify-between gap-6"
-        >
-          <motion.h1
-            variants={fadeUp}
-            className="text-4xl md:text-5xl font-extrabold font-audiowide text-[var(--primary-color)]"
+          {/* Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="space-y-6 mb-12"
           >
+            <div className="flex items-start justify-between gap-4 flex-col md:flex-row">
+              <div className="flex-1 space-y-4">
+                <h1 className="text-3xl md:text-4xl tracking-tight">
             {displayTitle}
-          </motion.h1>
-
-          {project.companyLogo && (
-            <motion.div variants={fadeUp} className="relative w-40 h-16 md:h-20 rounded-lg overflow-hidden">
-              <Image
-                src={project.companyLogo}
-                alt="Logo da empresa"
-                fill
-                className="object-contain"
-                priority
-              />
-            </motion.div>
-          )}
-        </motion.header>
-      </div>
-
-      <motion.section
-        variants={stagger}
-        initial="hidden"
-        animate="show"
-        className="container mx-auto px-4"
-      >
-        <motion.p variants={fadeUp} className="text-lg text-gray-400 mb-6">
-          {project.type === 'website' ? 'Site / Web' : 'App / Mobile'} |{' '}
-          <span className="opacity-80">
+                </h1>
+                <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+                  <span className="flex items-center gap-2">
+                    <Calendar size={16} />
             {new Date(project.date).toLocaleDateString('pt-BR', {
               year: 'numeric',
               month: 'long',
-              day: 'numeric',
+                      day: 'numeric'
             })}
           </span>
-        </motion.p>
+                  <span>
+                    {project.type === 'website'
+                      ? 'Site / Web'
+                      : project.type === 'api'
+                      ? 'Sistema / API'
+                      : 'App / Mobile'}
+                  </span>
+                  {project.status && (
+                    <span className="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-primary">
+                      {project.status}
+                    </span>
+                  )}
+                </div>
+              </div>
 
-        {(project.status || project.sourceCodeUrl) && (
-          <motion.div variants={fadeUp} className="text-sm text-gray-300 mb-10 space-y-1">
-            {project.status && <p><b>Status:</b> {project.status}</p>}
+              <div className="flex gap-3">
             {project.sourceCodeUrl && (
-              <p>
-                <b>Código Fonte:</b>{' '}
                 <a
                   href={project.sourceCodeUrl}
                   target="_blank"
-                  rel="noreferrer"
-                  className="underline text-[var(--primary-color)] hover:text-[var(--accent-color)] hover:scale-105 transition-all duration-300 transform inline-block"
+                    rel="noopener noreferrer"
+                    onClick={() => trackOutboundLink(`project-${project.id}-github`)}
+                    className="p-3 border border-border rounded-lg hover:border-primary hover:text-primary transition-colors"
+                  >
+                    <Github size={24} />
+                  </a>
+                )}
+                {project.links?.website && (
+                  <a
+                    href={project.links.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => trackOutboundLink(`project-${project.id}-website`)}
+                    className="px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors flex items-center gap-2"
+                  >
+                    <ExternalLink size={20} />
+                    Acessar Site
+                  </a>
+                )}
+                {project.links?.playStore && (
+                  <a
+                    href={project.links.playStore}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
+                  >
+                    Play Store
+                  </a>
+                )}
+                {project.links?.appStore && (
+                  <a
+                    href={project.links.appStore}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
                 >
-                  ver repositório
-                </a>
-              </p>
-            )}
-          </motion.div>
-        )}
-      </motion.section>
+                    App Store
+                  </a>
+                )}
+              </div>
+            </div>
 
-      <motion.section
-        variants={stagger}
-        initial="hidden"
-        animate="show"
-        className="container mx-auto px-4"
+            {/* Tech Stack Tags */}
+            <div className="flex flex-wrap gap-2">
+              {project.techStack.map((tech) => (
+                <span
+                  key={tech}
+                  className="px-4 py-2 bg-secondary border border-border rounded-lg text-sm"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Project Image/Preview */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="mb-12"
       >
         <ImageGallery
           images={project.images?.length ? project.images : [project.image]}
           projectTitle={displayTitle}
         />
-      </motion.section>
+          </motion.div>
 
-      <motion.section
-        variants={stagger}
-        initial="hidden"
-        animate="show"
-        className="container mx-auto px-4 max-w-4xl mt-16 pb-24"
+          {/* Description */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="mb-12"
       >
-        <motion.h2 variants={fadeUp} className="text-2xl font-semibold mb-4 text-[var(--primary-color)]">
-          Descrição
-        </motion.h2>
-        <motion.p variants={fadeUp} className="mb-8 leading-relaxed">
+            <h2 className="text-2xl mb-4 tracking-tight">Descrição</h2>
+            <p className="text-muted-foreground leading-relaxed">
           {project.description}
-        </motion.p>
+            </p>
+          </motion.div>
 
-        <motion.h2 variants={fadeUp} className="text-2xl font-semibold mb-4 text-[var(--primary-color)]">
-          Principais Destaques
-        </motion.h2>
-        <motion.ul variants={fadeUp} className="list-disc list-inside mb-8 space-y-2">
-          {project.highlights.map((h, i) => (
-            <li key={i}>{h}</li>
+          {/* Highlights */}
+          {project.highlights && project.highlights.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="mb-12"
+            >
+              <h2 className="text-2xl mb-6 tracking-tight">Principais Destaques</h2>
+              <div className="grid md:grid-cols-2 gap-4">
+                {project.highlights.map((highlight, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.4 + index * 0.05 }}
+                    className="flex items-start gap-3 p-4 bg-secondary/50 border border-border rounded-lg hover:border-primary transition-colors"
+                  >
+                    <CheckCircle2 className="text-primary flex-shrink-0 mt-0.5" size={20} />
+                    <span className="text-muted-foreground">{highlight}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          )}
+
+          {/* Tech Stack */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="mb-12"
+          >
+            <h2 className="text-2xl mb-6 tracking-tight">Tech Stack</h2>
+            <div className="flex flex-wrap gap-3">
+              {project.techStack.map((tech, index) => (
+                <motion.div
+                  key={tech}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.6 + index * 0.05 }}
+                  className="px-5 py-3 bg-card border border-border rounded-lg hover:border-primary transition-colors"
+                >
+                  {tech}
+                </motion.div>
           ))}
-        </motion.ul>
+            </div>
+          </motion.div>
 
-        <motion.h2 variants={fadeUp} className="text-2xl font-semibold mb-4 text-[var(--primary-color)]">
-          Tech Stack
-        </motion.h2>
-        <motion.div variants={fadeUp} className="flex flex-wrap gap-2 mb-12">
-          {project.techStack.map((t, i) => (
-            <span key={i} className="bg-[var(--bg-card)] px-3 py-1 rounded-full text-sm border border-[var(--primary-color)]">
-              {t}
+          {/* Other Projects */}
+          {otherProjects.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="pt-12 border-t border-border"
+            >
+              <h2 className="text-2xl mb-6 tracking-tight">Outros Projetos</h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                {otherProjects.map((otherProject) => (
+                  <Link
+                    key={otherProject.id}
+                    href={`/projects/${otherProject.id}?title=${otherProject.title}`}
+                    onClick={() => trackProjectClick(otherProject.id, otherProject.title)}
+                    className="group p-6 bg-card border border-border rounded-lg hover:border-primary transition-colors"
+                  >
+                    <h3 className="text-xl mb-2 group-hover:text-primary transition-colors">
+                      {otherProject.title}
+                    </h3>
+                    <p className="text-muted-foreground line-clamp-2 mb-4 text-sm">
+                      {otherProject.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {otherProject.techStack.slice(0, 3).map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-3 py-1 bg-secondary border border-border rounded text-sm"
+                        >
+                          {tech}
             </span>
           ))}
+                    </div>
+                  </Link>
+                ))}
+              </div>
         </motion.div>
-
-        <ProjectLinks project={project} />
-      </motion.section>
+          )}
+        </div>
+      </div>
 
       <Footer />
     </div>
-  );
-}
-
-function ProjectLinks({ project }: { project: Project }) {
-  if (!project.links) return null;
-  const { website, playStore, appStore } = project.links;
-
-  return (
-    <motion.div variants={fadeUp} className="space-x-4 text-center">
-      {website && (
-        <a href={website} target="_blank" rel="noreferrer" className="inline-block bg-[var(--primary-color)] text-white px-6 py-2 rounded-full font-bold hover:bg-opacity-90 hover:text-black hover:scale-105 hover:shadow-lg hover:shadow-[var(--primary-color)]/30 hover:-translate-y-1 transition-all duration-300 transform">
-          Acessar Site
-        </a>
-      )}
-      {playStore && (
-        <a href={playStore} target="_blank" rel="noreferrer" className="inline-block bg-green-500 px-6 py-2 rounded-full text-white font-bold hover:bg-green-600 hover:scale-105 hover:shadow-lg hover:shadow-green-500/30 hover:-translate-y-1 transition-all duration-300 transform">
-          Play Store
-        </a>
-      )}
-      {appStore && (
-        <a href={appStore} target="_blank" rel="noreferrer" className="inline-block bg-blue-500 px-6 py-2 rounded-full text-white font-bold hover:bg-blue-600 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 transition-all duration-300 transform">
-          App Store
-        </a>
-      )}
-    </motion.div>
   );
 }

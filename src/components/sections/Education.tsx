@@ -2,7 +2,7 @@
 "use client";
 
 import React, { useState, useRef } from "react";
-import { FaCertificate, FaGraduationCap } from "react-icons/fa";
+import { Award, GraduationCap } from "lucide-react";
 
 const educationData = [
   {
@@ -60,7 +60,7 @@ const Education = () => {
             className="relative bg-[var(--bg-card)] rounded-xl shadow-lg p-8 transform transition-transform duration-500 group text-left hover:scale-105 hover:shadow-2xl hover:-translate-y-3 hover:shadow-[var(--primary-color)] z-30"
           >
             <div className="flex flex-col lg:flex-row items-start lg:items-center space-y-4 lg:space-y-0 lg:space-x-4">
-              <FaGraduationCap className="text-[var(--primary-color)] text-4xl" />
+              <GraduationCap className="text-[var(--primary-color)]" size={32} />
               <div>
                 <h3 className="text-2xl font-semibold text-[var(--text-color)]">
                   {educationData[0].title}
@@ -75,7 +75,7 @@ const Education = () => {
 
             {/* Ícone de Certificação no Hover */}
             <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              <FaCertificate className="text-[var(--primary-color)] text-3xl" />
+              <Award className="text-[var(--primary-color)]" size={24} />
             </div>
           </div>
 
@@ -94,7 +94,7 @@ const Education = () => {
               }
             >
               <div className="flex flex-col lg:flex-row items-start lg:items-center space-y-4 lg:space-y-0 lg:space-x-4">
-                <FaGraduationCap className="text-[var(--primary-color)] text-4xl" />
+                <GraduationCap className="text-[var(--primary-color)]" size={32} />
                 <div>
                   <h3 className="text-2xl font-semibold text-[var(--text-color)]">
                     {educationData[1].title}
@@ -109,7 +109,7 @@ const Education = () => {
 
               {/* Ícone de Certificação no Hover */}
               <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <FaCertificate className="text-[var(--primary-color)] text-3xl" />
+                <Award className="text-[var(--primary-color)]" size={24} />
               </div>
             </div>
           </div>
@@ -122,7 +122,7 @@ const Education = () => {
                 className="relative bg-[var(--bg-card)] rounded-xl shadow-lg p-8 transform transition-transform duration-500 group text-left hover:scale-105 hover:shadow-2xl hover:-translate-y-3 hover:shadow-[var(--primary-color)] z-10"
               >
                 <div className="flex flex-col lg:flex-row items-start lg:items-center space-y-4 lg:space-y-0 lg:space-x-4">
-                  <FaGraduationCap className="text-[var(--primary-color)] text-4xl" />
+                  <GraduationCap className="text-[var(--primary-color)]" size={32} />
                   <div>
                     <h3 className="text-2xl font-semibold text-[var(--text-color)]">
                       {education.title}
@@ -137,7 +137,7 @@ const Education = () => {
 
                 {/* Ícone de Certificação no Hover */}
                 <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <FaCertificate className="text-[var(--primary-color)] text-3xl" />
+                  <Award className="text-[var(--primary-color)]" size={24} />
                 </div>
               </div>
             ))}

@@ -2,7 +2,7 @@
 "use client";
 
 import React, { useState, useRef } from "react";
-import { FaFire, FaBriefcase, FaCalendarAlt, FaCheckCircle } from "react-icons/fa";
+import { Briefcase, Calendar, CheckCircle2, Flame } from "lucide-react";
 
 const experiences = [
   {
@@ -74,13 +74,13 @@ const Experience = () => {
             className="relative bg-[var(--bg-card)] rounded-xl shadow-lg p-8 transform transition-transform duration-500 group text-left hover:scale-105 hover:shadow-2xl hover:-translate-y-3 hover:shadow-[var(--primary-color)] z-30"
           >
             <div className="flex flex-col lg:flex-row items-start lg:items-center space-y-4 lg:space-y-0 lg:space-x-4">
-              <FaBriefcase className="text-[var(--primary-color)] text-4xl" />
+              <Briefcase className="text-[var(--primary-color)]" size={32} />
               <div>
                 <h3 className="text-2xl font-semibold text-[var(--text-color)]">
                   {experiences[0].title}
                 </h3>
                 <div className="flex items-center text-sm text-gray-500">
-                  <FaCalendarAlt className="mr-2" />
+                  <Calendar className="mr-2" size={16} />
                   <span>{experiences[0].duration}</span>
                 </div>
               </div>
@@ -95,7 +95,7 @@ const Experience = () => {
               <ul className="space-y-1">
                 {experiences[0].achievements.map((achievement, i) => (
                   <li key={i} className="flex items-center space-x-2 text-[var(--text-color)]">
-                    <FaCheckCircle className="text-[var(--primary-color)]" />
+                    <CheckCircle2 className="text-[var(--primary-color)]" size={16} />
                     <span>{achievement}</span>
                   </li>
                 ))}
@@ -104,7 +104,7 @@ const Experience = () => {
 
             {/* Ícone no hover */}
             <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              <FaFire className="text-[var(--primary-color)] text-3xl" />
+              <Flame className="text-[var(--primary-color)]" size={24} />
             </div>
           </div>
 
@@ -121,13 +121,13 @@ const Experience = () => {
               }
             >
               <div className="flex flex-col lg:flex-row items-start lg:items-center space-y-4 lg:space-y-0 lg:space-x-4">
-                <FaBriefcase className="text-[var(--primary-color)] text-4xl" />
+                <Briefcase className="text-[var(--primary-color)]" size={32} />
                 <div>
                   <h3 className="text-2xl font-semibold text-[var(--text-color)]">
                     {experiences[1].title}
                   </h3>
                   <div className="flex items-center text-sm text-gray-500">
-                    <FaCalendarAlt className="mr-2" />
+                    <Calendar className="mr-2" size={16} />
                     <span>{experiences[1].duration}</span>
                   </div>
                 </div>
@@ -142,7 +142,7 @@ const Experience = () => {
                 <ul className="space-y-1">
                   {experiences[1].achievements.map((achievement, i) => (
                     <li key={i} className="flex items-center space-x-2 text-[var(--text-color)]">
-                      <FaCheckCircle className="text-[var(--primary-color)]" />
+                      <CheckCircle2 className="text-[var(--primary-color)]" size={16} />
                       <span>{achievement}</span>
                     </li>
                   ))}
@@ -151,7 +151,7 @@ const Experience = () => {
 
               {/* Ícone no hover */}
               <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <FaFire className="text-[var(--primary-color)] text-3xl" />
+                <Flame className="text-[var(--primary-color)]" size={24} />
               </div>
             </div>
           </div>
@@ -164,13 +164,13 @@ const Experience = () => {
                 className="relative bg-[var(--bg-card)] rounded-xl shadow-lg p-8 transform transition-transform duration-500 group text-left hover:scale-105 hover:shadow-2xl hover:-translate-y-3 hover:shadow-[var(--primary-color)] z-10"
               >
                 <div className="flex flex-col lg:flex-row items-start lg:items-center space-y-4 lg:space-y-0 lg:space-x-4">
-                  <FaBriefcase className="text-[var(--primary-color)] text-4xl" />
+                  <Briefcase className="text-[var(--primary-color)]" size={32} />
                   <div>
                     <h3 className="text-2xl font-semibold text-[var(--text-color)]">
                       {experience.title}
                     </h3>
                     <div className="flex items-center text-sm text-gray-500">
-                      <FaCalendarAlt className="mr-2" />
+                      <Calendar className="mr-2" size={16} />
                       <span>{experience.duration}</span>
                     </div>
                   </div>
@@ -187,7 +187,7 @@ const Experience = () => {
                   <ul className="space-y-1">
                     {experience.achievements.map((achievement, i) => (
                       <li key={i} className="flex items-center space-x-2 text-[var(--text-color)]">
-                        <FaCheckCircle className="text-[var(--primary-color)]" />
+                        <CheckCircle2 className="text-[var(--primary-color)]" size={16} />
                         <span>{achievement}</span>
                       </li>
                     ))}
@@ -196,7 +196,7 @@ const Experience = () => {
 
                 {/* Ícone no hover */}
                 <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <FaFire className="text-[var(--primary-color)] text-3xl" />
+                  <Flame className="text-[var(--primary-color)]" size={24} />
                 </div>
               </div>
             ))}
