@@ -92,7 +92,7 @@ export default function Home() {
               className="flex gap-4 justify-center pt-8"
             >
               <a
-                href="https://github.com/leorodrigues"
+                href="https://github.com/leorodriguesdev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 border border-border rounded-lg hover:border-primary hover:text-primary transition-colors"
@@ -100,7 +100,7 @@ export default function Home() {
                 <Github size={24} />
               </a>
               <a
-                href="https://linkedin.com/in/leorodrigues"
+                href="https://linkedin.com/in/leorodriguesdev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 border border-border rounded-lg hover:border-primary hover:text-primary transition-colors"
@@ -108,7 +108,7 @@ export default function Home() {
                 <Linkedin size={24} />
               </a>
               <a
-                href="https://twitter.com/leorodrigues"
+                href="https://x.com/leorodriguesdev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 border border-border rounded-lg hover:border-primary hover:text-primary transition-colors"

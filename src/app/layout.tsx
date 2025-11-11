@@ -68,7 +68,20 @@ export const metadata: Metadata = {
   "freelance developer",
   "desenvolvedor brasileiro",
   
-  // Brand
+    // Brand
+  "leorodrigues.dev",
+  "leorodrigues.com.br",
+  "leorodrigues.net",
+  "leorodrigues.org",
+  "leorodrigues.io",
+  "leorodrigues.tech",
+  "leorodrigues.space",
+  "leorodrigues.club",
+  "leorodrigues.me",
+  "leorodrigues.info",
+  "leorodrigues.com",
+  "leorodriguesdev",
+  "leo rodrigues",
   "Léo Rodrigues",
   "Léo Rodrigues dev",
   "Léo Rodrigues developer",
