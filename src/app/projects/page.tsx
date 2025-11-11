@@ -43,8 +43,8 @@ export default function AllProjectsPage() {
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
       <SEO
-        title="Projetos | Leo Rodrigues"
-        description="Portfolio de projetos desenvolvidos por Leo Rodrigues. Aplicações web, mobile e sistemas full stack usando React, Next.js, TypeScript e Node.js."
+        title="Projetos | Léo Rodrigues"
+        description="Portfolio de projetos desenvolvidos por Léo Rodrigues. Aplicações web, mobile e sistemas full stack usando React, Next.js, TypeScript e Node.js."
       />
 
       <div className="pt-24 pb-16">

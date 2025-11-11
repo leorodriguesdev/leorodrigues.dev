@@ -11,6 +11,22 @@ const nextConfig = {
   },
   compress: true,
   poweredByHeader: false,
+  async redirects() {
+    return [
+      // Redirecionar www para não-www
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "www.leorodrigues.dev",
+          },
+        ],
+        destination: "https://leorodrigues.dev/:path*",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

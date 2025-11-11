@@ -34,7 +34,7 @@ export default function ProjectDetailClient({
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
       <SEO
-        title={`${displayTitle} - Leo Rodrigues Portfolio`}
+        title={`${displayTitle} - Léo Rodrigues Portfolio`}
         description={project.description}
         keywords={project.techStack.join(", ")}
         type="article"

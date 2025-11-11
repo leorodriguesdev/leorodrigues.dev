@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.leorodrigues.dev"
+        }
+      ],
+      "destination": "https://leorodrigues.dev/:path*",
+      "permanent": true
+    }
+  ]
+}

@@ -36,7 +36,7 @@ export default async function Page({ params, searchParams }: any) {
           dateCreated: project.date,
           creator: {
             "@type": "Person",
-            name: "Leo Rodrigues",
+            name: "Léo Rodrigues",
             url: "https://leorodrigues.dev"
           },
           ...(project.links?.website && { url: project.links.website }),
@@ -63,7 +63,7 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
   }
 
   return {
-    title: `${project.title} | Leo Rodrigues`,
+    title: `${project.title} | Léo Rodrigues`,
     description: project.description,
     openGraph: {
       title: project.title,
