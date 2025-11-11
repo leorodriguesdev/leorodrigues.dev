@@ -16,8 +16,8 @@ export default function AboutPage() {
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
       <SEO
-        title="Sobre Mim | Leo Rodrigues"
-        description="Conheça Leo Rodrigues, Desenvolvedor Full Stack com 6+ anos de experiência em React, Next.js, TypeScript e Node.js. Especializado em criar aplicações web modernas e escaláveis."
+        title="Sobre Mim | Léo Rodrigues"
+        description="Conheça Léo Rodrigues, Desenvolvedor Full Stack com 6+ anos de experiência em React, Next.js, TypeScript e Node.js. Especializado em criar aplicações web modernas e escaláveis."
       />
 
       <div className="pt-24 pb-16">

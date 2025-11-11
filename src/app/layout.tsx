@@ -9,29 +9,75 @@ import GoogleAnalytics from '@/components/GoogleAnalytics';
 export const metadata: Metadata = {
   metadataBase: new URL('https://leorodrigues.dev'),
   title: {
-    default: "Leo Rodrigues - Desenvolvedor Full Stack | React, Next.js & TypeScript",
-    template: "%s | Leo Rodrigues"
+    default: "Léo Rodrigues - Desenvolvedor Mobile & Full Stack | React Native, Expo, Next.js & Node.js",
+    template: "%s | Léo Rodrigues"
   },
-  description: "Desenvolvedor Full Stack especializado em React, Next.js e TypeScript. Criando aplicações web modernas, rápidas e escaláveis. Disponível para projetos freelance e oportunidades.",
+  description: "Desenvolvedor Mobile especialista em React Native e Expo, e Full Stack com React, Next.js, Vite e Node.js. Criando aplicativos móveis e aplicações web modernas, rápidas e escaláveis.",
   keywords: [
-    "desenvolvedor web",
-    "full stack developer",
-    "React",
-    "Next.js",
-    "TypeScript",
-    "desenvolvedor frontend",
-    "desenvolvedor backend",
-    "portfolio desenvolvedor",
-    "programador web",
-    "desenvolvimento web moderno",
-    "desenvolvedor React",
-    "desenvolvedor Node.js",
-    "freelance developer",
-    "desenvolvedor brasileiro"
-  ],
-  authors: [{ name: "Leo Rodrigues", url: "https://leorodrigues.dev" }],
-  creator: "Leo Rodrigues",
-  publisher: "Leo Rodrigues",
+  // React Native e Mobile (prioridade)
+  "desenvolvedor react native",
+  "desenvolvedor mobile",
+  "react native developer",
+  "mobile developer",
+  "desenvolvedor expo",
+  "expo developer",
+  "desenvolvedor mobile react native",
+  "desenvolvedor app mobile",
+  "mobile app developer",
+  "react native especialista",
+  "desenvolvedor mobile brasil",
+  
+  // Full Stack e Web
+  "desenvolvedor full stack",
+  "full stack developer",
+  "desenvolvedor web",
+  "desenvolvedor frontend",
+  "desenvolvedor backend",
+  
+  // Tecnologias específicas
+  "React",
+  "React Native",
+  "Expo",
+  "Next.js",
+  "Vite",
+  "Node.js",
+  "TypeScript",
+  "JavaScript",
+  
+  // Especializações
+  "desenvolvedor React",
+  "desenvolvedor Next.js",
+  "desenvolvedor Node.js",
+  "desenvolvedor TypeScript",
+  "desenvolvedor JavaScript",
+  
+  // Long-tail (mais fácil de rankear)
+  "desenvolvedor react native expo",
+  "desenvolvedor mobile react native expo",
+  "contratar desenvolvedor react native",
+  "desenvolvedor full stack react native",
+  "desenvolvedor mobile e web",
+  "desenvolvedor react native freelance",
+  "desenvolvedor mobile especialista",
+  
+  // Outros
+  "portfolio desenvolvedor",
+  "programador web",
+  "desenvolvimento mobile",
+  "desenvolvimento web moderno",
+  "freelance developer",
+  "desenvolvedor brasileiro",
+  
+  // Brand
+  "Léo Rodrigues",
+  "Léo Rodrigues dev",
+  "Léo Rodrigues developer",
+  "Léo Rodrigues react native",
+  "Léo Rodrigues mobile",
+],
+  authors: [{ name: "Léo Rodrigues", url: "https://leorodrigues.dev" }],
+  creator: "Léo Rodrigues",
+  publisher: "Léo Rodrigues",
   robots: {
     index: true,
     follow: true,
@@ -44,25 +90,25 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    type: "website",
-    locale: "pt_BR",
-    url: "https://leorodrigues.dev",
-    siteName: "LeoRodrigues.dev",
-    title: "Leo Rodrigues - Desenvolvedor Full Stack | React, Next.js & TypeScript",
-    description: "Desenvolvedor Full Stack especializado em React, Next.js e TypeScript. Criando aplicações web modernas, rápidas e escaláveis. Disponível para projetos freelance.",
+  type: "website",
+  locale: "pt_BR",
+  url: "https://leorodrigues.dev",
+  siteName: "LeoRodrigues.dev",
+  title: "Léo Rodrigues - Desenvolvedor Mobile & Full Stack | React Native, Expo, Next.js",
+  description: "Desenvolvedor Mobile especialista em React Native e Expo, e Full Stack com React, Next.js e Node.js. Criando aplicativos móveis e aplicações web modernas.",
     images: [
       {
         url: "https://leorodrigues.dev/print.png",
         width: 1200,
         height: 630,
-        alt: "Leo Rodrigues - Desenvolvedor Full Stack",
+        alt: "Léo Rodrigues - Desenvolvedor Full Stack",
       },
     ],
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Leo Rodrigues - Desenvolvedor Full Stack",
-    description: "Desenvolvedor Full Stack especializado em React, Next.js e TypeScript. Criando aplicações web modernas, rápidas e escaláveis.",
+  card: "summary_large_image",
+  title: "Léo Rodrigues - Desenvolvedor Mobile & Full Stack",
+  description: "Especialista em React Native, Expo, Next.js e Node.js. Desenvolvimento mobile e web de alta qualidade.",
     images: ["https://leorodrigues.dev/print.png"],
     creator: "@leorodriguesdev",
     site: "@leorodriguesdev",
@@ -71,8 +117,7 @@ export const metadata: Metadata = {
     canonical: "https://leorodrigues.dev",
   },
   verification: {
-    // Adicionar depois quando tiver os códigos:
-    // google: "seu-codigo-google",
+    google: "MCCPSESPM5MMVGw-lXb_pL40db1Z6VMT",
     // yandex: "seu-codigo-yandex",
     // bing: "seu-codigo-bing",
   },

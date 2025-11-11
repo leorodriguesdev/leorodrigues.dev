@@ -12,7 +12,7 @@ interface SEOProps {
 }
 
 export function SEO({
-  title = "Leo Rodrigues - Desenvolvedor Full Stack | React, Next.js & TypeScript",
+  title = "Léo Rodrigues - Desenvolvedor Full Stack | React, Next.js & TypeScript",
   description = "Desenvolvedor Full Stack especializado em React, Next.js e TypeScript. Criando aplicações web modernas, rápidas e escaláveis. Disponível para projetos freelance e oportunidades.",
   keywords = "desenvolvedor web, full stack developer, React developer, Next.js, TypeScript, desenvolvedor frontend, desenvolvedor backend, portfolio desenvolvedor, programador web, desenvolvimento web moderno",
   image = "https://leorodrigues.dev/print.png",
@@ -42,7 +42,7 @@ export function SEO({
     // Basic meta tags
     updateMetaTag("description", description);
     updateMetaTag("keywords", keywords);
-    updateMetaTag("author", "Leo Rodrigues");
+    updateMetaTag("author", "Léo Rodrigues");
     updateMetaTag("robots", "index, follow");
 
     // Open Graph tags

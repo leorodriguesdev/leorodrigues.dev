@@ -19,7 +19,7 @@ export function StructuredData({ type, data }: StructuredDataProps) {
       structuredData = {
         "@context": "https://schema.org",
         "@type": "Person",
-        name: "Leo Rodrigues",
+        name: "Léo Rodrigues",
         jobTitle: "Full Stack Developer",
         url: "https://leorodrigues.dev",
         email: "contato@leorodrigues.dev",
@@ -50,10 +50,10 @@ export function StructuredData({ type, data }: StructuredDataProps) {
         "@type": "WebSite",
         name: "LeoRodrigues.dev",
         url: "https://leorodrigues.dev",
-        description: "Portfolio profissional de Leo Rodrigues - Desenvolvedor Full Stack especializado em React, Next.js e TypeScript",
+        description: "Portfolio profissional de Léo Rodrigues - Desenvolvedor Full Stack especializado em React, Next.js e TypeScript",
         author: {
           "@type": "Person",
-          name: "Leo Rodrigues"
+          name: "Léo Rodrigues"
         },
         potentialAction: {
           "@type": "SearchAction",
@@ -72,7 +72,7 @@ export function StructuredData({ type, data }: StructuredDataProps) {
         name: "Desenvolvimento Full Stack",
         provider: {
           "@type": "Person",
-          name: "Leo Rodrigues",
+          name: "Léo Rodrigues",
           url: "https://leorodrigues.dev",
           email: "contato@leorodrigues.dev"
         },
