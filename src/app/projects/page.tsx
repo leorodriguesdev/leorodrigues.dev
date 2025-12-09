@@ -151,7 +151,7 @@ export default function AllProjectsPage() {
                         src={project.image}
                         alt={project.title}
                         fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-500"
+                        className="object-cover object-top group-hover:scale-110 transition-transform duration-500"
                       />
                     ) : (
                       <Code2 className="text-primary/40" size={48} />
