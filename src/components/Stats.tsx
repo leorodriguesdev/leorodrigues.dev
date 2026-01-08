@@ -54,9 +54,9 @@ function StatItem({ end, label, suffix = "", prefix = "", duration = 2 }: StatIt
 export function Stats() {
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-      <StatItem end={6} label="Anos de Experiência" suffix="+" />
-      <StatItem end={100} label="Projetos Concluídos" suffix="+" />
-      <StatItem end={30} label="Clientes Satisfeitos" suffix="+" />
+      <StatItem end={7} label="Anos de Experiência" suffix="+" />
+      <StatItem end={97} label="Projetos Concluídos" suffix="+" />
+      <StatItem end={31} label="Clientes Satisfeitos" suffix="+" />
       <StatItem end={99} label="Taxa de Satisfação" suffix="%" />
     </div>
   );

@@ -16,7 +16,7 @@ const Footer = () => {
               <span className="text-primary">.dev</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              Desenvolvedor Full Stack criando experiências web modernas e de alta performance.
+              Desenvolvedor Full Stack criando experiências web e mobile modernas e de alta performance.
             </p>
           </div>
           
