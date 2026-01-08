@@ -40,7 +40,7 @@ const Contact = () => {
               contato@leorodrigues.dev
             </a>
             <a
-              href="https://wa.me/555180281270"
+              href="https://wa.me/555194389658"
               target="_blank"
               rel="noopener noreferrer"
               onClick={trackWhatsApp}

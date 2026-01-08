@@ -14,24 +14,24 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    name: "Maria Silva",
+    name: "Adriano Machado",
     role: "CEO",
-    company: "Tech Innovations",
-    content: "Leo é um profissional excepcional. Entregou nosso projeto antes do prazo e superou todas as expectativas. Seu conhecimento técnico e atenção aos detalhes são impressionantes.",
+    company: "OnStart Tecnologia",
+    content: "Léo é um profissional excepcional. Entregou nosso projeto antes do prazo e superou todas as expectativas. Colocou nossa empresa no mapa de empresas de tecnologia do Brasil.",
     rating: 5
   },
   {
-    name: "Carlos Santos",
-    role: "Product Manager",
-    company: "Digital Solutions",
-    content: "Trabalhar com Leo foi uma experiência incrível. Ele não apenas desenvolveu a aplicação, mas também contribuiu com ideias valiosas que melhoraram significativamente o produto final.",
+    name: "Vivian Oliveira",
+    role: "Scrum Master ",
+    company: "Serasa Experian",
+    content: "Trabalhar com o Léo está sendo incrível! Ele é proativo, eficiente e comunicador, resolve problemas com muita rapidez. É um profissional comprometido com resultados e engajado com pessoas, sempre pronto para ajudar, ouvir e apoiar. Está sempre buscando mais conhecimento e qualificação para tornar-se um profissional ainda mais gabaritado.",
     rating: 5
   },
   {
-    name: "Ana Costa",
-    role: "CTO",
-    company: "Startup Brasil",
-    content: "Profissional altamente qualificado e comprometido. Leo tem uma habilidade única de transformar requisitos complexos em soluções elegantes e eficientes. Recomendo fortemente!",
+    name: "Bianca Cabral",
+    role: "UX Designer",
+    company: "FIERGS",
+    content: "Se tivesse que resumir em uma palavra como é trabalhar com o Leonardo, seria parceria. Leo tem um olhar afiado para produto e negócio, e sempre leva o trabalho do designer a sério: respeita, recebe feedbacks com maturidade e faz questão de incluir minhas considerações. Sua comunicação é assertiva, consegue alinhar ideias com clareza e a colaboração acontece de verdade. Além da competência técnica, contribui para um ambiente leve, produtivo e centrado em resultado.",
     rating: 5
   }
 ];
