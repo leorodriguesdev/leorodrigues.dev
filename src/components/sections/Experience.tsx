@@ -6,11 +6,32 @@ import { Briefcase, Calendar, CheckCircle2, Flame } from "lucide-react";
 
 const experiences = [
   {
-    title: "Analista de Sistemas Pleno - Sistema FIERGS",
-    duration: "Abr 2023 - Presente",
+    title: "Fundador e Desenvolvedor - Leorodrigues.dev LTDA",
+    duration: "2020 - Presente",
     description:
-      "Desenvolvedor mobile utilizando React Native, mantendo a sustentação de sistemas legados em HTML, CSS, JS e Angular.",
-    achievements: ["React Native", "JavaScript", "5+ competências adicionais"],
+      "Fundador de empresa de desenvolvimento de software, atendendo clientes próprios com soluções customizadas em aplicativos mobile e web. Desenvolvimento de projetos end-to-end, desde a concepção até a entrega e manutenção.",
+    achievements: ["Gestão de projetos", "Desenvolvimento full stack", "Atendimento ao cliente", "React Native", "Kotlin", "Swift", "Node.js"],
+  },
+  {
+    title: "Engenheiro de Software Sênior - Raiô Benefícios",
+    duration: "Set 2025 - Presente · 5 meses",
+    description:
+      "Desenvolvedor full stack sênior, com foco em escalabilidade e performance do aplicativo de benefícios corporativos Raiô Benefícios. Com as tecnologias React Native e NodeJS.",
+    achievements: ["React Native", "Kotlin", "Swift", "Node.js"],
+  },
+  {
+    title: "Desenvolvedor Mobile Sênior - STV Segurança",
+    duration: "Mai 2024 - Presente · 1 ano 9 meses",
+    description:
+      "Desenvolvedor freelancer em aplicativo corporativo para funcionários da empresa, como hub de informações gerais e profissionais com fácil acesso.",
+    achievements: ["React Native", "Kotlin", "Swift"],
+  },
+  {
+    title: "Desenvolvedor e Analista de Sistemas Pleno - Sistema FIERGS",
+    duration: "Abr 2023 - Set 2025 · 2 anos 6 meses",
+    description:
+      "Analista e desenvolvedor de sistemas pleno. Desenvolvedor web e mobile utilizando React e React Native, também fazendo a sustentação de sistemas legados.",
+    achievements: ["Desenvolvimento orientado a testes", "JavaScript", "React", "React Native", "Kotlin", "Swift", "21+ competências adicionais"],
   },
   {
     title: "Desenvolvedor Mobile - IBM (Banco do Brasil)",

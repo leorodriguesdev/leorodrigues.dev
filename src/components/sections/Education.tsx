@@ -6,6 +6,14 @@ import { Award, GraduationCap } from "lucide-react";
 
 const educationData = [
   {
+    title: "Pós-graduação Lato Sensu - Especialização, Inteligência Artificial",
+    institution: "UniRitter",
+    year: "Mai 2025 - Jun 2026",
+    description:
+      "Especialista em Inteligência Artificial com os principais tópicos: Aprendizado de máquina, Engenharia, preparação e visualização de dados, Gestão do conhecimento e inteligência competitiva, Redes neurais e aprendizado profundo, Arquiteturas de aprendizagem de máquina na nuvem e nas bordas, Análise de imagem e visão computacional, Processamento de linguagem natural, Experiência de usuário e IA.",
+    achievements: ["Inteligência artificial", "Aprendizado de máquina", "25+ competências adicionais"],
+  },
+  {
     title: "Especialização em Desenvolvimento de Software com React, React Native e NodeJs",
     institution: "Rocketseat",
     year: "2023",
