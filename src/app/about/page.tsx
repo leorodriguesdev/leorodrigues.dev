@@ -2,7 +2,7 @@
 
 import { motion } from 'motion/react';
 import Image from 'next/image';
-import { Download, Mail } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import Experience from '@/components/sections/Experience';
@@ -11,7 +11,7 @@ import { SEO } from '@/components/SEO';
 import { useAnalytics } from '@/hooks/useAnalytics';
 
 export default function AboutPage() {
-  const { trackDownload, trackEmail } = useAnalytics();
+  const { trackEmail } = useAnalytics();
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
@@ -30,10 +30,10 @@ export default function AboutPage() {
           >
             <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border-2 border-primary/20 overflow-hidden relative">
               <Image
-                src="/avatar.jpeg"
+                src="/avatar.png"
                 alt="Leonardo Rodrigues"
                 fill
-                className="object-cover"
+                className="object-left-top object-cover"
                 priority
               />
             </div>
@@ -45,7 +45,7 @@ export default function AboutPage() {
                 Desenvolvedor Full Stack apaixonado por criar soluções web inovadoras e de alta qualidade
               </p>
               <div className="flex gap-4 justify-center pt-4">
-                <a
+                {/* <a
                   href="/cv.pdf"
                   download
                   onClick={() => trackDownload('CV-LeoRodrigues.pdf')}
@@ -53,7 +53,7 @@ export default function AboutPage() {
                 >
                   <Download size={20} />
                   Download CV
-                </a>
+                </a> */}
                 <a
                   href="mailto:contato@leorodrigues.dev"
                   onClick={trackEmail}
@@ -74,16 +74,18 @@ export default function AboutPage() {
             className="mb-20 p-8 bg-secondary/50 border border-border rounded-lg"
           >
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Olá! Meu nome é <strong>Leonardo Rodrigues</strong> e sou um desenvolvedor full stack apaixonado por transformar ideias em soluções digitais robustas e eficientes. Com <span className="text-primary">mais de 6 anos de experiência</span> no mercado, atuo com foco em desenvolvimento web e mobile, utilizando as mais modernas tecnologias para construir produtos de alta qualidade.
+              Olá! Meu nome é <strong>Leonardo Rodrigues</strong> e sou um desenvolvedor full stack apaixonado por transformar ideias em soluções digitais robustas e eficientes. Com <span className="text-primary">mais de 7 anos de experiência</span> no mercado, atuo com foco em desenvolvimento web e mobile, utilizando as mais modernas tecnologias para construir produtos de alta qualidade.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Minha jornada profissional inclui passagens por empresas como a <span className="text-primary">IBM, Banco do Brasil e Banco Sicredi</span>, atualmente contribuo para o <span className="text-primary">Sistema FIERGS</span>, onde tenho a oportunidade de participar de <span className="text-primary">todo o ciclo de desenvolvimento de projetos</span>, desde a concepção e prototipagem até o deploy e manutenção. Essa experiência me proporcionou uma visão 360º do processo de desenvolvimento, me permitindo entregar soluções completas e eficazes.
+              Minha jornada profissional inclui passagens por empresas como a <span className="text-primary">IBM, Banco do Brasil, Banco Sicredi e Sistema FIERGS</span>, atualmente contribuo para a <span className="text-primary">Raiô Benefícios</span> e <span className="text-primary">STV Segurança</span>, onde tenho a oportunidade de participar de <span className="text-primary">todo o ciclo de desenvolvimento de projetos</span>, desde a concepção e prototipagem até o deploy e manutenção. Essa experiência me proporcionou uma visão 360º do processo de desenvolvimento, me permitindo entregar soluções completas e eficazes.
             </p>
             <p className="text-muted-foreground leading-relaxed">
               Sou movido pela paixão em resolver <strong>problemas complexos</strong> e aprimorar minhas <strong>habilidades</strong>. Para mim, o desenvolvimento de software transcende o código; é sobre entender o <strong>usuário</strong> e criar <strong>soluções intuitivas e impactantes</strong>. Estou sempre em busca de novos <strong>desafios</strong> e oportunidades para contribuir com minha expertise em <strong>projetos inovadores</strong> e equipes colaborativas.
             </p>
             <p className="text-sm text-muted-foreground mt-6 italic">
-              &quot;Quanto mais estudo, mais sinto que minha mente nisso é insaciável.&quot; - Ada Lovelace, a inventora da programação.
+              &quot;Quanto mais estudo, mais sinto que minha mente nisso é insaciável.&quot;
+              <br />
+              Ada Lovelace - Matemática, Escritora Inglesa e inventora do primeiro algoritmo de computador da história.
             </p>
           </motion.div>
 
