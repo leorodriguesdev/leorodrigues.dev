@@ -38,16 +38,28 @@ export async function GET() {
 
     const repos = await reposResponse.json();
 
+    // Tipos para GitHub API
+    interface GitHubRepo {
+      fork: boolean;
+      name: string;
+      stargazers_count: number;
+      forks_count: number;
+    }
+
+    interface GitHubLanguages {
+      [key: string]: number;
+    }
+
     // Filtrar apenas repositórios que não são forks
-    const ownRepos = repos.filter((repo: any) => !repo.fork);
+    const ownRepos = repos.filter((repo: GitHubRepo) => !repo.fork);
 
     // Calcular estatísticas agregadas
-    const totalStars = ownRepos.reduce((sum: number, repo: any) => sum + repo.stargazers_count, 0);
-    const totalForks = ownRepos.reduce((sum: number, repo: any) => sum + repo.forks_count, 0);
+    const totalStars = ownRepos.reduce((sum: number, repo: GitHubRepo) => sum + repo.stargazers_count, 0);
+    const totalForks = ownRepos.reduce((sum: number, repo: GitHubRepo) => sum + repo.forks_count, 0);
 
     // Buscar linhas de código dos principais repositórios
     let totalLines = 0;
-    const statsPromises = ownRepos.slice(0, 20).map(async (repo: any) => {
+    const statsPromises = ownRepos.slice(0, 20).map(async (repo: GitHubRepo) => {
       try {
         const statsResponse = await fetch(
           `https://api.github.com/repos/${GITHUB_USERNAME}/${repo.name}/languages`,
@@ -60,8 +72,8 @@ export async function GET() {
         );
 
         if (statsResponse.ok) {
-          const languages = await statsResponse.json();
-          const repoLines = Object.values(languages).reduce((sum: number, lines: any) => sum + lines, 0);
+          const languages = await statsResponse.json() as GitHubLanguages;
+          const repoLines = Object.values(languages).reduce((sum: number, lines: number) => sum + lines, 0);
           return repoLines;
         }
         return 0;

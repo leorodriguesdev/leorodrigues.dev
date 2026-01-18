@@ -34,7 +34,7 @@ export async function GET() {
       
       checks[key as keyof typeof checks].status = response.ok ? 'success' : 'error';
       checks[key as keyof typeof checks].accessible = response.ok;
-    } catch (error) {
+    } catch {
       checks[key as keyof typeof checks].status = 'error';
       checks[key as keyof typeof checks].accessible = false;
     }

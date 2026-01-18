@@ -8,8 +8,6 @@ import {
   Code2, 
   ArrowRight, 
   CheckCircle2,
-  Cpu,
-  Database,
   MessageCircle
 } from "lucide-react";
 import { Stats } from "@/components/Stats";
