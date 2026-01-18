@@ -12,7 +12,9 @@ const Footer = () => {
   const pathname = usePathname();
 
   const handleSwitchVersion = () => {
-    const newIntent = intent === "portfolio" ? "commercial" : "portfolio";
+    // Considera null como "commercial" (padrão)
+    const currentIntent = intent || "commercial";
+    const newIntent = currentIntent === "portfolio" ? "commercial" : "portfolio";
     setIntent(newIntent);
     // Se estiver na homepage, força re-render
     if (pathname === "/") {
@@ -20,6 +22,12 @@ const Footer = () => {
     } else {
       router.push("/");
     }
+  };
+
+  // Calcula qual versão será exibida após o clique (destino)
+  const getNextIntent = () => {
+    const currentIntent = intent || "commercial";
+    return currentIntent === "portfolio" ? "commercial" : "portfolio";
   };
 
   return (
@@ -117,7 +125,7 @@ const Footer = () => {
                 className="inline-flex items-center gap-2 px-4 py-2 text-sm bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all font-medium"
               >
                 <RefreshCw size={16} />
-                Ver versão {intent === "portfolio" ? "Portfólio" : "Comercial"}
+                Ver versão {getNextIntent() === "portfolio" ? "Portfólio" : "Comercial"}
               </button>
             )}
           </div>
