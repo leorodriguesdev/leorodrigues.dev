@@ -49,7 +49,7 @@ export function VisitorIntentModal({ intent, setIntent }: VisitorIntentModalProp
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50"
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100]"
             onClick={handleClose}
           />
 
@@ -58,10 +58,10 @@ export function VisitorIntentModal({ intent, setIntent }: VisitorIntentModalProp
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto"
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="bg-card border border-border rounded-2xl p-4 sm:p-6 md:p-8 max-w-4xl w-full relative shadow-2xl my-auto">
+            <div className="bg-card border border-border rounded-2xl p-4 sm:p-6 md:p-8 max-w-4xl w-full relative shadow-2xl my-auto mt-20 sm:mt-24">
               <button
                 onClick={handleClose}
                 className="absolute top-2 right-2 sm:top-4 sm:right-4 p-2 hover:bg-secondary rounded-lg transition-colors z-10"
