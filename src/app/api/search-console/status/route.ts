@@ -31,7 +31,7 @@ export async function GET() {
   };
 
   // Verificar cada URL
-  for (const [key, check] of Object.entries(checks)) {
+  for (const check of Object.values(checks)) {
     try {
       const response = await fetch(check.url, {
         method: 'HEAD',
