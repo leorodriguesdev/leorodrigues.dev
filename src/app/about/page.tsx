@@ -9,6 +9,7 @@ import Experience from '@/components/sections/Experience';
 import Education from '@/components/sections/Education';
 import { SEO } from '@/components/SEO';
 import { useAnalytics } from '@/hooks/useAnalytics';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
 
 export default function AboutPage() {
   const { trackEmail } = useAnalytics();
@@ -16,11 +17,13 @@ export default function AboutPage() {
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
       <SEO
-        title="Sobre Mim | Léo Rodrigues"
-        description="Conheça Léo Rodrigues, Desenvolvedor Full Stack com 6+ anos de experiência em React, Next.js, TypeScript e Node.js. Especializado em criar aplicações web modernas e escaláveis."
+        title="Sobre Mim | Desenvolvedor Mobile e Full Stack | Léo Rodrigues"
+        description="Conheça Léo Rodrigues, Desenvolvedor Mobile e Full Stack com 7+ anos de experiência em React Native, Expo, React, Next.js, TypeScript e Node.js. Especializado em desenvolvimento mobile e web moderno."
+        keywords="desenvolvedor mobile experiência, desenvolvedor React Native experiência, desenvolvedor full stack, sobre desenvolvedor mobile, perfil desenvolvedor React Native"
       />
+      <Breadcrumbs />
 
-      <div className="pt-24 pb-16">
+      <div className="pb-16">
         <div className="container mx-auto max-w-5xl px-6">
           {/* Header */}
           <motion.div
@@ -39,10 +42,10 @@ export default function AboutPage() {
             </div>
             <div className="space-y-4">
               <h1 className="text-4xl md:text-5xl tracking-tight">
-                Sobre <span className="text-primary">Mim</span>
+                Desenvolvedor Mobile com <span className="text-primary">7+ Anos de Experiência</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Desenvolvedor Full Stack apaixonado por criar soluções web inovadoras e de alta qualidade
+                Especialista em React Native, Expo, Next.js e Node.js. Criando aplicativos móveis e aplicações web modernas e escaláveis
               </p>
               <div className="flex gap-4 justify-center pt-4">
                 {/* <a

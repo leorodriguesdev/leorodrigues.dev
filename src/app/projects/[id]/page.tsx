@@ -62,9 +62,15 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
     };
   }
 
+  const projectTypeLabel = project.type === 'mobile' 
+    ? 'App Mobile React Native' 
+    : project.type === 'api' 
+    ? 'Sistema Backend' 
+    : 'Site Next.js';
+
   return {
-    title: `${project.title} | Léo Rodrigues`,
-    description: project.description,
+    title: `${project.title} - Desenvolvido por Léo Rodrigues | ${projectTypeLabel}`,
+    description: `${project.description} Desenvolvido com ${project.techStack.slice(0, 3).join(', ')}. Veja mais projetos de ${project.type === 'mobile' ? 'desenvolvimento mobile' : 'desenvolvimento web'}.`,
     openGraph: {
       title: project.title,
       description: project.description,

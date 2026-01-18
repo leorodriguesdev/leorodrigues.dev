@@ -9,10 +9,10 @@ import GoogleAnalytics from '@/components/GoogleAnalytics';
 export const metadata: Metadata = {
   metadataBase: new URL('https://leorodrigues.dev'),
   title: {
-    default: "Léo Rodrigues - Desenvolvedor Mobile & Full Stack | React Native, Expo, Next.js & Node.js",
+    default: "Desenvolvedor React Native e Mobile | Léo Rodrigues - Apps e Sites Modernos",
     template: "%s | Léo Rodrigues"
   },
-  description: "Desenvolvedor Mobile especialista em React Native e Expo, e Full Stack com React, Next.js, Vite e Node.js. Criando aplicativos móveis e aplicações web modernas, rápidas e escaláveis.",
+  description: "Desenvolvedor Mobile especialista em React Native e Expo. Criando apps nativos para iOS e Android, sites com Next.js e sistemas full stack. 7+ anos de experiência. Disponível para projetos.",
   keywords: [
   // React Native e Mobile (prioridade)
   "desenvolvedor react native",
@@ -26,6 +26,21 @@ export const metadata: Metadata = {
   "mobile app developer",
   "react native especialista",
   "desenvolvedor mobile brasil",
+  
+  // Comercial - Criação de Sites e Apps
+  "criar site",
+  "fazer site",
+  "desenvolvimento de site",
+  "criar app",
+  "desenvolvimento de app",
+  "site profissional",
+  "app mobile",
+  "orçamento site",
+  "orçamento app",
+  "criar aplicativo",
+  "desenvolvimento de aplicativo",
+  "site para empresa",
+  "app para empresa",
   
   // Full Stack e Web
   "desenvolvedor full stack",
@@ -59,6 +74,9 @@ export const metadata: Metadata = {
   "desenvolvedor mobile e web",
   "desenvolvedor react native freelance",
   "desenvolvedor mobile especialista",
+  "criar site profissional",
+  "fazer app mobile",
+  "desenvolvedor para contratar",
   
   // Outros
   "portfolio desenvolvedor",
@@ -68,7 +86,7 @@ export const metadata: Metadata = {
   "freelance developer",
   "desenvolvedor brasileiro",
   
-    // Brand
+  // Brand
   "leorodrigues.dev",
   "leorodrigues.com.br",
   "leorodrigues.net",
@@ -107,8 +125,8 @@ export const metadata: Metadata = {
   locale: "pt_BR",
   url: "https://leorodrigues.dev",
   siteName: "LeoRodrigues.dev",
-  title: "Léo Rodrigues - Desenvolvedor Mobile & Full Stack | React Native, Expo, Next.js",
-  description: "Desenvolvedor Mobile especialista em React Native e Expo, e Full Stack com React, Next.js e Node.js. Criando aplicativos móveis e aplicações web modernas.",
+  title: "Desenvolvedor React Native e Mobile | Léo Rodrigues - Apps e Sites Modernos",
+  description: "Desenvolvedor Mobile especialista em React Native e Expo. Criando apps nativos para iOS e Android, sites com Next.js e sistemas full stack. 7+ anos de experiência.",
     images: [
       {
         url: "https://leorodrigues.dev/print.png",
@@ -120,8 +138,8 @@ export const metadata: Metadata = {
   },
   twitter: {
   card: "summary_large_image",
-  title: "Léo Rodrigues - Desenvolvedor Mobile & Full Stack",
-  description: "Especialista em React Native, Expo, Next.js e Node.js. Desenvolvimento mobile e web de alta qualidade.",
+  title: "Desenvolvedor React Native e Mobile | Léo Rodrigues",
+  description: "Desenvolvedor Mobile especialista em React Native e Expo. Apps nativos iOS/Android, sites Next.js e sistemas full stack. 7+ anos de experiência.",
     images: ["https://leorodrigues.dev/print.png"],
     creator: "@leorodriguesdev",
     site: "@leorodriguesdev",
