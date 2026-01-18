@@ -10,16 +10,24 @@ import { NextResponse } from 'next/server';
  * 
  * Uso: GET /api/search-console/status
  */
+type CheckStatus = 'pending' | 'success' | 'error';
+
+interface CheckResult {
+  url: string;
+  status: CheckStatus;
+  accessible: boolean;
+}
+
 export async function GET() {
   // O site redireciona para www, então verificamos ambos
   const baseUrl = 'https://www.leorodrigues.dev';
-  const checks = {
-    sitemap: { url: `${baseUrl}/sitemap.xml`, status: 'pending' as const, accessible: false },
-    robots: { url: `${baseUrl}/robots.txt`, status: 'pending' as const, accessible: false },
-    homepage: { url: baseUrl, status: 'pending' as const, accessible: false },
-    services: { url: `${baseUrl}/services`, status: 'pending' as const, accessible: false },
-    about: { url: `${baseUrl}/about`, status: 'pending' as const, accessible: false },
-    projects: { url: `${baseUrl}/projects`, status: 'pending' as const, accessible: false },
+  const checks: Record<string, CheckResult> = {
+    sitemap: { url: `${baseUrl}/sitemap.xml`, status: 'pending', accessible: false },
+    robots: { url: `${baseUrl}/robots.txt`, status: 'pending', accessible: false },
+    homepage: { url: baseUrl, status: 'pending', accessible: false },
+    services: { url: `${baseUrl}/services`, status: 'pending', accessible: false },
+    about: { url: `${baseUrl}/about`, status: 'pending', accessible: false },
+    projects: { url: `${baseUrl}/projects`, status: 'pending', accessible: false },
   };
 
   // Verificar cada URL
@@ -32,11 +40,11 @@ export async function GET() {
         },
       });
       
-      checks[key as keyof typeof checks].status = response.ok ? 'success' : 'error';
-      checks[key as keyof typeof checks].accessible = response.ok;
+      check.status = response.ok ? 'success' : 'error';
+      check.accessible = response.ok;
     } catch {
-      checks[key as keyof typeof checks].status = 'error';
-      checks[key as keyof typeof checks].accessible = false;
+      check.status = 'error';
+      check.accessible = false;
     }
   }
 
