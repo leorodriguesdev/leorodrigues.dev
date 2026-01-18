@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 
 interface StructuredDataProps {
-  type: "Person" | "WebSite" | "Article" | "CreativeWork" | "ProfessionalService";
+  type: "Person" | "WebSite" | "Article" | "CreativeWork" | "ProfessionalService" | "LocalBusiness" | "BreadcrumbList";
   data: Record<string, unknown>;
 }
 
@@ -20,7 +20,7 @@ export function StructuredData({ type, data }: StructuredDataProps) {
         "@context": "https://schema.org",
         "@type": "Person",
         name: "Léo Rodrigues",
-        jobTitle: "Full Stack Developer",
+        jobTitle: "Mobile & Full Stack Developer",
         url: "https://leorodrigues.dev",
         email: "contato@leorodrigues.dev",
         sameAs: [
@@ -30,6 +30,8 @@ export function StructuredData({ type, data }: StructuredDataProps) {
         ],
         knowsAbout: [
           "React",
+          "React Native",
+          "Expo",
           "Next.js",
           "TypeScript",
           "JavaScript",
@@ -39,9 +41,10 @@ export function StructuredData({ type, data }: StructuredDataProps) {
           "Frontend Development",
           "Backend Development",
           "Mobile Development",
-          "React Native"
+          "iOS Development",
+          "Android Development"
         ],
-        description: "Desenvolvedor Full Stack especializado em React, Next.js e TypeScript. Criando aplicações web modernas, rápidas e escaláveis.",
+        description: "Desenvolvedor Mobile e Full Stack especializado em React Native, Expo, Next.js e TypeScript. Criando aplicativos móveis e aplicações web modernas, rápidas e escaláveis.",
         ...data
       };
     } else if (type === "WebSite") {
@@ -50,7 +53,7 @@ export function StructuredData({ type, data }: StructuredDataProps) {
         "@type": "WebSite",
         name: "LeoRodrigues.dev",
         url: "https://leorodrigues.dev",
-        description: "Portfolio profissional de Léo Rodrigues - Desenvolvedor Full Stack especializado em React, Next.js e TypeScript",
+        description: "Portfolio profissional de Léo Rodrigues - Desenvolvedor Mobile e Full Stack especializado em React Native, Expo, Next.js e TypeScript",
         author: {
           "@type": "Person",
           name: "Léo Rodrigues"
@@ -89,6 +92,55 @@ export function StructuredData({ type, data }: StructuredDataProps) {
       structuredData = {
         "@context": "https://schema.org",
         "@type": "CreativeWork",
+        ...data
+      };
+    } else if (type === "LocalBusiness") {
+      structuredData = {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        name: "Léo Rodrigues - Desenvolvedor Mobile e Full Stack",
+        image: "https://leorodrigues.dev/avatar.png",
+        "@id": "https://leorodrigues.dev",
+        url: "https://leorodrigues.dev",
+        description: "Desenvolvedor Mobile especialista em React Native e Expo, e Full Stack com React, Next.js e Node.js. Criando aplicativos móveis e aplicações web modernas.",
+        priceRange: "$$",
+        address: {
+          "@type": "PostalAddress",
+          addressCountry: "BR",
+          ...(data.address as object)
+        },
+        geo: data.geo ? {
+          "@type": "GeoCoordinates",
+          ...(data.geo as object)
+        } : undefined,
+        openingHoursSpecification: {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          opens: "09:00",
+          closes: "18:00"
+        },
+        sameAs: [
+          "https://github.com/leorodriguesdev",
+          "https://linkedin.com/in/leorodriguesdev",
+          "https://x.com/leorodriguesdev"
+        ],
+        areaServed: {
+          "@type": "Country",
+          name: "Brasil"
+        },
+        serviceType: [
+          "Desenvolvimento Mobile",
+          "Desenvolvimento Web",
+          "Desenvolvimento Full Stack",
+          "Consultoria em Desenvolvimento"
+        ],
+        ...data
+      };
+    } else if (type === "BreadcrumbList") {
+      structuredData = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: data.itemListElement || [],
         ...data
       };
     }

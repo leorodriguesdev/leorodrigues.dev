@@ -2,9 +2,26 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import { useRouter, usePathname } from 'next/navigation';
+import { Github, Linkedin, Twitter, Mail, RefreshCw } from 'lucide-react';
+import { useVisitorIntent } from '@/hooks/useVisitorIntent';
 
 const Footer = () => {
+  const { intent, setIntent } = useVisitorIntent();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const handleSwitchVersion = () => {
+    const newIntent = intent === "portfolio" ? "commercial" : "portfolio";
+    setIntent(newIntent);
+    // Se estiver na homepage, força re-render
+    if (pathname === "/") {
+      window.location.reload();
+    } else {
+      router.push("/");
+    }
+  };
+
   return (
     <footer className="py-12 px-6 border-t border-border bg-background">
       <div className="container mx-auto max-w-6xl">
@@ -89,8 +106,21 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} LeoRodrigues.dev - Todos os direitos reservados | Desenvolvido com React & Next.js</p>
+        <div className="pt-8 border-t border-border">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-sm text-muted-foreground text-center md:text-left">
+              © {new Date().getFullYear()} LeoRodrigues.dev - Todos os direitos reservados | Desenvolvido com React & Next.js
+            </p>
+            {pathname === "/" && (
+              <button
+                onClick={handleSwitchVersion}
+                className="inline-flex items-center gap-2 px-4 py-2 text-sm bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all font-medium"
+              >
+                <RefreshCw size={16} />
+                Ver versão {intent === "portfolio" ? "Comercial" : "Portfólio"}
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </footer>

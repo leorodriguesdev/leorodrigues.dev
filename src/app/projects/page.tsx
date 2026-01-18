@@ -10,6 +10,7 @@ import { projectsData } from '@/data/projectsData';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { SEO } from '@/components/SEO';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
 
 type FilterOption = 'all' | 'website' | 'mobile' | 'api';
 
@@ -43,11 +44,13 @@ export default function AllProjectsPage() {
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
       <SEO
-        title="Projetos | Léo Rodrigues"
-        description="Portfolio de projetos desenvolvidos por Léo Rodrigues. Aplicações web, mobile e sistemas full stack usando React, Next.js, TypeScript e Node.js."
+        title="Projetos | Apps Mobile e Sites Desenvolvidos | Léo Rodrigues"
+        description="Portfolio de projetos desenvolvidos por Léo Rodrigues. Aplicativos mobile React Native, sites Next.js, sistemas full stack. Veja casos de sucesso em desenvolvimento mobile e web."
+        keywords="projetos React Native, projetos mobile, projetos Next.js, portfolio desenvolvedor, casos de sucesso desenvolvimento mobile"
       />
+      <Breadcrumbs />
 
-      <div className="pt-24 pb-16">
+      <div className="pb-16">
         <div className="container mx-auto max-w-6xl px-6">
           {/* Header */}
           <motion.div

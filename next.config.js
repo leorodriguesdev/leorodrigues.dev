@@ -2,11 +2,13 @@
 const { withSentryConfig } = require("@sentry/nextjs");
 
 const nextConfig = {
-  experimental: {
-    instrumentationHook: true,
-  },
   images: {
-    domains: ["images.unsplash.com"],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+    ],
     formats: ["image/avif", "image/webp"],
   },
   compress: true,

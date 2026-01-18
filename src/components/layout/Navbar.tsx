@@ -5,19 +5,27 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { motion } from "motion/react";
 import { AlignJustify, X } from "lucide-react";
+import { useVisitorIntent } from '@/hooks/useVisitorIntent';
 
 const Navbar = () => {
   const pathname = usePathname();
   const router = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const navItems = [
+  const { intent } = useVisitorIntent();
+  
+  // Menu base
+  const baseNavItems = [
     { name: "Home", path: "/", hash: false },
     { name: "Sobre", path: "/about", hash: false },
     { name: "Habilidades", path: "/#skills", hash: true },
     { name: "Projetos", path: "/projects", hash: false },
     { name: "Contato", path: "/#contact", hash: true },
   ];
+
+  // Adiciona "Serviços" apenas na versão comercial ou se não houver escolha ainda (padrão comercial)
+  const navItems = intent === "portfolio" 
+    ? baseNavItems 
+    : [...baseNavItems.slice(0, 2), { name: "Serviços", path: "/services", hash: false }, ...baseNavItems.slice(2)];
 
   const handleHashClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
     if (path.includes('#')) {
