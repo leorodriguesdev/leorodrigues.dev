@@ -36,7 +36,7 @@ const Footer = () => {
               Desenvolvedor Full Stack criando experiências web e mobile modernas e de alta performance.
             </p>
           </div>
-          
+
           <div className="space-y-3">
             <h4 className="text-primary font-medium">Links Rápidos</h4>
             <div className="space-y-2 text-sm">
@@ -54,7 +54,7 @@ const Footer = () => {
               </Link>
             </div>
           </div>
-          
+
           <div className="space-y-3">
             <h4 className="text-primary font-medium">Serviços</h4>
             <div className="space-y-2 text-sm text-muted-foreground">
@@ -64,7 +64,7 @@ const Footer = () => {
               <p>Otimização SEO</p>
             </div>
           </div>
-          
+
           <div className="space-y-3">
             <h4 className="text-primary font-medium">Social</h4>
             <div className="flex gap-3">
@@ -105,7 +105,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        
+
         <div className="pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-muted-foreground text-center md:text-left">
@@ -117,7 +117,7 @@ const Footer = () => {
                 className="inline-flex items-center gap-2 px-4 py-2 text-sm bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all font-medium"
               >
                 <RefreshCw size={16} />
-                Ver versão {intent === "portfolio" ? "Comercial" : "Portfólio"}
+                Ver versão {intent === "portfolio" ? "Portfólio" : "Comercial"}
               </button>
             )}
           </div>
