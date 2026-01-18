@@ -1,4 +1,4 @@
-// sentry.client.config.ts
+// instrumentation-client.ts
 import * as Sentry from "@sentry/nextjs";
 
 Sentry.init({
@@ -19,3 +19,5 @@ Sentry.init({
     return event;
   },
 });
+
+export const onRouterTransitionStart = Sentry.captureRouterTransitionStart;

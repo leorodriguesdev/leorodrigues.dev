@@ -1,7 +1,9 @@
+import * as Sentry from '@sentry/nextjs';
+import { captureRequestError } from '@sentry/nextjs';
+
 export async function register() {
   if (process.env.NEXT_RUNTIME === 'nodejs') {
-    const { init } = await import('@sentry/nextjs');
-    init({
+    Sentry.init({
       dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
       tracesSampleRate: 1.0,
       environment: process.env.NODE_ENV,
@@ -10,8 +12,7 @@ export async function register() {
   }
 
   if (process.env.NEXT_RUNTIME === 'edge') {
-    const { init } = await import('@sentry/nextjs');
-    init({
+    Sentry.init({
       dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
       tracesSampleRate: 1.0,
       environment: process.env.NODE_ENV,
@@ -20,3 +21,29 @@ export async function register() {
   }
 }
 
+export async function onRequestError(
+  err: Error,
+  request: {
+    path: string;
+    method: string;
+    headers: Record<string, string>;
+  },
+  context: {
+    routerKind: string;
+    routePath: string;
+  }
+) {
+  captureRequestError(
+    err,
+    {
+      path: request.path,
+      method: request.method,
+      headers: request.headers,
+    },
+    {
+      routerKind: context.routerKind,
+      routePath: context.routePath,
+      routeType: 'app',
+    }
+  );
+}
