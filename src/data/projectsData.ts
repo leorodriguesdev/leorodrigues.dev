@@ -1129,9 +1129,7 @@ export const projectsData: Project[] = [
       "Projeto desenvolvido para cliente real",
     ],
     date: "2024-12-20",
-    links: {
-      playStore: "https://play.google.com/store/apps/details?id=com.stv.mobile.elo",
-    },
+    links: {},
     status: "Em produção",
   },
 ];
