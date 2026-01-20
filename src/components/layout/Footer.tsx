@@ -117,7 +117,7 @@ const Footer = () => {
         <div className="pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-muted-foreground text-center md:text-left">
-              © {new Date().getFullYear()} LeoRodrigues.dev - Todos os direitos reservados | Desenvolvido com React & Next.js
+              © {new Date().getFullYear()} Leorodrigues.dev  - Todos os direitos reservados | Desenvolvido com React & Next.js
             </p>
             {pathname === "/" && (
               <button

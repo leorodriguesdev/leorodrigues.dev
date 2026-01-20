@@ -1,4 +1,4 @@
-# ✅ Checklist de Produção - LeoRodrigues.dev
+# ✅ Checklist de Produção - Leorodrigues.dev 
 
 ## 📋 Configurações Necessárias na Vercel
 

@@ -12,7 +12,7 @@ export function StructuredData({ type, data }: StructuredDataProps) {
     const script = document.createElement("script");
     script.type = "application/ld+json";
     script.id = `structured-data-${type}`;
-    
+
     let structuredData = {};
 
     if (type === "Person") {
@@ -51,7 +51,7 @@ export function StructuredData({ type, data }: StructuredDataProps) {
       structuredData = {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        name: "LeoRodrigues.dev",
+        name: "Leorodrigues.dev ",
         url: "https://leorodrigues.dev",
         description: "Portfolio profissional de Léo Rodrigues - Desenvolvedor Mobile e Full Stack especializado em React Native, Expo, Next.js e TypeScript",
         author: {
@@ -146,13 +146,13 @@ export function StructuredData({ type, data }: StructuredDataProps) {
     }
 
     script.text = JSON.stringify(structuredData);
-    
+
     // Remove existing script if present
     const existing = document.getElementById(`structured-data-${type}`);
     if (existing) {
       existing.remove();
     }
-    
+
     document.head.appendChild(script);
 
     return () => {

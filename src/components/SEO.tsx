@@ -29,13 +29,13 @@ export function SEO({
     const updateMetaTag = (property: string, content: string, isProperty = false) => {
       const attribute = isProperty ? "property" : "name";
       let element = document.querySelector(`meta[${attribute}="${property}"]`) as HTMLMetaElement;
-      
+
       if (!element) {
         element = document.createElement("meta");
         element.setAttribute(attribute, property);
         document.head.appendChild(element);
       }
-      
+
       element.setAttribute("content", content);
     };
 
@@ -51,7 +51,7 @@ export function SEO({
     updateMetaTag("og:type", type, true);
     updateMetaTag("og:url", url, true);
     updateMetaTag("og:image", image, true);
-    updateMetaTag("og:site_name", "LeoRodrigues.dev", true);
+    updateMetaTag("og:site_name", "Leorodrigues.dev ", true);
     updateMetaTag("og:locale", "pt_BR", true);
 
     // Twitter Card tags
