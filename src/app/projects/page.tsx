@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'motion/react';
-import { Code2, ExternalLink, Github, Calendar } from 'lucide-react';
+import { Code2, ExternalLink, Github, Calendar, ChevronDown, X } from 'lucide-react';
 
 import { projectsData } from '@/data/projectsData';
 import Navbar from '@/components/layout/Navbar';
@@ -18,11 +18,24 @@ type FilterOption = 'all' | 'website' | 'mobile' | 'api';
 export default function AllProjectsPage() {
   const [filter, setFilter] = useState<FilterOption>('all');
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
+  const [showAllTechTags, setShowAllTechTags] = useState(false);
 
-  // Get all unique tech stack tags
-  const allTechTags = Array.from(
-    new Set(projectsData.flatMap(p => p.techStack))
-  ).sort();
+  // Get all unique tech stack tags with usage count
+  const techTagsWithCount = useMemo(() => {
+    const tagCount: Record<string, number> = {};
+    projectsData.forEach(p => {
+      p.techStack.forEach(tag => {
+        tagCount[tag] = (tagCount[tag] || 0) + 1;
+      });
+    });
+    return Object.entries(tagCount)
+      .map(([tag, count]) => ({ tag, count }))
+      .sort((a, b) => b.count - a.count);
+  }, []);
+
+  // Most used tags (top 8)
+  const popularTags = techTagsWithCount.slice(0, 8).map(t => t.tag);
+  const allTechTags = techTagsWithCount.map(t => t.tag);
 
   // Filter projects by type and tag
   const filtered = projectsData
@@ -108,33 +121,127 @@ export default function AllProjectsPage() {
               transition={{ delay: 0.2 }}
               className="mb-12"
             >
-              <div className="flex flex-wrap gap-3 justify-center">
-                <button
-                  onClick={() => setSelectedTag(null)}
-                  className={`px-4 py-2 rounded-lg transition-colors text-sm ${
-                    selectedTag === null
-                      ? "bg-primary text-primary-foreground"
-                      : "bg-secondary border border-border hover:border-primary"
-                  }`}
-                >
-                  Todas as Tecnologias
-                </button>
-                {allTechTags.map((tag) => (
-                  <button
-                    key={tag}
-                    onClick={() => setSelectedTag(tag)}
-                    className={`px-4 py-2 rounded-lg transition-colors text-sm ${
-                      selectedTag === tag
-                        ? "bg-primary text-primary-foreground"
-                        : "bg-secondary border border-border hover:border-primary"
-                    }`}
-              >
-                    {tag}
-              </button>
-            ))}
+              <div className="space-y-4">
+                {/* Mobile: Select dropdown */}
+                <div className="md:hidden">
+                  <label className="block text-sm font-medium mb-2 text-muted-foreground">
+                    Filtrar por Tecnologia
+                  </label>
+                  <div className="relative">
+                    <select
+                      value={selectedTag || ''}
+                      onChange={(e) => setSelectedTag(e.target.value || null)}
+                      className="w-full px-4 py-2.5 bg-card border border-border rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm cursor-pointer"
+                    >
+                      <option value="">Todas as Tecnologias</option>
+                      {allTechTags.map((tag) => (
+                        <option key={tag} value={tag}>
+                          {tag}
+                        </option>
+                      ))}
+                    </select>
+                    <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-muted-foreground" size={20} />
+                  </div>
+                </div>
+
+                {/* Desktop: Compact view with popular tags */}
+                <div className="hidden md:block">
+                  <div className="flex flex-wrap items-center gap-3">
+                    <button
+                      onClick={() => setSelectedTag(null)}
+                      className={`px-4 py-2 rounded-lg transition-colors text-sm ${
+                        selectedTag === null
+                          ? "bg-primary text-primary-foreground"
+                          : "bg-secondary border border-border hover:border-primary"
+                      }`}
+                    >
+                      Todas
+                    </button>
+                    {popularTags.map((tag) => (
+                      <button
+                        key={tag}
+                        onClick={() => setSelectedTag(tag)}
+                        className={`px-4 py-2 rounded-lg transition-colors text-sm ${
+                          selectedTag === tag
+                            ? "bg-primary text-primary-foreground"
+                            : "bg-secondary border border-border hover:border-primary"
+                        }`}
+                      >
+                        {tag}
+                      </button>
+                    ))}
+                    {!showAllTechTags && allTechTags.length > popularTags.length && (
+                      <button
+                        onClick={() => setShowAllTechTags(true)}
+                        className="px-4 py-2 rounded-lg bg-secondary border border-border hover:border-primary transition-colors text-sm text-muted-foreground"
+                      >
+                        +{allTechTags.length - popularTags.length} mais
+                      </button>
+                    )}
+                  </div>
+
+                  {/* Expanded view with all tags */}
+                  {showAllTechTags && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="mt-4 pt-4 border-t border-border"
+                    >
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-sm font-medium text-foreground">Todas as tecnologias</span>
+                        <button
+                          onClick={() => setShowAllTechTags(false)}
+                          className="px-3 py-1.5 rounded-lg bg-secondary border border-border hover:border-primary hover:bg-secondary/80 transition-all flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground group"
+                        >
+                          <X size={16} className="group-hover:rotate-90 transition-transform duration-200" />
+                          Fechar
+                        </button>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {allTechTags
+                          .filter(tag => !popularTags.includes(tag))
+                          .map((tag) => (
+                            <button
+                              key={tag}
+                              onClick={() => setSelectedTag(tag)}
+                              className={`px-3 py-1.5 rounded-lg transition-colors text-xs ${
+                                selectedTag === tag
+                                  ? "bg-primary text-primary-foreground"
+                                  : "bg-secondary border border-border hover:border-primary"
+                              }`}
+                            >
+                              {tag}
+                            </button>
+                          ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </div>
+
+                {/* Selected tag indicator */}
+                {selectedTag && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="flex items-center gap-2 text-sm"
+                  >
+                    <span className="text-muted-foreground">Filtrado por:</span>
+                    <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-lg font-medium border border-primary/20">
+                      {selectedTag}
+                    </span>
+                    <button
+                      onClick={() => setSelectedTag(null)}
+                      className="p-1.5 rounded-lg hover:bg-secondary border border-transparent hover:border-border transition-all text-muted-foreground hover:text-foreground group"
+                      aria-label="Remover filtro"
+                    >
+                      <X size={16} className="group-hover:rotate-90 transition-transform duration-200" />
+                    </button>
+                  </motion.div>
+                )}
               </div>
-          </motion.div>
-        )}
+            </motion.div>
+          )}
 
           {/* Projects Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
