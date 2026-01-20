@@ -6,6 +6,7 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import { ArrowRight, Code2 } from "lucide-react";
 import { projectsData } from "@/data/projectsData";
+import { SafeImage } from "@/components/SafeImage";
 
 const Projects = () => {
   const projects = projectsData.slice(-3).reverse();
@@ -56,6 +57,18 @@ const Projects = () => {
                         />
                       ) : (
                         <Code2 className="text-primary/40" size={48} />
+                      )}
+                      {project.companyLogo && project.companyLogo.trim() !== "" && (
+                        <div className="absolute top-3 right-3 z-10 bg-background/90 backdrop-blur-sm p-2 rounded-lg border border-border/50">
+                          <SafeImage
+                            src={project.companyLogo}
+                            alt={`${project.title} logo`}
+                            width={40}
+                            height={40}
+                            className="object-contain"
+                            unoptimized={project.companyLogo.endsWith('.svg')}
+                          />
+                        </div>
                       )}
                     </div>
                     <div className="p-6 space-y-4">

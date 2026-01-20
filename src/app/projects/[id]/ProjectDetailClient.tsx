@@ -10,6 +10,7 @@ import { Project, projectsData } from '@/data/projectsData';
 import Link from 'next/link';
 import { SEO } from '@/components/SEO';
 import { useAnalytics } from '@/hooks/useAnalytics';
+import { SafeImage } from '@/components/SafeImage';
 
 export default function ProjectDetailClient({ 
   project, 
@@ -25,9 +26,10 @@ export default function ProjectDetailClient({
     trackProjectView(project.title);
   }, [project.title, trackProjectView]);
 
-  // Get other projects for suggestions
+  // Get other projects for suggestions (2 most recent by ID, excluding current)
   const otherProjects = projectsData
     .filter(p => p.id !== project.id)
+    .sort((a, b) => b.id - a.id)
     .slice(0, 2);
 
   return (
@@ -65,9 +67,23 @@ export default function ProjectDetailClient({
           >
             <div className="flex items-start justify-between gap-4 flex-col md:flex-row">
               <div className="flex-1 space-y-4">
-                <h1 className="text-3xl md:text-4xl tracking-tight">
-            {displayTitle}
-                </h1>
+                <div className="flex items-center gap-4">
+                  {project.companyLogo && project.companyLogo.trim() !== "" && (
+                    <div className="flex-shrink-0">
+                      <SafeImage
+                        src={project.companyLogo}
+                        alt={`${project.title} logo`}
+                        width={60}
+                        height={60}
+                        className="object-contain rounded-lg border border-border p-2 bg-card"
+                        unoptimized={project.companyLogo.endsWith('.svg')}
+                      />
+                    </div>
+                  )}
+                  <h1 className="text-3xl md:text-4xl tracking-tight">
+                    {displayTitle}
+                  </h1>
+                </div>
                 <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
                   <span className="flex items-center gap-2">
                     <Calendar size={16} />

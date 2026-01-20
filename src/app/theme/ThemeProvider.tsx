@@ -74,7 +74,7 @@ export default function ThemeProvider({ children }: ThemeProviderProps) {
 
   const LoadingScreen = () => {
     const [displayText, setDisplayText] = useState("");
-    const fullText = "LeoRodrigues.dev";
+    const fullText = "Leorodrigues.dev ";
     const firstPart = "Leo";
     const secondPart = "Rodrigues";
     const firstPartEnd = firstPart.length;
@@ -96,10 +96,10 @@ export default function ThemeProvider({ children }: ThemeProviderProps) {
 
     const renderText = () => {
       const length = displayText.length;
-      const cursorColor = 
+      const cursorColor =
         length <= firstPartEnd ? "var(--primary-color)" :
-        length <= secondPartEnd ? "var(--text-color)" :
-        "var(--primary-color)";
+          length <= secondPartEnd ? "var(--text-color)" :
+            "var(--primary-color)";
 
       return (
         <>
@@ -109,21 +109,21 @@ export default function ThemeProvider({ children }: ThemeProviderProps) {
               {displayText.substring(0, Math.min(length, firstPartEnd))}
             </span>
           )}
-          
+
           {/* Segunda parte: Rodrigues */}
           {length > firstPartEnd && (
             <span style={{ color: "var(--text-color)" }}>
               {displayText.substring(firstPartEnd, Math.min(length, secondPartEnd))}
             </span>
           )}
-          
+
           {/* Terceira parte: .dev */}
           {length > secondPartEnd && (
             <span style={{ color: "var(--primary-color)" }}>
               {displayText.substring(secondPartEnd)}
             </span>
           )}
-          
+
           {/* Cursor */}
           <span style={{ color: cursorColor }}>|</span>
         </>
@@ -189,10 +189,9 @@ export default function ThemeProvider({ children }: ThemeProviderProps) {
                       className={`
                         flex items-center text-xs p-1 w-full
                         rounded-lg transition-colors
-                        ${
-                          theme === themeOption.id
-                            ? "bg-[--primary-color] text-white border-2 hover:bg-[--primary-color]"
-                            : "bg-[--bg-color] text-[--text-color] hover:bg-[--secondary-color] hover:text-white border-2"
+                        ${theme === themeOption.id
+                          ? "bg-[--primary-color] text-white border-2 hover:bg-[--primary-color]"
+                          : "bg-[--bg-color] text-[--text-color] hover:bg-[--secondary-color] hover:text-white border-2"
                         }
                       `}
                     >
