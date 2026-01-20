@@ -58,7 +58,7 @@ export function SafeImage({
         unoptimized={unoptimized || src.endsWith('.svg')}
       />
     );
-  } catch (error) {
+  } catch {
     return (
       <div className="flex items-center justify-center w-full h-full">
         <Code2 className="text-primary/40" size={48} />
