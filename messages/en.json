@@ -1,0 +1,1014 @@
+{
+  "metadata": {
+    "rootTitle": "Software Engineer | Léo Rodrigues - Mobile, Web, APIs & Data",
+    "titleTemplate": "%s | Léo Rodrigues",
+    "rootDescription": "Software engineer with 7+ years across apps, web, APIs and databases. React Native, Expo, Next.js, Node.js and TypeScript. Available for projects.",
+    "ogDescription": "Software engineer: mobile, web, backend and data. React Native, Expo, Next.js and Node.js. 7+ years of experience.",
+    "twitterTitle": "Software Engineer | Léo Rodrigues",
+    "twitterDescription": "Mobile, web, APIs and databases. React Native, Expo, Next.js and Node.js. 7+ years of experience.",
+    "siteName": "Leorodrigues.dev",
+    "authorName": "Léo Rodrigues",
+    "ogImageAlt": "Léo Rodrigues - Software Engineer",
+    "rootKeywords": [
+      "software engineer",
+      "react native developer",
+      "mobile developer",
+      "expo developer",
+      "hire react native developer",
+      "full stack developer",
+      "next.js developer",
+      "typescript developer",
+      "React",
+      "React Native",
+      "Expo",
+      "Next.js",
+      "Node.js",
+      "TypeScript",
+      "JavaScript",
+      "portfolio developer",
+      "mobile development",
+      "web development",
+      "leorodrigues.dev",
+      "Léo Rodrigues",
+      "leo rodrigues"
+    ],
+    "homeTitle": "Websites & Apps | Professional Development | Léo Rodrigues",
+    "homeDescription": "Websites, mobile apps, APIs and systems with databases. Software engineer with React Native, Expo, Next.js and Node.js. Free quote. 7+ years of experience.",
+    "homeKeywords": "software engineer, full stack developer, build website, mobile app development, React Native developer, Next.js developer, Node.js developer, API, database",
+    "aboutTitle": "About Me | Software Engineer | Léo Rodrigues",
+    "aboutDescription": "Meet Léo Rodrigues, Software Engineer with 7+ years across mobile, web, APIs and databases. React Native, Expo, React, Next.js, TypeScript and Node.js.",
+    "aboutKeywords": "software engineer, full stack developer, developer profile, mobile and web experience",
+    "projectsListTitle": "Projects | Mobile Apps & Websites Built | Léo Rodrigues",
+    "projectsListDescription": "Léo Rodrigues portfolio: apps, web, APIs and data. React Native, Next.js, Node.js and more. Software engineering case studies.",
+    "projectsListKeywords": "software engineer portfolio, React Native projects, mobile projects, Next.js projects, full stack",
+    "servicesTitle": "Development Services | Build Website & Mobile App | Léo Rodrigues",
+    "servicesDescription": "Software engineering: apps, websites, APIs and database integration. React Native, Next.js, Node.js. Free quote. 7+ years of experience.",
+    "servicesKeywords": "hire software engineer, full stack development, mobile app, website, API, database, React Native, Next.js",
+    "searchConsoleTitle": "Google Search Console Status",
+    "searchConsoleDescription": "Status and configuration checks for Google Search Console on leorodrigues.dev",
+    "projectNotFoundTitle": "Project not found",
+    "projectMetaSuffix": "Developed by Léo Rodrigues",
+    "projectTypeMobile": "React Native Mobile App",
+    "projectTypeApi": "Backend System",
+    "projectTypeWebsite": "Next.js Site",
+    "projectMetaDescriptionDev": "Built with {tech}. See more {context} projects.",
+    "projectMetaContextMobile": "mobile development",
+    "projectMetaContextWeb": "web development",
+    "projectDetailSeoSuffix": "Léo Rodrigues Portfolio",
+    "seoDefaultTitle": "Léo Rodrigues - Software Engineer | Mobile, Web & Backend",
+    "seoDefaultDescription": "Software engineer with React, Next.js and TypeScript. Mobile, web, APIs and databases. Available for projects and opportunities.",
+    "seoDefaultKeywords": "software engineer, full stack developer, React, Next.js, TypeScript, mobile, backend, developer portfolio"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact",
+    "services": "Services",
+    "toggleMenu": "Open menu"
+  },
+  "languageSwitcher": {
+    "aria": "Select language",
+    "locales": {
+      "pt": "Portuguese",
+      "en": "English",
+      "es": "Spanish"
+    }
+  },
+  "footer": {
+    "tagline": "Software engineer building mobile, web, APIs and data layers with a focus on quality and performance.",
+    "quickLinks": "Quick links",
+    "servicesTitle": "Services",
+    "serviceWeb": "Web development",
+    "serviceConsulting": "Technical consulting",
+    "serviceUiux": "UI/UX design",
+    "serviceSeo": "SEO optimization",
+    "social": "Social",
+    "rights": "© {year} Leorodrigues.dev - All rights reserved | Built with React & Next.js",
+    "switchToPortfolio": "View portfolio version",
+    "switchToCommercial": "View business version"
+  },
+  "visitorIntent": {
+    "title": "Hi! How can I help?",
+    "subtitle": "Choose the option that best describes what you need",
+    "footerNote": "You can change this choice anytime",
+    "close": "Close",
+    "portfolioTitle": "Portfólio",
+    "portfolioSubtitle": "Software engineer for your technical team",
+    "portfolioDescription": "I'm looking for a developer to join my team or project",
+    "portfolioCta": "View portfolio",
+    "commercialTitle": "Comercial",
+    "commercialSubtitle": "Apps and websites for your business",
+    "commercialDescription": "I want to build a website or app for my business",
+    "commercialCta": "View services",
+    "badgePopular": "Most popular"
+  },
+  "projectsList": {
+    "title": "My",
+    "titleAccent": "Projects",
+    "subtitle": "A collection of projects I've built—from full web apps to experiments with new tech.",
+    "filterAll": "All",
+    "filterWebsites": "Websites",
+    "filterApi": "API",
+    "filterApps": "Apps",
+    "filterTechLabel": "Filter by technology",
+    "allTech": "All technologies",
+    "allTags": "All",
+    "moreTags": "+{count} more",
+    "close": "Fechar",
+    "allTechDesktop": "All technologies",
+    "filteredBy": "Filtered by:",
+    "removeFilterAria": "Remove filter",
+    "typeWebsite": "Website",
+    "typeApi": "System / API",
+    "typeMobile": "App / Mobile",
+    "viewDetails": "View details",
+    "empty": "No projects found with that technology."
+  },
+  "projectDetail": {
+    "back": "Back to projects",
+    "visitSite": "Visit website",
+    "playStore": "Play Store",
+    "appStore": "App Store",
+    "description": "Description",
+    "highlights": "Highlights",
+    "techStack": "Tech Stack",
+    "otherProjects": "Other projects"
+  },
+  "gallery": {
+    "imageAlt": "{title} image {index}",
+    "hint": "Click any image to view fullscreen • {count, plural, one {# image available} other {# images available}}"
+  },
+  "about": {
+    "avatarAlt": "Leonardo Rodrigues",
+    "heroTitle": "Software engineer with",
+    "heroAccent": "7+ years of experience",
+    "heroSubtitle": "Mobile, web, APIs and databases with React Native, Expo, Next.js, Node.js and TypeScript. Modern, secure and scalable solutions.",
+    "contactBtn": "Contact",
+    "bioP1": "Hello! My name is <strong>Leonardo Rodrigues</strong> and I'm a full stack developer passionate about turning ideas into robust, efficient digital solutions. With <span>over 7 years of experience</span>, I focus on web and mobile development using modern technologies to deliver high-quality products.",
+    "bioP2": "My journey includes companies such as <span>IBM, Banco do Brasil, Banco Sicredi and Sistema FIERGS</span>; I currently contribute to <span>Raiô Benefícios</span> and <span>STV Segurança</span>, participating in the <span>full project lifecycle</span>—from ideation and prototyping to deployment and maintenance. That 360° view helps me deliver complete, effective solutions.",
+    "bioP3": "I'm driven by solving <strong>complex problems</strong> and growing my <strong>skills</strong>. Software is more than code—it's understanding the <strong>user</strong> and building <strong>intuitive, impactful solutions</strong>. I'm always open to new <strong>challenges</strong> and to contributing my expertise to <strong>innovative projects</strong> and collaborative teams.",
+    "quote": "\"The more I study, the more insatiable my mind becomes on the subject.\"",
+    "quoteAuthor": "Ada Lovelace - Mathematician, writer, and author of the first computer algorithm."
+  },
+  "stats": {
+    "repos": "GitHub repositories",
+    "lines": "Lines of code",
+    "stars": "GitHub stars",
+    "followers": "GitHub followers",
+    "years": "Years of experience",
+    "completed": "Projects delivered",
+    "satisfaction": "Satisfaction rate"
+  },
+  "testimonials": {
+    "title": "What",
+    "titleAccent": "Clients say",
+    "subtitle": "Feedback from clients and partners who trusted my work",
+    "roleAt": "{role} at {company}"
+  },
+  "contact": {
+    "badge": "Available for new projects",
+    "title": "Ready to turn",
+    "titleAccent": "your idea into reality?",
+    "subtitle": "Let's build something great together. Get in touch to discuss your next project and a free consultation.",
+    "whatsapp": "WhatsApp"
+  },
+  "skills": {
+    "title": "Skills & technologies",
+    "subtitle": "Tools I use to turn ideas into high-quality projects.",
+    "expertise": "Expertise",
+    "reactDesc": "Build interactive, high-performance sites and systems with a great user experience.",
+    "nextDesc": "Extends React for fast, secure pages—ideal for business sites that need performance and SEO.",
+    "rnDesc": "Create Android/iOS apps sharing React knowledge—faster launches for your business.",
+    "expoDesc": "Streamlined mobile development without heavy configuration—faster releases and updates.",
+    "jsDesc": "The core language for interactivity—dynamic, engaging interfaces.",
+    "nodeDesc": "Robust servers and APIs that handle many users without slowing down.",
+    "tsDesc": "A structured take on JavaScript—fewer bugs as your project grows.",
+    "tailwindDesc": "Utility-first styling for attractive, responsive layouts on any screen."
+  },
+  "experience": {
+    "title": "Work experience",
+    "subtitle": "A journey of challenges and learning, always evolving in tech.",
+    "achievements": "Highlights:",
+    "showMore": "Show more experience",
+    "showLess": "Show less"
+  },
+  "education": {
+    "title": "Education & certifications",
+    "subtitle": "Academic background and certifications that strengthen my skills in technology.",
+    "showMore": "Show more education",
+    "showLess": "Show less"
+  },
+  "portfolioHome": {
+    "badge": "Open to opportunities",
+    "heroTitle": "Software",
+    "heroAccent": "Engineer",
+    "heroTitleEnd": "",
+    "heroSubtitle": "7+ years across apps, web, backend and databases. Stack: React Native, Expo, Next.js, Node.js and TypeScript. Ready to join your team and ship quality work.",
+    "ctaPortfolio": "View full portfolio",
+    "ctaAbout": "About me",
+    "whyTitle": "Why choose",
+    "whyAccent": "my work?",
+    "whySubtitle": "Commitment to excellence, innovation and measurable results",
+    "cardQualityTitle": "Quality code",
+    "cardQualityDesc": "Clean, maintainable, well-documented code following industry best practices. TypeScript and automated tests by default.",
+    "cardPerfTitle": "Optimized performance",
+    "cardPerfDesc": "Fast apps with strong Core Web Vitals, SEO and accessibility—built to rank well on Google.",
+    "cardCommTitle": "Clear communication",
+    "cardCommDesc": "Frequent updates, steady feedback and full transparency throughout development."
+  },
+  "projectsSection": {
+    "title": "Featured",
+    "titleAccent": "projects",
+    "subtitle": "Some of the projects I've built recently",
+    "viewAll": "View all projects"
+  },
+  "commercialHome": {
+    "badge": "Free quote",
+    "heroLine1": "Build your",
+    "heroAccent": "website or app",
+    "heroLine2": "like a pro",
+    "heroSubtitle": "Modern websites and mobile apps that grow your business. Google-ready sites, iOS and Android apps.",
+    "heroSubtitleAccent": "Request your free quote.",
+    "ctaQuote": "Request a free quote",
+    "ctaServices": "Services & pricing",
+    "whatsappAria": "WhatsApp",
+    "whatIDevTitle": "What I",
+    "whatIDevAccent": "build",
+    "whatIDevSubtitle": "End-to-end solutions for your digital presence",
+    "institutionalTitle": "Corporate websites",
+    "institutionalDesc": "Professional, responsive, Google-optimized sites—ideal for companies going online.",
+    "institutionalB1": "Design moderno e responsivo",
+    "institutionalB2": "SEO otimizado",
+    "institutionalB3": "Contact form",
+    "institutionalB4": "Social media integration",
+    "mobileTitle": "Mobile apps",
+    "mobileDesc": "Native iOS/Android apps—stay in your customers' pockets.",
+    "mobileB1": "App para iOS e Android",
+    "mobileB2": "Store publishing",
+    "mobileB3": "Integração com APIs",
+    "mobileB4": "Support & maintenance",
+    "systemsTitle": "Web systems",
+    "systemsDesc": "Full systems, e-commerce, dashboards—tailored to your business.",
+    "systemsB1": "Custom system",
+    "systemsB2": "Admin panel",
+    "systemsB3": "Payment integrations",
+    "systemsB4": "API & database",
+    "viewDetails": "View details",
+    "popularBadge": "Mais Popular",
+    "howTitle": "Como",
+    "howAccent": "Funciona",
+    "howSubtitle": "Simple, transparent process from kickoff to launch",
+    "step1Title": "Contato",
+    "step1Desc": "You reach out and describe your needs",
+    "step2Title": "Proposal",
+    "step2Desc": "I send a detailed proposal with timeline and investment",
+    "step3Title": "Development",
+    "step3Desc": "I build your project with regular updates",
+    "step4Title": "Delivery",
+    "step4Desc": "Your site or app goes live with training",
+    "investTitle": "Investment",
+    "investAccent": "tailored to you",
+    "investSubtitle": "Every project is unique—investment depends on your needs. Request a custom quote with no obligation.",
+    "budgetTitle": "Custom quotes",
+    "budgetDesc": "No one-size-fits-all packages. Each project is analyzed individually—scope, timeline and goals drive a fair, transparent investment aligned with value delivered.",
+    "featAnalysisTitle": "Detailed analysis",
+    "featAnalysisDesc": "We review your full project before defining investment",
+    "featTransparencyTitle": "Full transparency",
+    "featTransparencyDesc": "Clear scope, timelines and pricing in the proposal",
+    "featNoCommitTitle": "No commitment",
+    "featNoCommitDesc": "Free quote—no obligation to hire",
+    "featFairTitle": "Fair value",
+    "featFairDesc": "Investment matches complexity and delivered value",
+    "ctaCustomQuote": "Request a custom quote",
+    "guarantee1Title": "Free quote",
+    "guarantee1Sub": "No commitment",
+    "guarantee2Title": "3 months support",
+    "guarantee2Sub": "Included on delivery",
+    "guarantee3Title": "Documented code",
+    "guarantee3Sub": "Easier maintenance"
+  },
+  "servicesPage": {
+    "structuredName": "Mobile & web development services",
+    "structuredServiceTypes": [
+      "Mobile development",
+      "Web development",
+      "Full stack development"
+    ],
+    "heroTitle": "Development",
+    "heroAccent": "services",
+    "heroSubtitle": "Mobile, web and full stack development—apps, sites and systems that drive results.",
+    "includes": "Includes:",
+    "requestQuote": "Request a quote",
+    "whyTitle": "Why choose",
+    "whyAccent": "my services?",
+    "whyModernTitle": "Tecnologias Modernas",
+    "whyModernDesc": "Uso das tecnologias mais atuais e eficientes do mercado: React Native, Expo, Next.js, TypeScript e Node.js.",
+    "whyExpTitle": "7+ years of experience",
+    "whyExpDesc": "7+ years building apps and sites for companies like IBM, Banco do Brasil and Banco Sicredi.",
+    "whyQualityTitle": "Código de Qualidade",
+    "whyQualityDesc": "Código limpo, bem documentado e seguindo as melhores práticas da indústria. TypeScript e testes são padrão.",
+    "whyFastTitle": "Fast delivery",
+    "whyFastDesc": "Agile workflow, steady communication and on-time releases—your project live sooner.",
+    "ctaReadyTitle": "Ready to",
+    "ctaReadyAccent": "start your project?",
+    "ctaReadySubtitle": "Get in touch and let's discuss how I can turn your idea into reality.",
+    "ctaContact": "Contact me",
+    "ctaProjects": "View projects"
+  },
+  "servicesCards": {
+    "mobileTitle": "Mobile development",
+    "mobileDesc": "Native iOS/Android apps with React Native and Expo—performant, scalable and with great UX.",
+    "mobileF1": "Apps nativos iOS e Android",
+    "mobileF2": "React Native e Expo",
+    "mobileF3": "Integração com APIs",
+    "mobileF4": "Publicação nas lojas",
+    "mobileF5": "Manutenção e suporte",
+    "mobileF6": "Performance otimizada",
+    "webTitle": "Web development",
+    "webDesc": "Modern sites and apps with Next.js, React and TypeScript—performance, SEO and quality UX.",
+    "webF1": "Sites responsivos",
+    "webF2": "Aplicações web modernas",
+    "webF3": "SEO otimizado",
+    "webF4": "Performance otimizada",
+    "webF5": "PWA (Progressive Web Apps)",
+    "webF6": "Integração com APIs",
+    "fullTitle": "Full stack development",
+    "fullDesc": "End-to-end solutions—REST APIs, databases, auth and integrations. Scalable, robust systems.",
+    "fullF1": "APIs RESTful",
+    "fullF2": "Backend Node.js",
+    "fullF3": "Bancos de dados",
+    "fullF4": "Autenticação e segurança",
+    "fullF5": "Integrações de terceiros",
+    "fullF6": "Arquitetura escalável"
+  },
+  "searchConsole": {
+    "fetchError": "Failed to fetch status",
+    "unknownError": "Unknown error",
+    "pageTitle": "Google Search Console status",
+    "pageSubtitle": "Page accessibility checks and Search Console setup",
+    "statusChecking": "Checking...",
+    "statusOk": "Accessible",
+    "statusFail": "Not accessible",
+    "overallOk": "All good",
+    "overallWarn": "Attention needed",
+    "statusLabel": "Status:",
+    "lastCheck": "Last check:",
+    "pageChecks": "Page checks",
+    "nextSteps": "Next steps",
+    "usefulLinks": "Useful links",
+    "linkGscTitle": "Google Search Console",
+    "linkGscDesc": "Open dashboard",
+    "linkSitemapTitle": "Sitemap",
+    "linkSitemapDesc": "View sitemap.xml",
+    "linkRobotsTitle": "Robots.txt",
+    "linkRobotsDesc": "View robots.txt",
+    "linkGuideTitle": "Full guide",
+    "linkGuideDesc": "View documentation"
+  },
+  "globalError": {
+    "title": "Something went wrong",
+    "description": "An unexpected error occurred. Our team has been notified.",
+    "retry": "Try again"
+  },
+  "breadcrumbs": {
+    "navAria": "Breadcrumb",
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "services": "Services",
+    "search-console": "Search Console"
+  },
+  "api": {
+    "contactSuccess": "Email sent successfully!",
+    "contactError": "Failed to send email.",
+    "searchAllOk": "✅ All pages are accessible. Ready to submit the sitemap in Google Search Console.",
+    "searchSomeFail": "⚠️ Some pages are not accessible. Please verify before submitting the sitemap.",
+    "searchRec2": "📋 Open https://search.google.com/search-console and add the property https://leorodrigues.dev",
+    "searchRec3": "🗺️ Submit the sitemap: sitemap.xml",
+    "searchRec4": "🔍 Request indexing for main pages manually"
+  },
+  "theme": {
+    "openSelector": "Open theme selector",
+    "selectTheme": "Choose theme"
+  },
+  "structuredData": {
+    "websiteName": "Leorodrigues.dev",
+    "personJobTitle": "Software Engineer",
+    "personDescription": "Software engineer with experience across mobile, web, APIs and databases. React Native, Expo, Next.js, Node.js and TypeScript. Modern, fast and scalable products.",
+    "websiteDescription": "Professional portfolio of Léo Rodrigues—Software engineer (mobile, web, backend and data) with React Native, Expo, Next.js and TypeScript",
+    "professionalServiceName": "Full stack development",
+    "serviceWeb": "Web development",
+    "serviceMobile": "Mobile development",
+    "serviceFull": "Full stack development",
+    "serviceConsulting": "Development consulting",
+    "localBusinessName": "Léo Rodrigues - Software Engineer",
+    "localBusinessDescription": "Software engineer: apps, websites, APIs and database integration. React Native, Expo, Next.js, Node.js and TypeScript.",
+    "countryBrasil": "Brazil",
+    "servicesOfferedName": "Software development services"
+  },
+  "experienceItems": {
+    "e0": {
+      "title": "Founder & Developer - Leorodrigues.dev LTDA",
+      "duration": "2020 - Present",
+      "description": "Founder of a software development company serving direct clients with tailored mobile and web solutions. End-to-end delivery from concept through launch and ongoing maintenance.",
+      "achievements": [
+        "Project management",
+        "Full stack development",
+        "Client success",
+        "React Native",
+        "Kotlin",
+        "Swift",
+        "Node.js"
+      ]
+    },
+    "e1": {
+      "title": "Senior Software Engineer - Raiô Benefícios",
+      "duration": "Sep 2025 - Present · 5 months",
+      "description": "Senior full-stack engineer focused on scalability and performance of the Raiô corporate benefits app using React Native and Node.js.",
+      "achievements": [
+        "React Native",
+        "Kotlin",
+        "Swift",
+        "Node.js"
+      ]
+    },
+    "e2": {
+      "title": "Senior Mobile Developer - STV Segurança",
+      "duration": "May 2024 - Present · 1 year 9 months",
+      "description": "Freelance developer on an employee-facing corporate app that centralizes general and professional information with quick access.",
+      "achievements": [
+        "React Native",
+        "Kotlin",
+        "Swift"
+      ]
+    },
+    "e3": {
+      "title": "Mid-level Developer & Systems Analyst - Sistema FIERGS",
+      "duration": "Apr 2023 - Sep 2025 · 2 years 6 months",
+      "description": "Mid-level systems analyst and developer. Web and mobile delivery with React and React Native, plus maintenance of legacy systems.",
+      "achievements": [
+        "Test-driven development",
+        "JavaScript",
+        "React",
+        "React Native",
+        "Kotlin",
+        "Swift",
+        "21+ additional skills"
+      ]
+    },
+    "e4": {
+      "title": "Mobile Developer - IBM (Banco do Brasil)",
+      "duration": "Dec 2021 - Mar 2023 · 1 year 4 months",
+      "description": "Mobile development on the Banco do Brasil account with a focus on the investments app.",
+      "achievements": [
+        "Jest",
+        "Front-end development",
+        "1+ additional skill"
+      ]
+    },
+    "e5": {
+      "title": "QA Tester - Sicredi",
+      "duration": "Aug 2021 - Nov 2021 · 4 months",
+      "description": "QA on a Sicredi bank project for the user wallet system used by relationship managers. Worked with Kafka, PostgreSQL, RestAssured, and Salesforce.",
+      "achievements": [
+        "PostgreSQL",
+        "Salesforce",
+        "Test automation"
+      ]
+    },
+    "e6": {
+      "title": "Full Stack Developer - IBM",
+      "duration": "Mar 2021 - Aug 2021 · 6 months",
+      "description": "Full-stack development on IBM's internship management project using Angular, Java with Spring, and PostgreSQL.",
+      "achievements": [
+        "Front-end development",
+        "Java with Spring",
+        "PostgreSQL"
+      ]
+    },
+    "e7": {
+      "title": "Customer Support - Nitronnews Email Marketing",
+      "duration": "Jun 2020 - Mar 2021 · 10 months",
+      "description": "Technical support for Nitronnews customers across channels and production of technical content.",
+      "achievements": [
+        "Technical support",
+        "Documentation",
+        "Content production"
+      ]
+    }
+  },
+  "educationItems": {
+    "ed0": {
+      "title": "Postgraduate (Lato Sensu) - Specialization, Artificial Intelligence",
+      "institution": "UniRitter",
+      "year": "May 2025 - Jun 2026",
+      "description": "AI specialization covering machine learning; data engineering, preparation, and visualization; knowledge management and competitive intelligence; neural networks and deep learning; ML architectures in the cloud and at the edge; image analysis and computer vision; natural language processing; user experience and AI.",
+      "achievements": [
+        "Artificial intelligence",
+        "Machine learning",
+        "25+ additional skills"
+      ]
+    },
+    "ed1": {
+      "title": "Specialization in Software Development with React, React Native, and Node.js",
+      "institution": "Rocketseat",
+      "year": "2023",
+      "description": "Hands-on training to build modern, high-performance applications end to end. Front end: interactive, responsive interfaces with React. Mobile: React Native for a smooth native experience. Back end: Node.js for scalable, secure APIs—enabling complete, innovative solutions."
+    },
+    "ed2": {
+      "title": "Associate Degree, Systems Analysis and Development",
+      "institution": "Universidade Estácio de Sá",
+      "year": "2022",
+      "description": "Completed Systems Analysis and Development with advanced engineering concepts and a practical focus on React-based web applications—a solid base to design, build, and maintain efficient, robust systems aligned with market practice and innovation."
+    },
+    "ed3": {
+      "title": "Technical Course in Web Programming",
+      "institution": "IFRS - Federal Institute of Rio Grande do Sul",
+      "year": "2020",
+      "description": "Technical program in web programming: programming languages, databases, and information security fundamentals, plus visual media (images, video, animation) with HTML, CSS, and core web technologies for polished interfaces and high-quality experiences."
+    }
+  },
+  "testimonialItems": {
+    "t0": {
+      "name": "Adriano Machado",
+      "role": "CEO",
+      "company": "OnStart Tecnologia",
+      "content": "Léo is an exceptional professional. He delivered ahead of schedule and exceeded expectations. He put our company on Brazil's tech map."
+    },
+    "t1": {
+      "name": "Vivian Oliveira",
+      "role": "Scrum Master",
+      "company": "Serasa Experian",
+      "content": "Working with Léo has been amazing! Proactive, efficient, great communicator—he solves problems fast. Committed to results and people, always ready to help, listen and support. Always learning to grow even further."
+    },
+    "t2": {
+      "name": "Bianca Cabral",
+      "role": "UX Designer",
+      "company": "FIERGS",
+      "content": "If I had one word for working with Leonardo, it would be partnership. He has a sharp eye for product and business, takes design work seriously, respects feedback maturely and includes my input. Clear communication, aligned ideas and real collaboration—plus strong technical skills and a light, productive, outcome-focused environment."
+    }
+  },
+  "projects": {
+    "items": {
+      "1": {
+        "title": "Anna Bella - Institutional Website",
+        "description": "My very first project: a fictional institutional site to showcase a model’s portfolio. Built early in my career to practice HTML and CSS with multi-page navigation and a photo gallery.",
+        "highlights": [
+          "First project early in my career",
+          "Multi-page navigation",
+          "Simple image gallery with styled borders",
+          "Classic, elegant layout with plain CSS"
+        ],
+        "status": "Online"
+      },
+      "2": {
+        "title": "TecBlog - Technology Blog",
+        "description": "Hands-on project from the start of my career, built alongside parallel courses with my tech degree. TecBlog is a fictional tech blog using HTML and CSS to practice basic layout, typography, spacing, sticky header, and styling for links and posts.",
+        "highlights": [
+          "Early-career project to practice HTML and CSS",
+          "Clean layout with sticky header and side areas",
+          "Posts with date and image",
+          "Sidebar with recent posts and categories"
+        ],
+        "status": "Online"
+      },
+      "3": {
+        "title": "Simple Login Screen",
+        "description": "A minimal, responsive login screen using only HTML and CSS to practice positioning and styling with gradients and transparency.",
+        "highlights": [
+          "Fields with icons for email and password",
+          "Centered, responsive layout",
+          "Background gradient and transparent elements"
+        ],
+        "status": "Completed"
+      },
+      "4": {
+        "title": "Interactive Resume - Apresentation",
+        "description": "Project from my first bootcamp with Codaí, where I first used Bootstrap. The goal was a personal site for job applications after the bootcamp—an interactive online resume with dynamic content switching and social links.",
+        "highlights": [
+          "Interactive resume",
+          "Responsive",
+          "Dynamic content switching"
+        ],
+        "status": "Online"
+      },
+      "5": {
+        "title": "City News Portal",
+        "description": "One of the first portals I built during my early web studies. I learned to structure multi-page HTML/CSS sites as a fictional news portal with categories and an image gallery.",
+        "highlights": [
+          "Multi-page HTML structure",
+          "Portal layout with columns and menus"
+        ],
+        "status": "Completed"
+      },
+      "6": {
+        "title": "Chalé Hotel - Institutional Website",
+        "description": "Early HTML/CSS project from Jamilton Damasceno’s Udemy course. A fictional hotel institutional page with visuals, navigation, and a benefits list.",
+        "highlights": [
+          "Institutional layout with imagery",
+          "Navigation menu and benefits list"
+        ],
+        "status": "Completed"
+      },
+      "7": {
+        "title": "Parallax Effect with CSS",
+        "description": "Practice project for a parallax effect using only HTML and CSS, exploring background-attachment: fixed for depth and smooth scrolling.",
+        "highlights": [
+          "Parallax with background-attachment: fixed",
+          "Distinctive visual experience"
+        ],
+        "status": "Completed"
+      },
+      "8": {
+        "title": "National Museum",
+        "description": "Institutional-style site simulating a museum. HTML and CSS focused on structure, navigation, and embedding video, map, and form.",
+        "highlights": [
+          "Institutional page with video and map",
+          "Visit form",
+          "Photo gallery"
+        ],
+        "status": "Completed"
+      },
+      "9": {
+        "title": "Finans",
+        "description": "Modern, responsive landing page for a personal finance concept. Built with HTML, CSS, and Bootstrap to present features and benefits clearly.",
+        "highlights": [
+          "Responsive landing page",
+          "Lead capture form",
+          "Modern, clean design"
+        ],
+        "status": "Completed"
+      },
+      "10": {
+        "title": "Spotify Clone",
+        "description": "Spotify-style landing page with HTML, CSS, and Bootstrap—responsive layout, highlight carousel, and promotional sections.",
+        "highlights": [
+          "Responsive carousel",
+          "Modern, clean layout",
+          "Institutional landing page"
+        ],
+        "status": "Completed"
+      },
+      "11": {
+        "title": "NPS API",
+        "description": "RESTful API to submit and compute Net Promoter Score, with email integration and automated tests. Node.js, TypeORM, Nodemailer, and SQLite.",
+        "highlights": [
+          "Automated email delivery",
+          "NPS calculation",
+          "Automated tests"
+        ],
+        "status": "Completed"
+      },
+      "12": {
+        "title": "dev.finances",
+        "description": "Personal finance tracker with plain HTML, CSS, and JavaScript—register and view income, expenses, and total balance.",
+        "highlights": [
+          "New transaction modal with DOM interaction",
+          "Dynamic income, expense, and total views",
+          "Responsive, modern styling"
+        ],
+        "status": "Completed"
+      },
+      "13": {
+        "title": "Pomo - Pomodoro App with Gamification",
+        "description": "Web app inspired by the Pomodoro technique, combining productivity with physical exercise and eye care. Breaks include challenges; users earn XP, level up, and unlock achievements.",
+        "highlights": [
+          "25-minute Pomodoro focus timer",
+          "Challenges for physical and eye exercises",
+          "Gamification with XP, levels, and achievements",
+          "Browser and sound notifications",
+          "Data persistence in cookies",
+          "Responsive, modern UI"
+        ],
+        "status": "Online"
+      },
+      "14": {
+        "title": "UNES - University of Excellence",
+        "description": "Modern, responsive institutional site for a fictional university. Evolves a legacy table-based site to HTML5 semantics, CSS Grid/Flexbox, and ES6+ JavaScript—with forms, smooth animations, SEO, and a full design system.",
+        "highlights": [
+          "Full modernization of a legacy table-based site",
+          "Responsive layout with CSS Grid and Flexbox",
+          "Contact form with real-time validation",
+          "Smooth animations and polished visuals",
+          "SEO with meta tags and structured data",
+          "Design system with professional color and typography",
+          "Interactive FAQ accordion",
+          "Animated stat counters",
+          "Performance with lazy loading",
+          "PWA-ready with Service Worker"
+        ],
+        "status": "Online"
+      },
+      "15": {
+        "title": "desaba.fei - Modern Comment System",
+        "description": "Modern, interactive comment system in React with responsive design and advanced features: live search, smart filters, editing, dynamic avatars, real-time validation, and local persistence. Gradient UI, smooth motion, and accessibility.",
+        "highlights": [
+          "Full comment CRUD",
+          "Live search by name, email, or content",
+          "Smart filters by date and name",
+          "Inline editing with real-time validation",
+          "Dynamic avatars with colored initials",
+          "Responsive, mobile-first design",
+          "Automatic localStorage persistence",
+          "Smooth animations and shimmer effects",
+          "Accessibility aligned with WCAG 2.1 AA",
+          "Modern design system with rich gradients",
+          "Interactive states with clear feedback",
+          "Automatic dark mode detection"
+        ],
+        "status": "Online"
+      },
+      "16": {
+        "title": "MySkills - Developer Skills App",
+        "description": "React Native app to register and browse developer skills—add skills, view lists, and login/welcome flow. Built to practice mobile development with React Native and Expo.",
+        "highlights": [
+          "Add and list skills",
+          "Profile component",
+          "Login / welcome screen"
+        ],
+        "status": "Under construction"
+      },
+      "17": {
+        "title": "dtmoney - Personal Finance",
+        "description": "Web app for personal finance from Rocketseat Ignite Chapter 1—track income and expenses by name and category with automatic total balance.",
+        "highlights": [
+          "Income and expense entries",
+          "Automatic totals for in, out, and balance",
+          "Organization by name and category",
+          "Modern, responsive UI",
+          "MirageJS API simulation",
+          "Integrated login page"
+        ],
+        "status": "Online"
+      },
+      "18": {
+        "title": "ig.news - React News Platform",
+        "description": "News platform about the React ecosystem with Next.js, TypeScript, and Stripe. GitHub auth, premium subscription, exclusive content, webhooks, API routes, and responsive UI.",
+        "highlights": [
+          "GitHub authentication with NextAuth.js",
+          "Premium subscription with Stripe",
+          "Webhooks for payment processing",
+          "API routes for checkout and webhooks",
+          "Responsive design with SCSS Modules",
+          "Post previews for non-subscribers",
+          "Modern, elegant interface",
+          "Full Stripe Dashboard integration",
+          "Optimized Vercel deploy"
+        ],
+        "status": "Online"
+      },
+      "19": {
+        "title": "LalaMovie - Movie Reviews App",
+        "description": "React Native app for movie reviews and comments—navigation, sliders, movie cards, comments, and ratings.",
+        "highlights": [
+          "Home with header and navigation",
+          "Featured movies slider",
+          "Movie cards with details",
+          "Top rated and lowest rated sections",
+          "Movie detail page",
+          "Comments and ratings",
+          "Input to add comments",
+          "Comment persistence logic"
+        ],
+        "status": "Under construction"
+      },
+      "20": {
+        "title": "GoFinances - Personal Finance",
+        "description": "Personal finance app with React Native, Expo, and TypeScript—social auth, dashboard, transactions, categories, summary charts, and local storage.",
+        "highlights": [
+          "Google and Apple social sign-in",
+          "Dashboard with transaction list",
+          "Transaction registration (in/out)",
+          "Transaction categories",
+          "Highlight cards (in, out, total)",
+          "Financial summary charts",
+          "Local data storage",
+          "Responsive, modern UI",
+          "Tab navigation",
+          "Validated forms",
+          "BRL currency formatting",
+          "Transaction history"
+        ],
+        "status": "In production"
+      },
+      "21": {
+        "title": "SavePass - Password Manager",
+        "description": "Mobile password manager from a Rocketseat bootcamp with React Native, Expo, and TypeScript—store service name, email, and password locally with AsyncStorage. Search and organized credentials.",
+        "highlights": [
+          "Secure local credential storage",
+          "Quick search by service name",
+          "Simple new login registration",
+          "Modern, responsive UI",
+          "Styled Components design system",
+          "React Hook Form + Yup validation",
+          "Smooth screen navigation",
+          "AsyncStorage persistence",
+          "Saved password counter",
+          "Custom splash screen"
+        ],
+        "status": "In development"
+      },
+      "22": {
+        "title": "Personal Portfolio - leorodriguesdev.github.io",
+        "description": "First personal portfolio with HTML5, CSS3, and vanilla JavaScript—work, skills, and experience. Responsive UI, interactive experience timeline, project gallery, contact form, and animated background video.",
+        "highlights": [
+          "Responsive, modern design",
+          "Personal intro section",
+          "Interactive professional timeline",
+          "Project and services gallery",
+          "Integrated contact form",
+          "Animated background video",
+          "Motion and visual effects",
+          "Email delivery via form",
+          "External API integrations",
+          "Advanced SEO optimizations"
+        ],
+        "status": "In production"
+      },
+      "23": {
+        "title": "EdimedApp - Medical Services",
+        "description": "React Native and Expo app for medical services and scheduling. Beneficiaries book appointments, manage profiles, and track requests (EdimedPlus client).",
+        "highlights": [
+          "User authentication with login and registration",
+          "Full beneficiary profile management",
+          "Medical appointment scheduling",
+          "Nearby provider search with maps",
+          "Order management and payment tracking",
+          "Dependent management",
+          "Appointment history",
+          "REST API integration",
+          "AsyncStorage for local data",
+          "JWT authentication",
+          "Modern UI with custom branding"
+        ],
+        "status": "In production"
+      },
+      "24": {
+        "title": "AgendaPro - Online Scheduling",
+        "description": "Full online scheduling system with Next.js, React, and TypeScript—clients book quickly while businesses control availability and white-label branding. Multi-tenant with dynamic company routes.",
+        "highlights": [
+          "End-to-end online scheduling",
+          "Multi-tenant dynamic routes per company",
+          "Per-company visual customization",
+          "Full control of hours and availability",
+          "Date and time validation",
+          "Automatic client notifications",
+          "Email booking confirmation",
+          "Light and dark themes",
+          "Responsive, accessible design",
+          "Intuitive form with real-time validation",
+          "Smooth animations and transitions",
+          "Toast feedback for notifications"
+        ],
+        "status": "In development"
+      },
+      "25": {
+        "title": "Mega Verifica - Mega Sena Ticket Checker",
+        "description": "Web app to check Mega Sena tickets—pick 6–15 numbers from a 1–60 grid and compare against drawn numbers with a results modal.",
+        "highlights": [
+          "Interactive 1–60 number grid",
+          "Validation for min 6 and max 15 picks",
+          "Responsive, modern UI",
+          "Results modal",
+          "Automatic match between picks and draw",
+          "Visual highlight for hits",
+          "API route to simulate draw results",
+          "Real-time visual feedback"
+        ],
+        "status": "Completed"
+      },
+      "26": {
+        "title": "Toninho Nickname Generator",
+        "description": "Interactive web app that generates unique, fun nicknames inspired by “Toninho”—great for informal chats and social handles, each with a random image.",
+        "highlights": [
+          "Random unique funny nicknames",
+          "Random image per nickname",
+          "Copy nickname to clipboard",
+          "Responsive layout",
+          "Modern, intuitive UI",
+          "Copy confirmation tooltip",
+          "Playful visual experience"
+        ],
+        "status": "Online"
+      },
+      "27": {
+        "title": "Personal Blog - leorodriguesdev",
+        "description": "First personal blog with Next.js on React, React Native, Node.js, and Next.js. Posts load from a separate GitHub repo for independent content management—categories, code formatting, and comments.",
+        "highlights": [
+          "Automatic article fetch from GitHub repo",
+          "Category listing",
+          "Article view with code formatting",
+          "Post-to-post navigation",
+          "Easy code snippet copy",
+          "Comment system",
+          "Author login page",
+          "GitHub API integration",
+          "Dynamic Markdown rendering",
+          "Responsive, modern design"
+        ],
+        "status": "In development"
+      },
+      "28": {
+        "title": "dev.finances - Finance Tracker",
+        "description": "Finance tracker with HTML, CSS, and vanilla JS—income, expenses, and balance with a modal for new transactions.",
+        "highlights": [
+          "New transaction modal with DOM interaction",
+          "Dynamic income, expense, and total views",
+          "Responsive, modern styling",
+          "Transaction registration",
+          "Automatic balance calculation"
+        ],
+        "status": "Completed"
+      },
+      "29": {
+        "title": "AgendAI - Smart Scheduling with AI",
+        "description": "Full smart scheduling system with AI for businesses—Next.js 15 and React 19, auth, metrics dashboard, services and staff, hours, bookings, themes, and notifications. Firebase Auth and Firestore.",
+        "highlights": [
+          "Smart scheduling with AI integration",
+          "Firebase Authentication",
+          "Dashboard metrics with Recharts",
+          "Full service catalog management",
+          "Multiple staff members",
+          "Flexible business hours",
+          "Booking management UI",
+          "Light/dark theme",
+          "Booking notifications and reminders",
+          "Unit tests with Jest and RTL",
+          "E2E tests with Cypress",
+          "GitHub Actions CI/CD",
+          "Scalable repository-style architecture",
+          "Zustand state management"
+        ],
+        "status": "Online"
+      },
+      "30": {
+        "title": "OnStart Tecnologia - Institutional Website",
+        "description": "Institutional site for OnStart Tecnologia—technology that simplifies people’s lives. Four main pages: home, about (mission and values), services, and contact with location. Real client project.",
+        "highlights": [
+          "Full institutional site with four main pages",
+          "Home with company and services overview",
+          "About page with mission, vision, and values",
+          "Services page detailing solutions",
+          "Contact page with location info",
+          "Responsive, modern design",
+          "Motion and interactivity with JavaScript",
+          "Font Awesome icons",
+          "Real client delivery",
+          "Organized, professional structure"
+        ],
+        "status": "Online"
+      },
+      "31": {
+        "title": "Coelho Tattoo 013 - Institutional Website",
+        "description": "Modern, responsive site for tattoo artist Leonardo Coelho (custom lettering and calligraffiti, Porto Alegre, RS)—portfolio lightbox, WhatsApp contact forms, services, testimonials. Real client project.",
+        "highlights": [
+          "Interactive portfolio gallery with lightbox",
+          "Contact and booking forms via WhatsApp",
+          "Keyboard and touch (swipe) gallery navigation",
+          "Lazy-loaded images for performance",
+          "Real-time validation with Brazilian phone mask",
+          "Mobile-first responsive design",
+          "Smooth entrance animations",
+          "Next.js automatic image optimization",
+          "SEO with sitemap and robots.txt",
+          "Configured web app manifest",
+          "Security headers configured",
+          "Real client delivery"
+        ],
+        "status": "Online"
+      },
+      "32": {
+        "title": "Eletel Sat - Institutional Website",
+        "description": "Modern responsive site for Eletel Sat—30+ years of electronic security in Viamão, RS. Services include CCTV, alarms, gate motors, electric fences, intercoms, and solar energy. Real client project.",
+        "highlights": [
+          "Modern responsive design with smooth motion",
+          "Responsive hamburger menu",
+          "Smooth scroll between sections",
+          "Floating WhatsApp button",
+          "Contact form with React Hook Form and Zod",
+          "Embedded Google Map",
+          "Scroll-reveal animations with Framer Motion",
+          "SEO with meta tags, structured data, and sitemap",
+          "Open Graph and Twitter Cards",
+          "Lazy loading and code splitting",
+          "WCAG-oriented Radix UI components",
+          "Real client delivery"
+        ],
+        "status": "Online"
+      },
+      "33": {
+        "title": "STV - ELO",
+        "description": "Mobile app for STV Group (Security, Technology, and Asset Protection)—internal communication with documents and useful information for employees. Real client project.",
+        "highlights": [
+          "Internal company communication",
+          "Access to corporate documents",
+          "Useful information for staff",
+          "Real client delivery"
+        ],
+        "status": "In production"
+      }
+    }
+  }
+}

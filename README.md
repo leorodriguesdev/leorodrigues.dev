@@ -25,6 +25,7 @@
 - [Pré-requisitos](#pré-requisitos)
 - [Instalação](#instalação)
 - [Rodando a Aplicação](#rodando-a-aplicação)
+- [Tradução (i18n)](#tradução-i18n)
 - [Tecnologias](#tecnologias)
 - [Autor](#autor)
 - [📫 Contato](#-contato)
@@ -126,6 +127,10 @@ npm run dev
 
 A aplicação irá iniciar na porta `3000`. Acesse [http://localhost:3000](http://localhost:3000) no seu navegador para visualizar o projeto.
 
+O script padrão `dev` usa o bundler **webpack** do Next.js (mais estável com o cache local). Para tentar **Turbopack** (mais rápido, porém pode falhar com `ENOENT` em `.next` em alguns ambientes), use `npm run dev:turbo` / `yarn dev:turbo`.
+
+**Se aparecer erro `ENOENT` em arquivos dentro de `.next/`:** pare o servidor, apague a pasta de cache (`rm -rf .next`) e suba de novo com `npm run dev`. Evite rodar `next build` e `next dev` ao mesmo tempo no mesmo diretório.
+
 Para construir a aplicação para produção:
 
 ```bash
@@ -149,6 +154,29 @@ ou
 ```bash
 npm start
 ```
+
+## Tradução (i18n)
+
+O site usa **[next-intl](https://next-intl.dev/)** com locales **`pt`** (padrão, URL sem prefixo), **`en`** (`/en/...`) e **`es`** (`/es/...`).
+
+**Onde editar textos**
+
+1. **`messages/parts/{pt,en,es}/`** — `01-metadata.json`, `02-nav.json`, `03-ui.json` (merge em ordem alfabética).  
+2. **`messages/partials/projects.{locale}.json`** — cópias dos projetos.
+
+Os arquivos **`messages/pt.json`**, **`en.json`** e **`es.json`** na raiz de `messages/` são **gerados**. Depois de mudar `parts` ou `partials`, rode:
+
+```bash
+npm run messages:merge
+```
+
+**No código**
+
+- Componentes cliente: `useTranslations('namespace')` de `next-intl`.  
+- Server / `generateMetadata`: `getTranslations` de `next-intl/server`.  
+- Links internos: `Link`, `usePathname`, `useRouter` de **`@/i18n/navigation`**.
+
+Plano detalhado (etapas A–J, APIs, sitemap, checklist): [`docs/plano-traducao-i18n.md`](docs/plano-traducao-i18n.md).
 
 ## 💻 Tecnologias
 
@@ -190,4 +218,4 @@ Este projeto está licenciado sob a licença [MIT](./LICENSE).
 
 ---
 
-© 2025 Leorodrigues.dev. Todos os direitos reservados.
+© 2026 Leorodrigues.dev. Todos os direitos reservados.

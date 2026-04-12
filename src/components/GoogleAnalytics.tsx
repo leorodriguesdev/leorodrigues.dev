@@ -1,5 +1,9 @@
 "use client";
 
+/**
+ * Etapa C (i18n): mantém `next/navigation` de propósito — `pathname` reflete a
+ * URL real (incl. `/en`, `/es`), alinhado a `window.location.pathname` no gtag.
+ */
 import Script from 'next/script';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { useEffect } from 'react';

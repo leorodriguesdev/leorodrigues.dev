@@ -1,0 +1,19 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact",
+    "services": "Services",
+    "toggleMenu": "Open menu"
+  },
+  "languageSwitcher": {
+    "aria": "Select language",
+    "locales": {
+      "pt": "Portuguese",
+      "en": "English",
+      "es": "Spanish"
+    }
+  }
+}

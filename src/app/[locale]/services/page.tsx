@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { 
   Smartphone, 
   Globe, 
@@ -16,82 +16,79 @@ import Footer from '@/components/layout/Footer';
 import { SEO } from '@/components/SEO';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { StructuredData } from '@/components/StructuredData';
-
-const services = [
-  {
-    id: "mobile-development",
-    title: "Desenvolvimento Mobile",
-    icon: Smartphone,
-    description: "Criação de aplicativos nativos para iOS e Android usando React Native e Expo. Apps performáticos, escaláveis e com experiência de usuário excepcional.",
-    features: [
-      "Apps nativos iOS e Android",
-      "React Native e Expo",
-      "Integração com APIs",
-      "Publicação nas lojas",
-      "Manutenção e suporte",
-      "Performance otimizada"
-    ],
-    technologies: ["React Native", "Expo", "TypeScript", "JavaScript"],
-    keywords: "desenvolvedor React Native, desenvolvedor mobile, desenvolvedor Expo, app mobile, desenvolvimento de aplicativos"
-  },
-  {
-    id: "web-development",
-    title: "Desenvolvimento Web",
-    icon: Globe,
-    description: "Sites e aplicações web modernas com Next.js, React e TypeScript. Performance otimizada, SEO avançado e experiência de usuário de alta qualidade.",
-    features: [
-      "Sites responsivos",
-      "Aplicações web modernas",
-      "SEO otimizado",
-      "Performance otimizada",
-      "PWA (Progressive Web Apps)",
-      "Integração com APIs"
-    ],
-    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
-    keywords: "desenvolvedor Next.js, desenvolvedor web, desenvolvedor React, site moderno, desenvolvimento web"
-  },
-  {
-    id: "full-stack-development",
-    title: "Desenvolvimento Full Stack",
-    icon: Code2,
-    description: "Soluções completas do frontend ao backend. APIs RESTful, bancos de dados, autenticação e integrações. Sistemas escaláveis e robustos.",
-    features: [
-      "APIs RESTful",
-      "Backend Node.js",
-      "Bancos de dados",
-      "Autenticação e segurança",
-      "Integrações de terceiros",
-      "Arquitetura escalável"
-    ],
-    technologies: ["Node.js", "TypeScript", "Express", "PostgreSQL", "MongoDB"],
-    keywords: "desenvolvedor full stack, desenvolvedor Node.js, API REST, backend, desenvolvimento full stack"
-  }
-];
+import { Link } from "@/i18n/navigation";
 
 export default function ServicesPage() {
+  const t = useTranslations("servicesPage");
+  const tc = useTranslations("servicesCards");
+  const tMeta = useTranslations("metadata");
+  const services = [
+    {
+      id: "mobile-development",
+      title: tc("mobileTitle"),
+      icon: Smartphone,
+      description: tc("mobileDesc"),
+      features: [
+        tc("mobileF1"),
+        tc("mobileF2"),
+        tc("mobileF3"),
+        tc("mobileF4"),
+        tc("mobileF5"),
+        tc("mobileF6"),
+      ],
+      technologies: ["React Native", "Expo", "TypeScript", "JavaScript"],
+    },
+    {
+      id: "web-development",
+      title: tc("webTitle"),
+      icon: Globe,
+      description: tc("webDesc"),
+      features: [
+        tc("webF1"),
+        tc("webF2"),
+        tc("webF3"),
+        tc("webF4"),
+        tc("webF5"),
+        tc("webF6"),
+      ],
+      technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    },
+    {
+      id: "full-stack-development",
+      title: tc("fullTitle"),
+      icon: Code2,
+      description: tc("fullDesc"),
+      features: [
+        tc("fullF1"),
+        tc("fullF2"),
+        tc("fullF3"),
+        tc("fullF4"),
+        tc("fullF5"),
+        tc("fullF6"),
+      ],
+      technologies: ["Node.js", "TypeScript", "Express", "PostgreSQL", "MongoDB"],
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
       <SEO
-        title="Serviços de Desenvolvimento | Criar Site e App Mobile | Léo Rodrigues"
-        description="Serviços de desenvolvimento mobile com React Native, desenvolvimento web com Next.js e desenvolvimento full stack. Criação de apps iOS/Android, sites modernos e sistemas. Orçamento grátis. 7+ anos de experiência."
-        keywords="criar site, fazer site, desenvolvimento de site, criar app, desenvolvimento de app, site profissional, app mobile, orçamento site, orçamento app, serviços desenvolvimento mobile, serviços desenvolvimento web, desenvolvedor React Native contratar, desenvolvedor Next.js contratar, desenvolvimento de apps, desenvolvimento de sites"
+        title={tMeta("servicesTitle")}
+        description={tMeta("servicesDescription")}
+        keywords={tMeta("servicesKeywords")}
       />
       <Breadcrumbs />
       <StructuredData
         type="ProfessionalService"
         data={{
-          name: "Serviços de Desenvolvimento Mobile e Web",
+          name: t("structuredName"),
           provider: {
             "@type": "Person",
             name: "Léo Rodrigues",
             url: "https://leorodrigues.dev"
           },
-          serviceType: [
-            "Desenvolvimento Mobile",
-            "Desenvolvimento Web",
-            "Desenvolvimento Full Stack"
-          ],
+          serviceType: t.raw("structuredServiceTypes") as string[],
           areaServed: "BR"
         }}
       />
@@ -105,11 +102,10 @@ export default function ServicesPage() {
             className="text-center space-y-6 mb-20"
           >
             <h1 className="text-4xl md:text-5xl tracking-tight">
-              Serviços de <span className="text-primary">Desenvolvimento</span>
+              {t("heroTitle")} <span className="text-primary">{t("heroAccent")}</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Soluções completas em desenvolvimento mobile, web e full stack. 
-              Criando aplicativos, sites e sistemas que impulsionam resultados.
+              {t("heroSubtitle")}
             </p>
           </motion.div>
 
@@ -139,7 +135,7 @@ export default function ServicesPage() {
 
                   <div className="space-y-3">
                     <h3 className="font-medium text-sm text-muted-foreground uppercase tracking-wide">
-                      Inclui:
+                      {t("includes")}
                     </h3>
                     <ul className="space-y-2">
                       {service.features.map((feature, idx) => (
@@ -162,13 +158,13 @@ export default function ServicesPage() {
                         </span>
                       ))}
                     </div>
-                    <Link
+                    <a
                       href="#contact"
                       className="inline-flex items-center gap-2 text-primary hover:gap-3 transition-all text-sm font-medium"
                     >
-                      Solicitar Orçamento
+                      {t("requestQuote")}
                       <ArrowRight size={16} />
-                    </Link>
+                    </a>
                   </div>
                 </motion.div>
               );
@@ -183,43 +179,43 @@ export default function ServicesPage() {
             className="bg-secondary/50 border border-border rounded-lg p-8 md:p-12 mb-20"
           >
             <h2 className="text-3xl md:text-4xl tracking-tight mb-6 text-center">
-              Por Que Escolher <span className="text-primary">Meus Serviços?</span>
+              {t("whyTitle")} <span className="text-primary">{t("whyAccent")}</span>
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold flex items-center gap-2">
                   <Cpu className="text-primary" size={24} />
-                  Tecnologias Modernas
+                  {t("whyModernTitle")}
                 </h3>
                 <p className="text-muted-foreground">
-                  Uso das tecnologias mais atuais e eficientes do mercado: React Native, Expo, Next.js, TypeScript e Node.js.
+                  {t("whyModernDesc")}
                 </p>
               </div>
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold flex items-center gap-2">
                   <Database className="text-primary" size={24} />
-                  7+ Anos de Experiência
+                  {t("whyExpTitle")}
                 </h3>
                 <p className="text-muted-foreground">
-                  Mais de 7 anos desenvolvendo aplicativos e sites para empresas como IBM, Banco do Brasil e Banco Sicredi.
+                  {t("whyExpDesc")}
                 </p>
               </div>
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold flex items-center gap-2">
                   <CheckCircle2 className="text-primary" size={24} />
-                  Código de Qualidade
+                  {t("whyQualityTitle")}
                 </h3>
                 <p className="text-muted-foreground">
-                  Código limpo, bem documentado e seguindo as melhores práticas da indústria. TypeScript e testes são padrão.
+                  {t("whyQualityDesc")}
                 </p>
               </div>
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold flex items-center gap-2">
                   <ArrowRight className="text-primary" size={24} />
-                  Entrega Rápida
+                  {t("whyFastTitle")}
                 </h3>
                 <p className="text-muted-foreground">
-                  Metodologia ágil, comunicação constante e entregas dentro do prazo. Seu projeto no ar mais rápido.
+                  {t("whyFastDesc")}
                 </p>
               </div>
             </div>
@@ -233,24 +229,24 @@ export default function ServicesPage() {
             className="text-center space-y-6"
           >
             <h2 className="text-3xl md:text-4xl tracking-tight">
-              Pronto para <span className="text-primary">Começar Seu Projeto?</span>
+              {t("ctaReadyTitle")} <span className="text-primary">{t("ctaReadyAccent")}</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Entre em contato e vamos conversar sobre como posso ajudar a transformar sua ideia em realidade.
+              {t("ctaReadySubtitle")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
-              <Link
+              <a
                 href="#contact"
                 className="px-8 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all hover:scale-105 flex items-center gap-2 font-medium shadow-lg shadow-primary/20 justify-center"
               >
-                Entre em Contato
+                {t("ctaContact")}
                 <ArrowRight size={20} />
-              </Link>
+              </a>
               <Link
                 href="/projects"
                 className="px-8 py-3 border border-border rounded-lg hover:bg-secondary transition-colors"
               >
-                Ver Projetos
+                {t("ctaProjects")}
               </Link>
             </div>
           </motion.div>

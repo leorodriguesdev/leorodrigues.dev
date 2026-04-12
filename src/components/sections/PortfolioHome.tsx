@@ -1,15 +1,17 @@
 "use client";
 
 import { motion } from "motion/react";
-import Link from "next/link";
-import { Github, Linkedin, Twitter, ArrowRight, Code2, Zap, Users } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { Github, Linkedin, ArrowRight, Code2, Zap, Users } from "lucide-react";
 import { Stats } from "@/components/Stats";
 import { Testimonials } from "@/components/Testimonials";
 import Skills from "@/components/sections/Skills";
 import Projects from "@/components/sections/Projects";
 import Contact from "@/components/sections/Contact";
+import { Link } from "@/i18n/navigation";
 
 export function PortfolioHome() {
+  const t = useTranslations("portfolioHome");
   return (
     <>
       {/* Hero Section */}
@@ -28,7 +30,7 @@ export function PortfolioHome() {
               className="inline-block"
             >
               <span className="inline-block px-4 py-2 bg-primary/10 border border-primary rounded-full text-primary font-medium neon-glow">
-                Disponível para contratação
+                {t("badge")}
               </span>
             </motion.div>
 
@@ -38,7 +40,10 @@ export function PortfolioHome() {
               transition={{ delay: 0.3 }}
               className="text-5xl md:text-7xl tracking-tight"
             >
-              Desenvolvedor <span className="text-primary font-audiowide">React Native</span> e Mobile
+              {t("heroTitle")}
+              {t("heroTitle").trim() ? " " : null}
+              <span className="text-primary font-audiowide">{t("heroAccent")}</span>
+              {t("heroTitleEnd").trim() ? ` ${t("heroTitleEnd")}` : null}
             </motion.h1>
 
             <motion.p
@@ -47,8 +52,7 @@ export function PortfolioHome() {
               transition={{ delay: 0.4 }}
               className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto"
             >
-              Desenvolvedor Full Stack com 7+ anos de experiência em React Native, Expo, Next.js e Node.js. 
-              Pronto para integrar sua equipe técnica e entregar projetos de alta qualidade.
+              {t("heroSubtitle")}
             </motion.p>
 
             <motion.div
@@ -61,14 +65,14 @@ export function PortfolioHome() {
                 href="/projects"
                 className="px-8 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all hover:scale-105 flex items-center gap-2 font-medium shadow-lg shadow-primary/20"
               >
-                Ver Portfólio Completo
+                {t("ctaPortfolio")}
                 <ArrowRight size={20} />
               </Link>
               <Link
                 href="/about"
                 className="px-8 py-3 border border-border rounded-lg hover:bg-secondary transition-colors"
               >
-                Sobre Mim
+                {t("ctaAbout")}
               </Link>
             </motion.div>
 
@@ -83,6 +87,7 @@ export function PortfolioHome() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 border border-border rounded-lg hover:border-primary hover:text-primary transition-colors"
+                aria-label="GitHub"
               >
                 <Github size={24} />
               </a>
@@ -91,17 +96,21 @@ export function PortfolioHome() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 border border-border rounded-lg hover:border-primary hover:text-primary transition-colors"
+                aria-label="LinkedIn"
               >
                 <Linkedin size={24} />
               </a>
+              {/* Twitter/X oculto
               <a
                 href="https://x.com/leorodriguesdev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 border border-border rounded-lg hover:border-primary hover:text-primary transition-colors"
+                aria-label="X"
               >
                 <Twitter size={24} />
               </a>
+              */}
             </motion.div>
           </motion.div>
         </div>
@@ -126,10 +135,10 @@ export function PortfolioHome() {
           >
             <div className="text-center space-y-4">
               <h2 className="text-4xl md:text-5xl tracking-tight font-audiowide">
-                Por Que Escolher <span className="text-primary">Meu Trabalho?</span>
+                {t("whyTitle")} <span className="text-primary">{t("whyAccent")}</span>
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Compromisso com excelência, inovação e resultados mensuráveis
+                {t("whySubtitle")}
               </p>
             </div>
 
@@ -145,9 +154,9 @@ export function PortfolioHome() {
                 <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center">
                   <Code2 className="text-primary" size={32} />
                 </div>
-                <h3 className="text-2xl">Código de Qualidade</h3>
+                <h3 className="text-2xl">{t("cardQualityTitle")}</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Código limpo, maintível e bem documentado seguindo as melhores práticas da indústria. TypeScript e testes automatizados são padrão.
+                  {t("cardQualityDesc")}
                 </p>
               </motion.div>
 
@@ -162,9 +171,9 @@ export function PortfolioHome() {
                 <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center">
                   <Zap className="text-primary" size={32} />
                 </div>
-                <h3 className="text-2xl">Performance Otimizada</h3>
+                <h3 className="text-2xl">{t("cardPerfTitle")}</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Aplicações rápidas com Core Web Vitals otimizados, SEO avançado e acessibilidade garantida. Seu site vai ranquear bem no Google.
+                  {t("cardPerfDesc")}
                 </p>
               </motion.div>
 
@@ -179,9 +188,9 @@ export function PortfolioHome() {
                 <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center">
                   <Users className="text-primary" size={32} />
                 </div>
-                <h3 className="text-2xl">Comunicação Clara</h3>
+                <h3 className="text-2xl">{t("cardCommTitle")}</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Atualizações frequentes, feedback constante e transparência total durante todo o desenvolvimento do projeto.
+                  {t("cardCommDesc")}
                 </p>
               </motion.div>
             </div>

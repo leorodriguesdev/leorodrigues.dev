@@ -1,7 +1,11 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { getApiCopy, resolveApiLocale } from "@/lib/apiLocale";
 
 export async function POST(request: Request) {
+  const locale = resolveApiLocale(request);
+  const api = getApiCopy(locale);
+
   try {
     const { name, email, message } = await request.json();
 
@@ -20,9 +24,15 @@ export async function POST(request: Request) {
       text: `Nome: ${name}\nEmail: ${email}\nMensagem: ${message}`,
     });
 
-    return NextResponse.json({ message: "E-mail enviado com sucesso!" }, { status: 200 });
+    return NextResponse.json(
+      { message: api.contactSuccess },
+      { status: 200, headers: { "Content-Language": locale } },
+    );
   } catch (error) {
     console.error("Erro ao enviar email:", error);
-    return NextResponse.json({ error: "Erro ao enviar email." }, { status: 500 });
+    return NextResponse.json(
+      { error: api.contactError },
+      { status: 500, headers: { "Content-Language": locale } },
+    );
   }
 }

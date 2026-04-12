@@ -1,16 +1,18 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { motion } from 'motion/react';
 import { ArrowLeft, ExternalLink, Github, Calendar, CheckCircle2 } from 'lucide-react';
+import { useFormatter, useTranslations } from 'next-intl';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import ImageGallery from './components/ImagesGallery';
-import { Project, projectsData } from '@/data/projectsData';
-import Link from 'next/link';
+import type { Project } from '@/data/projectsData';
+import { Link } from '@/i18n/navigation';
 import { SEO } from '@/components/SEO';
 import { useAnalytics } from '@/hooks/useAnalytics';
 import { SafeImage } from '@/components/SafeImage';
+import { useProjects } from '@/hooks/useProjects';
 
 export default function ProjectDetailClient({ 
   project, 
@@ -21,16 +23,36 @@ export default function ProjectDetailClient({
 }) {
   const displayTitle = titleFromUrl || project.title;
   const { trackProjectView, trackOutboundLink, trackProjectClick } = useAnalytics();
+  const t = useTranslations('projectDetail');
+  const tList = useTranslations('projectsList');
+  const format = useFormatter();
+  const allProjects = useProjects();
+
+  const formattedDate = useMemo(
+    () =>
+      format.dateTime(new Date(project.date), {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      }),
+    [format, project.date]
+  );
 
   useEffect(() => {
     trackProjectView(project.title);
   }, [project.title, trackProjectView]);
 
-  // Get other projects for suggestions (2 most recent by ID, excluding current)
-  const otherProjects = projectsData
-    .filter(p => p.id !== project.id)
+  const otherProjects = allProjects
+    .filter((p) => p.id !== project.id)
     .sort((a, b) => b.id - a.id)
     .slice(0, 2);
+
+  const typeLabel =
+    project.type === 'website'
+      ? tList('typeWebsite')
+      : project.type === 'api'
+        ? tList('typeApi')
+        : tList('typeMobile');
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -55,7 +77,7 @@ export default function ProjectDetailClient({
               className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
           >
               <ArrowLeft size={20} />
-              Voltar aos Projetos
+              {t('back')}
           </Link>
         </motion.div>
 
@@ -87,18 +109,10 @@ export default function ProjectDetailClient({
                 <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
                   <span className="flex items-center gap-2">
                     <Calendar size={16} />
-            {new Date(project.date).toLocaleDateString('pt-BR', {
-              year: 'numeric',
-              month: 'long',
-                      day: 'numeric'
-            })}
+            {formattedDate}
           </span>
                   <span>
-                    {project.type === 'website'
-                      ? 'Site / Web'
-                      : project.type === 'api'
-                      ? 'Sistema / API'
-                      : 'App / Mobile'}
+                    {typeLabel}
                   </span>
                   {project.status && (
                     <span className="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-primary">
@@ -129,7 +143,7 @@ export default function ProjectDetailClient({
                     className="px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors flex items-center gap-2"
                   >
                     <ExternalLink size={20} />
-                    Acessar Site
+                    {t('visitSite')}
                   </a>
                 )}
                 {project.links?.playStore && (
@@ -139,7 +153,7 @@ export default function ProjectDetailClient({
                     rel="noopener noreferrer"
                     className="px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
                   >
-                    Play Store
+                    {t('playStore')}
                   </a>
                 )}
                 {project.links?.appStore && (
@@ -149,7 +163,7 @@ export default function ProjectDetailClient({
                     rel="noopener noreferrer"
                     className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
                 >
-                    App Store
+                    {t('appStore')}
                   </a>
                 )}
               </div>
@@ -188,7 +202,7 @@ export default function ProjectDetailClient({
             transition={{ delay: 0.2 }}
             className="mb-12"
       >
-            <h2 className="text-2xl mb-4 tracking-tight">Descrição</h2>
+            <h2 className="text-2xl mb-4 tracking-tight">{t('description')}</h2>
             <p className="text-muted-foreground leading-relaxed">
           {project.description}
             </p>
@@ -202,7 +216,7 @@ export default function ProjectDetailClient({
               transition={{ delay: 0.3 }}
               className="mb-12"
             >
-              <h2 className="text-2xl mb-6 tracking-tight">Principais Destaques</h2>
+              <h2 className="text-2xl mb-6 tracking-tight">{t('highlights')}</h2>
               <div className="grid md:grid-cols-2 gap-4">
                 {project.highlights.map((highlight, index) => (
                   <motion.div
@@ -227,7 +241,7 @@ export default function ProjectDetailClient({
             transition={{ delay: 0.5 }}
             className="mb-12"
           >
-            <h2 className="text-2xl mb-6 tracking-tight">Tech Stack</h2>
+            <h2 className="text-2xl mb-6 tracking-tight">{t('techStack')}</h2>
             <div className="flex flex-wrap gap-3">
               {project.techStack.map((tech, index) => (
                 <motion.div
@@ -251,12 +265,12 @@ export default function ProjectDetailClient({
               viewport={{ once: true }}
               className="pt-12 border-t border-border"
             >
-              <h2 className="text-2xl mb-6 tracking-tight">Outros Projetos</h2>
+              <h2 className="text-2xl mb-6 tracking-tight">{t('otherProjects')}</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 {otherProjects.map((otherProject) => (
                   <Link
                     key={otherProject.id}
-                    href={`/projects/${otherProject.id}?title=${otherProject.title}`}
+                    href={`/projects/${otherProject.id}?title=${encodeURIComponent(otherProject.title)}`}
                     onClick={() => trackProjectClick(otherProject.id, otherProject.title)}
                     className="group p-6 bg-card border border-border rounded-lg hover:border-primary transition-colors"
                   >

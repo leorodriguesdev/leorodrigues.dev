@@ -2,14 +2,17 @@
 
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "motion/react";
 import { ArrowRight, Code2 } from "lucide-react";
-import { projectsData } from "@/data/projectsData";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
+import { useProjects } from "@/hooks/useProjects";
 import { SafeImage } from "@/components/SafeImage";
 
 const Projects = () => {
-  const projects = projectsData.slice(-3).reverse();
+  const t = useTranslations("projectsSection");
+  const all = useProjects();
+  const projects = all.slice(-3).reverse();
 
   return (
     <section id="projects" className="py-32 px-6">
@@ -23,11 +26,12 @@ const Projects = () => {
         >
           <div className="text-center space-y-4">
             <h2 className="text-4xl md:text-5xl tracking-tight font-audiowide">
-              Projetos em <span className="text-primary">Destaque</span>
-        </h2>
+              {t("title")}{" "}
+              <span className="text-primary">{t("titleAccent")}</span>
+            </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Alguns dos projetos que desenvolvi recentemente
-        </p>
+              {t("subtitle")}
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -42,7 +46,7 @@ const Projects = () => {
                 className="group"
               >
                 <Link
-                  href={`/projects/${project.id}?title=${project.title}`}
+                  href={`/projects/${project.id}?title=${encodeURIComponent(project.title)}`}
                   className="block h-full"
                 >
                   <div className="h-full bg-card border border-border rounded-lg overflow-hidden hover:border-primary transition-colors">
@@ -100,7 +104,7 @@ const Projects = () => {
               href="/projects"
               className="inline-flex items-center gap-2 px-8 py-3 border border-border rounded-lg hover:border-primary hover:text-primary transition-colors"
             >
-              Ver Todos os Projetos
+              {t("viewAll")}
               <ArrowRight size={20} />
         </Link>
           </div>

@@ -1,0 +1,463 @@
+{
+  "projects": {
+    "items": {
+      "1": {
+        "title": "Anna Bella - Institutional Website",
+        "description": "My very first project: a fictional institutional site to showcase a model’s portfolio. Built early in my career to practice HTML and CSS with multi-page navigation and a photo gallery.",
+        "highlights": [
+          "First project early in my career",
+          "Multi-page navigation",
+          "Simple image gallery with styled borders",
+          "Classic, elegant layout with plain CSS"
+        ],
+        "status": "Online"
+      },
+      "2": {
+        "title": "TecBlog - Technology Blog",
+        "description": "Hands-on project from the start of my career, built alongside parallel courses with my tech degree. TecBlog is a fictional tech blog using HTML and CSS to practice basic layout, typography, spacing, sticky header, and styling for links and posts.",
+        "highlights": [
+          "Early-career project to practice HTML and CSS",
+          "Clean layout with sticky header and side areas",
+          "Posts with date and image",
+          "Sidebar with recent posts and categories"
+        ],
+        "status": "Online"
+      },
+      "3": {
+        "title": "Simple Login Screen",
+        "description": "A minimal, responsive login screen using only HTML and CSS to practice positioning and styling with gradients and transparency.",
+        "highlights": [
+          "Fields with icons for email and password",
+          "Centered, responsive layout",
+          "Background gradient and transparent elements"
+        ],
+        "status": "Completed"
+      },
+      "4": {
+        "title": "Interactive Resume - Apresentation",
+        "description": "Project from my first bootcamp with Codaí, where I first used Bootstrap. The goal was a personal site for job applications after the bootcamp—an interactive online resume with dynamic content switching and social links.",
+        "highlights": [
+          "Interactive resume",
+          "Responsive",
+          "Dynamic content switching"
+        ],
+        "status": "Online"
+      },
+      "5": {
+        "title": "City News Portal",
+        "description": "One of the first portals I built during my early web studies. I learned to structure multi-page HTML/CSS sites as a fictional news portal with categories and an image gallery.",
+        "highlights": [
+          "Multi-page HTML structure",
+          "Portal layout with columns and menus"
+        ],
+        "status": "Completed"
+      },
+      "6": {
+        "title": "Chalé Hotel - Institutional Website",
+        "description": "Early HTML/CSS project from Jamilton Damasceno’s Udemy course. A fictional hotel institutional page with visuals, navigation, and a benefits list.",
+        "highlights": [
+          "Institutional layout with imagery",
+          "Navigation menu and benefits list"
+        ],
+        "status": "Completed"
+      },
+      "7": {
+        "title": "Parallax Effect with CSS",
+        "description": "Practice project for a parallax effect using only HTML and CSS, exploring background-attachment: fixed for depth and smooth scrolling.",
+        "highlights": [
+          "Parallax with background-attachment: fixed",
+          "Distinctive visual experience"
+        ],
+        "status": "Completed"
+      },
+      "8": {
+        "title": "National Museum",
+        "description": "Institutional-style site simulating a museum. HTML and CSS focused on structure, navigation, and embedding video, map, and form.",
+        "highlights": [
+          "Institutional page with video and map",
+          "Visit form",
+          "Photo gallery"
+        ],
+        "status": "Completed"
+      },
+      "9": {
+        "title": "Finans",
+        "description": "Modern, responsive landing page for a personal finance concept. Built with HTML, CSS, and Bootstrap to present features and benefits clearly.",
+        "highlights": [
+          "Responsive landing page",
+          "Lead capture form",
+          "Modern, clean design"
+        ],
+        "status": "Completed"
+      },
+      "10": {
+        "title": "Spotify Clone",
+        "description": "Spotify-style landing page with HTML, CSS, and Bootstrap—responsive layout, highlight carousel, and promotional sections.",
+        "highlights": [
+          "Responsive carousel",
+          "Modern, clean layout",
+          "Institutional landing page"
+        ],
+        "status": "Completed"
+      },
+      "11": {
+        "title": "NPS API",
+        "description": "RESTful API to submit and compute Net Promoter Score, with email integration and automated tests. Node.js, TypeORM, Nodemailer, and SQLite.",
+        "highlights": [
+          "Automated email delivery",
+          "NPS calculation",
+          "Automated tests"
+        ],
+        "status": "Completed"
+      },
+      "12": {
+        "title": "dev.finances",
+        "description": "Personal finance tracker with plain HTML, CSS, and JavaScript—register and view income, expenses, and total balance.",
+        "highlights": [
+          "New transaction modal with DOM interaction",
+          "Dynamic income, expense, and total views",
+          "Responsive, modern styling"
+        ],
+        "status": "Completed"
+      },
+      "13": {
+        "title": "Pomo - Pomodoro App with Gamification",
+        "description": "Web app inspired by the Pomodoro technique, combining productivity with physical exercise and eye care. Breaks include challenges; users earn XP, level up, and unlock achievements.",
+        "highlights": [
+          "25-minute Pomodoro focus timer",
+          "Challenges for physical and eye exercises",
+          "Gamification with XP, levels, and achievements",
+          "Browser and sound notifications",
+          "Data persistence in cookies",
+          "Responsive, modern UI"
+        ],
+        "status": "Online"
+      },
+      "14": {
+        "title": "UNES - University of Excellence",
+        "description": "Modern, responsive institutional site for a fictional university. Evolves a legacy table-based site to HTML5 semantics, CSS Grid/Flexbox, and ES6+ JavaScript—with forms, smooth animations, SEO, and a full design system.",
+        "highlights": [
+          "Full modernization of a legacy table-based site",
+          "Responsive layout with CSS Grid and Flexbox",
+          "Contact form with real-time validation",
+          "Smooth animations and polished visuals",
+          "SEO with meta tags and structured data",
+          "Design system with professional color and typography",
+          "Interactive FAQ accordion",
+          "Animated stat counters",
+          "Performance with lazy loading",
+          "PWA-ready with Service Worker"
+        ],
+        "status": "Online"
+      },
+      "15": {
+        "title": "desaba.fei - Modern Comment System",
+        "description": "Modern, interactive comment system in React with responsive design and advanced features: live search, smart filters, editing, dynamic avatars, real-time validation, and local persistence. Gradient UI, smooth motion, and accessibility.",
+        "highlights": [
+          "Full comment CRUD",
+          "Live search by name, email, or content",
+          "Smart filters by date and name",
+          "Inline editing with real-time validation",
+          "Dynamic avatars with colored initials",
+          "Responsive, mobile-first design",
+          "Automatic localStorage persistence",
+          "Smooth animations and shimmer effects",
+          "Accessibility aligned with WCAG 2.1 AA",
+          "Modern design system with rich gradients",
+          "Interactive states with clear feedback",
+          "Automatic dark mode detection"
+        ],
+        "status": "Online"
+      },
+      "16": {
+        "title": "MySkills - Developer Skills App",
+        "description": "React Native app to register and browse developer skills—add skills, view lists, and login/welcome flow. Built to practice mobile development with React Native and Expo.",
+        "highlights": [
+          "Add and list skills",
+          "Profile component",
+          "Login / welcome screen"
+        ],
+        "status": "Under construction"
+      },
+      "17": {
+        "title": "dtmoney - Personal Finance",
+        "description": "Web app for personal finance from Rocketseat Ignite Chapter 1—track income and expenses by name and category with automatic total balance.",
+        "highlights": [
+          "Income and expense entries",
+          "Automatic totals for in, out, and balance",
+          "Organization by name and category",
+          "Modern, responsive UI",
+          "MirageJS API simulation",
+          "Integrated login page"
+        ],
+        "status": "Online"
+      },
+      "18": {
+        "title": "ig.news - React News Platform",
+        "description": "News platform about the React ecosystem with Next.js, TypeScript, and Stripe. GitHub auth, premium subscription, exclusive content, webhooks, API routes, and responsive UI.",
+        "highlights": [
+          "GitHub authentication with NextAuth.js",
+          "Premium subscription with Stripe",
+          "Webhooks for payment processing",
+          "API routes for checkout and webhooks",
+          "Responsive design with SCSS Modules",
+          "Post previews for non-subscribers",
+          "Modern, elegant interface",
+          "Full Stripe Dashboard integration",
+          "Optimized Vercel deploy"
+        ],
+        "status": "Online"
+      },
+      "19": {
+        "title": "LalaMovie - Movie Reviews App",
+        "description": "React Native app for movie reviews and comments—navigation, sliders, movie cards, comments, and ratings.",
+        "highlights": [
+          "Home with header and navigation",
+          "Featured movies slider",
+          "Movie cards with details",
+          "Top rated and lowest rated sections",
+          "Movie detail page",
+          "Comments and ratings",
+          "Input to add comments",
+          "Comment persistence logic"
+        ],
+        "status": "Under construction"
+      },
+      "20": {
+        "title": "GoFinances - Personal Finance",
+        "description": "Personal finance app with React Native, Expo, and TypeScript—social auth, dashboard, transactions, categories, summary charts, and local storage.",
+        "highlights": [
+          "Google and Apple social sign-in",
+          "Dashboard with transaction list",
+          "Transaction registration (in/out)",
+          "Transaction categories",
+          "Highlight cards (in, out, total)",
+          "Financial summary charts",
+          "Local data storage",
+          "Responsive, modern UI",
+          "Tab navigation",
+          "Validated forms",
+          "BRL currency formatting",
+          "Transaction history"
+        ],
+        "status": "In production"
+      },
+      "21": {
+        "title": "SavePass - Password Manager",
+        "description": "Mobile password manager from a Rocketseat bootcamp with React Native, Expo, and TypeScript—store service name, email, and password locally with AsyncStorage. Search and organized credentials.",
+        "highlights": [
+          "Secure local credential storage",
+          "Quick search by service name",
+          "Simple new login registration",
+          "Modern, responsive UI",
+          "Styled Components design system",
+          "React Hook Form + Yup validation",
+          "Smooth screen navigation",
+          "AsyncStorage persistence",
+          "Saved password counter",
+          "Custom splash screen"
+        ],
+        "status": "In development"
+      },
+      "22": {
+        "title": "Personal Portfolio - leorodriguesdev.github.io",
+        "description": "First personal portfolio with HTML5, CSS3, and vanilla JavaScript—work, skills, and experience. Responsive UI, interactive experience timeline, project gallery, contact form, and animated background video.",
+        "highlights": [
+          "Responsive, modern design",
+          "Personal intro section",
+          "Interactive professional timeline",
+          "Project and services gallery",
+          "Integrated contact form",
+          "Animated background video",
+          "Motion and visual effects",
+          "Email delivery via form",
+          "External API integrations",
+          "Advanced SEO optimizations"
+        ],
+        "status": "In production"
+      },
+      "23": {
+        "title": "EdimedApp - Medical Services",
+        "description": "React Native and Expo app for medical services and scheduling. Beneficiaries book appointments, manage profiles, and track requests (EdimedPlus client).",
+        "highlights": [
+          "User authentication with login and registration",
+          "Full beneficiary profile management",
+          "Medical appointment scheduling",
+          "Nearby provider search with maps",
+          "Order management and payment tracking",
+          "Dependent management",
+          "Appointment history",
+          "REST API integration",
+          "AsyncStorage for local data",
+          "JWT authentication",
+          "Modern UI with custom branding"
+        ],
+        "status": "In production"
+      },
+      "24": {
+        "title": "AgendaPro - Online Scheduling",
+        "description": "Full online scheduling system with Next.js, React, and TypeScript—clients book quickly while businesses control availability and white-label branding. Multi-tenant with dynamic company routes.",
+        "highlights": [
+          "End-to-end online scheduling",
+          "Multi-tenant dynamic routes per company",
+          "Per-company visual customization",
+          "Full control of hours and availability",
+          "Date and time validation",
+          "Automatic client notifications",
+          "Email booking confirmation",
+          "Light and dark themes",
+          "Responsive, accessible design",
+          "Intuitive form with real-time validation",
+          "Smooth animations and transitions",
+          "Toast feedback for notifications"
+        ],
+        "status": "In development"
+      },
+      "25": {
+        "title": "Mega Verifica - Mega Sena Ticket Checker",
+        "description": "Web app to check Mega Sena tickets—pick 6–15 numbers from a 1–60 grid and compare against drawn numbers with a results modal.",
+        "highlights": [
+          "Interactive 1–60 number grid",
+          "Validation for min 6 and max 15 picks",
+          "Responsive, modern UI",
+          "Results modal",
+          "Automatic match between picks and draw",
+          "Visual highlight for hits",
+          "API route to simulate draw results",
+          "Real-time visual feedback"
+        ],
+        "status": "Completed"
+      },
+      "26": {
+        "title": "Toninho Nickname Generator",
+        "description": "Interactive web app that generates unique, fun nicknames inspired by “Toninho”—great for informal chats and social handles, each with a random image.",
+        "highlights": [
+          "Random unique funny nicknames",
+          "Random image per nickname",
+          "Copy nickname to clipboard",
+          "Responsive layout",
+          "Modern, intuitive UI",
+          "Copy confirmation tooltip",
+          "Playful visual experience"
+        ],
+        "status": "Online"
+      },
+      "27": {
+        "title": "Personal Blog - leorodriguesdev",
+        "description": "First personal blog with Next.js on React, React Native, Node.js, and Next.js. Posts load from a separate GitHub repo for independent content management—categories, code formatting, and comments.",
+        "highlights": [
+          "Automatic article fetch from GitHub repo",
+          "Category listing",
+          "Article view with code formatting",
+          "Post-to-post navigation",
+          "Easy code snippet copy",
+          "Comment system",
+          "Author login page",
+          "GitHub API integration",
+          "Dynamic Markdown rendering",
+          "Responsive, modern design"
+        ],
+        "status": "In development"
+      },
+      "28": {
+        "title": "dev.finances - Finance Tracker",
+        "description": "Finance tracker with HTML, CSS, and vanilla JS—income, expenses, and balance with a modal for new transactions.",
+        "highlights": [
+          "New transaction modal with DOM interaction",
+          "Dynamic income, expense, and total views",
+          "Responsive, modern styling",
+          "Transaction registration",
+          "Automatic balance calculation"
+        ],
+        "status": "Completed"
+      },
+      "29": {
+        "title": "AgendAI - Smart Scheduling with AI",
+        "description": "Full smart scheduling system with AI for businesses—Next.js 15 and React 19, auth, metrics dashboard, services and staff, hours, bookings, themes, and notifications. Firebase Auth and Firestore.",
+        "highlights": [
+          "Smart scheduling with AI integration",
+          "Firebase Authentication",
+          "Dashboard metrics with Recharts",
+          "Full service catalog management",
+          "Multiple staff members",
+          "Flexible business hours",
+          "Booking management UI",
+          "Light/dark theme",
+          "Booking notifications and reminders",
+          "Unit tests with Jest and RTL",
+          "E2E tests with Cypress",
+          "GitHub Actions CI/CD",
+          "Scalable repository-style architecture",
+          "Zustand state management"
+        ],
+        "status": "Online"
+      },
+      "30": {
+        "title": "OnStart Tecnologia - Institutional Website",
+        "description": "Institutional site for OnStart Tecnologia—technology that simplifies people’s lives. Four main pages: home, about (mission and values), services, and contact with location. Real client project.",
+        "highlights": [
+          "Full institutional site with four main pages",
+          "Home with company and services overview",
+          "About page with mission, vision, and values",
+          "Services page detailing solutions",
+          "Contact page with location info",
+          "Responsive, modern design",
+          "Motion and interactivity with JavaScript",
+          "Font Awesome icons",
+          "Real client delivery",
+          "Organized, professional structure"
+        ],
+        "status": "Online"
+      },
+      "31": {
+        "title": "Coelho Tattoo 013 - Institutional Website",
+        "description": "Modern, responsive site for tattoo artist Leonardo Coelho (custom lettering and calligraffiti, Porto Alegre, RS)—portfolio lightbox, WhatsApp contact forms, services, testimonials. Real client project.",
+        "highlights": [
+          "Interactive portfolio gallery with lightbox",
+          "Contact and booking forms via WhatsApp",
+          "Keyboard and touch (swipe) gallery navigation",
+          "Lazy-loaded images for performance",
+          "Real-time validation with Brazilian phone mask",
+          "Mobile-first responsive design",
+          "Smooth entrance animations",
+          "Next.js automatic image optimization",
+          "SEO with sitemap and robots.txt",
+          "Configured web app manifest",
+          "Security headers configured",
+          "Real client delivery"
+        ],
+        "status": "Online"
+      },
+      "32": {
+        "title": "Eletel Sat - Institutional Website",
+        "description": "Modern responsive site for Eletel Sat—30+ years of electronic security in Viamão, RS. Services include CCTV, alarms, gate motors, electric fences, intercoms, and solar energy. Real client project.",
+        "highlights": [
+          "Modern responsive design with smooth motion",
+          "Responsive hamburger menu",
+          "Smooth scroll between sections",
+          "Floating WhatsApp button",
+          "Contact form with React Hook Form and Zod",
+          "Embedded Google Map",
+          "Scroll-reveal animations with Framer Motion",
+          "SEO with meta tags, structured data, and sitemap",
+          "Open Graph and Twitter Cards",
+          "Lazy loading and code splitting",
+          "WCAG-oriented Radix UI components",
+          "Real client delivery"
+        ],
+        "status": "Online"
+      },
+      "33": {
+        "title": "STV - ELO",
+        "description": "Mobile app for STV Group (Security, Technology, and Asset Protection)—internal communication with documents and useful information for employees. Real client project.",
+        "highlights": [
+          "Internal company communication",
+          "Access to corporate documents",
+          "Useful information for staff",
+          "Real client delivery"
+        ],
+        "status": "In production"
+      }
+    }
+  }
+}

@@ -1,34 +1,35 @@
 "use client";
 
-import React from 'react';
-import Link from 'next/link';
-import { useRouter, usePathname } from 'next/navigation';
-import { Github, Linkedin, Twitter, Mail, RefreshCw } from 'lucide-react';
-import { useVisitorIntent } from '@/hooks/useVisitorIntent';
+import React from "react";
+import { Link, useRouter, usePathname } from "@/i18n/navigation";
+import { Github, Linkedin, Mail, RefreshCw } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { useVisitorIntent } from "@/hooks/useVisitorIntent";
 
 const Footer = () => {
   const { intent, setIntent } = useVisitorIntent();
   const router = useRouter();
   const pathname = usePathname();
+  const t = useTranslations("footer");
+  const tNav = useTranslations("nav");
 
   const handleSwitchVersion = () => {
-    // Considera null como "commercial" (padrão)
     const currentIntent = intent || "commercial";
     const newIntent = currentIntent === "portfolio" ? "commercial" : "portfolio";
     setIntent(newIntent);
-    // Se estiver na homepage, força re-render
-    if (pathname === "/") {
+    if (pathname === "/" || pathname === "") {
       window.location.reload();
     } else {
       router.push("/");
     }
   };
 
-  // Calcula qual versão será exibida após o clique (destino)
   const getNextIntent = () => {
     const currentIntent = intent || "commercial";
     return currentIntent === "portfolio" ? "commercial" : "portfolio";
   };
+
+  const isHome = pathname === "/" || pathname === "";
 
   return (
     <footer className="py-12 px-6 border-t border-border bg-background">
@@ -40,41 +41,51 @@ const Footer = () => {
               <span className="text-foreground">Rodrigues</span>
               <span className="text-primary">.dev</span>
             </div>
-            <p className="text-sm text-muted-foreground">
-              Desenvolvedor Full Stack criando experiências web e mobile modernas e de alta performance.
-            </p>
+            <p className="text-sm text-muted-foreground">{t("tagline")}</p>
           </div>
 
           <div className="space-y-3">
-            <h4 className="text-primary font-medium">Links Rápidos</h4>
+            <h4 className="text-primary font-medium">{t("quickLinks")}</h4>
             <div className="space-y-2 text-sm">
-              <Link href="/" className="block text-muted-foreground hover:text-primary transition-colors">
-                Home
+              <Link
+                href="/"
+                className="block text-muted-foreground hover:text-primary transition-colors"
+              >
+                {tNav("home")}
               </Link>
-              <Link href="/about" className="block text-muted-foreground hover:text-primary transition-colors">
-                Sobre
+              <Link
+                href="/about"
+                className="block text-muted-foreground hover:text-primary transition-colors"
+              >
+                {tNav("about")}
               </Link>
-              <Link href="/projects" className="block text-muted-foreground hover:text-primary transition-colors">
-                Projetos
+              <Link
+                href="/projects"
+                className="block text-muted-foreground hover:text-primary transition-colors"
+              >
+                {tNav("projects")}
               </Link>
-              <Link href="/#contact" className="block text-muted-foreground hover:text-primary transition-colors">
-                Contato
+              <Link
+                href="/#contact"
+                className="block text-muted-foreground hover:text-primary transition-colors"
+              >
+                {tNav("contact")}
               </Link>
             </div>
           </div>
 
           <div className="space-y-3">
-            <h4 className="text-primary font-medium">Serviços</h4>
+            <h4 className="text-primary font-medium">{t("servicesTitle")}</h4>
             <div className="space-y-2 text-sm text-muted-foreground">
-              <p>Desenvolvimento Web</p>
-              <p>Consultoria Técnica</p>
-              <p>UI/UX Design</p>
-              <p>Otimização SEO</p>
+              <p>{t("serviceWeb")}</p>
+              <p>{t("serviceConsulting")}</p>
+              <p>{t("serviceUiux")}</p>
+              <p>{t("serviceSeo")}</p>
             </div>
           </div>
 
           <div className="space-y-3">
-            <h4 className="text-primary font-medium">Social</h4>
+            <h4 className="text-primary font-medium">{t("social")}</h4>
             <div className="flex gap-3">
               <a
                 href="https://github.com/leorodriguesdev"
@@ -94,6 +105,7 @@ const Footer = () => {
               >
                 <Linkedin size={20} />
               </a>
+              {/* Twitter/X oculto
               <a
                 href="https://x.com/leorodriguesdev"
                 target="_blank"
@@ -103,6 +115,7 @@ const Footer = () => {
               >
                 <Twitter size={20} />
               </a>
+              */}
               <a
                 href="mailto:contato@leorodrigues.dev"
                 className="p-2 border border-border rounded hover:border-primary hover:text-primary transition-colors"
@@ -117,15 +130,18 @@ const Footer = () => {
         <div className="pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-muted-foreground text-center md:text-left">
-              © {new Date().getFullYear()} Leorodrigues.dev  - Todos os direitos reservados | Desenvolvido com React & Next.js
+              {t("rights", { year: new Date().getFullYear() })}
             </p>
-            {pathname === "/" && (
+            {isHome && (
               <button
+                type="button"
                 onClick={handleSwitchVersion}
                 className="inline-flex items-center gap-2 px-4 py-2 text-sm bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all font-medium"
               >
                 <RefreshCw size={16} />
-                Ver versão {getNextIntent() === "portfolio" ? "Portfólio" : "Comercial"}
+                {getNextIntent() === "portfolio"
+                  ? t("switchToPortfolio")
+                  : t("switchToCommercial")}
               </button>
             )}
           </div>

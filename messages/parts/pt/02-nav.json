@@ -1,0 +1,19 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "Sobre",
+    "skills": "Habilidades",
+    "projects": "Projetos",
+    "contact": "Contato",
+    "services": "Serviços",
+    "toggleMenu": "Abrir menu"
+  },
+  "languageSwitcher": {
+    "aria": "Selecionar idioma",
+    "locales": {
+      "pt": "Português",
+      "en": "English",
+      "es": "Español"
+    }
+  }
+}

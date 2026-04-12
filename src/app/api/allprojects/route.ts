@@ -1,8 +1,10 @@
-// src/app/api/allprojects/route.ts
-
 import { NextResponse } from "next/server";
-import { projectsData } from "@/data/projectsData";
+import { getProjectsForApiLocale, resolveApiLocale } from "@/lib/apiLocale";
 
-export async function GET() {
-  return NextResponse.json(projectsData);
+export async function GET(request: Request) {
+  const locale = resolveApiLocale(request);
+  const projects = getProjectsForApiLocale(locale);
+  return NextResponse.json(projects, {
+    headers: { "Content-Language": locale },
+  });
 }
