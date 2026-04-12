@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useEffect, useLayoutEffect, useState } from "react";
 import { Palette } from "lucide-react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
@@ -9,6 +9,17 @@ import { useAnalytics } from "@/hooks/useAnalytics";
 type ThemeProviderProps = {
   children: ReactNode;
 };
+
+const THEME_IDS = [
+  "figmaNeon",
+  "dark",
+  "light",
+  "minimalBlue",
+  "pastel",
+  "purpleMono",
+  "darkYellow",
+  "retroGreen",
+] as const;
 
 export default function ThemeProvider({ children }: ThemeProviderProps) {
   const t = useTranslations("theme");
@@ -28,6 +39,18 @@ export default function ThemeProvider({ children }: ThemeProviderProps) {
       localStorage.setItem("theme", "figmaNeon");
     }
   }, []);
+
+  /** Portais (ex.: Vaul Drawer) montam no body fora do wrapper com `theme-*`; variáveis CSS precisam estar no <html>. */
+  useLayoutEffect(() => {
+    const root = document.documentElement;
+    for (const id of THEME_IDS) {
+      root.classList.remove(`theme-${id}`);
+    }
+    const safeTheme = (THEME_IDS as readonly string[]).includes(theme)
+      ? theme
+      : "figmaNeon";
+    root.classList.add(`theme-${safeTheme}`);
+  }, [theme]);
 
   useEffect(() => {
     const timeout = setTimeout(() => setIsLoading(false), 3000);
@@ -126,7 +149,6 @@ export default function ThemeProvider({ children }: ThemeProviderProps) {
   return (
     <div
       className={`
-        theme-${theme}
         transition-colors duration-500 min-h-screen
         ${isTransitioning ? "fade-transition" : ""}
       `}
