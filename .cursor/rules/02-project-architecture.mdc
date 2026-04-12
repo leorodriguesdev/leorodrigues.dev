@@ -1,0 +1,38 @@
+---
+description: Onde colocar código novo neste site Next.js com App Router, i18n e camadas por pasta.
+globs:
+  - "*.*"
+---
+
+# Arquitetura observada
+
+Monorepo **não** — aplicação **Next.js** única com código em `src/`.
+
+## Estrutura principal
+
+| Área | Caminho | Uso |
+|------|---------|-----|
+| App Router (raiz + metadados globais) | `src/app/layout.tsx`, `src/app/global-error.tsx`, `src/app/sitemap.ts`, `src/app/robots.ts` | Layout raiz, erros globais, SEO técnico |
+| Rotas localizadas | `src/app/[locale]/` | Páginas por idioma (`page.tsx`, `layout.tsx`) |
+| Detalhe de projeto (exemplo) | `src/app/[locale]/projects/[id]/` | Página + `ProjectDetailClient.tsx` e subpasta `components/` quando o escopo for só da rota |
+| API (Route Handlers) | `src/app/api/**/route.ts` | Endpoints REST do Next |
+| Componentes de página / marketing | `src/components/` | Blocos reutilizáveis, seções (`sections/`), layout (`layout/`) |
+| Primitivos de UI | `src/components/ui/` | Botões, cards, utilitários visuais compartilhados |
+| Hooks | `src/hooks/` | Lógica cliente reutilizável (`use*` ) |
+| Bibliotecas / helpers | `src/lib/` | Funções puras, integrações (analytics, URLs, locale de API) |
+| Dados estáticos / fixtures | `src/data/` | Dados e JSON usados pela UI |
+| i18n (config next-intl) | `src/i18n/` | `routing.ts`, `request.ts`, `navigation.ts` |
+| Estilos globais | `src/styles/globals.css` | Tokens e estilos globais Tailwind |
+| Traduções | `messages/` | `pt.json`, `en.json`, `es.json` |
+| Scripts de build/repo | `scripts/` | Ex.: `merge-locale-messages.mjs` |
+| Config Next / Sentry | raiz | `next.config.js`, `sentry.*.config.ts`, `tailwind.config.ts`, `postcss.config.mjs` |
+
+## Instruções para o agente
+
+- **Nova página roteada:** criar em `src/app/[locale]/.../page.tsx` (e `layout.tsx` local se necessário), alinhado ao padrão de rotas já existente.
+- **Novo endpoint:** adicionar `src/app/api/<recurso>/route.ts` (ou subpastas por recurso).
+- **Componente reutilizável em várias páginas:** `src/components/` (subpasta `sections/` ou `layout/` conforme o papel).
+- **Componente só de uma rota complexa:** pasta `components/` ao lado da `page.tsx` da rota (como em `projects/[id]/components/`).
+- **Lógica compartilhada sem JSX:** `src/lib/`.
+- **Estado cliente compartilhado:** hook em `src/hooks/`.
+- **Cópia traduzível:** chaves em `messages/*.json` e uso via next-intl, não strings soltas na UI.

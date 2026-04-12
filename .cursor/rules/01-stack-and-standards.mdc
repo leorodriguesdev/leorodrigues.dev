@@ -1,0 +1,26 @@
+---
+description: Padrões de código para TypeScript, Next.js 15 (App Router), React 18 e Tailwind neste repositório.
+globs:
+  - "**/*.ts"
+  - "**/*.tsx"
+---
+
+# Stack detectada (este repositório)
+
+- **Runtime / build:** Node.js, **Next.js 15.5** (`next dev`, `next build`), App Router em `src/app/`.
+- **UI:** **React 18**, **TypeScript 5**, **Tailwind CSS 3** + PostCSS, **Radix UI**, padrão de componentes em `src/components/ui/` (CVA, `tailwind-merge`, `clsx`).
+- **i18n:** **next-intl** (`src/i18n/*`, rotas `src/app/[locale]/`, mensagens em `messages/*.json`).
+- **Observabilidade / deploy:** **@sentry/nextjs**, **@vercel/analytics**, **@vercel/speed-insights**.
+- **Formulários / HTTP:** **react-hook-form**, **axios**, **nodemailer** (API routes).
+- **Qualidade:** **ESLint 8** com `eslint-config-next` (`next/core-web-vitals`, `next/typescript`). Não há script de testes (Jest/Vitest/Playwright) no `package.json`.
+
+# Padrões e boas práticas
+
+1. **TypeScript:** Preferir tipagem explícita em APIs públicas, props de componentes e retornos de funções. Evitar `any`; o projeto ainda usa `"strict": false` no `tsconfig.json` — não piorar o uso de `any` em código novo; quando tocar em módulos existentes, endurecer tipos quando for barato.
+2. **Next.js App Router:** Usar Server Components por padrão; marcar `"use client"` só quando precisar de estado, efeitos ou eventos do DOM. Colocar Route Handlers em `src/app/api/**/route.ts` com métodos HTTP nomeados e respostas `Response`/`NextResponse` adequadas.
+3. **Internacionalização:** Textos de interface devem passar por **next-intl** e arquivos em `messages/` (não hardcodar strings visíveis ao usuário em PT/EN/ES fora do fluxo de tradução).
+4. **Imports:** Usar o alias `@/*` → `./src/*` já configurado no `tsconfig.json`.
+5. **React:** Hooks nas regras oficiais (ordem, dependências corretas de `useEffect`/`useMemo`/`useCallback`). Evitar otimizações prematuras de memoização.
+6. **Acessibilidade:** Preferir primitivos Radix já usados no projeto; manter foco, `aria-*` e HTML semântico em componentes interativos.
+7. **Estilo:** Classes Tailwind coerentes com o design existente; utilitários compartilhados em `cn()` / padrão já usado em `src/components/ui/utils.ts`.
+8. **Segurança:** Validar e sanitizar dados em rotas de API; não expor segredos no cliente; variáveis sensíveis apenas em ambiente servidor.

@@ -1,0 +1,33 @@
+---
+description: Comandos de terminal e fluxo de trabalho (npm, Next, ESLint) mapeados ao tooling deste repositório.
+globs:
+  - "*.*"
+---
+
+# Gerenciador de pacotes
+
+O `package.json` define scripts **npm**. Existem `package-lock.json` e `yarn.lock` na raiz — **padronize um fluxo** (recomendado: **npm** alinhado ao `package-lock.json` e aos scripts abaixo).
+
+# Comandos detectados (use o terminal / execução de comandos)
+
+| Objetivo | Comando |
+|----------|---------|
+| Instalar dependências | `npm install` |
+| Servidor de desenvolvimento | `npm run dev` (alternativa com Turbopack: `npm run dev:turbo`) |
+| Build de produção | `npm run build` |
+| Servidor após build | `npm start` |
+| Lint (ESLint via Next) | `npm run lint` |
+| Mesclar mensagens de locale | `npm run messages:merge` |
+
+**Não há** script `test` / `vitest` / `jest` no `package.json` — antes de propor testes automatizados, alinhar com o mantenedor (adição de framework e script).
+
+# Checklist antes de finalizar alterações
+
+1. Rodar **`npm run lint`** e corrigir problemas reportados pelo ESLint (`next/core-web-vitals`, `next/typescript`).
+2. Se alterou traduções ou chaves i18n, rodar **`npm run messages:merge`** quando fizer parte do fluxo do projeto.
+3. Smoke manual: **`npm run dev`** e validar a rota afetada (especialmente `[locale]`).
+
+# Skills Cursor (como aplicar)
+
+- **Terminal:** executar os comandos acima no diretório raiz do repositório (`leorodrigues.dev`), não apenas sugerir ao usuário.
+- **Edição de arquivos:** respeitar `.cursor/rules/01-stack-and-standards.mdc` e `02-project-architecture.mdc` para paths e convenções.
