@@ -6,9 +6,14 @@ function deepMerge(
   source: Record<string, unknown>,
 ): Record<string, unknown> {
   for (const key of Object.keys(source)) {
+    if (key === "__proto__" || key === "constructor" || key === "prototype") {
+      continue;
+    }
+
     const sv = source[key];
     const tv = target[key];
     if (
+      Object.prototype.hasOwnProperty.call(target, key) &&
       sv !== null &&
       typeof sv === "object" &&
       !Array.isArray(sv) &&
