@@ -73,6 +73,9 @@
     "vaul": "^1.1.2",
     "yet-another-react-lightbox": "^3.23.0"
   },
+  "overrides": {
+    "@swc/helpers": "0.5.21"
+  },
   "devDependencies": {
     "@types/node": "^20",
     "@types/nodemailer": "^6.4.16",
