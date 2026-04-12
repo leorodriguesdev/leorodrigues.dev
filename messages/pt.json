@@ -1,0 +1,1024 @@
+{
+  "metadata": {
+    "rootTitle": "Engenheiro de Software | Léo Rodrigues - Mobile, Web, APIs e Dados",
+    "titleTemplate": "%s | Léo Rodrigues",
+    "rootDescription": "Engenheiro de Software com 7+ anos em aplicativos, web, APIs e banco de dados. React Native, Expo, Next.js, Node.js e TypeScript. Disponível para projetos.",
+    "ogDescription": "Engenheiro de Software: mobile, web, backend e dados. React Native, Expo, Next.js e Node.js. 7+ anos de experiência.",
+    "twitterTitle": "Engenheiro de Software | Léo Rodrigues",
+    "twitterDescription": "Mobile, web, APIs e banco de dados. React Native, Expo, Next.js e Node.js. 7+ anos de experiência.",
+    "siteName": "Leorodrigues.dev",
+    "authorName": "Léo Rodrigues",
+    "ogImageAlt": "Léo Rodrigues - Engenheiro de Software",
+    "rootKeywords": [
+      "engenheiro de software",
+      "software engineer",
+      "desenvolvedor react native",
+      "desenvolvedor mobile",
+      "react native developer",
+      "mobile developer",
+      "desenvolvedor expo",
+      "expo developer",
+      "criar site",
+      "fazer site",
+      "desenvolvimento de site",
+      "criar app",
+      "desenvolvimento de app",
+      "site profissional",
+      "app mobile",
+      "desenvolvedor full stack",
+      "full stack developer",
+      "desenvolvedor web",
+      "React",
+      "React Native",
+      "Expo",
+      "Next.js",
+      "Node.js",
+      "TypeScript",
+      "JavaScript",
+      "portfolio desenvolvedor",
+      "desenvolvimento mobile",
+      "desenvolvimento web moderno",
+      "leorodrigues.dev",
+      "Léo Rodrigues",
+      "leo rodrigues"
+    ],
+    "homeTitle": "Criação de Sites e Apps | Desenvolvimento Profissional | Léo Rodrigues",
+    "homeDescription": "Sites, aplicativos, APIs e sistemas com banco de dados. Engenheiro de Software com React Native, Expo, Next.js e Node.js. Orçamento grátis. 7+ anos de experiência.",
+    "homeKeywords": "engenheiro de software, desenvolvedor full stack, criar site, desenvolvimento de app, desenvolvedor React Native, desenvolvedor mobile, desenvolvedor Next.js, desenvolvedor Node.js, API, banco de dados",
+    "aboutTitle": "Sobre Mim | Engenheiro de Software | Léo Rodrigues",
+    "aboutDescription": "Conheça Léo Rodrigues, Engenheiro de Software com 7+ anos em mobile, web, APIs e banco de dados. React Native, Expo, React, Next.js, TypeScript e Node.js.",
+    "aboutKeywords": "engenheiro de software, desenvolvedor full stack, perfil desenvolvedor, experiência mobile e web",
+    "projectsListTitle": "Projetos | Apps Mobile e Sites Desenvolvidos | Léo Rodrigues",
+    "projectsListDescription": "Portfolio de Léo Rodrigues: apps, web, APIs e dados. React Native, Next.js, Node.js e mais. Casos de sucesso em engenharia de software.",
+    "projectsListKeywords": "portfolio engenheiro de software, projetos React Native, projetos mobile, projetos Next.js, full stack",
+    "servicesTitle": "Serviços de Desenvolvimento | Criar Site e App Mobile | Léo Rodrigues",
+    "servicesDescription": "Engenharia de software: apps, sites, APIs e integração com bancos de dados. React Native, Next.js, Node.js. Orçamento grátis. 7+ anos de experiência.",
+    "servicesKeywords": "engenheiro de software contratar, desenvolvimento full stack, criar app, criar site, API, banco de dados, React Native, Next.js",
+    "searchConsoleTitle": "Status do Google Search Console",
+    "searchConsoleDescription": "Verificação de status e configuração do Google Search Console para leorodrigues.dev",
+    "projectNotFoundTitle": "Projeto não encontrado",
+    "projectMetaSuffix": "Desenvolvido por Léo Rodrigues",
+    "projectTypeMobile": "App Mobile React Native",
+    "projectTypeApi": "Sistema Backend",
+    "projectTypeWebsite": "Site Next.js",
+    "projectMetaDescriptionDev": "Desenvolvido com {tech}. Veja mais projetos de {context}.",
+    "projectMetaContextMobile": "desenvolvimento mobile",
+    "projectMetaContextWeb": "desenvolvimento web",
+    "projectDetailSeoSuffix": "Léo Rodrigues Portfolio",
+    "seoDefaultTitle": "Léo Rodrigues - Engenheiro de Software | Mobile, Web & Backend",
+    "seoDefaultDescription": "Engenheiro de Software com React, Next.js e TypeScript. Mobile, web, APIs e banco de dados. Disponível para projetos e oportunidades.",
+    "seoDefaultKeywords": "engenheiro de software, desenvolvedor full stack, React, Next.js, TypeScript, mobile, backend, portfolio desenvolvedor"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "Sobre",
+    "skills": "Habilidades",
+    "projects": "Projetos",
+    "contact": "Contato",
+    "services": "Serviços",
+    "toggleMenu": "Abrir menu"
+  },
+  "languageSwitcher": {
+    "aria": "Selecionar idioma",
+    "locales": {
+      "pt": "Português",
+      "en": "English",
+      "es": "Español"
+    }
+  },
+  "footer": {
+    "tagline": "Engenheiro de Software criando produtos mobile, web, APIs e dados com foco em qualidade e performance.",
+    "quickLinks": "Links Rápidos",
+    "servicesTitle": "Serviços",
+    "serviceWeb": "Desenvolvimento Web",
+    "serviceConsulting": "Consultoria Técnica",
+    "serviceUiux": "UI/UX Design",
+    "serviceSeo": "Otimização SEO",
+    "social": "Social",
+    "rights": "© {year} Leorodrigues.dev - Todos os direitos reservados | Desenvolvido com React & Next.js",
+    "switchToPortfolio": "Ver versão Portfólio",
+    "switchToCommercial": "Ver versão Comercial"
+  },
+  "visitorIntent": {
+    "title": "Olá! Como posso te ajudar?",
+    "subtitle": "Escolha a opção que melhor descreve sua necessidade",
+    "footerNote": "Você pode mudar essa escolha a qualquer momento",
+    "close": "Fechar",
+    "portfolioTitle": "Portfólio",
+    "portfolioSubtitle": "Engenheiro de Software para sua equipe técnica",
+    "portfolioDescription": "Estou procurando um desenvolvedor para trabalhar na minha equipe ou projeto",
+    "portfolioCta": "Ver Portfólio",
+    "commercialTitle": "Comercial",
+    "commercialSubtitle": "Apps e sites para sua empresa",
+    "commercialDescription": "Quero desenvolver um site ou aplicativo para meu negócio",
+    "commercialCta": "Ver Serviços",
+    "badgePopular": "Mais Popular"
+  },
+  "projectsList": {
+    "title": "Meus",
+    "titleAccent": "Projetos",
+    "subtitle": "Uma coleção dos projetos que desenvolvi, desde aplicações web completas até experimentações com novas tecnologias",
+    "filterAll": "Todos",
+    "filterWebsites": "Websites",
+    "filterApi": "API",
+    "filterApps": "Apps",
+    "filterTechLabel": "Filtrar por Tecnologia",
+    "allTech": "Todas as Tecnologias",
+    "allTags": "Todas",
+    "moreTags": "+{count} mais",
+    "close": "Fechar",
+    "allTechDesktop": "Todas as tecnologias",
+    "filteredBy": "Filtrado por:",
+    "removeFilterAria": "Remover filtro",
+    "typeWebsite": "Site / Web",
+    "typeApi": "Sistema / API",
+    "typeMobile": "App / Mobile",
+    "viewDetails": "Ver Detalhes",
+    "empty": "Nenhum projeto encontrado com essa tecnologia."
+  },
+  "projectDetail": {
+    "back": "Voltar aos Projetos",
+    "visitSite": "Acessar Site",
+    "playStore": "Play Store",
+    "appStore": "App Store",
+    "description": "Descrição",
+    "highlights": "Principais Destaques",
+    "techStack": "Tech Stack",
+    "otherProjects": "Outros Projetos"
+  },
+  "gallery": {
+    "imageAlt": "{title} imagem {index}",
+    "hint": "Clique em qualquer imagem para visualizar em tela cheia • {count} {count, plural, one {imagem disponível} other {imagens disponíveis}}"
+  },
+  "about": {
+    "avatarAlt": "Leonardo Rodrigues",
+    "heroTitle": "Engenheiro de Software com",
+    "heroAccent": "7+ Anos de Experiência",
+    "heroSubtitle": "Mobile, web, APIs e banco de dados com React Native, Expo, Next.js, Node.js e TypeScript. Soluções modernas, seguras e escaláveis.",
+    "contactBtn": "Contato",
+    "bioP1": "Olá! Meu nome é <strong>Leonardo Rodrigues</strong> e sou um desenvolvedor full stack apaixonado por transformar ideias em soluções digitais robustas e eficientes. Com <span>mais de 7 anos de experiência</span> no mercado, atuo com foco em desenvolvimento web e mobile, utilizando as mais modernas tecnologias para construir produtos de alta qualidade.",
+    "bioP2": "Minha jornada profissional inclui passagens por empresas como a <span>IBM, Banco do Brasil, Banco Sicredi e Sistema FIERGS</span>, atualmente contribuo para a <span>Raiô Benefícios</span> e <span>STV Segurança</span>, onde tenho a oportunidade de participar de <span>todo o ciclo de desenvolvimento de projetos</span>, desde a concepção e prototipagem até o deploy e manutenção. Essa experiência me proporcionou uma visão 360º do processo de desenvolvimento, me permitindo entregar soluções completas e eficazes.",
+    "bioP3": "Sou movido pela paixão em resolver <strong>problemas complexos</strong> e aprimorar minhas <strong>habilidades</strong>. Para mim, o desenvolvimento de software transcende o código; é sobre entender o <strong>usuário</strong> e criar <strong>soluções intuitivas e impactantes</strong>. Estou sempre em busca de novos <strong>desafios</strong> e oportunidades para contribuir com minha expertise em <strong>projetos inovadores</strong> e equipes colaborativas.",
+    "quote": "\"Quanto mais estudo, mais sinto que minha mente nisso é insaciável.\"",
+    "quoteAuthor": "Ada Lovelace - Matemática, Escritora Inglesa e inventora do primeiro algoritmo de computador da história."
+  },
+  "stats": {
+    "repos": "Repositórios GitHub",
+    "lines": "Linhas de Código",
+    "stars": "Stars no GitHub",
+    "followers": "Seguidores GitHub",
+    "years": "Anos de Experiência",
+    "completed": "Projetos Concluídos",
+    "satisfaction": "Taxa de Satisfação"
+  },
+  "testimonials": {
+    "title": "O Que Dizem os",
+    "titleAccent": "Clientes",
+    "subtitle": "Feedback de clientes e parceiros que confiaram no meu trabalho",
+    "roleAt": "{role} na {company}"
+  },
+  "contact": {
+    "badge": "Disponível para novos projetos",
+    "title": "Pronto Para Transformar",
+    "titleAccent": "Sua Ideia?",
+    "subtitle": "Vamos criar algo incrível juntos. Entre em contato para discutir seu próximo projeto e receber uma consultoria gratuita.",
+    "whatsapp": "WhatsApp"
+  },
+  "skills": {
+    "title": "Habilidades e Tecnologias",
+    "subtitle": "Tecnologias e ferramentas que utilizo para transformar ideias em projetos de alta qualidade.",
+    "expertise": "Expertise",
+    "reactDesc": "Tecnologia para criar sites e sistemas interativos com alto desempenho, garantindo uma ótima experiência para os usuários.",
+    "nextDesc": "Expande o React para gerar páginas rápidas e seguras. Ideal para sites de negócios que precisam de boa performance e SEO.",
+    "rnDesc": "Permite criar aplicativos móveis (Android/iOS) usando a mesma base do React, agilizando o lançamento de apps para o seu negócio.",
+    "expoDesc": "Facilita o desenvolvimento de aplicativos sem configurações complicadas, acelerando a publicação e as atualizações dos apps.",
+    "jsDesc": "Linguagem fundamental que garante a parte interativa do site ou sistema, tornando-o mais dinâmico e atraente.",
+    "nodeDesc": "Permite criar servidores e APIs robustos para atender múltiplos usuários simultaneamente, sem lentidão ou travamentos.",
+    "tsDesc": "Versão mais organizada do JavaScript, ajudando a evitar erros e manter seu projeto estável à medida que cresce.",
+    "tailwindDesc": "Ferramenta de design que agiliza a criação de layouts atraentes e responsivos, adequados a qualquer tamanho de tela."
+  },
+  "experience": {
+    "title": "Experiência Profissional",
+    "subtitle": "Uma jornada repleta de desafios e aprendizado, em constante evolução no mundo da tecnologia.",
+    "achievements": "Conquistas:",
+    "showMore": "Ver Mais Experiências",
+    "showLess": "Ver Menos"
+  },
+  "education": {
+    "title": "Educação e Certificações",
+    "subtitle": "Formação acadêmica e certificações que fortalecem minhas habilidades e conhecimentos na área de tecnologia.",
+    "showMore": "Ver Mais Educação",
+    "showLess": "Ver Menos"
+  },
+  "portfolioHome": {
+    "badge": "Disponível para contratação",
+    "heroTitle": "Engenheiro",
+    "heroAccent": "de Software",
+    "heroTitleEnd": "",
+    "heroSubtitle": "7+ anos em aplicativos, web, backend e banco de dados. Stack: React Native, Expo, Next.js, Node.js e TypeScript. Pronto para integrar sua equipe e entregar com qualidade.",
+    "ctaPortfolio": "Ver Portfólio Completo",
+    "ctaAbout": "Sobre Mim",
+    "whyTitle": "Por Que Escolher",
+    "whyAccent": "Meu Trabalho?",
+    "whySubtitle": "Compromisso com excelência, inovação e resultados mensuráveis",
+    "cardQualityTitle": "Código de Qualidade",
+    "cardQualityDesc": "Código limpo, maintível e bem documentado seguindo as melhores práticas da indústria. TypeScript e testes automatizados são padrão.",
+    "cardPerfTitle": "Performance Otimizada",
+    "cardPerfDesc": "Aplicações rápidas com Core Web Vitals otimizados, SEO avançado e acessibilidade garantida. Seu site vai ranquear bem no Google.",
+    "cardCommTitle": "Comunicação Clara",
+    "cardCommDesc": "Atualizações frequentes, feedback constante e transparência total durante todo o desenvolvimento do projeto."
+  },
+  "projectsSection": {
+    "title": "Projetos em",
+    "titleAccent": "Destaque",
+    "subtitle": "Alguns dos projetos que desenvolvi recentemente",
+    "viewAll": "Ver Todos os Projetos"
+  },
+  "commercialHome": {
+    "badge": "Orçamento Grátis",
+    "heroLine1": "Crie Seu",
+    "heroAccent": "Site ou App",
+    "heroLine2": "Profissional",
+    "heroSubtitle": "Desenvolvimento de sites modernos e aplicativos mobile que impulsionam seu negócio. Sites otimizados para Google, apps para iOS e Android.",
+    "heroSubtitleAccent": "Solicite seu orçamento gratuito.",
+    "ctaQuote": "Solicitar Orçamento Grátis",
+    "ctaServices": "Ver Serviços e Preços",
+    "whatsappAria": "WhatsApp",
+    "whatIDevTitle": "O Que Eu",
+    "whatIDevAccent": "Desenvolvo",
+    "whatIDevSubtitle": "Soluções completas para sua presença digital",
+    "institutionalTitle": "Sites Institucionais",
+    "institutionalDesc": "Site profissional, responsivo e otimizado para Google. Ideal para empresas que querem presença online.",
+    "institutionalB1": "Design moderno e responsivo",
+    "institutionalB2": "SEO otimizado",
+    "institutionalB3": "Formulário de contato",
+    "institutionalB4": "Integração com redes sociais",
+    "mobileTitle": "Aplicativos Mobile",
+    "mobileDesc": "App nativo para iOS e Android. Ideal para empresas que querem estar na palma da mão dos clientes.",
+    "mobileB1": "App para iOS e Android",
+    "mobileB2": "Publicação nas lojas",
+    "mobileB3": "Integração com APIs",
+    "mobileB4": "Suporte e manutenção",
+    "systemsTitle": "Sistemas Web",
+    "systemsDesc": "Sistemas completos, e-commerce, dashboards. Soluções personalizadas para seu negócio.",
+    "systemsB1": "Sistema personalizado",
+    "systemsB2": "Painel administrativo",
+    "systemsB3": "Integrações de pagamento",
+    "systemsB4": "API e banco de dados",
+    "viewDetails": "Ver detalhes",
+    "popularBadge": "Mais Popular",
+    "howTitle": "Como",
+    "howAccent": "Funciona",
+    "howSubtitle": "Processo simples e transparente do início ao lançamento",
+    "step1Title": "Contato",
+    "step1Desc": "Você entra em contato e descreve sua necessidade",
+    "step2Title": "Orçamento",
+    "step2Desc": "Envio uma proposta detalhada com prazo e investimento",
+    "step3Title": "Desenvolvimento",
+    "step3Desc": "Desenvolvo seu projeto com atualizações regulares",
+    "step4Title": "Entrega",
+    "step4Desc": "Seu site ou app é lançado e você recebe treinamento",
+    "investTitle": "Investimento",
+    "investAccent": "Personalizado",
+    "investSubtitle": "Cada projeto é único e o investimento depende das suas necessidades específicas. Solicite um orçamento personalizado sem compromisso.",
+    "budgetTitle": "Orçamento Sob Medida",
+    "budgetDesc": "Não trabalhamos com pacotes fechados. Cada projeto é analisado individualmente, considerando suas necessidades, complexidade, prazo e objetivos. O investimento é calculado de forma justa e transparente, sempre alinhado ao valor entregue.",
+    "featAnalysisTitle": "Análise Detalhada",
+    "featAnalysisDesc": "Avaliamos seu projeto completo antes de definir o investimento",
+    "featTransparencyTitle": "Transparência Total",
+    "featTransparencyDesc": "Proposta detalhada com escopo, prazos e investimento claros",
+    "featNoCommitTitle": "Sem Compromisso",
+    "featNoCommitDesc": "Orçamento grátis e sem obrigação de contratação",
+    "featFairTitle": "Valor Justo",
+    "featFairDesc": "Investimento proporcional à complexidade e valor entregue",
+    "ctaCustomQuote": "Solicitar Orçamento Personalizado",
+    "guarantee1Title": "Orçamento Grátis",
+    "guarantee1Sub": "Sem compromisso",
+    "guarantee2Title": "3 Meses de Suporte",
+    "guarantee2Sub": "Incluso na entrega",
+    "guarantee3Title": "Código Documentado",
+    "guarantee3Sub": "Fácil manutenção"
+  },
+  "servicesPage": {
+    "structuredName": "Serviços de Desenvolvimento Mobile e Web",
+    "structuredServiceTypes": [
+      "Desenvolvimento Mobile",
+      "Desenvolvimento Web",
+      "Desenvolvimento Full Stack"
+    ],
+    "heroTitle": "Serviços de",
+    "heroAccent": "Desenvolvimento",
+    "heroSubtitle": "Soluções completas em desenvolvimento mobile, web e full stack. Criando aplicativos, sites e sistemas que impulsionam resultados.",
+    "includes": "Inclui:",
+    "requestQuote": "Solicitar Orçamento",
+    "whyTitle": "Por Que Escolher",
+    "whyAccent": "Meus Serviços?",
+    "whyModernTitle": "Tecnologias Modernas",
+    "whyModernDesc": "Uso das tecnologias mais atuais e eficientes do mercado: React Native, Expo, Next.js, TypeScript e Node.js.",
+    "whyExpTitle": "7+ Anos de Experiência",
+    "whyExpDesc": "Mais de 7 anos desenvolvendo aplicativos e sites para empresas como IBM, Banco do Brasil e Banco Sicredi.",
+    "whyQualityTitle": "Código de Qualidade",
+    "whyQualityDesc": "Código limpo, bem documentado e seguindo as melhores práticas da indústria. TypeScript e testes são padrão.",
+    "whyFastTitle": "Entrega Rápida",
+    "whyFastDesc": "Metodologia ágil, comunicação constante e entregas dentro do prazo. Seu projeto no ar mais rápido.",
+    "ctaReadyTitle": "Pronto para",
+    "ctaReadyAccent": "Começar Seu Projeto?",
+    "ctaReadySubtitle": "Entre em contato e vamos conversar sobre como posso ajudar a transformar sua ideia em realidade.",
+    "ctaContact": "Entre em Contato",
+    "ctaProjects": "Ver Projetos"
+  },
+  "servicesCards": {
+    "mobileTitle": "Desenvolvimento Mobile",
+    "mobileDesc": "Criação de aplicativos nativos para iOS e Android usando React Native e Expo. Apps performáticos, escaláveis e com experiência de usuário excepcional.",
+    "mobileF1": "Apps nativos iOS e Android",
+    "mobileF2": "React Native e Expo",
+    "mobileF3": "Integração com APIs",
+    "mobileF4": "Publicação nas lojas",
+    "mobileF5": "Manutenção e suporte",
+    "mobileF6": "Performance otimizada",
+    "webTitle": "Desenvolvimento Web",
+    "webDesc": "Sites e aplicações web modernas com Next.js, React e TypeScript. Performance otimizada, SEO avançado e experiência de usuário de alta qualidade.",
+    "webF1": "Sites responsivos",
+    "webF2": "Aplicações web modernas",
+    "webF3": "SEO otimizado",
+    "webF4": "Performance otimizada",
+    "webF5": "PWA (Progressive Web Apps)",
+    "webF6": "Integração com APIs",
+    "fullTitle": "Desenvolvimento Full Stack",
+    "fullDesc": "Soluções completas do frontend ao backend. APIs RESTful, bancos de dados, autenticação e integrações. Sistemas escaláveis e robustos.",
+    "fullF1": "APIs RESTful",
+    "fullF2": "Backend Node.js",
+    "fullF3": "Bancos de dados",
+    "fullF4": "Autenticação e segurança",
+    "fullF5": "Integrações de terceiros",
+    "fullF6": "Arquitetura escalável"
+  },
+  "searchConsole": {
+    "fetchError": "Erro ao buscar status",
+    "unknownError": "Erro desconhecido",
+    "pageTitle": "Status do Google Search Console",
+    "pageSubtitle": "Verificação de acessibilidade das páginas e configuração do Search Console",
+    "statusChecking": "Verificando...",
+    "statusOk": "Acessível",
+    "statusFail": "Não acessível",
+    "overallOk": "Tudo OK",
+    "overallWarn": "Atenção Necessária",
+    "statusLabel": "Status:",
+    "lastCheck": "Última verificação:",
+    "pageChecks": "Verificação de Páginas",
+    "nextSteps": "Próximos Passos",
+    "usefulLinks": "Links Úteis",
+    "linkGscTitle": "Google Search Console",
+    "linkGscDesc": "Acessar dashboard",
+    "linkSitemapTitle": "Sitemap",
+    "linkSitemapDesc": "Ver sitemap.xml",
+    "linkRobotsTitle": "Robots.txt",
+    "linkRobotsDesc": "Ver robots.txt",
+    "linkGuideTitle": "Guia Completo",
+    "linkGuideDesc": "Ver documentação"
+  },
+  "globalError": {
+    "title": "Algo deu errado!",
+    "description": "Um erro inesperado ocorreu. Nossa equipe foi notificada.",
+    "retry": "Tentar novamente"
+  },
+  "breadcrumbs": {
+    "navAria": "Trilha de navegação",
+    "home": "Home",
+    "about": "Sobre",
+    "projects": "Projetos",
+    "services": "Serviços",
+    "search-console": "Search Console"
+  },
+  "api": {
+    "contactSuccess": "E-mail enviado com sucesso!",
+    "contactError": "Erro ao enviar email.",
+    "searchAllOk": "✅ Todas as páginas estão acessíveis. Pronto para enviar sitemap no Google Search Console.",
+    "searchSomeFail": "⚠️ Algumas páginas não estão acessíveis. Verifique antes de enviar sitemap.",
+    "searchRec2": "📋 Acesse https://search.google.com/search-console e adicione a propriedade https://leorodrigues.dev",
+    "searchRec3": "🗺️ Envie o sitemap: sitemap.xml",
+    "searchRec4": "🔍 Solicite indexação das páginas principais manualmente"
+  },
+  "theme": {
+    "openSelector": "Abrir seletor de tema",
+    "selectTheme": "Selecione o Tema"
+  },
+  "structuredData": {
+    "websiteName": "Leorodrigues.dev",
+    "personJobTitle": "Engenheiro de Software",
+    "personDescription": "Engenheiro de Software com experiência em mobile, web, APIs e banco de dados. React Native, Expo, Next.js, Node.js e TypeScript. Produtos modernos, rápidos e escaláveis.",
+    "websiteDescription": "Portfolio profissional de Léo Rodrigues — Engenheiro de Software (mobile, web, backend e dados) com React Native, Expo, Next.js e TypeScript",
+    "professionalServiceName": "Desenvolvimento Full Stack",
+    "serviceWeb": "Desenvolvimento Web",
+    "serviceMobile": "Desenvolvimento Mobile",
+    "serviceFull": "Desenvolvimento Full Stack",
+    "serviceConsulting": "Consultoria em Desenvolvimento",
+    "localBusinessName": "Léo Rodrigues - Engenheiro de Software",
+    "localBusinessDescription": "Engenheiro de Software: aplicativos, sites, APIs e integração com bancos de dados. React Native, Expo, Next.js, Node.js e TypeScript.",
+    "countryBrasil": "Brasil",
+    "servicesOfferedName": "Serviços de desenvolvimento de software"
+  },
+  "experienceItems": {
+    "e0": {
+      "title": "Fundador e Desenvolvedor - Leorodrigues.dev LTDA",
+      "duration": "2020 - Presente",
+      "description": "Fundador de empresa de desenvolvimento de software, atendendo clientes próprios com soluções customizadas em aplicativos mobile e web. Desenvolvimento de projetos end-to-end, desde a concepção até a entrega e manutenção.",
+      "achievements": [
+        "Gestão de projetos",
+        "Desenvolvimento full stack",
+        "Atendimento ao cliente",
+        "React Native",
+        "Kotlin",
+        "Swift",
+        "Node.js"
+      ]
+    },
+    "e1": {
+      "title": "Engenheiro de Software Sênior - Raiô Benefícios",
+      "duration": "Set 2025 - Presente · 5 meses",
+      "description": "Desenvolvedor full stack sênior, com foco em escalabilidade e performance do aplicativo de benefícios corporativos Raiô Benefícios. Com as tecnologias React Native e NodeJS.",
+      "achievements": [
+        "React Native",
+        "Kotlin",
+        "Swift",
+        "Node.js"
+      ]
+    },
+    "e2": {
+      "title": "Desenvolvedor Mobile Sênior - STV Segurança",
+      "duration": "Mai 2024 - Presente · 1 ano 9 meses",
+      "description": "Desenvolvedor freelancer em aplicativo corporativo para funcionários da empresa, como hub de informações gerais e profissionais com fácil acesso.",
+      "achievements": [
+        "React Native",
+        "Kotlin",
+        "Swift"
+      ]
+    },
+    "e3": {
+      "title": "Desenvolvedor e Analista de Sistemas Pleno - Sistema FIERGS",
+      "duration": "Abr 2023 - Set 2025 · 2 anos 6 meses",
+      "description": "Analista e desenvolvedor de sistemas pleno. Desenvolvedor web e mobile utilizando React e React Native, também fazendo a sustentação de sistemas legados.",
+      "achievements": [
+        "Desenvolvimento orientado a testes",
+        "JavaScript",
+        "React",
+        "React Native",
+        "Kotlin",
+        "Swift",
+        "21+ competências adicionais"
+      ]
+    },
+    "e4": {
+      "title": "Desenvolvedor Mobile - IBM (Banco do Brasil)",
+      "duration": "Dez 2021 - Mar 2023 · 1 ano 4 meses",
+      "description": "Desenvolvimento mobile na conta do Banco do Brasil, com especialização no desenvolvimento do app de investimentos.",
+      "achievements": [
+        "Jest",
+        "Desenvolvimento de front-end",
+        "1+ competência adicional"
+      ]
+    },
+    "e5": {
+      "title": "QA Tester - Sicredi",
+      "duration": "Ago 2021 - Nov 2021 · 4 meses",
+      "description": "QA em projeto para o banco Sicredi, envolvendo o sistema de carteiras de usuários para respectivos gerentes. Utilizei ferramentas como Kafka, PostgreSQL, RestAssured e Salesforce.",
+      "achievements": [
+        "PostgreSQL",
+        "Salesforce",
+        "Automação de testes"
+      ]
+    },
+    "e6": {
+      "title": "Desenvolvedor Full Stack - IBM",
+      "duration": "Mar 2021 - Ago 2021 · 6 meses",
+      "description": "Desenvolvimento full-stack em projeto de controle de estágios na IBM, utilizando Angular, Java com Spring e PostgreSQL.",
+      "achievements": [
+        "Desenvolvimento de front-end",
+        "Java com Spring",
+        "PostgreSQL"
+      ]
+    },
+    "e7": {
+      "title": "Suporte ao Cliente - Nitronnews Email Marketing",
+      "duration": "Jun 2020 - Mar 2021 · 10 meses",
+      "description": "Suporte técnico aos clientes da ferramenta Nitronnews por meio de diversos canais e produção de conteúdo técnico.",
+      "achievements": [
+        "Suporte técnico",
+        "Documentação",
+        "Produção de conteúdo"
+      ]
+    }
+  },
+  "educationItems": {
+    "ed0": {
+      "title": "Pós-graduação Lato Sensu - Especialização, Inteligência Artificial",
+      "institution": "UniRitter",
+      "year": "Mai 2025 - Jun 2026",
+      "description": "Especialista em Inteligência Artificial com os principais tópicos: Aprendizado de máquina, Engenharia, preparação e visualização de dados, Gestão do conhecimento e inteligência competitiva, Redes neurais e aprendizado profundo, Arquiteturas de aprendizagem de máquina na nuvem e nas bordas, Análise de imagem e visão computacional, Processamento de linguagem natural, Experiência de usuário e IA.",
+      "achievements": [
+        "Inteligência artificial",
+        "Aprendizado de máquina",
+        "25+ competências adicionais"
+      ]
+    },
+    "ed1": {
+      "title": "Especialização em Desenvolvimento de Software com React, React Native e NodeJs",
+      "institution": "Rocketseat",
+      "year": "2023",
+      "description": "Me especializei em desenvolvimento de aplicações modernas e de alta performance, com um foco prático em todo o processo de criação. No front-end, desenvolvi interfaces interativas e responsivas com React, enquanto no desenvolvimento de aplicações móveis, utilizei React Native para proporcionar uma experiência nativa e fluida. No back-end, aprofundei meus conhecimentos em Node.js, criando APIs escaláveis e seguras, o que me capacitou a construir soluções completas e inovadoras."
+    },
+    "ed2": {
+      "title": "Tecnólogo, Análise e Desenvolvimento de Sistemas",
+      "institution": "Universidade Estácio de Sá",
+      "year": "2022",
+      "description": "Concluí o curso superior em Análise e Desenvolvimento de Sistemas, onde aprendi a dominar conceitos avançados de desenvolvimento com uma ênfase prática em aplicações web com React. Esta formação me permitiu adquirir uma base técnica sólida para arquitetar, desenvolver e manter sistemas eficientes e robustos, sempre alinhados às boas práticas e inovações do mercado."
+    },
+    "ed3": {
+      "title": "Curso Técnico em Programação Web",
+      "institution": "IFRS - Instituto Federal do Rio Grande do Sul",
+      "year": "2020",
+      "description": "Realizei minha formação técnica em Programação Web, onde desenvolvi habilidades fundamentais para criar projetos completos. Aprendi linguagens de programação, banco de dados e princípios de segurança da informação. Também explorei o uso de recursos visuais, como imagens, vídeos e animações, aliados ao domínio de HTML, CSS e outras tecnologias essenciais para desenvolver interfaces atraentes e experiências web de alto nível."
+    }
+  },
+  "testimonialItems": {
+    "t0": {
+      "name": "Adriano Machado",
+      "role": "CEO",
+      "company": "OnStart Tecnologia",
+      "content": "Léo é um profissional excepcional. Entregou nosso projeto antes do prazo e superou todas as expectativas. Colocou nossa empresa no mapa de empresas de tecnologia do Brasil."
+    },
+    "t1": {
+      "name": "Vivian Oliveira",
+      "role": "Scrum Master",
+      "company": "Serasa Experian",
+      "content": "Trabalhar com o Léo está sendo incrível! Ele é proativo, eficiente e comunicador, resolve problemas com muita rapidez. É um profissional comprometido com resultados e engajado com pessoas, sempre pronto para ajudar, ouvir e apoiar. Está sempre buscando mais conhecimento e qualificação para tornar-se um profissional ainda mais gabaritado."
+    },
+    "t2": {
+      "name": "Bianca Cabral",
+      "role": "UX Designer",
+      "company": "FIERGS",
+      "content": "Se tivesse que resumir em uma palavra como é trabalhar com o Leonardo, seria parceria. Leo tem um olhar afiado para produto e negócio, e sempre leva o trabalho do designer a sério: respeita, recebe feedbacks com maturidade e faz questão de incluir minhas considerações. Sua comunicação é assertiva, consegue alinhar ideias com clareza e a colaboração acontece de verdade. Além da competência técnica, contribui para um ambiente leve, produtivo e centrado em resultado."
+    }
+  },
+  "projects": {
+    "items": {
+      "1": {
+        "title": "Anna Bella - Site Institucional",
+        "description": "Meu primeiro de todos, Site institucional fictício para apresentar o portfólio de uma modelo. Projeto criado no início da carreira para treinar HTML e CSS com navegação entre páginas e galeria de fotos.",
+        "highlights": [
+          "Primeiro projeto no início da carreira",
+          "Navegação entre páginas",
+          "Galeria de imagens simples com bordas estilizadas",
+          "Layout clássico e elegante com CSS puro"
+        ],
+        "status": "Online"
+      },
+      "2": {
+        "title": "TecBlog - Blog de Tecnologia",
+        "description": "Projeto prático desenvolvido no início da carreira durante cursos paralelos feitos junto ao curso de tecnologia. TecBlog é um blog fictício de tecnologia com páginas HTML e CSS onde foram praticados conceitos básicos de layout, tipografia, espaçamento, cabeçalho fixo e estilização de links e posts.",
+        "highlights": [
+          "Projeto do início da carreira para praticar HTML e CSS",
+          "Layout limpo e organizado com cabeçalho fixo e áreas laterais",
+          "Postagens com data e imagem",
+          "Sidebar com posts recentes e categorias"
+        ],
+        "status": "Online"
+      },
+      "3": {
+        "title": "Tela de Login Simples",
+        "description": "Projeto de uma tela de login minimalista e responsiva utilizando apenas HTML e CSS para prática de posicionamento e estilização com gradientes e transparência.",
+        "highlights": [
+          "Campos com ícones para e-mail e senha",
+          "Layout centralizado e responsivo",
+          "Gradiente de fundo e transparência nos elementos"
+        ],
+        "status": "Concluído"
+      },
+      "4": {
+        "title": "Currículo Interativo - Apresentation",
+        "description": "Projeto desenvolvido no meu primeiro bootcamp com a Codaí, onde tive meu primeiro contato com Bootstrap. O objetivo foi criar um site pessoal para apresentação em vagas de emprego após o bootcamp. Este projeto simula um currículo online interativo com mudança dinâmica de conteúdo e links para redes sociais.",
+        "highlights": [
+          "Currículo Interativo",
+          "Responsivo",
+          "Troca dinâmica de conteúdo"
+        ],
+        "status": "Online"
+      },
+      "5": {
+        "title": "Portal Notícias Cidade",
+        "description": "Um dos primeiros portais que desenvolvi durante minha fase inicial de estudos em desenvolvimento web. Neste projeto aprendi a estruturar sites com múltiplas páginas HTML e CSS, criando um portal de notícias fictício com diversas categorias e galeria de imagens.",
+        "highlights": [
+          "Estrutura de múltiplas páginas HTML",
+          "Layout de portal com colunas e menus"
+        ],
+        "status": "Concluído"
+      },
+      "6": {
+        "title": "Chalé Hotel - Site Institucional",
+        "description": "Projeto desenvolvido no meu início de estudos com HTML e CSS, durante o curso da Udemy do professor Jamilton Damasceno. O site simula a página institucional de um hotel fictício com apresentação visual atrativa, menus de navegação e listagem de benefícios.",
+        "highlights": [
+          "Layout institucional com imagens",
+          "Menu de navegação e listagem de benefícios"
+        ],
+        "status": "Concluído"
+      },
+      "7": {
+        "title": "Efeito Parallax com CSS",
+        "description": "Projeto prático desenvolvido para treinar o efeito Parallax apenas com HTML e CSS. A ideia era explorar a propriedade background-attachment: fixed para criar uma experiência de rolagem suave e com profundidade.",
+        "highlights": [
+          "Efeito Parallax com background-attachment: fixed",
+          "Experiência visual diferenciada"
+        ],
+        "status": "Concluído"
+      },
+      "8": {
+        "title": "Museu Nacional",
+        "description": "Projeto institucional desenvolvido para simular o site de um museu. Foram utilizados HTML e CSS com foco em estruturação, navegação e integração de elementos como vídeo, mapa e formulário.",
+        "highlights": [
+          "Página institucional com vídeo e mapa",
+          "Formulário de visita",
+          "Galeria de fotos"
+        ],
+        "status": "Concluído"
+      },
+      "9": {
+        "title": "Finans",
+        "description": "Landing page moderna e responsiva para uma solução de finanças pessoais. Desenvolvido com HTML, CSS e Bootstrap para apresentar recursos e benefícios do produto de forma clara e atraente.",
+        "highlights": [
+          "Landing page responsiva",
+          "Formulário de captura",
+          "Design moderno e clean"
+        ],
+        "status": "Concluído"
+      },
+      "10": {
+        "title": "Clone Spotify",
+        "description": "Landing page clone do Spotify desenvolvida com HTML, CSS e Bootstrap para treinar responsividade, carrossel de destaques e organização de seções promocionais.",
+        "highlights": [
+          "Carrossel responsivo",
+          "Layout moderno e clean",
+          "Landing page institucional"
+        ],
+        "status": "Concluído"
+      },
+      "11": {
+        "title": "API NPS",
+        "description": "API RESTful para envio e cálculo de NPS (Net Promoter Score), com integração de e-mail e testes automatizados. Utiliza Node.js, TypeORM, Nodemailer e SQLite.",
+        "highlights": [
+          "Envio automatizado de e-mails",
+          "Cálculo de NPS",
+          "Testes automatizados"
+        ],
+        "status": "Concluído"
+      },
+      "12": {
+        "title": "dev.finances",
+        "description": "Aplicação de controle financeiro desenvolvida com HTML, CSS e JavaScript puro, permitindo registrar e visualizar entradas, saídas e saldo total.",
+        "highlights": [
+          "Modal de nova transação com interação via DOM",
+          "Visualização dinâmica de entradas, saídas e total",
+          "Estilização responsiva e moderna"
+        ],
+        "status": "Concluído"
+      },
+      "13": {
+        "title": "Pomo - Aplicação Pomodoro com Gamificação",
+        "description": "Aplicação web inspirada na técnica Pomodoro que combina produtividade com exercícios físicos e cuidados com a saúde. Durante as pausas, o usuário recebe desafios de exercícios físicos e para os olhos, ganhando experiência (XP) ao completá-los e subindo de nível.",
+        "highlights": [
+          "Timer Pomodoro de 25 minutos para sessões de foco",
+          "Sistema de desafios com exercícios físicos e para os olhos",
+          "Gamificação com XP, níveis e conquistas",
+          "Notificações sonoras e do navegador",
+          "Persistência de dados em cookies",
+          "Interface responsiva e moderna"
+        ],
+        "status": "Online"
+      },
+      "14": {
+        "title": "UNES - Universidade de Excelência",
+        "description": "Site institucional moderno e responsivo para uma universidade fictícia. Projeto que demonstra a evolução de um site legado com tabelas para uma versão moderna usando HTML5 semântico, CSS Grid/Flexbox e JavaScript ES6+. Inclui formulário funcional, animações suaves, SEO otimizado e design system completo.",
+        "highlights": [
+          "Modernização completa de site legado com tabelas",
+          "Design responsivo com CSS Grid e Flexbox",
+          "Formulário de contato com validação em tempo real",
+          "Animações suaves e efeitos visuais elegantes",
+          "SEO otimizado com meta tags e structured data",
+          "Sistema de design com cores e tipografia profissional",
+          "FAQ interativo com accordion",
+          "Contadores animados de estatísticas",
+          "Performance otimizada com lazy loading",
+          "PWA Ready com Service Worker configurado"
+        ],
+        "status": "Online"
+      },
+      "15": {
+        "title": "desaba.fei - Sistema de Comentários Moderno",
+        "description": "Sistema de comentários moderno e interativo desenvolvido em React, com design responsivo e funcionalidades avançadas. Inclui busca em tempo real, filtros inteligentes, edição de comentários, avatares dinâmicos, validação em tempo real e persistência local. Interface moderna com gradientes sofisticados, animações suaves e suporte completo à acessibilidade.",
+        "highlights": [
+          "Sistema de comentários completo com CRUD",
+          "Busca avançada em tempo real por nome, email ou conteúdo",
+          "Filtros inteligentes por data e nome",
+          "Edição de comentários com validação em tempo real",
+          "Avatares dinâmicos com iniciais coloridas",
+          "Design responsivo com mobile-first approach",
+          "Persistência automática no localStorage",
+          "Animações suaves e efeitos shimmer",
+          "Suporte completo à acessibilidade (WCAG 2.1 AA)",
+          "Design system moderno com gradientes sofisticados",
+          "Estados interativos com feedback visual",
+          "Detecção automática de dark mode"
+        ],
+        "status": "Online"
+      },
+      "16": {
+        "title": "MySkills - App de Cadastro de Skills",
+        "description": "Aplicação mobile desenvolvida com React Native para cadastro e visualização de skills de desenvolvedores. O app permite adicionar novas habilidades, visualizar lista de skills cadastradas e inclui sistema de login/welcome. Projeto criado para praticar desenvolvimento mobile com React Native e Expo.",
+        "highlights": [
+          "Cadastro de entrada/saída das skills",
+          "Component Profile para exibição de perfil",
+          "Página de login/Welcome"
+        ],
+        "status": "Em construção"
+      },
+      "17": {
+        "title": "dtmoney - Controle de Finanças Pessoais",
+        "description": "Aplicação web para controle pessoal de finanças desenvolvida durante o Chapter 1 do Ignite da Rocketseat. Permite cadastrar entradas e saídas de dinheiro organizadas por nome e categoria, com cálculo automático de saldo total.",
+        "highlights": [
+          "Cadastro de entradas e saídas de dinheiro",
+          "Cálculo automático de entrada, saída e total",
+          "Organização por nome e categoria",
+          "Interface moderna e responsiva",
+          "Simulação de API com MirageJS",
+          "Página de login integrada"
+        ],
+        "status": "Online"
+      },
+      "18": {
+        "title": "ig.news - Plataforma de Notícias React",
+        "description": "Plataforma de notícias sobre o mundo React desenvolvida com Next.js, TypeScript e integração com Stripe para pagamentos. Sistema completo de autenticação com GitHub, assinatura premium e conteúdo exclusivo. Projeto full-stack com webhooks, API routes e design responsivo moderno.",
+        "highlights": [
+          "Autenticação completa com GitHub via NextAuth.js",
+          "Sistema de assinatura premium integrado com Stripe",
+          "Webhooks para processamento de pagamentos",
+          "API Routes para checkout e webhooks",
+          "Design responsivo com SCSS Modules",
+          "Sistema de posts com preview para não assinantes",
+          "Interface moderna e elegante",
+          "Integração completa com Stripe Dashboard",
+          "Deploy otimizado na Vercel"
+        ],
+        "status": "Online"
+      },
+      "19": {
+        "title": "LalaMovie - App de Críticas de Filmes",
+        "description": "Aplicação mobile desenvolvida em React Native para críticas e comentários de filmes. Projeto de estudo criado para aprender na prática React Native e preparar para desenvolvimento mobile. Inclui funcionalidades como navegação, sliders, cards de filmes, sistema de comentários e avaliações.",
+        "highlights": [
+          "Página Home com header e navegação",
+          "Slider de filmes em destaque",
+          "Cards de filmes com informações",
+          "Seções Top Rated e Lowest Rated",
+          "Página de detalhes do filme",
+          "Sistema de comentários e avaliações",
+          "Input para adicionar comentários",
+          "Lógica de persistência de comentários"
+        ],
+        "status": "Em construção"
+      },
+      "20": {
+        "title": "GoFinances - Controle Financeiro Pessoal",
+        "description": "Aplicativo mobile de controle financeiro pessoal desenvolvido com React Native, Expo e TypeScript. Permite gerenciar receitas e despesas de forma simples e intuitiva, com autenticação social, dashboard completo, cadastro de transações, categorização, gráficos de resumo financeiro e armazenamento local de dados.",
+        "highlights": [
+          "Autenticação social com Google e Apple",
+          "Dashboard com listagem de transações",
+          "Cadastro de transações (entradas e saídas)",
+          "Categorização de transações",
+          "Cards de destaque (Entradas, Saídas, Total)",
+          "Resumo financeiro com gráficos",
+          "Armazenamento local de dados",
+          "Interface responsiva e moderna",
+          "Navegação por abas",
+          "Formulários com validação",
+          "Formatação de valores em Real (BRL)",
+          "Histórico de transações"
+        ],
+        "status": "Em produção"
+      },
+      "21": {
+        "title": "SavePass - Gerenciador de Senhas",
+        "description": "Gerenciador de senhas mobile desenvolvido em um bootcamp da Rocketseat com React Native, Expo e TypeScript. Permite armazenar de forma segura credenciais de login (nome do serviço, e-mail e senha) diretamente no dispositivo usando AsyncStorage. Interface moderna e intuitiva com funcionalidades de busca e organização de credenciais.",
+        "highlights": [
+          "Armazenamento seguro de credenciais localmente",
+          "Busca rápida de senhas por nome do serviço",
+          "Cadastro simples de novos logins",
+          "Interface moderna e responsiva",
+          "Design consistente com Styled Components",
+          "Validação de formulários com React Hook Form e Yup",
+          "Navegação fluida entre telas",
+          "Persistência de dados com AsyncStorage",
+          "Contador de senhas salvas",
+          "Tela de splash personalizada"
+        ],
+        "status": "Em desenvolvimento"
+      },
+      "22": {
+        "title": "Portfólio Pessoal - leorodriguesdev.github.io",
+        "description": "Meu primeiro portfólio pessoal desenvolvido com HTML5, CSS3 e JavaScript puro para apresentar trabalhos, habilidades e experiências no desenvolvimento web e mobile. Interface moderna e responsiva com timeline de experiências profissionais interativa, galeria de projetos, formulário de contato integrado e vídeo de fundo animado.",
+        "highlights": [
+          "Design responsivo e moderno",
+          "Seção de apresentação pessoal",
+          "Timeline de experiências profissionais interativa",
+          "Galeria de projetos e serviços",
+          "Formulário de contato integrado",
+          "Vídeo de fundo animado",
+          "Animações e efeitos visuais",
+          "Sistema de envio de email via formulário",
+          "Integração com APIs externas",
+          "Otimizações de SEO avançadas"
+        ],
+        "status": "Em produção"
+      },
+      "23": {
+        "title": "EdimedApp - Gerenciamento de Serviços Médicos",
+        "description": "Aplicativo mobile desenvolvido com React Native e Expo para gerenciamento de serviços médicos e agendamentos. O EdimedApp permite que beneficiários realizem agendamentos de consultas, gerenciem seus perfis e acompanhem seus pedidos de forma simples e intuitiva. Projeto desenvolvido para cliente real (EdimedPlus).",
+        "highlights": [
+          "Autenticação de usuários com sistema de login e registro",
+          "Gerenciamento completo de perfil do beneficiário",
+          "Agendamento de consultas médicas",
+          "Busca de credenciados próximos usando mapas",
+          "Gerenciamento de pedidos e acompanhamento de pagamentos",
+          "Gerenciamento de dependentes cadastrados",
+          "Histórico de agendamentos",
+          "Integração com API REST",
+          "Armazenamento local com AsyncStorage",
+          "Autenticação JWT",
+          "Design moderno com cores personalizadas"
+        ],
+        "status": "Em produção"
+      },
+      "24": {
+        "title": "AgendaPro - Sistema de Agendamentos Online",
+        "description": "Sistema completo de agendamentos online desenvolvido com Next.js, React e TypeScript. Permite que clientes agendem serviços de forma rápida e prática, enquanto as empresas mantêm controle total e personalizam a experiência com sua identidade visual. Sistema multi-tenant com rotas dinâmicas por empresa.",
+        "highlights": [
+          "Gestão completa de agendamentos online",
+          "Sistema multi-tenant com rotas dinâmicas por empresa",
+          "Customização de identidade visual por empresa",
+          "Controle total de horários e disponibilidade",
+          "Validação de datas e horários",
+          "Notificações automáticas para clientes",
+          "Confirmação de agendamento via e-mail",
+          "Suporte a tema claro e escuro",
+          "Design responsivo e acessível",
+          "Formulário intuitivo com validação em tempo real",
+          "Animações e transições suaves",
+          "Feedback visual com toasts de notificação"
+        ],
+        "status": "Em desenvolvimento"
+      },
+      "25": {
+        "title": "Mega Verifica - Verificador de Apostas Mega Sena",
+        "description": "Aplicação web desenvolvida para verificar apostas da Mega Sena. Permite que o usuário selecione de 6 a 15 números de um grid de 60 números e compara os números apostados com os números sorteados, exibindo quantos acertos foram obtidos. Interface moderna e responsiva com modal de resultados.",
+        "highlights": [
+          "Seleção de números de 1 a 60 em grid interativo",
+          "Validação de seleção mínima (6 números) e máxima (15 números)",
+          "Interface responsiva e moderna",
+          "Modal para exibição de resultados",
+          "Comparação automática entre números apostados e sorteados",
+          "Destaque visual dos números acertados",
+          "API route para simulação de resultados da Mega Sena",
+          "Feedback visual em tempo real"
+        ],
+        "status": "Concluído"
+      },
+      "26": {
+        "title": "Gerador de Apelidos do Toninho",
+        "description": "Aplicação web interativa que permite aos usuários gerar apelidos únicos e divertidos inspirados no personagem 'Toninho'. Ideal para adicionar um toque de humor e criatividade em conversas informais, redes sociais ou qualquer ambiente que necessite de um apelido personalizado. Cada apelido gerado é acompanhado por uma imagem aleatória.",
+        "highlights": [
+          "Geração aleatória de apelidos únicos e engraçados",
+          "Imagens aleatórias para cada apelido gerado",
+          "Função de copiar apelido para área de transferência",
+          "Design responsivo para diferentes dispositivos",
+          "Interface moderna e intuitiva",
+          "Tooltip de confirmação ao copiar",
+          "Experiência visual e divertida"
+        ],
+        "status": "Online"
+      },
+      "27": {
+        "title": "Blog Pessoal - leorodriguesdev",
+        "description": "Meu primeiro blog pessoal desenvolvido com Next.js para compartilhar conhecimentos sobre React, React Native, Node.js e Next.js. O blog busca artigos automaticamente de um repositório GitHub separado, permitindo que os conteúdos sejam armazenados e gerenciados de forma independente. Sistema completo com listagem por categoria, visualização de artigos com formatação de código e sistema de comentários.",
+        "highlights": [
+          "Busca automática de artigos de repositório GitHub",
+          "Listagem de artigos por categoria",
+          "Visualização de artigos com formatação de código",
+          "Navegação entre posts",
+          "Copiar trechos de código facilmente",
+          "Sistema de comentários",
+          "Página de login para autores",
+          "Integração com GitHub API",
+          "Renderização dinâmica de conteúdo Markdown",
+          "Design responsivo e moderno"
+        ],
+        "status": "Em desenvolvimento"
+      },
+      "28": {
+        "title": "dev.finances - Controle Financeiro",
+        "description": "Aplicação de controle financeiro desenvolvida com HTML, CSS e JavaScript puro, permitindo registrar e visualizar entradas, saídas e saldo total. Interface moderna com modal para cadastro de transações e visualização dinâmica dos dados financeiros.",
+        "highlights": [
+          "Modal de nova transação com interação via DOM",
+          "Visualização dinâmica de entradas, saídas e total",
+          "Estilização responsiva e moderna",
+          "Cadastro de transações financeiras",
+          "Cálculo automático de saldo"
+        ],
+        "status": "Concluído"
+      },
+      "29": {
+        "title": "AgendAI - Sistema de Agendamento Inteligente com IA",
+        "description": "Sistema completo de agendamento inteligente com integração de Inteligência Artificial para negócios. Desenvolvido com Next.js 15 e React 19, oferece autenticação de usuários, dashboard com métricas, gerenciamento de serviços e profissionais, configuração de horários, visualização de agendamentos, suporte a tema claro/escuro e notificações. Utiliza Firebase para autenticação e Firestore para persistência de dados.",
+        "highlights": [
+          "Sistema de agendamento inteligente com integração de IA",
+          "Autenticação completa com Firebase Auth",
+          "Dashboard com métricas e visualização de dados com Recharts",
+          "Gerenciamento completo de serviços oferecidos",
+          "Gerenciamento de múltiplos profissionais",
+          "Configuração flexível de horários de funcionamento",
+          "Visualização e gerenciamento de agendamentos",
+          "Suporte a tema claro/escuro",
+          "Notificações e lembretes de agendamentos",
+          "Testes unitários com Jest e React Testing Library",
+          "Testes end-to-end com Cypress",
+          "CI/CD automatizado com GitHub Actions",
+          "Arquitetura escalável com padrão de repositório",
+          "Gerenciamento de estado com Zustand"
+        ],
+        "status": "Online"
+      },
+      "30": {
+        "title": "OnStart Tecnologia - Site Institucional",
+        "description": "Site institucional desenvolvido para a OnStart Tecnologia, empresa dedicada a simplificar a vida das pessoas através de soluções tecnológicas inovadoras. O site apresenta quatro páginas principais: página inicial com apresentação da empresa, página 'Quem Somos' com missão e valores, página de serviços detalhando todas as soluções oferecidas, e página de contato com informações de localização. Projeto desenvolvido para cliente real.",
+        "highlights": [
+          "Site institucional completo com quatro páginas principais",
+          "Página inicial com apresentação da empresa e serviços",
+          "Página 'Quem Somos' com missão, visão e valores",
+          "Página de serviços detalhando soluções tecnológicas",
+          "Página de contato com informações e localização",
+          "Design responsivo e moderno",
+          "Animações e interatividade com JavaScript",
+          "Ícones e símbolos com Font Awesome",
+          "Projeto desenvolvido para cliente real",
+          "Estrutura organizada e profissional"
+        ],
+        "status": "Online"
+      },
+      "31": {
+        "title": "Coelho Tattoo 013 - Site Institucional",
+        "description": "Site institucional moderno e responsivo para o tatuador Leonardo Coelho, especialista em custom lettering e calligraffiti, localizado em Porto Alegre, RS. O site apresenta portfólio interativo com lightbox, formulários de contato integrados com WhatsApp, seções de serviços, depoimentos de clientes e design totalmente responsivo. Projeto desenvolvido para cliente real.",
+        "highlights": [
+          "Galeria de portfólio interativa com lightbox",
+          "Formulários de contato e agendamento integrados com WhatsApp",
+          "Navegação por teclado e touch (swipe) na galeria",
+          "Lazy loading de imagens para performance",
+          "Validação em tempo real com máscara de telefone brasileira",
+          "Design responsivo mobile-first",
+          "Animações suaves de entrada",
+          "Otimização automática de imagens com Next.js",
+          "SEO otimizado com sitemap e robots.txt",
+          "Web App Manifest configurado",
+          "Headers de segurança configurados",
+          "Projeto desenvolvido para cliente real"
+        ],
+        "status": "Online"
+      },
+      "32": {
+        "title": "Eletel Sat - Site Institucional",
+        "description": "Site institucional moderno e responsivo da Eletel Sat, empresa especializada em segurança eletrônica há mais de 30 anos em Viamão, Rio Grande do Sul. O site apresenta os serviços oferecidos pela empresa, incluindo câmeras de segurança (CFTV), sistemas de alarme, motores para portões, cercas elétricas, interfones e energia solar. Projeto desenvolvido para cliente real.",
+        "highlights": [
+          "Design moderno e responsivo com animações suaves",
+          "Menu hambúrguer responsivo para mobile",
+          "Navegação suave entre seções (smooth scroll)",
+          "Botão WhatsApp flutuante integrado",
+          "Formulário de contato com validação usando React Hook Form e Zod",
+          "Mapa do Google Maps integrado",
+          "Animações de entrada ao scroll (scroll reveal) com Framer Motion",
+          "SEO otimizado com meta tags, structured data e sitemap",
+          "Open Graph e Twitter Cards configurados",
+          "Performance otimizada com lazy loading e code splitting",
+          "Acessibilidade (WCAG) com componentes Radix UI",
+          "Projeto desenvolvido para cliente real"
+        ],
+        "status": "Online"
+      },
+      "33": {
+        "title": "STV - ELO",
+        "description": "Aplicativo mobile do Grupo STV-Segurança, Tecnologia e Vigilância Patrimonial. Desenvolvido para melhorar a comunicação interna da empresa, disponibilizando acesso a documentos e informações úteis aos funcionários. Projeto desenvolvido para cliente real.",
+        "highlights": [
+          "Comunicação interna da empresa",
+          "Acesso a documentos corporativos",
+          "Informações úteis para funcionários",
+          "Projeto desenvolvido para cliente real"
+        ],
+        "status": "Em produção"
+      }
+    }
+  }
+}

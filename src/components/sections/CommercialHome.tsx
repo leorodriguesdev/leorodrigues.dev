@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { 
   Smartphone, 
   Globe, 
@@ -13,8 +13,16 @@ import {
 import { Stats } from "@/components/Stats";
 import { Testimonials } from "@/components/Testimonials";
 import Contact from "@/components/sections/Contact";
+import { Link } from "@/i18n/navigation";
 
 export function CommercialHome() {
+  const t = useTranslations("commercialHome");
+  const steps = [
+    { step: "01", title: t("step1Title"), desc: t("step1Desc") },
+    { step: "02", title: t("step2Title"), desc: t("step2Desc") },
+    { step: "03", title: t("step3Title"), desc: t("step3Desc") },
+    { step: "04", title: t("step4Title"), desc: t("step4Desc") },
+  ];
   return (
     <>
       {/* Hero Section */}
@@ -33,7 +41,7 @@ export function CommercialHome() {
               className="inline-block"
             >
               <span className="inline-block px-4 py-2 bg-primary/10 border border-primary rounded-full text-primary font-medium neon-glow">
-                Orçamento Grátis
+                {t("badge")}
               </span>
             </motion.div>
 
@@ -43,7 +51,8 @@ export function CommercialHome() {
               transition={{ delay: 0.3 }}
               className="text-5xl md:text-7xl tracking-tight"
             >
-              Crie Seu <span className="text-primary font-audiowide">Site ou App</span> Profissional
+              {t("heroLine1")} <span className="text-primary font-audiowide">{t("heroAccent")}</span>{" "}
+              {t("heroLine2")}
             </motion.h1>
 
             <motion.p
@@ -52,8 +61,7 @@ export function CommercialHome() {
               transition={{ delay: 0.4 }}
               className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto"
             >
-              Desenvolvimento de sites modernos e aplicativos mobile que impulsionam seu negócio. 
-              Sites otimizados para Google, apps para iOS e Android. <span className="text-primary">Solicite seu orçamento gratuito.</span>
+              {t("heroSubtitle")} <span className="text-primary">{t("heroSubtitleAccent")}</span>
             </motion.p>
 
             <motion.div
@@ -62,18 +70,18 @@ export function CommercialHome() {
               transition={{ delay: 0.5 }}
               className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6"
             >
-              <Link
+              <a
                 href="#contact"
                 className="px-8 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all hover:scale-105 flex items-center gap-2 font-medium shadow-lg shadow-primary/20"
               >
-                Solicitar Orçamento Grátis
+                {t("ctaQuote")}
                 <ArrowRight size={20} />
-              </Link>
+              </a>
               <Link
                 href="/services"
                 className="px-8 py-3 border border-border rounded-lg hover:bg-secondary transition-colors"
               >
-                Ver Serviços e Preços
+                {t("ctaServices")}
               </Link>
             </motion.div>
 
@@ -88,7 +96,7 @@ export function CommercialHome() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 border border-border rounded-lg hover:border-primary hover:text-primary transition-colors"
-                aria-label="WhatsApp"
+                aria-label={t("whatsappAria")}
               >
                 <MessageCircle size={24} />
               </a>
@@ -116,10 +124,10 @@ export function CommercialHome() {
           >
             <div className="text-center space-y-4">
               <h2 className="text-4xl md:text-5xl tracking-tight font-audiowide">
-                O Que Eu <span className="text-primary">Desenvolvo</span>
+                {t("whatIDevTitle")} <span className="text-primary">{t("whatIDevAccent")}</span>
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-                Soluções completas para sua presença digital
+                {t("whatIDevSubtitle")}
               </p>
             </div>
 
@@ -135,30 +143,30 @@ export function CommercialHome() {
                 <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
                   <Globe className="text-primary" size={32} />
                 </div>
-                <h3 className="text-2xl font-semibold mb-4">Sites Institucionais</h3>
+                <h3 className="text-2xl font-semibold mb-4">{t("institutionalTitle")}</h3>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  Site profissional, responsivo e otimizado para Google. Ideal para empresas que querem presença online.
+                  {t("institutionalDesc")}
                 </p>
                 <ul className="space-y-2 mb-6 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="text-primary mt-0.5 flex-shrink-0" size={16} />
-                    <span>Design moderno e responsivo</span>
+                    <span>{t("institutionalB1")}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="text-primary mt-0.5 flex-shrink-0" size={16} />
-                    <span>SEO otimizado</span>
+                    <span>{t("institutionalB2")}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="text-primary mt-0.5 flex-shrink-0" size={16} />
-                    <span>Formulário de contato</span>
+                    <span>{t("institutionalB3")}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="text-primary mt-0.5 flex-shrink-0" size={16} />
-                    <span>Integração com redes sociais</span>
+                    <span>{t("institutionalB4")}</span>
                   </li>
                 </ul>
                 <Link href="/services" className="text-primary hover:underline font-medium inline-flex items-center gap-2">
-                  Ver detalhes
+                  {t("viewDetails")}
                   <ArrowRight size={16} />
                 </Link>
               </motion.div>
@@ -173,35 +181,35 @@ export function CommercialHome() {
                 className="bg-card border-2 border-primary rounded-lg p-8 hover:border-primary/80 transition-all relative"
               >
                 <span className="absolute -top-3 left-4 px-3 py-1 bg-primary text-primary-foreground text-xs rounded-full font-medium">
-                  Mais Popular
+                  {t("popularBadge")}
                 </span>
                 <div className="w-16 h-16 bg-primary/20 rounded-lg flex items-center justify-center mb-6">
                   <Smartphone className="text-primary" size={32} />
                 </div>
-                <h3 className="text-2xl font-semibold mb-4">Aplicativos Mobile</h3>
+                <h3 className="text-2xl font-semibold mb-4">{t("mobileTitle")}</h3>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  App nativo para iOS e Android. Ideal para empresas que querem estar na palma da mão dos clientes.
+                  {t("mobileDesc")}
                 </p>
                 <ul className="space-y-2 mb-6 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="text-primary mt-0.5 flex-shrink-0" size={16} />
-                    <span>App para iOS e Android</span>
+                    <span>{t("mobileB1")}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="text-primary mt-0.5 flex-shrink-0" size={16} />
-                    <span>Publicação nas lojas</span>
+                    <span>{t("mobileB2")}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="text-primary mt-0.5 flex-shrink-0" size={16} />
-                    <span>Integração com APIs</span>
+                    <span>{t("mobileB3")}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="text-primary mt-0.5 flex-shrink-0" size={16} />
-                    <span>Suporte e manutenção</span>
+                    <span>{t("mobileB4")}</span>
                   </li>
                 </ul>
                 <Link href="/services" className="text-primary hover:underline font-medium inline-flex items-center gap-2">
-                  Ver detalhes
+                  {t("viewDetails")}
                   <ArrowRight size={16} />
                 </Link>
               </motion.div>
@@ -218,43 +226,43 @@ export function CommercialHome() {
                 <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
                   <Code2 className="text-primary" size={32} />
                 </div>
-                <h3 className="text-2xl font-semibold mb-4">Sistemas Web</h3>
+                <h3 className="text-2xl font-semibold mb-4">{t("systemsTitle")}</h3>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  Sistemas completos, e-commerce, dashboards. Soluções personalizadas para seu negócio.
+                  {t("systemsDesc")}
                 </p>
                 <ul className="space-y-2 mb-6 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="text-primary mt-0.5 flex-shrink-0" size={16} />
-                    <span>Sistema personalizado</span>
+                    <span>{t("systemsB1")}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="text-primary mt-0.5 flex-shrink-0" size={16} />
-                    <span>Painel administrativo</span>
+                    <span>{t("systemsB2")}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="text-primary mt-0.5 flex-shrink-0" size={16} />
-                    <span>Integrações de pagamento</span>
+                    <span>{t("systemsB3")}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="text-primary mt-0.5 flex-shrink-0" size={16} />
-                    <span>API e banco de dados</span>
+                    <span>{t("systemsB4")}</span>
                   </li>
                 </ul>
                 <Link href="/services" className="text-primary hover:underline font-medium inline-flex items-center gap-2">
-                  Ver detalhes
+                  {t("viewDetails")}
                   <ArrowRight size={16} />
                 </Link>
               </motion.div>
             </div>
 
             <div className="text-center pt-8">
-              <Link 
+              <a 
                 href="#contact"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all font-medium"
               >
-                Solicitar Orçamento Grátis
+                {t("ctaQuote")}
                 <ArrowRight size={20} />
-              </Link>
+              </a>
             </div>
           </motion.div>
         </div>
@@ -271,20 +279,15 @@ export function CommercialHome() {
           >
             <div className="space-y-4">
               <h2 className="text-4xl md:text-5xl tracking-tight font-audiowide">
-                Como <span className="text-primary">Funciona</span>
+                {t("howTitle")} <span className="text-primary">{t("howAccent")}</span>
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Processo simples e transparente do início ao lançamento
+                {t("howSubtitle")}
               </p>
             </div>
 
             <div className="grid md:grid-cols-4 gap-8">
-              {[
-                { step: "01", title: "Contato", desc: "Você entra em contato e descreve sua necessidade" },
-                { step: "02", title: "Orçamento", desc: "Envio uma proposta detalhada com prazo e investimento" },
-                { step: "03", title: "Desenvolvimento", desc: "Desenvolvo seu projeto com atualizações regulares" },
-                { step: "04", title: "Entrega", desc: "Seu site ou app é lançado e você recebe treinamento" }
-              ].map((item, idx) => (
+              {steps.map((item, idx) => (
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 20 }}
@@ -315,11 +318,10 @@ export function CommercialHome() {
             className="space-y-4"
           >
             <h2 className="text-4xl md:text-5xl tracking-tight font-audiowide">
-              Investimento <span className="text-primary">Personalizado</span>
+                {t("investTitle")} <span className="text-primary">{t("investAccent")}</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              Cada projeto é único e o investimento depende das suas necessidades específicas. 
-              Solicite um orçamento personalizado sem compromisso.
+                {t("investSubtitle")}
             </p>
           </motion.div>
           
@@ -330,11 +332,9 @@ export function CommercialHome() {
             className="bg-card border border-border rounded-lg p-8 md:p-12 max-w-2xl mx-auto space-y-6"
           >
             <div className="space-y-4">
-              <h3 className="text-2xl font-semibold">Orçamento Sob Medida</h3>
+              <h3 className="text-2xl font-semibold">{t("budgetTitle")}</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Não trabalhamos com pacotes fechados. Cada projeto é analisado individualmente, 
-                considerando suas necessidades, complexidade, prazo e objetivos. 
-                O investimento é calculado de forma justa e transparente, sempre alinhado ao valor entregue.
+                {t("budgetDesc")}
               </p>
             </div>
 
@@ -342,37 +342,37 @@ export function CommercialHome() {
               <div className="text-left space-y-2">
                 <h4 className="font-semibold flex items-center gap-2">
                   <CheckCircle2 className="text-primary" size={20} />
-                  Análise Detalhada
+                  {t("featAnalysisTitle")}
                 </h4>
                 <p className="text-sm text-muted-foreground">
-                  Avaliamos seu projeto completo antes de definir o investimento
+                  {t("featAnalysisDesc")}
                 </p>
               </div>
               <div className="text-left space-y-2">
                 <h4 className="font-semibold flex items-center gap-2">
                   <CheckCircle2 className="text-primary" size={20} />
-                  Transparência Total
+                  {t("featTransparencyTitle")}
                 </h4>
                 <p className="text-sm text-muted-foreground">
-                  Proposta detalhada com escopo, prazos e investimento claros
+                  {t("featTransparencyDesc")}
                 </p>
               </div>
               <div className="text-left space-y-2">
                 <h4 className="font-semibold flex items-center gap-2">
                   <CheckCircle2 className="text-primary" size={20} />
-                  Sem Compromisso
+                  {t("featNoCommitTitle")}
                 </h4>
                 <p className="text-sm text-muted-foreground">
-                  Orçamento grátis e sem obrigação de contratação
+                  {t("featNoCommitDesc")}
                 </p>
               </div>
               <div className="text-left space-y-2">
                 <h4 className="font-semibold flex items-center gap-2">
                   <CheckCircle2 className="text-primary" size={20} />
-                  Valor Justo
+                  {t("featFairTitle")}
                 </h4>
                 <p className="text-sm text-muted-foreground">
-                  Investimento proporcional à complexidade e valor entregue
+                  {t("featFairDesc")}
                 </p>
               </div>
             </div>
@@ -384,13 +384,13 @@ export function CommercialHome() {
             viewport={{ once: true }}
             className="pt-8"
           >
-            <Link 
+            <a 
               href="#contact"
               className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all font-medium"
             >
-              Solicitar Orçamento Personalizado
+              {t("ctaCustomQuote")}
               <ArrowRight size={20} />
-            </Link>
+            </a>
           </motion.div>
         </div>
       </section>
@@ -406,18 +406,18 @@ export function CommercialHome() {
           >
             <div>
               <CheckCircle2 className="text-primary mx-auto mb-2" size={32} />
-              <h3 className="font-semibold mb-1">Orçamento Grátis</h3>
-              <p className="text-sm text-muted-foreground">Sem compromisso</p>
+              <h3 className="font-semibold mb-1">{t("guarantee1Title")}</h3>
+              <p className="text-sm text-muted-foreground">{t("guarantee1Sub")}</p>
             </div>
             <div>
               <CheckCircle2 className="text-primary mx-auto mb-2" size={32} />
-              <h3 className="font-semibold mb-1">3 Meses de Suporte</h3>
-              <p className="text-sm text-muted-foreground">Incluso na entrega</p>
+              <h3 className="font-semibold mb-1">{t("guarantee2Title")}</h3>
+              <p className="text-sm text-muted-foreground">{t("guarantee2Sub")}</p>
             </div>
             <div>
               <CheckCircle2 className="text-primary mx-auto mb-2" size={32} />
-              <h3 className="font-semibold mb-1">Código Documentado</h3>
-              <p className="text-sm text-muted-foreground">Fácil manutenção</p>
+              <h3 className="font-semibold mb-1">{t("guarantee3Title")}</h3>
+              <p className="text-sm text-muted-foreground">{t("guarantee3Sub")}</p>
             </div>
           </motion.div>
         </div>

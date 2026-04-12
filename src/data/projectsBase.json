@@ -1,0 +1,758 @@
+[
+  {
+    "id": 1,
+    "type": "website",
+    "image": "/projects/anna-bella/anna-bella-home.png",
+    "images": [
+      "/projects/anna-bella/anna-bella-logo.png",
+      "/projects/anna-bella/anna-bella-home.png",
+      "/projects/anna-bella/anna-bella-campanha.png",
+      "/projects/anna-bella/anna-bella-contato.png"
+    ],
+    "techStack": [
+      "HTML5",
+      "CSS3"
+    ],
+    "date": "2022-07-01",
+    "links": {
+      "website": "https://leorodriguesdev.github.io/projetoanna-bella/"
+    },
+    "sourceCodeUrl": "https://github.com/leorodriguesdev/projetoanna-bella"
+  },
+  {
+    "id": 2,
+    "type": "website",
+    "image": "/projects/projetotecblog/tecblog-home.png",
+    "images": [
+      "/projects/projetotecblog/tecblog-home.png"
+    ],
+    "companyLogo": "/projects/projetotecblog/logo.png",
+    "techStack": [
+      "HTML5",
+      "CSS3"
+    ],
+    "date": "2022-12-08",
+    "links": {
+      "website": "https://leorodriguesdev.github.io/projetotecblog/"
+    },
+    "sourceCodeUrl": "https://github.com/leorodriguesdev/projetotecblog"
+  },
+  {
+    "id": 3,
+    "type": "website",
+    "image": "/projects/teladelogin1/tela-login-principal.png",
+    "images": [
+      "/projects/teladelogin1/tela-login-principal.png"
+    ],
+    "techStack": [
+      "HTML5",
+      "CSS3"
+    ],
+    "date": "2023-03-15",
+    "links": {
+      "website": "https://leorodriguesdev.github.io/teladelogin1/"
+    },
+    "sourceCodeUrl": "https://github.com/leorodriguesdev/teladelogin1"
+  },
+  {
+    "id": 4,
+    "type": "website",
+    "image": "/projects/apresentation/apresentation-home.png",
+    "images": [
+      "/projects/apresentation/apresentation-home.png",
+      "/projects/apresentation/apresentation-projects.png"
+    ],
+    "companyLogo": "/projects/apresentation/apresentation-home.png",
+    "techStack": [
+      "HTML",
+      "CSS",
+      "Bootstrap",
+      "JavaScript"
+    ],
+    "date": "2020-09-10",
+    "links": {
+      "website": "https://leorodriguesdev.github.io/apresentation"
+    },
+    "sourceCodeUrl": "https://github.com/leorodriguesdev/apresentation"
+  },
+  {
+    "id": 5,
+    "type": "website",
+    "image": "/projects/projetonoticiascidade/noticiascidade1.png",
+    "images": [
+      "/projects/projetonoticiascidade/noticiascidade1.png",
+      "/projects/projetonoticiascidade/noticiascidade2.png",
+      "/projects/projetonoticiascidade/noticiascidade3.png"
+    ],
+    "companyLogo": "/projects/projetonoticiascidade/iconeSite.png",
+    "techStack": [
+      "HTML",
+      "CSS"
+    ],
+    "date": "2020-07-15",
+    "links": {
+      "website": "https://leorodriguesdev.github.io/projetonoticiascidade/"
+    },
+    "sourceCodeUrl": "https://github.com/leorodriguesdev/projetonoticiascidade"
+  },
+  {
+    "id": 6,
+    "type": "website",
+    "image": "/projects/projetochale-hotel/chalehotel1.png",
+    "images": [
+      "/projects/projetochale-hotel/chalehotel1.png"
+    ],
+    "companyLogo": "/projects/projetochale-hotel/iconeSite.png",
+    "techStack": [
+      "HTML",
+      "CSS"
+    ],
+    "date": "2021-05-20",
+    "links": {
+      "website": "https://leorodriguesdev.github.io/projetochale-hotel/"
+    },
+    "sourceCodeUrl": "https://github.com/leorodriguesdev/projetochale-hotel"
+  },
+  {
+    "id": 7,
+    "type": "website",
+    "image": "/projects/efeitoparallaxcss/parallax1.png",
+    "images": [
+      "/projects/efeitoparallaxcss/parallax1.png"
+    ],
+    "companyLogo": "/projects/efeitoparallaxcss/iconeSite.png",
+    "techStack": [
+      "HTML",
+      "CSS"
+    ],
+    "date": "2021-06-10",
+    "links": {
+      "website": "https://leorodriguesdev.github.io/efeitoparallaxcss/"
+    },
+    "sourceCodeUrl": "https://github.com/leorodriguesdev/efeitoparallaxcss"
+  },
+  {
+    "id": 8,
+    "type": "website",
+    "image": "/projects/museu-nacional/museu-nacional.png",
+    "images": [
+      "/projects/museu-nacional/museu-nacional.png"
+    ],
+    "companyLogo": "/projects/museu-nacional/iconeSite.png",
+    "techStack": [
+      "HTML",
+      "CSS"
+    ],
+    "date": "2021-07-15",
+    "links": {
+      "website": "https://leorodriguesdev.github.io/museu-nacional/"
+    },
+    "sourceCodeUrl": "https://github.com/leorodriguesdev/museu-nacional"
+  },
+  {
+    "id": 9,
+    "type": "website",
+    "image": "/projects/finans/finans-desktop.png",
+    "images": [
+      "/projects/finans/finans-desktop.png",
+      "/projects/finans/finans-mobile.png"
+    ],
+    "companyLogo": "/projects/finans/iconeSite.png",
+    "techStack": [
+      "HTML",
+      "CSS",
+      "Bootstrap",
+      "FontAwesome"
+    ],
+    "date": "2021-08-01",
+    "links": {
+      "website": "https://leorodriguesdev.github.io/finans/"
+    },
+    "sourceCodeUrl": "https://github.com/leorodriguesdev/finans"
+  },
+  {
+    "id": 10,
+    "type": "website",
+    "image": "/projects/clonespotify/clone-spotify-desktop.png",
+    "images": [
+      "/projects/clonespotify/clone-spotify-desktop.png",
+      "/projects/clonespotify/clone-spotify-mobile.png"
+    ],
+    "companyLogo": "/projects/clonespotify/iconeSite.png",
+    "techStack": [
+      "HTML",
+      "CSS",
+      "Bootstrap",
+      "FontAwesome"
+    ],
+    "date": "2021-09-10",
+    "links": {
+      "website": "https://leorodriguesdev.github.io/clonespotify/"
+    },
+    "sourceCodeUrl": "https://github.com/leorodriguesdev/clonespotify"
+  },
+  {
+    "id": 11,
+    "type": "api",
+    "image": "/projects/api-nps/api-nps.png",
+    "images": [
+      "/projects/api-nps/api-nps.png"
+    ],
+    "companyLogo": "/projects/api-nps/iconeBackend.png",
+    "techStack": [
+      "Node.js",
+      "TypeScript",
+      "Express",
+      "SQLite",
+      "TypeORM",
+      "Nodemailer",
+      "Jest"
+    ],
+    "date": "2021-08-30",
+    "links": {
+      "website": ""
+    },
+    "sourceCodeUrl": "https://github.com/leorodriguesdev/api-nps"
+  },
+  {
+    "id": 12,
+    "type": "website",
+    "image": "/projects/dev-finances/web.png",
+    "images": [
+      "/projects/dev-finances/web.png",
+      "/projects/dev-finances/mobile.png"
+    ],
+    "companyLogo": "/projects/dev-finances/icon.png",
+    "techStack": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "date": "2021-01-23",
+    "links": {
+      "website": "https://leorodriguesdev.github.io/dev.finances/"
+    },
+    "sourceCodeUrl": "https://github.com/leorodriguesdev/dev.finances"
+  },
+  {
+    "id": 13,
+    "type": "website",
+    "image": "/projects/pomo/home.png",
+    "images": [
+      "/projects/pomo/home.png",
+      "/projects/pomo/tempo.png",
+      "/projects/pomo/fimdotempo.png",
+      "/projects/pomo/mobile.png"
+    ],
+    "companyLogo": "/projects/pomo/logo.png",
+    "techStack": [
+      "Next.js",
+      "TypeScript",
+      "React",
+      "CSS Modules",
+      "Context API"
+    ],
+    "date": "2024-03-15",
+    "links": {
+      "website": "https://pomo-puce.vercel.app/"
+    },
+    "sourceCodeUrl": "https://github.com/leorodriguesdev/pomo"
+  },
+  {
+    "id": 14,
+    "type": "website",
+    "image": "/projects/unes-universidade/unes-home.png",
+    "images": [
+      "/projects/unes-universidade/unes-home.png",
+      "/projects/unes-universidade/unes-quem-somos.png",
+      "/projects/unes-universidade/unes-contato.png",
+      "/projects/unes-universidade/unes-mobile.png"
+    ],
+    "companyLogo": "/projects/unes-universidade/unes-logo.png",
+    "techStack": [
+      "HTML5",
+      "CSS3",
+      "JavaScript ES6+",
+      "Font Awesome",
+      "AOS Library",
+      "Google Fonts"
+    ],
+    "date": "2024-12-15",
+    "links": {
+      "website": "https://leorodriguesdev.github.io/unes-universidade/"
+    },
+    "sourceCodeUrl": "https://github.com/leorodriguesdev/unes-universidade"
+  },
+  {
+    "id": 15,
+    "type": "website",
+    "image": "/projects/desaba-fei/desaba-fei-home.png",
+    "images": [
+      "/projects/desaba-fei/desaba-fei-home.png",
+      "/projects/desaba-fei/desaba-fei-comments.png",
+      "/projects/desaba-fei/desaba-fei-comments2.png",
+      "/projects/desaba-fei/desaba-fei-mobile.png"
+    ],
+    "companyLogo": "/projects/desaba-fei/desaba-fei-logo.png",
+    "techStack": [
+      "React",
+      "JavaScript",
+      "CSS3",
+      "HTML5",
+      "date-fns",
+      "LocalStorage API"
+    ],
+    "date": "2024-12-20",
+    "links": {
+      "website": "https://desaba-fei.vercel.app/"
+    },
+    "sourceCodeUrl": "https://github.com/leorodriguesdev/desaba.fei"
+  },
+  {
+    "id": 16,
+    "type": "mobile",
+    "image": "/projects/myskills/myskills-logo.png",
+    "images": [
+      "/projects/myskills/myskills-home.png"
+    ],
+    "companyLogo": "/projects/myskills/myskills-logo.png",
+    "techStack": [
+      "React Native",
+      "TypeScript",
+      "Expo",
+      "FlatList",
+      "Hooks",
+      "JSX"
+    ],
+    "date": "2024-01-15",
+    "links": {},
+    "sourceCodeUrl": "https://github.com/leorodriguesdev/MySkills"
+  },
+  {
+    "id": 17,
+    "type": "website",
+    "image": "/projects/dtmoney/dtmoney-home.png",
+    "images": [
+      "/projects/dtmoney/dtmoney-home.png",
+      "/projects/dtmoney/dtmoney-transactions.png",
+      "/projects/dtmoney/dtmoney-mobile.png"
+    ],
+    "companyLogo": "/projects/dtmoney/dtmoney-logo.png",
+    "techStack": [
+      "React",
+      "TypeScript",
+      "Styled Components",
+      "MirageJS",
+      "Axios",
+      "Polished"
+    ],
+    "date": "2023-06-15",
+    "links": {
+      "website": "https://dtmoney-ten-omega.vercel.app/"
+    },
+    "sourceCodeUrl": "https://github.com/leorodriguesdev/dtmoney"
+  },
+  {
+    "id": 18,
+    "type": "website",
+    "image": "/projects/ignews/ignews-home.png",
+    "images": [
+      "/projects/ignews/ignews-home.png",
+      "/projects/ignews/ignews-home-logada.png",
+      "/projects/ignews/ignews-post.png",
+      "/projects/ignews/ignews-post-detail.png",
+      "/projects/ignews/ignews-mobile.png",
+      "/projects/ignews/ignews-checkout.png"
+    ],
+    "companyLogo": "/projects/ignews/ignews-logo.png",
+    "techStack": [
+      "Next.js",
+      "TypeScript",
+      "React",
+      "NextAuth.js",
+      "Stripe",
+      "Sass",
+      "SCSS Modules"
+    ],
+    "date": "2024-12-25",
+    "links": {
+      "website": "https://ignews-snowy-sigma.vercel.app/"
+    },
+    "sourceCodeUrl": "https://github.com/leorodriguesdev/ignews"
+  },
+  {
+    "id": 19,
+    "type": "mobile",
+    "image": "/projects/lalamovie/lalamovie-banner.png",
+    "images": [
+      "/projects/lalamovie/lalamovie-home.png"
+    ],
+    "companyLogo": "/projects/lalamovie/lalamovie-logo.png",
+    "techStack": [
+      "React Native",
+      "TypeScript",
+      "Node.js",
+      "Hooks",
+      "FlatList",
+      "JavaScript"
+    ],
+    "date": "2024-01-20",
+    "links": {},
+    "sourceCodeUrl": "https://github.com/leorodriguesdev/lalamovie"
+  },
+  {
+    "id": 20,
+    "type": "mobile",
+    "image": "/projects/gofinances/login.png",
+    "images": [
+      "/projects/gofinances/login.png",
+      "/projects/gofinances/cadastro.png",
+      "/projects/gofinances/home-entradas.png",
+      "/projects/gofinances/home-saida.png",
+      "/projects/gofinances/home-total.png",
+      "/projects/gofinances/categoria.png",
+      "/projects/gofinances/resumo-categoria.png"
+    ],
+    "companyLogo": "/projects/gofinances/logo.svg",
+    "techStack": [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "React Navigation",
+      "Styled Components",
+      "React Hook Form",
+      "Yup",
+      "AsyncStorage",
+      "Victory Native",
+      "Expo Google App Auth",
+      "Expo Apple Authentication",
+      "date-fns",
+      "React Native SVG"
+    ],
+    "date": "2021-09-22",
+    "links": {},
+    "sourceCodeUrl": "https://github.com/leorodriguesdev/gofinances"
+  },
+  {
+    "id": 21,
+    "type": "mobile",
+    "image": "/projects/savepass/home.png",
+    "images": [
+      "/projects/savepass/home.png",
+      "/projects/savepass/icon.png",
+      "/projects/savepass/splash.png",
+      "/projects/savepass/splash-expo.png",
+      "/projects/savepass/adaptive-icon.png"
+    ],
+    "companyLogo": "/projects/savepass/icon.png",
+    "techStack": [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "React Navigation",
+      "React Hook Form",
+      "Yup",
+      "AsyncStorage",
+      "Styled Components",
+      "Expo Linear Gradient",
+      "React Native Reanimated",
+      "React Native Gesture Handler",
+      "Expo Font",
+      "@expo-google-fonts/rubik",
+      "@expo-google-fonts/poppins"
+    ],
+    "date": "2023-01-01",
+    "links": {},
+    "sourceCodeUrl": "https://github.com/leorodriguesdev/savepass"
+  },
+  {
+    "id": 22,
+    "type": "website",
+    "image": "/projects/leorodriguesdev.github.io/home.png",
+    "images": [
+      "/projects/leorodriguesdev.github.io/home.png",
+      "/projects/leorodriguesdev.github.io/home2.png"
+    ],
+    "techStack": [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Bootstrap 5",
+      "Font Awesome",
+      "Bootstrap Icons",
+      "jQuery"
+    ],
+    "date": "2023-06-06",
+    "links": {
+      "website": "https://leorodriguesdev.github.io/"
+    },
+    "sourceCodeUrl": "https://github.com/leorodriguesdev/leorodriguesdev.github.io"
+  },
+  {
+    "id": 23,
+    "type": "mobile",
+    "image": "/projects/edimedApp/login.png",
+    "images": [
+      "/projects/edimedApp/splash-.png",
+      "/projects/edimedApp/login.png",
+      "/projects/edimedApp/registro.png",
+      "/projects/edimedApp/home.png",
+      "/projects/edimedApp/menu.png",
+      "/projects/edimedApp/perfil1.png",
+      "/projects/edimedApp/perfil2.png"
+    ],
+    "companyLogo": "/projects/edimedApp/splash-.png",
+    "techStack": [
+      "React Native",
+      "Expo",
+      "React Navigation",
+      "Axios",
+      "AsyncStorage",
+      "React Native Maps",
+      "React Native Vector Icons",
+      "TypeScript"
+    ],
+    "date": "2024-08-11",
+    "links": {},
+    "sourceCodeUrl": "https://github.com/leorodriguesdev"
+  },
+  {
+    "id": 24,
+    "type": "website",
+    "image": "/projects/AgendaPro/home.png",
+    "images": [
+      "/projects/AgendaPro/home.png",
+      "/projects/AgendaPro/home2.png",
+      "/projects/AgendaPro/marcar.png",
+      "/projects/AgendaPro/marcar2.png"
+    ],
+    "techStack": [
+      "Next.js 15",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS",
+      "PostCSS",
+      "React Icons",
+      "React Toastify",
+      "ESLint",
+      "Turbopack"
+    ],
+    "date": "2024-01-01",
+    "links": {
+      "website": "https://agenda-pro-two.vercel.app/"
+    },
+    "sourceCodeUrl": "https://github.com/leorodriguesdev/AgendaPro"
+  },
+  {
+    "id": 25,
+    "type": "website",
+    "image": "/projects/mega-verifica/home.png",
+    "images": [
+      "/projects/mega-verifica/home.png",
+      "/projects/mega-verifica/resultado.png"
+    ],
+    "techStack": [
+      "Next.js 15",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS",
+      "Turbopack",
+      "API Routes"
+    ],
+    "date": "2024-12-23",
+    "links": {},
+    "sourceCodeUrl": "https://github.com/leorodriguesdev/mega-verifica"
+  },
+  {
+    "id": 26,
+    "type": "website",
+    "image": "/projects/coe-toninho/imagem-gerada.png",
+    "images": [
+      "/projects/coe-toninho/home.png",
+      "/projects/coe-toninho/imagem-gerada.png",
+      "/projects/coe-toninho/imagem-gerada2.png",
+      "/projects/coe-toninho/imagem-gerada3.png"
+    ],
+    "techStack": [
+      "HTML5",
+      "CSS3",
+      "Bootstrap 5",
+      "JavaScript",
+      "Google Fonts",
+      "Flexbox"
+    ],
+    "date": "2023-10-20",
+    "links": {
+      "website": "https://leorodriguesdev.github.io/coe-toninho/"
+    },
+    "sourceCodeUrl": "https://github.com/leorodriguesdev/coe-toninho"
+  },
+  {
+    "id": 27,
+    "type": "website",
+    "image": "/projects/blog/home.png",
+    "images": [
+      "/projects/blog/home.png",
+      "/projects/blog/filtrado.png"
+    ],
+    "techStack": [
+      "Next.js",
+      "React",
+      "JavaScript",
+      "TypeScript",
+      "Axios",
+      "MirageJS",
+      "PrismJS",
+      "Styled Components",
+      "React Icons",
+      "Gray Matter",
+      "Remark",
+      "Rehype",
+      "Polished",
+      "React Modal"
+    ],
+    "date": "2024-07-28",
+    "links": {
+      "website": "https://blog-a9yaptw32-leonardo-rodrigues-projects-49c382a0.vercel.app/"
+    },
+    "sourceCodeUrl": "https://github.com/leorodriguesdev/blog"
+  },
+  {
+    "id": 28,
+    "type": "website",
+    "image": "/projects/dev.finances/home.png",
+    "images": [
+      "/projects/dev.finances/home.png",
+      "/projects/dev.finances/cadastro.png"
+    ],
+    "techStack": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "date": "2021-01-23",
+    "links": {
+      "website": "https://leorodriguesdev.github.io/dev.finances/"
+    },
+    "sourceCodeUrl": "https://github.com/leorodriguesdev/dev.finances"
+  },
+  {
+    "id": 29,
+    "type": "website",
+    "image": "/projects/agendAI/home.png",
+    "images": [
+      "/projects/agendAI/hero.png",
+      "/projects/agendAI/home.png",
+      "/projects/agendAI/home-mobile.png",
+      "/projects/agendAI/login.png"
+    ],
+    "companyLogo": "/projects/agendAI/logo.svg",
+    "techStack": [
+      "Next.js 15",
+      "React 19",
+      "TypeScript",
+      "TailwindCSS",
+      "Firebase Auth",
+      "Firestore",
+      "Recharts",
+      "Zustand",
+      "Jest",
+      "React Testing Library",
+      "Cypress",
+      "GitHub Actions"
+    ],
+    "date": "2025-01-15",
+    "links": {
+      "website": "https://agend-ai-sand.vercel.app/"
+    },
+    "sourceCodeUrl": "https://github.com/leorodriguesdev/agendAI"
+  },
+  {
+    "id": 30,
+    "type": "website",
+    "image": "/projects/onstart/home.png",
+    "images": [
+      "/projects/onstart/home.png",
+      "/projects/onstart/quem-somos.png",
+      "/projects/onstart/servicos.png",
+      "/projects/onstart/contato.png"
+    ],
+    "companyLogo": "/projects/onstart/logo.png",
+    "techStack": [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Font Awesome"
+    ],
+    "date": "2024-12-01",
+    "links": {
+      "website": "https://www.onstart.com.br/"
+    }
+  },
+  {
+    "id": 31,
+    "type": "website",
+    "image": "/projects/coelhotattoo013/home.png",
+    "images": [
+      "/projects/coelhotattoo013/home.png",
+      "/projects/coelhotattoo013/onepage.png"
+    ],
+    "companyLogo": "/projects/coelhotattoo013/Logo.png",
+    "techStack": [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS 4",
+      "Next.js Image Optimization"
+    ],
+    "date": "2024-12-15",
+    "links": {
+      "website": "https://coelhotattoo013.com.br/"
+    },
+    "sourceCodeUrl": "https://github.com/leorodriguesdev/coelhotattoo013.com.br"
+  },
+  {
+    "id": 32,
+    "type": "website",
+    "image": "/projects/eletelsat/home.png",
+    "images": [
+      "/projects/eletelsat/home.png",
+      "/projects/eletelsat/onepage.png"
+    ],
+    "companyLogo": "/projects/eletelsat/logo.png",
+    "techStack": [
+      "React 18",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "Framer Motion",
+      "React Router",
+      "React Hook Form",
+      "Zod",
+      "TanStack Query",
+      "Radix UI",
+      "Lucide React"
+    ],
+    "date": "2024-12-20",
+    "links": {
+      "website": "https://eletelsat.vercel.app/"
+    },
+    "sourceCodeUrl": "https://github.com/leorodriguesdev/eletelsat"
+  },
+  {
+    "id": 33,
+    "type": "mobile",
+    "image": "/projects/stv-elo/stv-elo.png",
+    "images": [
+      "/projects/stv-elo/stv-elo.png"
+    ],
+    "companyLogo": "/projects/stv-elo/logo.png",
+    "techStack": [
+      "React Native",
+      "Expo",
+      "TypeScript"
+    ],
+    "date": "2024-12-20",
+    "links": {}
+  }
+]

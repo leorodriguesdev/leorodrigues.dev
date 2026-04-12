@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { X, Briefcase, Code2, ArrowRight } from "lucide-react";
 import { Drawer } from "vaul";
 import { useMediaQuery } from "react-responsive";
+import { useTranslations } from "next-intl";
 import { VisitorIntent } from "@/hooks/useVisitorIntent";
 
 interface VisitorIntentModalProps {
@@ -23,26 +24,6 @@ interface IntentOption {
   cta: string;
   badge?: string;
 }
-
-const intentOptions: IntentOption[] = [
-  {
-    id: "portfolio",
-    icon: Briefcase,
-    title: "Portfólio",
-    subtitle: "Desenvolvedor para sua equipe técnica",
-    description: "Estou procurando um desenvolvedor para trabalhar na minha equipe ou projeto",
-    cta: "Ver Portfólio",
-  },
-  {
-    id: "commercial",
-    icon: Code2,
-    title: "Comercial",
-    subtitle: "Apps e sites para sua empresa",
-    description: "Quero desenvolver um site ou aplicativo para meu negócio",
-    cta: "Ver Serviços",
-    badge: "Mais Popular",
-  },
-];
 
 function IntentOptionCard({
   option,
@@ -122,9 +103,29 @@ function IntentOptionCard({
 }
 
 export function VisitorIntentModal({ intent, setIntent }: VisitorIntentModalProps) {
+  const t = useTranslations("visitorIntent");
   const [showModal, setShowModal] = useState(false);
   const [mounted, setMounted] = useState(false);
   const isMobile = useMediaQuery({ maxWidth: MOBILE_BREAKPOINT - 1 });
+  const intentOptions: IntentOption[] = [
+    {
+      id: "portfolio",
+      icon: Briefcase,
+      title: t("portfolioTitle"),
+      subtitle: t("portfolioSubtitle"),
+      description: t("portfolioDescription"),
+      cta: t("portfolioCta"),
+    },
+    {
+      id: "commercial",
+      icon: Code2,
+      title: t("commercialTitle"),
+      subtitle: t("commercialSubtitle"),
+      description: t("commercialDescription"),
+      cta: t("commercialCta"),
+      badge: t("badgePopular"),
+    },
+  ];
 
   useEffect(() => {
     setMounted(true);
@@ -159,10 +160,10 @@ export function VisitorIntentModal({ intent, setIntent }: VisitorIntentModalProp
     <div className="space-y-4 sm:space-y-6">
       <div className="px-2">
         <h2 className="text-xl sm:text-3xl md:text-4xl font-bold mb-2 text-foreground">
-          Olá! Como posso te ajudar?
+          {t("title")}
         </h2>
         <p className="text-sm sm:text-base text-muted-foreground">
-          Escolha a opção que melhor descreve sua necessidade
+          {t("subtitle")}
         </p>
       </div>
 
@@ -178,7 +179,7 @@ export function VisitorIntentModal({ intent, setIntent }: VisitorIntentModalProp
       </div>
 
       <p className="text-xs text-muted-foreground pt-2 sm:pt-4 px-2">
-        Você pode mudar essa escolha a qualquer momento
+        {t("footerNote")}
       </p>
     </div>
   );
@@ -194,7 +195,7 @@ export function VisitorIntentModal({ intent, setIntent }: VisitorIntentModalProp
               <button
                 onClick={handleClose}
                 className="absolute top-4 right-4 p-2 text-muted-foreground hover:text-foreground hover:bg-secondary rounded-lg transition-colors"
-                aria-label="Fechar"
+                aria-label={t("close")}
               >
                 <X size={20} />
               </button>
@@ -228,7 +229,7 @@ export function VisitorIntentModal({ intent, setIntent }: VisitorIntentModalProp
               <button
                 onClick={handleClose}
                 className="absolute top-2 right-2 sm:top-4 sm:right-4 p-2 text-muted-foreground hover:text-foreground hover:bg-secondary rounded-lg transition-colors z-10"
-                aria-label="Fechar"
+                aria-label={t("close")}
               >
                 <X size={20} />
               </button>

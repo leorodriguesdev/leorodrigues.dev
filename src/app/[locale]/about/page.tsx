@@ -3,6 +3,7 @@
 import { motion } from 'motion/react';
 import Image from 'next/image';
 import { Mail } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import Experience from '@/components/sections/Experience';
@@ -12,14 +13,16 @@ import { useAnalytics } from '@/hooks/useAnalytics';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 
 export default function AboutPage() {
+  const t = useTranslations('about');
+  const tMeta = useTranslations('metadata');
   const { trackEmail } = useAnalytics();
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
       <SEO
-        title="Sobre Mim | Desenvolvedor Mobile e Full Stack | Léo Rodrigues"
-        description="Conheça Léo Rodrigues, Desenvolvedor Mobile e Full Stack com 7+ anos de experiência em React Native, Expo, React, Next.js, TypeScript e Node.js. Especializado em desenvolvimento mobile e web moderno."
-        keywords="desenvolvedor mobile experiência, desenvolvedor React Native experiência, desenvolvedor full stack, sobre desenvolvedor mobile, perfil desenvolvedor React Native"
+        title={tMeta('aboutTitle')}
+        description={tMeta('aboutDescription')}
+        keywords={tMeta('aboutKeywords')}
       />
       <Breadcrumbs />
 
@@ -34,7 +37,7 @@ export default function AboutPage() {
             <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border-2 border-primary/20 overflow-hidden relative">
               <Image
                 src="/avatar.png"
-                alt="Leonardo Rodrigues"
+                alt={t('avatarAlt')}
                 fill
                 className="object-left-top object-cover"
                 priority
@@ -42,10 +45,10 @@ export default function AboutPage() {
             </div>
             <div className="space-y-4">
               <h1 className="text-4xl md:text-5xl tracking-tight">
-                Desenvolvedor Mobile com <span className="text-primary">7+ Anos de Experiência</span>
+                {t('heroTitle')} <span className="text-primary">{t('heroAccent')}</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Especialista em React Native, Expo, Next.js e Node.js. Criando aplicativos móveis e aplicações web modernas e escaláveis
+                {t('heroSubtitle')}
               </p>
               <div className="flex gap-4 justify-center pt-4">
                 {/* <a
@@ -63,7 +66,7 @@ export default function AboutPage() {
                   className="inline-flex items-center gap-2 px-6 py-3 border border-border rounded-lg hover:border-primary hover:text-primary transition-colors"
                 >
                   <Mail size={20} />
-                  Contato
+                  {t('contactBtn')}
                 </a>
               </div>
             </div>
@@ -77,18 +80,25 @@ export default function AboutPage() {
             className="mb-20 p-8 bg-secondary/50 border border-border rounded-lg"
           >
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Olá! Meu nome é <strong>Leonardo Rodrigues</strong> e sou um desenvolvedor full stack apaixonado por transformar ideias em soluções digitais robustas e eficientes. Com <span className="text-primary">mais de 7 anos de experiência</span> no mercado, atuo com foco em desenvolvimento web e mobile, utilizando as mais modernas tecnologias para construir produtos de alta qualidade.
+              {t.rich('bioP1', {
+                strong: (chunks) => <strong>{chunks}</strong>,
+                span: (chunks) => <span className="text-primary">{chunks}</span>,
+              })}
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Minha jornada profissional inclui passagens por empresas como a <span className="text-primary">IBM, Banco do Brasil, Banco Sicredi e Sistema FIERGS</span>, atualmente contribuo para a <span className="text-primary">Raiô Benefícios</span> e <span className="text-primary">STV Segurança</span>, onde tenho a oportunidade de participar de <span className="text-primary">todo o ciclo de desenvolvimento de projetos</span>, desde a concepção e prototipagem até o deploy e manutenção. Essa experiência me proporcionou uma visão 360º do processo de desenvolvimento, me permitindo entregar soluções completas e eficazes.
+              {t.rich('bioP2', {
+                span: (chunks) => <span className="text-primary">{chunks}</span>,
+              })}
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Sou movido pela paixão em resolver <strong>problemas complexos</strong> e aprimorar minhas <strong>habilidades</strong>. Para mim, o desenvolvimento de software transcende o código; é sobre entender o <strong>usuário</strong> e criar <strong>soluções intuitivas e impactantes</strong>. Estou sempre em busca de novos <strong>desafios</strong> e oportunidades para contribuir com minha expertise em <strong>projetos inovadores</strong> e equipes colaborativas.
+              {t.rich('bioP3', {
+                strong: (chunks) => <strong>{chunks}</strong>,
+              })}
             </p>
             <p className="text-sm text-muted-foreground mt-6 italic">
-              &quot;Quanto mais estudo, mais sinto que minha mente nisso é insaciável.&quot;
+              {t('quote')}
               <br />
-              Ada Lovelace - Matemática, Escritora Inglesa e inventora do primeiro algoritmo de computador da história.
+              {t('quoteAuthor')}
             </p>
           </motion.div>
 

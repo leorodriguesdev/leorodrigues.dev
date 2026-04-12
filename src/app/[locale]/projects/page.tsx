@@ -1,21 +1,27 @@
 "use client";
 
 import React, { useState, useMemo } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'motion/react';
 import { Code2, ExternalLink, Github, Calendar, ChevronDown, X } from 'lucide-react';
+import { useFormatter, useTranslations } from 'next-intl';
 
-import { projectsData } from '@/data/projectsData';
+import { Link } from '@/i18n/navigation';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { SEO } from '@/components/SEO';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { SafeImage } from '@/components/SafeImage';
+import { useProjects } from '@/hooks/useProjects';
 
 type FilterOption = 'all' | 'website' | 'mobile' | 'api';
 
 export default function AllProjectsPage() {
+  const t = useTranslations('projectsList');
+  const tMeta = useTranslations('metadata');
+  const format = useFormatter();
+  const projectsData = useProjects();
+
   const [filter, setFilter] = useState<FilterOption>('all');
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const [showAllTechTags, setShowAllTechTags] = useState(false);
@@ -31,7 +37,7 @@ export default function AllProjectsPage() {
     return Object.entries(tagCount)
       .map(([tag, count]) => ({ tag, count }))
       .sort((a, b) => b.count - a.count);
-  }, []);
+  }, [projectsData]);
 
   // Most used tags (top 8)
   const popularTags = techTagsWithCount.slice(0, 8).map(t => t.tag);
@@ -58,9 +64,9 @@ export default function AllProjectsPage() {
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
       <SEO
-        title="Projetos | Apps Mobile e Sites Desenvolvidos | Léo Rodrigues"
-        description="Portfolio de projetos desenvolvidos por Léo Rodrigues. Aplicativos mobile React Native, sites Next.js, sistemas full stack. Veja casos de sucesso em desenvolvimento mobile e web."
-        keywords="projetos React Native, projetos mobile, projetos Next.js, portfolio desenvolvedor, casos de sucesso desenvolvimento mobile"
+        title={tMeta('projectsListTitle')}
+        description={tMeta('projectsListDescription')}
+        keywords={tMeta('projectsListKeywords')}
       />
       <Breadcrumbs />
 
@@ -73,10 +79,11 @@ export default function AllProjectsPage() {
             className="text-center space-y-6 mb-16"
           >
             <h1 className="text-4xl md:text-5xl tracking-tight">
-              Meus <span className="text-primary">Projetos</span>
+              {t('title')}{' '}
+              <span className="text-primary">{t('titleAccent')}</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Uma coleção dos projetos que desenvolvi, desde aplicações web completas até experimentações com novas tecnologias
+              {t('subtitle')}
             </p>
           </motion.div>
 
@@ -102,12 +109,12 @@ export default function AllProjectsPage() {
                 }`}
             >
                   {btn === 'all'
-                    ? `Todos (${projectCounts.all})`
+                    ? `${t('filterAll')} (${projectCounts.all})`
                     : btn === 'website'
-                    ? `Websites (${projectCounts.website})`
+                    ? `${t('filterWebsites')} (${projectCounts.website})`
                     : btn === 'api'
-                    ? `API (${projectCounts.api})`
-                    : `Apps (${projectCounts.mobile})`}
+                    ? `${t('filterApi')} (${projectCounts.api})`
+                    : `${t('filterApps')} (${projectCounts.mobile})`}
             </button>
           ))}
             </div>
@@ -125,7 +132,7 @@ export default function AllProjectsPage() {
                 {/* Mobile: Select dropdown */}
                 <div className="md:hidden">
                   <label className="block text-sm font-medium mb-2 text-muted-foreground">
-                    Filtrar por Tecnologia
+                    {t('filterTechLabel')}
                   </label>
                   <div className="relative">
                     <select
@@ -133,7 +140,7 @@ export default function AllProjectsPage() {
                       onChange={(e) => setSelectedTag(e.target.value || null)}
                       className="w-full px-4 py-2.5 bg-card border border-border rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm cursor-pointer"
                     >
-                      <option value="">Todas as Tecnologias</option>
+                      <option value="">{t('allTech')}</option>
                       {allTechTags.map((tag) => (
                         <option key={tag} value={tag}>
                           {tag}
@@ -155,7 +162,7 @@ export default function AllProjectsPage() {
                           : "bg-secondary border border-border hover:border-primary"
                       }`}
                     >
-                      Todas
+                      {t('allTags')}
                     </button>
                     {popularTags.map((tag) => (
                       <button
@@ -175,7 +182,7 @@ export default function AllProjectsPage() {
                         onClick={() => setShowAllTechTags(true)}
                         className="px-4 py-2 rounded-lg bg-secondary border border-border hover:border-primary transition-colors text-sm text-muted-foreground"
                       >
-                        +{allTechTags.length - popularTags.length} mais
+                        {t('moreTags', { count: allTechTags.length - popularTags.length })}
                       </button>
                     )}
                   </div>
@@ -189,13 +196,13 @@ export default function AllProjectsPage() {
                       className="mt-4 pt-4 border-t border-border"
                     >
                       <div className="flex items-center justify-between mb-3">
-                        <span className="text-sm font-medium text-foreground">Todas as tecnologias</span>
+                        <span className="text-sm font-medium text-foreground">{t('allTechDesktop')}</span>
                         <button
                           onClick={() => setShowAllTechTags(false)}
                           className="px-3 py-1.5 rounded-lg bg-secondary border border-border hover:border-primary hover:bg-secondary/80 transition-all flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground group"
                         >
                           <X size={16} className="group-hover:rotate-90 transition-transform duration-200" />
-                          Fechar
+                          {t('close')}
                         </button>
                       </div>
                       <div className="flex flex-wrap gap-2">
@@ -226,14 +233,14 @@ export default function AllProjectsPage() {
                     animate={{ opacity: 1, y: 0 }}
                     className="flex items-center gap-2 text-sm"
                   >
-                    <span className="text-muted-foreground">Filtrado por:</span>
+                    <span className="text-muted-foreground">{t('filteredBy')}</span>
                     <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-lg font-medium border border-primary/20">
                       {selectedTag}
                     </span>
                     <button
                       onClick={() => setSelectedTag(null)}
                       className="p-1.5 rounded-lg hover:bg-secondary border border-transparent hover:border-border transition-all text-muted-foreground hover:text-foreground group"
-                      aria-label="Remover filtro"
+                      aria-label={t('removeFilterAria')}
                     >
                       <X size={16} className="group-hover:rotate-90 transition-transform duration-200" />
                     </button>
@@ -289,18 +296,18 @@ export default function AllProjectsPage() {
                       </h3>
                       <p className="text-sm text-muted-foreground flex items-center gap-1">
                         <Calendar size={14} />
-                        {new Date(project.date).toLocaleDateString('pt-BR', {
+                        {format.dateTime(new Date(project.date), {
                           year: 'numeric',
                           month: 'long',
-                          day: 'numeric'
+                          day: 'numeric',
                         })}
                       </p>
                       <span className="text-xs text-muted-foreground">
                         {project.type === 'website'
-                          ? 'Site / Web'
+                          ? t('typeWebsite')
                           : project.type === 'api'
-                          ? 'Sistema / API'
-                          : 'App / Mobile'}
+                          ? t('typeApi')
+                          : t('typeMobile')}
                       </span>
                     </div>
 
@@ -328,10 +335,10 @@ export default function AllProjectsPage() {
                     {/* Actions */}
                     <div className="flex gap-3 pt-4">
                       <Link
-                        href={`/projects/${project.id}?title=${project.title}`}
+                        href={`/projects/${project.id}?title=${encodeURIComponent(project.title)}`}
                         className="flex-1 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors text-center"
                       >
-                        Ver Detalhes
+                        {t('viewDetails')}
                       </Link>
                       {project.sourceCodeUrl && (
                         <a
@@ -371,7 +378,7 @@ export default function AllProjectsPage() {
             >
               <Code2 className="mx-auto mb-4 text-muted-foreground" size={48} />
               <p className="text-muted-foreground">
-                Nenhum projeto encontrado com essa tecnologia.
+                {t('empty')}
               </p>
             </motion.div>
           )}

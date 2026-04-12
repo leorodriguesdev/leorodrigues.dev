@@ -1,69 +1,35 @@
 // components/Experience.tsx
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useMemo, useState, useRef } from "react";
 import { Briefcase, Calendar, CheckCircle2, Flame } from "lucide-react";
+import { useTranslations } from "next-intl";
 
-const experiences = [
-  {
-    title: "Fundador e Desenvolvedor - Leorodrigues.dev LTDA",
-    duration: "2020 - Presente",
-    description:
-      "Fundador de empresa de desenvolvimento de software, atendendo clientes próprios com soluções customizadas em aplicativos mobile e web. Desenvolvimento de projetos end-to-end, desde a concepção até a entrega e manutenção.",
-    achievements: ["Gestão de projetos", "Desenvolvimento full stack", "Atendimento ao cliente", "React Native", "Kotlin", "Swift", "Node.js"],
-  },
-  {
-    title: "Engenheiro de Software Sênior - Raiô Benefícios",
-    duration: "Set 2025 - Presente · 5 meses",
-    description:
-      "Desenvolvedor full stack sênior, com foco em escalabilidade e performance do aplicativo de benefícios corporativos Raiô Benefícios. Com as tecnologias React Native e NodeJS.",
-    achievements: ["React Native", "Kotlin", "Swift", "Node.js"],
-  },
-  {
-    title: "Desenvolvedor Mobile Sênior - STV Segurança",
-    duration: "Mai 2024 - Presente · 1 ano 9 meses",
-    description:
-      "Desenvolvedor freelancer em aplicativo corporativo para funcionários da empresa, como hub de informações gerais e profissionais com fácil acesso.",
-    achievements: ["React Native", "Kotlin", "Swift"],
-  },
-  {
-    title: "Desenvolvedor e Analista de Sistemas Pleno - Sistema FIERGS",
-    duration: "Abr 2023 - Set 2025 · 2 anos 6 meses",
-    description:
-      "Analista e desenvolvedor de sistemas pleno. Desenvolvedor web e mobile utilizando React e React Native, também fazendo a sustentação de sistemas legados.",
-    achievements: ["Desenvolvimento orientado a testes", "JavaScript", "React", "React Native", "Kotlin", "Swift", "21+ competências adicionais"],
-  },
-  {
-    title: "Desenvolvedor Mobile - IBM (Banco do Brasil)",
-    duration: "Dez 2021 - Mar 2023 · 1 ano 4 meses",
-    description:
-      "Desenvolvimento mobile na conta do Banco do Brasil, com especialização no desenvolvimento do app de investimentos.",
-    achievements: ["Jest", "Desenvolvimento de front-end", "1+ competência adicional"],
-  },
-  {
-    title: "QA Tester - Sicredi",
-    duration: "Ago 2021 - Nov 2021 · 4 meses",
-    description:
-      "QA em projeto para o banco Sicredi, envolvendo o sistema de carteiras de usuários para respectivos gerentes. Utilizei ferramentas como Kafka, PostgreSQL, RestAssured e Salesforce.",
-    achievements: ["PostgreSQL", "Salesforce", "Automação de testes"],
-  },
-  {
-    title: "Desenvolvedor Full Stack - IBM",
-    duration: "Mar 2021 - Ago 2021 · 6 meses",
-    description:
-      "Desenvolvimento full-stack em projeto de controle de estágios na IBM, utilizando Angular, Java com Spring e PostgreSQL.",
-    achievements: ["Desenvolvimento de front-end", "Java com Spring", "PostgreSQL"],
-  },
-  {
-    title: "Suporte ao Cliente - Nitronnews Email Marketing",
-    duration: "Jun 2020 - Mar 2021 · 10 meses",
-    description:
-      "Suporte técnico aos clientes da ferramenta Nitronnews por meio de diversos canais e produção de conteúdo técnico.",
-    achievements: ["Suporte técnico", "Documentação", "Produção de conteúdo"],
-  },
-];
+const EXPERIENCE_KEYS = [
+  "e0",
+  "e1",
+  "e2",
+  "e3",
+  "e4",
+  "e5",
+  "e6",
+  "e7",
+] as const;
 
 const Experience = () => {
+  const t = useTranslations("experience");
+  const ti = useTranslations("experienceItems");
+  const experiences = useMemo(
+    () =>
+      EXPERIENCE_KEYS.map((k) => ({
+        title: ti(`${k}.title`),
+        duration: ti(`${k}.duration`),
+        description: ti(`${k}.description`),
+        achievements: ti.raw(`${k}.achievements`) as string[],
+      })),
+    [ti]
+  );
+
   const [showAll, setShowAll] = useState(false);
   const experienceRef = useRef<HTMLElement>(null);
 
@@ -83,11 +49,9 @@ const Experience = () => {
     >
       <div className="container mx-auto text-center relative">
         <h2 className="text-5xl font-bold mb-12 text-[var(--primary-color)] font-audiowide">
-          Experiência Profissional
+          {t("title")}
         </h2>
-        <p className="mb-16 text-xl max-w-3xl mx-auto">
-          Uma jornada repleta de desafios e aprendizado, em constante evolução no mundo da tecnologia.
-        </p>
+        <p className="mb-16 text-xl max-w-3xl mx-auto">{t("subtitle")}</p>
 
         <div className="flex flex-col items-center space-y-12 max-w-4xl mx-auto relative">
           {/* Primeira experiência totalmente visível */}
@@ -112,7 +76,9 @@ const Experience = () => {
 
             {/* Conquistas do primeiro item */}
             <div className="mt-6 space-y-2">
-              <h4 className="text-lg font-semibold text-[var(--primary-color)]">Conquistas:</h4>
+              <h4 className="text-lg font-semibold text-[var(--primary-color)]">
+                {t("achievements")}
+              </h4>
               <ul className="space-y-1">
                 {experiences[0].achievements.map((achievement, i) => (
                   <li key={i} className="flex items-center space-x-2 text-[var(--text-color)]">
@@ -159,7 +125,9 @@ const Experience = () => {
 
               {/* Conquistas */}
               <div className="mt-6 space-y-2">
-                <h4 className="text-lg font-semibold text-[var(--primary-color)]">Conquistas:</h4>
+                <h4 className="text-lg font-semibold text-[var(--primary-color)]">
+                {t("achievements")}
+              </h4>
                 <ul className="space-y-1">
                   {experiences[1].achievements.map((achievement, i) => (
                     <li key={i} className="flex items-center space-x-2 text-[var(--text-color)]">
@@ -203,7 +171,7 @@ const Experience = () => {
                 {/* Conquistas */}
                 <div className="mt-6 space-y-2">
                   <h4 className="text-lg font-semibold text-[var(--primary-color)]">
-                    Conquistas:
+                    {t("achievements")}
                   </h4>
                   <ul className="space-y-1">
                     {experience.achievements.map((achievement, i) => (
@@ -236,7 +204,7 @@ const Experience = () => {
               className="bg-[var(--primary-color)] text-white px-6 py-3 rounded-full font-semibold hover:bg-opacity-90 hover:scale-105 hover:shadow-lg hover:shadow-[var(--primary-color)]/30 hover:-translate-y-1 transition-all duration-300 transform"
               aria-expanded={showAll}
             >
-              {showAll ? "Ver Menos" : "Ver Mais Experiências"}
+              {showAll ? t("showLess") : t("showMore")}
             </button>
           )}
         </div>
