@@ -108,7 +108,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={locale} className="theme-figmaNeon" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${audiowide.variable} min-h-screen bg-background text-foreground antialiased`}
       >

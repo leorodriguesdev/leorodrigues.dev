@@ -258,44 +258,49 @@
   --radius: 0.625rem;
 }
 
-/* Aplicação de variáveis no layout */
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  transition: background-color 0.3s, color 0.3s;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Aplicação de variáveis no layout: dentro de @layer base para não vencer
+   utilities do Tailwind (ex.: bg-card em botões do modal de intenção). */
+@layer base {
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  code, pre, kbd, samp {
+    font-family: var(--font-geist-mono), ui-monospace, monospace;
+  }
+
+  button, .btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+  }
+
+  input {
+    background-color: var(--input-bg);
+    border-color: var(--input-border);
+  }
+
+  a, .link {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  a:hover:not([class*="bg-primary"]):not([class*="text-primary-foreground"]),
+  .link:hover:not([class*="bg-primary"]):not([class*="text-primary-foreground"]) {
+    color: var(--primary-color);
+  }
 }
 
-code, pre, kbd, samp {
-  font-family: var(--font-geist-mono), ui-monospace, monospace;
-}
-
-.card {
-  background-color: var(--bg-card);
-  box-shadow: 0 4px 8px var(--shadow-color);
-}
-
-button, .btn-primary {
-  background-color: var(--primary-color);
-  color: var(--text-color);
-}
-
-input {
-  background-color: var(--input-bg);
-  border-color: var(--input-border);
-}
-
-a, .link {
-  color: var(--accent-color);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-a:hover:not([class*="bg-primary"]):not([class*="text-primary-foreground"]), 
-.link:hover:not([class*="bg-primary"]):not([class*="text-primary-foreground"]) {
-  color: var(--primary-color);
+@layer components {
+  .card {
+    background-color: var(--bg-card);
+    box-shadow: 0 4px 8px var(--shadow-color);
+  }
 }
 
 /* globals.css */

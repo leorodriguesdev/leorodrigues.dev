@@ -40,12 +40,16 @@ function IntentOptionCard({
   const baseClasses =
     "w-full text-left bg-card border border-border rounded-xl transition-all group relative flex hover:border-muted-foreground/40 hover:bg-secondary/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
 
+  /** Fundo explícito: no mobile, Motion + transform do Vaul no WebKit podem “comer” o bg de `bg-card`. */
+  const opaqueCardStyle = { backgroundColor: "var(--card)" } as const;
+
   if (compact) {
     return (
-      <motion.button
+      <button
+        type="button"
         onClick={onSelect}
-        whileTap={{ scale: 0.98 }}
-        className={`${baseClasses} p-4 gap-4 items-center min-h-[72px] touch-manipulation`}
+        style={opaqueCardStyle}
+        className={`${baseClasses} p-4 gap-4 items-center min-h-[72px] touch-manipulation transition-transform active:scale-[0.98]`}
       >
         {hasBadge && (
           <span className="absolute -top-2 left-4 px-2 py-0.5 bg-secondary text-foreground text-[10px] rounded-full font-medium border border-border">
@@ -66,7 +70,7 @@ function IntentOptionCard({
           className="text-muted-foreground group-hover:text-primary shrink-0 transition-colors"
           aria-hidden
         />
-      </motion.button>
+      </button>
     );
   }
 
@@ -156,31 +160,37 @@ export function VisitorIntentModal({ intent, setIntent }: VisitorIntentModalProp
     if (!open) handleClose();
   };
 
-  const content = (
+  const intentOptionCards = intentOptions.map((option) => (
+    <IntentOptionCard
+      key={option.id}
+      option={option}
+      onSelect={() => handleIntentSelect(option.id)}
+      compact={isMobile}
+    />
+  ));
+
+  const optionsGrid = (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6 mt-4 sm:mt-8">
+      {intentOptionCards}
+    </div>
+  );
+
+  const footerNote = (
+    <p className="text-xs text-muted-foreground pt-2 sm:pt-4 px-2">{t("footerNote")}</p>
+  );
+
+  const desktopHeading = (
+    <div className="px-2">
+      <h2 className="text-xl sm:text-3xl md:text-4xl font-bold mb-2 text-foreground">{t("title")}</h2>
+      <p className="text-sm sm:text-base text-muted-foreground">{t("subtitle")}</p>
+    </div>
+  );
+
+  const desktopContent = (
     <div className="space-y-4 sm:space-y-6">
-      <div className="px-2">
-        <h2 className="text-xl sm:text-3xl md:text-4xl font-bold mb-2 text-foreground">
-          {t("title")}
-        </h2>
-        <p className="text-sm sm:text-base text-muted-foreground">
-          {t("subtitle")}
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-6 mt-4 sm:mt-8">
-        {intentOptions.map((option) => (
-          <IntentOptionCard
-            key={option.id}
-            option={option}
-            onSelect={() => handleIntentSelect(option.id)}
-            compact={isMobile}
-          />
-        ))}
-      </div>
-
-      <p className="text-xs text-muted-foreground pt-2 sm:pt-4 px-2">
-        {t("footerNote")}
-      </p>
+      {desktopHeading}
+      {optionsGrid}
+      {footerNote}
     </div>
   );
 
@@ -189,10 +199,17 @@ export function VisitorIntentModal({ intent, setIntent }: VisitorIntentModalProp
       <Drawer.Root open={showModal} onOpenChange={handleOpenChange}>
         <Drawer.Portal>
           <Drawer.Overlay className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100]" />
-          <Drawer.Content className="bg-card border-t border-border rounded-t-2xl fixed bottom-0 left-0 right-0 z-[100] outline-none max-h-[90vh] overflow-y-auto pb-[env(safe-area-inset-bottom)]">
-            <div className="sticky top-0 bg-card pt-4 pb-2 px-4 z-10">
+          <Drawer.Content
+            style={{ backgroundColor: "var(--card)" }}
+            className="isolate bg-card border-t border-border rounded-t-2xl fixed bottom-0 left-0 right-0 z-[100] outline-none max-h-[90vh] overflow-y-auto pb-[env(safe-area-inset-bottom)]"
+          >
+            <div
+              className="sticky top-0 bg-card pt-4 pb-2 px-4 z-10"
+              style={{ backgroundColor: "var(--card)" }}
+            >
               <Drawer.Handle className="w-12 h-1.5 bg-muted-foreground/30 rounded-full mx-auto mb-4" />
               <button
+                type="button"
                 onClick={handleClose}
                 className="absolute top-4 right-4 p-2 text-muted-foreground hover:text-foreground hover:bg-secondary rounded-lg transition-colors"
                 aria-label={t("close")}
@@ -200,7 +217,18 @@ export function VisitorIntentModal({ intent, setIntent }: VisitorIntentModalProp
                 <X size={20} />
               </button>
             </div>
-            <div className="px-4 pb-6">{content}</div>
+            <div className="px-4 pb-6 space-y-4 sm:space-y-6">
+              <div className="px-2 pt-2">
+                <Drawer.Title className="text-xl font-bold mb-2 text-foreground">
+                  {t("title")}
+                </Drawer.Title>
+                <Drawer.Description className="text-sm text-muted-foreground">
+                  {t("subtitle")}
+                </Drawer.Description>
+              </div>
+              {optionsGrid}
+              {footerNote}
+            </div>
           </Drawer.Content>
         </Drawer.Portal>
       </Drawer.Root>
@@ -233,7 +261,7 @@ export function VisitorIntentModal({ intent, setIntent }: VisitorIntentModalProp
               >
                 <X size={20} />
               </button>
-              <div className="text-center">{content}</div>
+              <div className="text-center">{desktopContent}</div>
             </div>
           </motion.div>
         </>
