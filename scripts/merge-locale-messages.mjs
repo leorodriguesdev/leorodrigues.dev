@@ -11,12 +11,20 @@ function deepMerge(target, source) {
     return source;
   }
   for (const key of Object.keys(source)) {
+    if (key === "__proto__" || key === "constructor" || key === "prototype") {
+      continue;
+    }
     const sv = source[key];
     const tv = target[key];
     if (Array.isArray(sv)) {
       target[key] = sv;
     } else if (sv && typeof sv === "object") {
-      if (!tv || typeof tv !== "object" || Array.isArray(tv)) {
+      if (
+        !Object.prototype.hasOwnProperty.call(target, key) ||
+        !tv ||
+        typeof tv !== "object" ||
+        Array.isArray(tv)
+      ) {
         target[key] = {};
       }
       deepMerge(target[key], sv);
