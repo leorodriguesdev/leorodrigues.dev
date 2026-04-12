@@ -1,49 +1,57 @@
 "use client";
 
-import React, { useState } from 'react';
-import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
+import React, { useState } from "react";
+import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { motion } from "motion/react";
 import { AlignJustify, X } from "lucide-react";
-import { useVisitorIntent } from '@/hooks/useVisitorIntent';
+import { useTranslations } from "next-intl";
+import { useVisitorIntent } from "@/hooks/useVisitorIntent";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
 const Navbar = () => {
   const pathname = usePathname();
   const router = useRouter();
+  const t = useTranslations("nav");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { intent } = useVisitorIntent();
-  
-  // Menu base
+
   const baseNavItems = [
-    { name: "Home", path: "/", hash: false },
-    { name: "Sobre", path: "/about", hash: false },
-    { name: "Habilidades", path: "/#skills", hash: true },
-    { name: "Projetos", path: "/projects", hash: false },
-    { name: "Contato", path: "/#contact", hash: true },
+    { nameKey: "home" as const, path: "/", hash: false },
+    { nameKey: "about" as const, path: "/about", hash: false },
+    { nameKey: "skills" as const, path: "/#skills", hash: true },
+    { nameKey: "projects" as const, path: "/projects", hash: false },
+    { nameKey: "contact" as const, path: "/#contact", hash: true },
   ];
 
-  // Adiciona "Serviços" apenas na versão comercial ou se não houver escolha ainda (padrão comercial)
-  const navItems = intent === "portfolio" 
-    ? baseNavItems 
-    : [...baseNavItems.slice(0, 2), { name: "Serviços", path: "/services", hash: false }, ...baseNavItems.slice(2)];
+  const navItems =
+    intent === "portfolio"
+      ? baseNavItems
+      : [
+          ...baseNavItems.slice(0, 2),
+          { nameKey: "services" as const, path: "/services", hash: false },
+          ...baseNavItems.slice(2),
+        ];
 
-  const handleHashClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
-    if (path.includes('#')) {
+  const handleHashClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    path: string
+  ) => {
+    if (path.includes("#")) {
       e.preventDefault();
-      const [basePath, hash] = path.split('#');
-      
-      if (pathname !== basePath || pathname !== '/') {
+      const [, hash] = path.split("#");
+
+      if (pathname !== "/" && pathname !== "") {
         router.push(path);
         setTimeout(() => {
-          const element = document.querySelector(hash ? `#${hash}` : '');
+          const element = document.querySelector(hash ? `#${hash}` : "");
           if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
+            element.scrollIntoView({ behavior: "smooth" });
           }
         }, 100);
       } else {
-        const element = document.querySelector(hash ? `#${hash}` : '');
+        const element = document.querySelector(hash ? `#${hash}` : "");
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+          element.scrollIntoView({ behavior: "smooth" });
         }
       }
       setMobileMenuOpen(false);
@@ -52,9 +60,8 @@ const Navbar = () => {
 
   const isActive = (path: string, hash?: boolean) => {
     if (hash) {
-      // Para links com hash, verificar se estamos na home e se o hash está visível
-      if (pathname === "/") {
-        const hashValue = path.split('#')[1];
+      if (pathname === "/" || pathname === "") {
+        const hashValue = path.split("#")[1];
         if (hashValue) {
           const element = document.querySelector(`#${hashValue}`);
           if (element) {
@@ -66,7 +73,7 @@ const Navbar = () => {
       return false;
     }
     if (path === "/") {
-      return pathname === "/";
+      return pathname === "/" || pathname === "";
     }
     return pathname === path || pathname.startsWith(path + "/");
   };
@@ -91,52 +98,56 @@ const Navbar = () => {
             </motion.div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                href={item.path}
-                className="relative group"
-                onClick={(e) => {
-                  if (item.hash) {
-                    handleHashClick(e, item.path);
-                  } else {
-                    setMobileMenuOpen(false);
-                  }
-                }}
-              >
-                <span
-                  className={`transition-colors ${
-                    isActive(item.path, item.hash)
-                      ? "text-primary"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
+          <div className="hidden md:flex items-center gap-6">
+            <div className="flex items-center gap-8">
+              {navItems.map((item) => (
+                <Link
+                  key={item.path}
+                  href={item.path}
+                  className="relative group"
+                  onClick={(e) => {
+                    if (item.hash) {
+                      handleHashClick(e, item.path);
+                    } else {
+                      setMobileMenuOpen(false);
+                    }
+                  }}
                 >
-                  {item.name}
-                </span>
-                {isActive(item.path, item.hash) && (
-                  <motion.div
-                    layoutId="activeNav"
-                    className="absolute -bottom-1 left-0 right-0 h-[2px] bg-primary"
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                  />
-                )}
-              </Link>
-            ))}
+                  <span
+                    className={`transition-colors ${
+                      isActive(item.path, item.hash)
+                        ? "text-primary"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    {t(item.nameKey)}
+                  </span>
+                  {isActive(item.path, item.hash) && (
+                    <motion.div
+                      layoutId="activeNav"
+                      className="absolute -bottom-1 left-0 right-0 h-[2px] bg-primary"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                </Link>
+              ))}
+            </div>
+            <LanguageSwitcher />
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 border border-border rounded-lg text-foreground hover:border-primary hover:text-secondary transition-all"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? <X size={20} /> : <AlignJustify size={20} />}
-          </button>
+          <div className="flex items-center gap-2 md:hidden">
+            <LanguageSwitcher />
+            <button
+              type="button"
+              className="p-2 border border-border rounded-lg text-foreground hover:border-primary hover:text-secondary transition-all"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label={t("toggleMenu")}
+            >
+              {mobileMenuOpen ? <X size={20} /> : <AlignJustify size={20} />}
+            </button>
+          </div>
         </div>
 
-        {/* Mobile Navigation */}
         {mobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
@@ -161,7 +172,7 @@ const Navbar = () => {
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
-                {item.name}
+                {t(item.nameKey)}
               </Link>
             ))}
           </motion.div>

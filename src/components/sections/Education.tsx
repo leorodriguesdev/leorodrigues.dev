@@ -1,42 +1,26 @@
 // components/Education.tsx
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useMemo, useState, useRef } from "react";
 import { Award, GraduationCap } from "lucide-react";
+import { useTranslations } from "next-intl";
 
-const educationData = [
-  {
-    title: "Pós-graduação Lato Sensu - Especialização, Inteligência Artificial",
-    institution: "UniRitter",
-    year: "Mai 2025 - Jun 2026",
-    description:
-      "Especialista em Inteligência Artificial com os principais tópicos: Aprendizado de máquina, Engenharia, preparação e visualização de dados, Gestão do conhecimento e inteligência competitiva, Redes neurais e aprendizado profundo, Arquiteturas de aprendizagem de máquina na nuvem e nas bordas, Análise de imagem e visão computacional, Processamento de linguagem natural, Experiência de usuário e IA.",
-    achievements: ["Inteligência artificial", "Aprendizado de máquina", "25+ competências adicionais"],
-  },
-  {
-    title: "Especialização em Desenvolvimento de Software com React, React Native e NodeJs",
-    institution: "Rocketseat",
-    year: "2023",
-    description:
-      "Me especializei em desenvolvimento de aplicações modernas e de alta performance, com um foco prático em todo o processo de criação. No front-end, desenvolvi interfaces interativas e responsivas com React, enquanto no desenvolvimento de aplicações móveis, utilizei React Native para proporcionar uma experiência nativa e fluida. No back-end, aprofundei meus conhecimentos em Node.js, criando APIs escaláveis e seguras, o que me capacitou a construir soluções completas e inovadoras.",
-  },
-  {
-    title: "Tecnólogo, Análise e Desenvolvimento de Sistemas",
-    institution: "Universidade Estácio de Sá",
-    year: "2022",
-    description:
-      "Concluí o curso superior em Análise e Desenvolvimento de Sistemas, onde aprendi a dominar conceitos avançados de desenvolvimento com uma ênfase prática em aplicações web com React. Esta formação me permitiu adquirir uma base técnica sólida para arquitetar, desenvolver e manter sistemas eficientes e robustos, sempre alinhados às boas práticas e inovações do mercado.",
-  },
-  {
-    title: "Curso Técnico em Programação Web",
-    institution: "IFRS - Instituto Federal do Rio Grande do Sul",
-    year: "2020",
-    description:
-      "Realizei minha formação técnica em Programação Web, onde desenvolvi habilidades fundamentais para criar projetos completos. Aprendi linguagens de programação, banco de dados e princípios de segurança da informação. Também explorei o uso de recursos visuais, como imagens, vídeos e animações, aliados ao domínio de HTML, CSS e outras tecnologias essenciais para desenvolver interfaces atraentes e experiências web de alto nível.",
-  },
-];
+const EDUCATION_KEYS = ["ed0", "ed1", "ed2", "ed3"] as const;
 
 const Education = () => {
+  const t = useTranslations("education");
+  const ti = useTranslations("educationItems");
+  const educationData = useMemo(
+    () =>
+      EDUCATION_KEYS.map((k) => ({
+        title: ti(`${k}.title`),
+        institution: ti(`${k}.institution`),
+        year: ti(`${k}.year`),
+        description: ti(`${k}.description`),
+      })),
+    [ti]
+  );
+
   const [showAll, setShowAll] = useState(false);
   const educationRef = useRef<HTMLElement>(null);
 
@@ -56,11 +40,9 @@ const Education = () => {
     >
       <div className="container mx-auto text-center relative">
         <h2 className="text-5xl font-bold mb-12 text-[var(--primary-color)] font-audiowide">
-          Educação e Certificações
+          {t("title")}
         </h2>
-        <p className="mb-16 text-xl max-w-3xl mx-auto">
-          Formação acadêmica e certificações que fortalecem minhas habilidades e conhecimentos na área de tecnologia.
-        </p>
+        <p className="mb-16 text-xl max-w-3xl mx-auto">{t("subtitle")}</p>
 
         <div className="flex flex-col items-center space-y-12 max-w-4xl mx-auto relative">
           {/* Primeira Educação */}
@@ -164,7 +146,7 @@ const Education = () => {
               className="bg-[var(--primary-color)] text-white px-6 py-3 rounded-full font-semibold hover:bg-opacity-90 hover:scale-105 hover:shadow-lg hover:shadow-[var(--primary-color)]/30 hover:-translate-y-1 transition-all duration-300 transform"
               aria-expanded={showAll}
             >
-              {showAll ? "Ver Menos" : "Ver Mais Educação"}
+              {showAll ? t("showLess") : t("showMore")}
             </button>
           )}
         </div>

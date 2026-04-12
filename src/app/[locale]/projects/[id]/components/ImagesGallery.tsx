@@ -1,8 +1,9 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import Image from 'next/image';
-import { motion } from 'motion/react';
+import React, { useState } from "react";
+import Image from "next/image";
+import { useTranslations } from "next-intl";
+import { motion } from "motion/react";
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 
@@ -19,6 +20,7 @@ type Props = {
 };
 
 export default function ImageGallery({ images, projectTitle }: Props) {
+  const t = useTranslations("gallery");
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
 
@@ -95,7 +97,7 @@ export default function ImageGallery({ images, projectTitle }: Props) {
             <div className="relative w-full h-full flex items-center justify-center bg-gray-900/20">
               <Image
                 src={src}
-                alt={`${projectTitle} imagem ${idx + 1}`}
+                alt={t("imageAlt", { title: projectTitle, index: idx + 1 })}
                 fill
                 className="object-contain group-hover:scale-110 transition-transform duration-700 ease-out"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -146,9 +148,7 @@ export default function ImageGallery({ images, projectTitle }: Props) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5 }}
       >
-        <p className="text-sm">
-          Clique em qualquer imagem para visualizar em tela cheia • {images.length} {images.length === 1 ? 'imagem' : 'imagens'} {images.length > 1 ? 'disponíveis' : 'disponível'}
-        </p>
+        <p className="text-sm">{t("hint", { count: images.length })}</p>
       </motion.div>
 
       <Lightbox

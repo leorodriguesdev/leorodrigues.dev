@@ -2,71 +2,62 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 import { FaReact, FaNodeJs, FaJsSquare } from "react-icons/fa";
 import { SiNextdotjs, SiTailwindcss, SiTypescript, SiExpo } from "react-icons/si";
 
-// Lista de skills com descrição
-const skills = [
-  {
-    icon: <FaReact className="text-blue-500" />,
-    name: "React",
-    percentage: 96,
-    description:
-      "Tecnologia para criar sites e sistemas interativos com alto desempenho, garantindo uma ótima experiência para os usuários.",
-  },
-  {
-    icon: <SiNextdotjs className="text-black dark:text-white" />,
-    name: "Next.js",
-    percentage: 89,
-    description:
-      "Expande o React para gerar páginas rápidas e seguras. Ideal para sites de negócios que precisam de boa performance e SEO.",
-  },
-  {
-    icon: <FaReact className="text-blue-700" />,
-    name: "React Native",
-    percentage: 97,
-    description:
-      "Permite criar aplicativos móveis (Android/iOS) usando a mesma base do React, agilizando o lançamento de apps para o seu negócio.",
-  },
-  {
-    icon: <SiExpo className="text-black dark:text-white" />,
-    name: "Expo",
-    percentage: 90,
-    description:
-      "Facilita o desenvolvimento de aplicativos sem configurações complicadas, acelerando a publicação e as atualizações dos apps.",
-  },
-  {
-    icon: <FaJsSquare className="text-yellow-500" />,
-    name: "JavaScript",
-    percentage: 95,
-    description:
-      "Linguagem fundamental que garante a parte interativa do site ou sistema, tornando-o mais dinâmico e atraente.",
-  },
-  {
-    icon: <FaNodeJs className="text-green-600" />,
-    name: "Node.js",
-    percentage: 81,
-    description:
-      "Permite criar servidores e APIs robustos para atender múltiplos usuários simultaneamente, sem lentidão ou travamentos.",
-  },
-  {
-    icon: <SiTypescript className="text-blue-700" />,
-    name: "TypeScript",
-    percentage: 85,
-    description:
-      "Versão mais organizada do JavaScript, ajudando a evitar erros e manter seu projeto estável à medida que cresce.",
-  },
-  {
-    icon: <SiTailwindcss className="text-blue-400" />,
-    name: "Tailwind CSS",
-    percentage: 87,
-    description:
-      "Ferramenta de design que agiliza a criação de layouts atraentes e responsivos, adequados a qualquer tamanho de tela.",
-  },
-];
-
-
 const Skills = () => {
+  const t = useTranslations("skills");
+  const skills = [
+    {
+      icon: <FaReact className="text-blue-500" />,
+      name: "React",
+      percentage: 96,
+      description: t("reactDesc"),
+    },
+    {
+      icon: <SiNextdotjs className="text-black dark:text-white" />,
+      name: "Next.js",
+      percentage: 89,
+      description: t("nextDesc"),
+    },
+    {
+      icon: <FaReact className="text-blue-700" />,
+      name: "React Native",
+      percentage: 97,
+      description: t("rnDesc"),
+    },
+    {
+      icon: <SiExpo className="text-black dark:text-white" />,
+      name: "Expo",
+      percentage: 90,
+      description: t("expoDesc"),
+    },
+    {
+      icon: <FaJsSquare className="text-yellow-500" />,
+      name: "JavaScript",
+      percentage: 95,
+      description: t("jsDesc"),
+    },
+    {
+      icon: <FaNodeJs className="text-green-600" />,
+      name: "Node.js",
+      percentage: 81,
+      description: t("nodeDesc"),
+    },
+    {
+      icon: <SiTypescript className="text-blue-700" />,
+      name: "TypeScript",
+      percentage: 85,
+      description: t("tsDesc"),
+    },
+    {
+      icon: <SiTailwindcss className="text-blue-400" />,
+      name: "Tailwind CSS",
+      percentage: 87,
+      description: t("tailwindDesc"),
+    },
+  ];
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   // No MOBILE: guarda índices de cards que cruzaram a faixa de 50px
@@ -168,10 +159,10 @@ const Skills = () => {
     >
       <div className="container mx-auto text-center">
         <h2 className="text-5xl font-bold mb-12 text-[var(--primary-color)] font-audiowide">
-          Habilidades e Tecnologias
+          {t("title")}
         </h2>
         <p className="mb-16 text-xl max-w-3xl mx-auto">
-          Tecnologias e ferramentas que utilizo para transformar ideias em projetos de alta qualidade.
+          {t("subtitle")}
         </p>
 
         <div
@@ -285,7 +276,7 @@ const Skills = () => {
                     </svg>
                   </div>
                   <p className="font-audiowide text-xs text-[var(--text-color)] mt-2">
-                    Expertise
+                    {t("expertise")}
                   </p>
                 </div>
               </div>

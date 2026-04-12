@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useFormatter, useLocale, useTranslations } from "next-intl";
 import { CheckCircle2, XCircle, Loader2, ExternalLink, AlertCircle } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -19,6 +20,10 @@ interface StatusResponse {
 }
 
 export default function SearchConsolePage() {
+  const locale = useLocale();
+  const t = useTranslations("searchConsole");
+  const tMeta = useTranslations("metadata");
+  const format = useFormatter();
   const [data, setData] = useState<StatusResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -26,18 +31,20 @@ export default function SearchConsolePage() {
   useEffect(() => {
     async function fetchStatus() {
       try {
-        const response = await fetch('/api/search-console/status');
-        if (!response.ok) throw new Error('Erro ao buscar status');
+        const response = await fetch(
+          `/api/search-console/status?locale=${encodeURIComponent(locale)}`,
+        );
+        if (!response.ok) throw new Error(t('fetchError'));
         const result = await response.json();
         setData(result);
       } catch (err) {
-        setError(err instanceof Error ? err.message : 'Erro desconhecido');
+        setError(err instanceof Error ? err.message : t('unknownError'));
       } finally {
         setLoading(false);
       }
     }
     fetchStatus();
-  }, []);
+  }, [locale, t]);
 
   const getStatusIcon = (status: CheckStatus['status']) => {
     if (status === 'pending') return <Loader2 className="w-5 h-5 animate-spin text-muted-foreground" />;
@@ -46,25 +53,25 @@ export default function SearchConsolePage() {
   };
 
   const getStatusText = (status: CheckStatus['status']) => {
-    if (status === 'pending') return 'Verificando...';
-    if (status === 'success') return 'Acessível';
-    return 'Não acessível';
+    if (status === 'pending') return t('statusChecking');
+    if (status === 'success') return t('statusOk');
+    return t('statusFail');
   };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEO
-        title="Status do Google Search Console"
-        description="Verificação de status e configuração do Google Search Console para leorodrigues.dev"
+        title={tMeta("searchConsoleTitle")}
+        description={tMeta("searchConsoleDescription")}
       />
       <Breadcrumbs />
       
       <div className="container mx-auto max-w-4xl px-6 py-12">
         <div className="space-y-8">
           <div>
-            <h1 className="text-4xl font-bold mb-4">Status do Google Search Console</h1>
+            <h1 className="text-4xl font-bold mb-4">{t('pageTitle')}</h1>
             <p className="text-muted-foreground">
-              Verificação de acessibilidade das páginas e configuração do Search Console
+              {t('pageSubtitle')}
             </p>
           </div>
 
@@ -95,16 +102,19 @@ export default function SearchConsolePage() {
                     <AlertCircle className="w-6 h-6 text-yellow-500" />
                   )}
                   <h2 className="text-2xl font-semibold">
-                    Status: {data.status === 'healthy' ? 'Tudo OK' : 'Atenção Necessária'}
+                    {t('statusLabel')} {data.status === 'healthy' ? t('overallOk') : t('overallWarn')}
                   </h2>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  Última verificação: {new Date(data.timestamp).toLocaleString('pt-BR')}
+                  {t('lastCheck')} {format.dateTime(new Date(data.timestamp), {
+                    dateStyle: 'medium',
+                    timeStyle: 'short',
+                  })}
                 </p>
               </div>
 
               <div className="space-y-4">
-                <h2 className="text-2xl font-semibold">Verificação de Páginas</h2>
+                <h2 className="text-2xl font-semibold">{t('pageChecks')}</h2>
                 <div className="grid gap-4">
                   {Object.entries(data.checks).map(([key, check]) => (
                     <div
@@ -131,7 +141,7 @@ export default function SearchConsolePage() {
               </div>
 
               <div className="space-y-4">
-                <h2 className="text-2xl font-semibold">Próximos Passos</h2>
+                <h2 className="text-2xl font-semibold">{t('nextSteps')}</h2>
                 <div className="space-y-3">
                   {data.recommendations.map((rec, index) => (
                     <div key={index} className="flex items-start gap-3 p-4 border rounded-lg bg-card">
@@ -151,7 +161,7 @@ export default function SearchConsolePage() {
               </div>
 
               <div className="bg-muted/50 border rounded-lg p-6 space-y-4">
-                <h2 className="text-2xl font-semibold">Links Úteis</h2>
+                <h2 className="text-2xl font-semibold">{t('usefulLinks')}</h2>
                 <div className="grid md:grid-cols-2 gap-4">
                   <a
                     href="https://search.google.com/search-console"
@@ -161,8 +171,8 @@ export default function SearchConsolePage() {
                   >
                     <ExternalLink className="w-5 h-5 text-primary" />
                     <div>
-                      <p className="font-medium">Google Search Console</p>
-                      <p className="text-sm text-muted-foreground">Acessar dashboard</p>
+                      <p className="font-medium">{t('linkGscTitle')}</p>
+                      <p className="text-sm text-muted-foreground">{t('linkGscDesc')}</p>
                     </div>
                   </a>
                   <a
@@ -173,8 +183,8 @@ export default function SearchConsolePage() {
                   >
                     <ExternalLink className="w-5 h-5 text-primary" />
                     <div>
-                      <p className="font-medium">Sitemap</p>
-                      <p className="text-sm text-muted-foreground">Ver sitemap.xml</p>
+                      <p className="font-medium">{t('linkSitemapTitle')}</p>
+                      <p className="text-sm text-muted-foreground">{t('linkSitemapDesc')}</p>
                     </div>
                   </a>
                   <a
@@ -185,8 +195,8 @@ export default function SearchConsolePage() {
                   >
                     <ExternalLink className="w-5 h-5 text-primary" />
                     <div>
-                      <p className="font-medium">Robots.txt</p>
-                      <p className="text-sm text-muted-foreground">Ver robots.txt</p>
+                      <p className="font-medium">{t('linkRobotsTitle')}</p>
+                      <p className="text-sm text-muted-foreground">{t('linkRobotsDesc')}</p>
                     </div>
                   </a>
                   <a
@@ -197,8 +207,8 @@ export default function SearchConsolePage() {
                   >
                     <ExternalLink className="w-5 h-5 text-primary" />
                     <div>
-                      <p className="font-medium">Guia Completo</p>
-                      <p className="text-sm text-muted-foreground">Ver documentação</p>
+                      <p className="font-medium">{t('linkGuideTitle')}</p>
+                      <p className="text-sm text-muted-foreground">{t('linkGuideDesc')}</p>
                     </div>
                   </a>
                 </div>

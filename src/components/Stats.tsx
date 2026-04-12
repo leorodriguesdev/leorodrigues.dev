@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 
 interface StatItemProps {
   end: number;
@@ -68,6 +69,7 @@ interface StatsProps {
 }
 
 export function Stats({ variant = 'commercial' }: StatsProps) {
+  const t = useTranslations("stats");
   const [githubStats, setGithubStats] = useState({
     linesOfCode: { value: 50, suffix: 'K' },
     publicRepos: 0,
@@ -125,25 +127,25 @@ export function Stats({ variant = 'commercial' }: StatsProps) {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
         <StatItem 
           end={githubStats.publicRepos} 
-          label="Repositórios GitHub" 
+          label={t("repos")}
           suffix="+"
           key={`repos-${githubStats.publicRepos}`}
         />
         <StatItem 
           end={githubStats.linesOfCode.value} 
-          label="Linhas de Código" 
+          label={t("lines")}
           suffix={githubStats.linesOfCode.suffix}
           key={`lines-${githubStats.linesOfCode.value}`}
         />
         <StatItem 
           end={githubStats.totalStars} 
-          label="Stars no GitHub" 
+          label={t("stars")}
           suffix="+"
           key={`stars-${githubStats.totalStars}`}
         />
         <StatItem 
           end={githubStats.followers} 
-          label="Seguidores GitHub" 
+          label={t("followers")}
           suffix="+"
           key={`followers-${githubStats.followers}`}
         />
@@ -154,15 +156,15 @@ export function Stats({ variant = 'commercial' }: StatsProps) {
   // Versão Commercial: Estatísticas atuais
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-      <StatItem end={7} label="Anos de Experiência" suffix="+" />
-      <StatItem end={97} label="Projetos Concluídos" suffix="+" />
+      <StatItem end={7} label={t("years")} suffix="+" />
+      <StatItem end={97} label={t("completed")} suffix="+" />
       <StatItem 
         end={githubStats.linesOfCode.value} 
-        label="Linhas de Código" 
+        label={t("lines")}
         suffix={githubStats.linesOfCode.suffix}
         key={`lines-${githubStats.linesOfCode.value}`}
       />
-      <StatItem end={99} label="Taxa de Satisfação" suffix="%" />
+      <StatItem end={99} label={t("satisfaction")} suffix="%" />
     </div>
   );
 }

@@ -1,0 +1,463 @@
+{
+  "projects": {
+    "items": {
+      "1": {
+        "title": "Anna Bella - Site Institucional",
+        "description": "Meu primeiro de todos, Site institucional fictício para apresentar o portfólio de uma modelo. Projeto criado no início da carreira para treinar HTML e CSS com navegação entre páginas e galeria de fotos.",
+        "highlights": [
+          "Primeiro projeto no início da carreira",
+          "Navegação entre páginas",
+          "Galeria de imagens simples com bordas estilizadas",
+          "Layout clássico e elegante com CSS puro"
+        ],
+        "status": "Online"
+      },
+      "2": {
+        "title": "TecBlog - Blog de Tecnologia",
+        "description": "Projeto prático desenvolvido no início da carreira durante cursos paralelos feitos junto ao curso de tecnologia. TecBlog é um blog fictício de tecnologia com páginas HTML e CSS onde foram praticados conceitos básicos de layout, tipografia, espaçamento, cabeçalho fixo e estilização de links e posts.",
+        "highlights": [
+          "Projeto do início da carreira para praticar HTML e CSS",
+          "Layout limpo e organizado com cabeçalho fixo e áreas laterais",
+          "Postagens com data e imagem",
+          "Sidebar com posts recentes e categorias"
+        ],
+        "status": "Online"
+      },
+      "3": {
+        "title": "Tela de Login Simples",
+        "description": "Projeto de uma tela de login minimalista e responsiva utilizando apenas HTML e CSS para prática de posicionamento e estilização com gradientes e transparência.",
+        "highlights": [
+          "Campos com ícones para e-mail e senha",
+          "Layout centralizado e responsivo",
+          "Gradiente de fundo e transparência nos elementos"
+        ],
+        "status": "Concluído"
+      },
+      "4": {
+        "title": "Currículo Interativo - Apresentation",
+        "description": "Projeto desenvolvido no meu primeiro bootcamp com a Codaí, onde tive meu primeiro contato com Bootstrap. O objetivo foi criar um site pessoal para apresentação em vagas de emprego após o bootcamp. Este projeto simula um currículo online interativo com mudança dinâmica de conteúdo e links para redes sociais.",
+        "highlights": [
+          "Currículo Interativo",
+          "Responsivo",
+          "Troca dinâmica de conteúdo"
+        ],
+        "status": "Online"
+      },
+      "5": {
+        "title": "Portal Notícias Cidade",
+        "description": "Um dos primeiros portais que desenvolvi durante minha fase inicial de estudos em desenvolvimento web. Neste projeto aprendi a estruturar sites com múltiplas páginas HTML e CSS, criando um portal de notícias fictício com diversas categorias e galeria de imagens.",
+        "highlights": [
+          "Estrutura de múltiplas páginas HTML",
+          "Layout de portal com colunas e menus"
+        ],
+        "status": "Concluído"
+      },
+      "6": {
+        "title": "Chalé Hotel - Site Institucional",
+        "description": "Projeto desenvolvido no meu início de estudos com HTML e CSS, durante o curso da Udemy do professor Jamilton Damasceno. O site simula a página institucional de um hotel fictício com apresentação visual atrativa, menus de navegação e listagem de benefícios.",
+        "highlights": [
+          "Layout institucional com imagens",
+          "Menu de navegação e listagem de benefícios"
+        ],
+        "status": "Concluído"
+      },
+      "7": {
+        "title": "Efeito Parallax com CSS",
+        "description": "Projeto prático desenvolvido para treinar o efeito Parallax apenas com HTML e CSS. A ideia era explorar a propriedade background-attachment: fixed para criar uma experiência de rolagem suave e com profundidade.",
+        "highlights": [
+          "Efeito Parallax com background-attachment: fixed",
+          "Experiência visual diferenciada"
+        ],
+        "status": "Concluído"
+      },
+      "8": {
+        "title": "Museu Nacional",
+        "description": "Projeto institucional desenvolvido para simular o site de um museu. Foram utilizados HTML e CSS com foco em estruturação, navegação e integração de elementos como vídeo, mapa e formulário.",
+        "highlights": [
+          "Página institucional com vídeo e mapa",
+          "Formulário de visita",
+          "Galeria de fotos"
+        ],
+        "status": "Concluído"
+      },
+      "9": {
+        "title": "Finans",
+        "description": "Landing page moderna e responsiva para uma solução de finanças pessoais. Desenvolvido com HTML, CSS e Bootstrap para apresentar recursos e benefícios do produto de forma clara e atraente.",
+        "highlights": [
+          "Landing page responsiva",
+          "Formulário de captura",
+          "Design moderno e clean"
+        ],
+        "status": "Concluído"
+      },
+      "10": {
+        "title": "Clone Spotify",
+        "description": "Landing page clone do Spotify desenvolvida com HTML, CSS e Bootstrap para treinar responsividade, carrossel de destaques e organização de seções promocionais.",
+        "highlights": [
+          "Carrossel responsivo",
+          "Layout moderno e clean",
+          "Landing page institucional"
+        ],
+        "status": "Concluído"
+      },
+      "11": {
+        "title": "API NPS",
+        "description": "API RESTful para envio e cálculo de NPS (Net Promoter Score), com integração de e-mail e testes automatizados. Utiliza Node.js, TypeORM, Nodemailer e SQLite.",
+        "highlights": [
+          "Envio automatizado de e-mails",
+          "Cálculo de NPS",
+          "Testes automatizados"
+        ],
+        "status": "Concluído"
+      },
+      "12": {
+        "title": "dev.finances",
+        "description": "Aplicação de controle financeiro desenvolvida com HTML, CSS e JavaScript puro, permitindo registrar e visualizar entradas, saídas e saldo total.",
+        "highlights": [
+          "Modal de nova transação com interação via DOM",
+          "Visualização dinâmica de entradas, saídas e total",
+          "Estilização responsiva e moderna"
+        ],
+        "status": "Concluído"
+      },
+      "13": {
+        "title": "Pomo - Aplicação Pomodoro com Gamificação",
+        "description": "Aplicação web inspirada na técnica Pomodoro que combina produtividade com exercícios físicos e cuidados com a saúde. Durante as pausas, o usuário recebe desafios de exercícios físicos e para os olhos, ganhando experiência (XP) ao completá-los e subindo de nível.",
+        "highlights": [
+          "Timer Pomodoro de 25 minutos para sessões de foco",
+          "Sistema de desafios com exercícios físicos e para os olhos",
+          "Gamificação com XP, níveis e conquistas",
+          "Notificações sonoras e do navegador",
+          "Persistência de dados em cookies",
+          "Interface responsiva e moderna"
+        ],
+        "status": "Online"
+      },
+      "14": {
+        "title": "UNES - Universidade de Excelência",
+        "description": "Site institucional moderno e responsivo para uma universidade fictícia. Projeto que demonstra a evolução de um site legado com tabelas para uma versão moderna usando HTML5 semântico, CSS Grid/Flexbox e JavaScript ES6+. Inclui formulário funcional, animações suaves, SEO otimizado e design system completo.",
+        "highlights": [
+          "Modernização completa de site legado com tabelas",
+          "Design responsivo com CSS Grid e Flexbox",
+          "Formulário de contato com validação em tempo real",
+          "Animações suaves e efeitos visuais elegantes",
+          "SEO otimizado com meta tags e structured data",
+          "Sistema de design com cores e tipografia profissional",
+          "FAQ interativo com accordion",
+          "Contadores animados de estatísticas",
+          "Performance otimizada com lazy loading",
+          "PWA Ready com Service Worker configurado"
+        ],
+        "status": "Online"
+      },
+      "15": {
+        "title": "desaba.fei - Sistema de Comentários Moderno",
+        "description": "Sistema de comentários moderno e interativo desenvolvido em React, com design responsivo e funcionalidades avançadas. Inclui busca em tempo real, filtros inteligentes, edição de comentários, avatares dinâmicos, validação em tempo real e persistência local. Interface moderna com gradientes sofisticados, animações suaves e suporte completo à acessibilidade.",
+        "highlights": [
+          "Sistema de comentários completo com CRUD",
+          "Busca avançada em tempo real por nome, email ou conteúdo",
+          "Filtros inteligentes por data e nome",
+          "Edição de comentários com validação em tempo real",
+          "Avatares dinâmicos com iniciais coloridas",
+          "Design responsivo com mobile-first approach",
+          "Persistência automática no localStorage",
+          "Animações suaves e efeitos shimmer",
+          "Suporte completo à acessibilidade (WCAG 2.1 AA)",
+          "Design system moderno com gradientes sofisticados",
+          "Estados interativos com feedback visual",
+          "Detecção automática de dark mode"
+        ],
+        "status": "Online"
+      },
+      "16": {
+        "title": "MySkills - App de Cadastro de Skills",
+        "description": "Aplicação mobile desenvolvida com React Native para cadastro e visualização de skills de desenvolvedores. O app permite adicionar novas habilidades, visualizar lista de skills cadastradas e inclui sistema de login/welcome. Projeto criado para praticar desenvolvimento mobile com React Native e Expo.",
+        "highlights": [
+          "Cadastro de entrada/saída das skills",
+          "Component Profile para exibição de perfil",
+          "Página de login/Welcome"
+        ],
+        "status": "Em construção"
+      },
+      "17": {
+        "title": "dtmoney - Controle de Finanças Pessoais",
+        "description": "Aplicação web para controle pessoal de finanças desenvolvida durante o Chapter 1 do Ignite da Rocketseat. Permite cadastrar entradas e saídas de dinheiro organizadas por nome e categoria, com cálculo automático de saldo total.",
+        "highlights": [
+          "Cadastro de entradas e saídas de dinheiro",
+          "Cálculo automático de entrada, saída e total",
+          "Organização por nome e categoria",
+          "Interface moderna e responsiva",
+          "Simulação de API com MirageJS",
+          "Página de login integrada"
+        ],
+        "status": "Online"
+      },
+      "18": {
+        "title": "ig.news - Plataforma de Notícias React",
+        "description": "Plataforma de notícias sobre o mundo React desenvolvida com Next.js, TypeScript e integração com Stripe para pagamentos. Sistema completo de autenticação com GitHub, assinatura premium e conteúdo exclusivo. Projeto full-stack com webhooks, API routes e design responsivo moderno.",
+        "highlights": [
+          "Autenticação completa com GitHub via NextAuth.js",
+          "Sistema de assinatura premium integrado com Stripe",
+          "Webhooks para processamento de pagamentos",
+          "API Routes para checkout e webhooks",
+          "Design responsivo com SCSS Modules",
+          "Sistema de posts com preview para não assinantes",
+          "Interface moderna e elegante",
+          "Integração completa com Stripe Dashboard",
+          "Deploy otimizado na Vercel"
+        ],
+        "status": "Online"
+      },
+      "19": {
+        "title": "LalaMovie - App de Críticas de Filmes",
+        "description": "Aplicação mobile desenvolvida em React Native para críticas e comentários de filmes. Projeto de estudo criado para aprender na prática React Native e preparar para desenvolvimento mobile. Inclui funcionalidades como navegação, sliders, cards de filmes, sistema de comentários e avaliações.",
+        "highlights": [
+          "Página Home com header e navegação",
+          "Slider de filmes em destaque",
+          "Cards de filmes com informações",
+          "Seções Top Rated e Lowest Rated",
+          "Página de detalhes do filme",
+          "Sistema de comentários e avaliações",
+          "Input para adicionar comentários",
+          "Lógica de persistência de comentários"
+        ],
+        "status": "Em construção"
+      },
+      "20": {
+        "title": "GoFinances - Controle Financeiro Pessoal",
+        "description": "Aplicativo mobile de controle financeiro pessoal desenvolvido com React Native, Expo e TypeScript. Permite gerenciar receitas e despesas de forma simples e intuitiva, com autenticação social, dashboard completo, cadastro de transações, categorização, gráficos de resumo financeiro e armazenamento local de dados.",
+        "highlights": [
+          "Autenticação social com Google e Apple",
+          "Dashboard com listagem de transações",
+          "Cadastro de transações (entradas e saídas)",
+          "Categorização de transações",
+          "Cards de destaque (Entradas, Saídas, Total)",
+          "Resumo financeiro com gráficos",
+          "Armazenamento local de dados",
+          "Interface responsiva e moderna",
+          "Navegação por abas",
+          "Formulários com validação",
+          "Formatação de valores em Real (BRL)",
+          "Histórico de transações"
+        ],
+        "status": "Em produção"
+      },
+      "21": {
+        "title": "SavePass - Gerenciador de Senhas",
+        "description": "Gerenciador de senhas mobile desenvolvido em um bootcamp da Rocketseat com React Native, Expo e TypeScript. Permite armazenar de forma segura credenciais de login (nome do serviço, e-mail e senha) diretamente no dispositivo usando AsyncStorage. Interface moderna e intuitiva com funcionalidades de busca e organização de credenciais.",
+        "highlights": [
+          "Armazenamento seguro de credenciais localmente",
+          "Busca rápida de senhas por nome do serviço",
+          "Cadastro simples de novos logins",
+          "Interface moderna e responsiva",
+          "Design consistente com Styled Components",
+          "Validação de formulários com React Hook Form e Yup",
+          "Navegação fluida entre telas",
+          "Persistência de dados com AsyncStorage",
+          "Contador de senhas salvas",
+          "Tela de splash personalizada"
+        ],
+        "status": "Em desenvolvimento"
+      },
+      "22": {
+        "title": "Portfólio Pessoal - leorodriguesdev.github.io",
+        "description": "Meu primeiro portfólio pessoal desenvolvido com HTML5, CSS3 e JavaScript puro para apresentar trabalhos, habilidades e experiências no desenvolvimento web e mobile. Interface moderna e responsiva com timeline de experiências profissionais interativa, galeria de projetos, formulário de contato integrado e vídeo de fundo animado.",
+        "highlights": [
+          "Design responsivo e moderno",
+          "Seção de apresentação pessoal",
+          "Timeline de experiências profissionais interativa",
+          "Galeria de projetos e serviços",
+          "Formulário de contato integrado",
+          "Vídeo de fundo animado",
+          "Animações e efeitos visuais",
+          "Sistema de envio de email via formulário",
+          "Integração com APIs externas",
+          "Otimizações de SEO avançadas"
+        ],
+        "status": "Em produção"
+      },
+      "23": {
+        "title": "EdimedApp - Gerenciamento de Serviços Médicos",
+        "description": "Aplicativo mobile desenvolvido com React Native e Expo para gerenciamento de serviços médicos e agendamentos. O EdimedApp permite que beneficiários realizem agendamentos de consultas, gerenciem seus perfis e acompanhem seus pedidos de forma simples e intuitiva. Projeto desenvolvido para cliente real (EdimedPlus).",
+        "highlights": [
+          "Autenticação de usuários com sistema de login e registro",
+          "Gerenciamento completo de perfil do beneficiário",
+          "Agendamento de consultas médicas",
+          "Busca de credenciados próximos usando mapas",
+          "Gerenciamento de pedidos e acompanhamento de pagamentos",
+          "Gerenciamento de dependentes cadastrados",
+          "Histórico de agendamentos",
+          "Integração com API REST",
+          "Armazenamento local com AsyncStorage",
+          "Autenticação JWT",
+          "Design moderno com cores personalizadas"
+        ],
+        "status": "Em produção"
+      },
+      "24": {
+        "title": "AgendaPro - Sistema de Agendamentos Online",
+        "description": "Sistema completo de agendamentos online desenvolvido com Next.js, React e TypeScript. Permite que clientes agendem serviços de forma rápida e prática, enquanto as empresas mantêm controle total e personalizam a experiência com sua identidade visual. Sistema multi-tenant com rotas dinâmicas por empresa.",
+        "highlights": [
+          "Gestão completa de agendamentos online",
+          "Sistema multi-tenant com rotas dinâmicas por empresa",
+          "Customização de identidade visual por empresa",
+          "Controle total de horários e disponibilidade",
+          "Validação de datas e horários",
+          "Notificações automáticas para clientes",
+          "Confirmação de agendamento via e-mail",
+          "Suporte a tema claro e escuro",
+          "Design responsivo e acessível",
+          "Formulário intuitivo com validação em tempo real",
+          "Animações e transições suaves",
+          "Feedback visual com toasts de notificação"
+        ],
+        "status": "Em desenvolvimento"
+      },
+      "25": {
+        "title": "Mega Verifica - Verificador de Apostas Mega Sena",
+        "description": "Aplicação web desenvolvida para verificar apostas da Mega Sena. Permite que o usuário selecione de 6 a 15 números de um grid de 60 números e compara os números apostados com os números sorteados, exibindo quantos acertos foram obtidos. Interface moderna e responsiva com modal de resultados.",
+        "highlights": [
+          "Seleção de números de 1 a 60 em grid interativo",
+          "Validação de seleção mínima (6 números) e máxima (15 números)",
+          "Interface responsiva e moderna",
+          "Modal para exibição de resultados",
+          "Comparação automática entre números apostados e sorteados",
+          "Destaque visual dos números acertados",
+          "API route para simulação de resultados da Mega Sena",
+          "Feedback visual em tempo real"
+        ],
+        "status": "Concluído"
+      },
+      "26": {
+        "title": "Gerador de Apelidos do Toninho",
+        "description": "Aplicação web interativa que permite aos usuários gerar apelidos únicos e divertidos inspirados no personagem 'Toninho'. Ideal para adicionar um toque de humor e criatividade em conversas informais, redes sociais ou qualquer ambiente que necessite de um apelido personalizado. Cada apelido gerado é acompanhado por uma imagem aleatória.",
+        "highlights": [
+          "Geração aleatória de apelidos únicos e engraçados",
+          "Imagens aleatórias para cada apelido gerado",
+          "Função de copiar apelido para área de transferência",
+          "Design responsivo para diferentes dispositivos",
+          "Interface moderna e intuitiva",
+          "Tooltip de confirmação ao copiar",
+          "Experiência visual e divertida"
+        ],
+        "status": "Online"
+      },
+      "27": {
+        "title": "Blog Pessoal - leorodriguesdev",
+        "description": "Meu primeiro blog pessoal desenvolvido com Next.js para compartilhar conhecimentos sobre React, React Native, Node.js e Next.js. O blog busca artigos automaticamente de um repositório GitHub separado, permitindo que os conteúdos sejam armazenados e gerenciados de forma independente. Sistema completo com listagem por categoria, visualização de artigos com formatação de código e sistema de comentários.",
+        "highlights": [
+          "Busca automática de artigos de repositório GitHub",
+          "Listagem de artigos por categoria",
+          "Visualização de artigos com formatação de código",
+          "Navegação entre posts",
+          "Copiar trechos de código facilmente",
+          "Sistema de comentários",
+          "Página de login para autores",
+          "Integração com GitHub API",
+          "Renderização dinâmica de conteúdo Markdown",
+          "Design responsivo e moderno"
+        ],
+        "status": "Em desenvolvimento"
+      },
+      "28": {
+        "title": "dev.finances - Controle Financeiro",
+        "description": "Aplicação de controle financeiro desenvolvida com HTML, CSS e JavaScript puro, permitindo registrar e visualizar entradas, saídas e saldo total. Interface moderna com modal para cadastro de transações e visualização dinâmica dos dados financeiros.",
+        "highlights": [
+          "Modal de nova transação com interação via DOM",
+          "Visualização dinâmica de entradas, saídas e total",
+          "Estilização responsiva e moderna",
+          "Cadastro de transações financeiras",
+          "Cálculo automático de saldo"
+        ],
+        "status": "Concluído"
+      },
+      "29": {
+        "title": "AgendAI - Sistema de Agendamento Inteligente com IA",
+        "description": "Sistema completo de agendamento inteligente com integração de Inteligência Artificial para negócios. Desenvolvido com Next.js 15 e React 19, oferece autenticação de usuários, dashboard com métricas, gerenciamento de serviços e profissionais, configuração de horários, visualização de agendamentos, suporte a tema claro/escuro e notificações. Utiliza Firebase para autenticação e Firestore para persistência de dados.",
+        "highlights": [
+          "Sistema de agendamento inteligente com integração de IA",
+          "Autenticação completa com Firebase Auth",
+          "Dashboard com métricas e visualização de dados com Recharts",
+          "Gerenciamento completo de serviços oferecidos",
+          "Gerenciamento de múltiplos profissionais",
+          "Configuração flexível de horários de funcionamento",
+          "Visualização e gerenciamento de agendamentos",
+          "Suporte a tema claro/escuro",
+          "Notificações e lembretes de agendamentos",
+          "Testes unitários com Jest e React Testing Library",
+          "Testes end-to-end com Cypress",
+          "CI/CD automatizado com GitHub Actions",
+          "Arquitetura escalável com padrão de repositório",
+          "Gerenciamento de estado com Zustand"
+        ],
+        "status": "Online"
+      },
+      "30": {
+        "title": "OnStart Tecnologia - Site Institucional",
+        "description": "Site institucional desenvolvido para a OnStart Tecnologia, empresa dedicada a simplificar a vida das pessoas através de soluções tecnológicas inovadoras. O site apresenta quatro páginas principais: página inicial com apresentação da empresa, página 'Quem Somos' com missão e valores, página de serviços detalhando todas as soluções oferecidas, e página de contato com informações de localização. Projeto desenvolvido para cliente real.",
+        "highlights": [
+          "Site institucional completo com quatro páginas principais",
+          "Página inicial com apresentação da empresa e serviços",
+          "Página 'Quem Somos' com missão, visão e valores",
+          "Página de serviços detalhando soluções tecnológicas",
+          "Página de contato com informações e localização",
+          "Design responsivo e moderno",
+          "Animações e interatividade com JavaScript",
+          "Ícones e símbolos com Font Awesome",
+          "Projeto desenvolvido para cliente real",
+          "Estrutura organizada e profissional"
+        ],
+        "status": "Online"
+      },
+      "31": {
+        "title": "Coelho Tattoo 013 - Site Institucional",
+        "description": "Site institucional moderno e responsivo para o tatuador Leonardo Coelho, especialista em custom lettering e calligraffiti, localizado em Porto Alegre, RS. O site apresenta portfólio interativo com lightbox, formulários de contato integrados com WhatsApp, seções de serviços, depoimentos de clientes e design totalmente responsivo. Projeto desenvolvido para cliente real.",
+        "highlights": [
+          "Galeria de portfólio interativa com lightbox",
+          "Formulários de contato e agendamento integrados com WhatsApp",
+          "Navegação por teclado e touch (swipe) na galeria",
+          "Lazy loading de imagens para performance",
+          "Validação em tempo real com máscara de telefone brasileira",
+          "Design responsivo mobile-first",
+          "Animações suaves de entrada",
+          "Otimização automática de imagens com Next.js",
+          "SEO otimizado com sitemap e robots.txt",
+          "Web App Manifest configurado",
+          "Headers de segurança configurados",
+          "Projeto desenvolvido para cliente real"
+        ],
+        "status": "Online"
+      },
+      "32": {
+        "title": "Eletel Sat - Site Institucional",
+        "description": "Site institucional moderno e responsivo da Eletel Sat, empresa especializada em segurança eletrônica há mais de 30 anos em Viamão, Rio Grande do Sul. O site apresenta os serviços oferecidos pela empresa, incluindo câmeras de segurança (CFTV), sistemas de alarme, motores para portões, cercas elétricas, interfones e energia solar. Projeto desenvolvido para cliente real.",
+        "highlights": [
+          "Design moderno e responsivo com animações suaves",
+          "Menu hambúrguer responsivo para mobile",
+          "Navegação suave entre seções (smooth scroll)",
+          "Botão WhatsApp flutuante integrado",
+          "Formulário de contato com validação usando React Hook Form e Zod",
+          "Mapa do Google Maps integrado",
+          "Animações de entrada ao scroll (scroll reveal) com Framer Motion",
+          "SEO otimizado com meta tags, structured data e sitemap",
+          "Open Graph e Twitter Cards configurados",
+          "Performance otimizada com lazy loading e code splitting",
+          "Acessibilidade (WCAG) com componentes Radix UI",
+          "Projeto desenvolvido para cliente real"
+        ],
+        "status": "Online"
+      },
+      "33": {
+        "title": "STV - ELO",
+        "description": "Aplicativo mobile do Grupo STV-Segurança, Tecnologia e Vigilância Patrimonial. Desenvolvido para melhorar a comunicação interna da empresa, disponibilizando acesso a documentos e informações úteis aos funcionários. Projeto desenvolvido para cliente real.",
+        "highlights": [
+          "Comunicação interna da empresa",
+          "Acesso a documentos corporativos",
+          "Informações úteis para funcionários",
+          "Projeto desenvolvido para cliente real"
+        ],
+        "status": "Em produção"
+      }
+    }
+  }
+}
