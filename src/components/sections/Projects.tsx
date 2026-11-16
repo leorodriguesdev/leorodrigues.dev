@@ -46,7 +46,7 @@ const Projects = () => {
                 className="group"
               >
                 <Link
-                  href={`/projects/${project.id}?title=${encodeURIComponent(project.title)}`}
+                  href={`/projects/${project.id}`}
                   className="block h-full"
                 >
                   <div className="h-full bg-card border border-border rounded-lg overflow-hidden hover:border-primary transition-colors">
@@ -57,6 +57,7 @@ const Projects = () => {
                   src={project.image}
                           alt={project.title}
                           fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                           className="object-left-top object-cover group-hover:scale-110 transition-transform duration-500"
                         />
                       ) : (

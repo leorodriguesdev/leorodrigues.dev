@@ -262,6 +262,7 @@ export default function ProjectsPageClient() {
                         src={project.image}
                         alt={project.title}
                         fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className="object-cover object-top group-hover:scale-110 transition-transform duration-500"
                       />
                     ) : (
@@ -328,7 +329,7 @@ export default function ProjectsPageClient() {
                     {/* Actions */}
                     <div className="flex gap-3 pt-4">
                       <Link
-                        href={`/projects/${project.id}?title=${encodeURIComponent(project.title)}`}
+                        href={`/projects/${project.id}`}
                         className="flex-1 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors text-center"
                       >
                         {t('viewDetails')}

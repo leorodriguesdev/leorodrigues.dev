@@ -12,6 +12,8 @@ interface SafeImageProps {
   height?: number;
   className?: string;
   unoptimized?: boolean;
+  /** Obrigatório na prática com `fill`: sem ele o Next assume 100vw e baixa a maior variante. */
+  sizes?: string;
 }
 
 export function SafeImage({
@@ -22,6 +24,7 @@ export function SafeImage({
   height,
   className = '',
   unoptimized = false,
+  sizes,
 }: SafeImageProps) {
   const [hasError, setHasError] = useState(false);
 
@@ -40,6 +43,7 @@ export function SafeImage({
           src={src}
           alt={alt}
           fill
+          sizes={sizes}
           className={className}
           onError={() => setHasError(true)}
           unoptimized={unoptimized || src.endsWith('.svg')}

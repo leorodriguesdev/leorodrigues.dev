@@ -56,7 +56,7 @@
   --card-foreground: #FFFFFF;
   --popover: #1f2937;
   --popover-foreground: #FFFFFF;
-  --primary-foreground: #FFFFFF;
+  --primary-foreground: #121212;
   --secondary-foreground: #FFFFFF;
   --muted: #535353;
   --destructive: oklch(.396 .141 25.723);
@@ -80,7 +80,7 @@
   --input-bg: #FFFFFF;
   --input-border: #CCCCCC;
   --shadow-color: rgba(0, 0, 0, 0.1);
-  --muted-foreground: #717182;
+  --muted-foreground: #5C5C6B;
   --border: #dee2e6;
   --background: #FFFFFF;
   --foreground: #121212;
@@ -103,8 +103,8 @@
   --bg-color: #FFFFFF;
   --bg-card: #e3f2fd;
   --text-color: #212121;
-  --primary-color: #3498DB;
-  --primary: #3498DB;
+  --primary-color: #2A7AAF;
+  --primary: #2A7AAF;
   --secondary-color: #bbdefb;
   --secondary: #bbdefb;
   --accent-color: #2980B9;
@@ -112,7 +112,7 @@
   --input-bg: #FFFFFF;
   --input-border: #CCCCCC;
   --shadow-color: rgba(0, 0, 0, 0.15);
-  --muted-foreground: #717182;
+  --muted-foreground: #5C5C6B;
   --border: #90caf9;
   --background: #FFFFFF;
   --foreground: #212121;
@@ -126,7 +126,7 @@
   --destructive: #d4183d;
   --destructive-foreground: #FFFFFF;
   --input: transparent;
-  --ring: #3498DB;
+  --ring: #2A7AAF;
   --radius: 0.625rem;
 }
 
@@ -135,16 +135,16 @@
   --bg-color: #F7F6F2;
   --bg-card: #ffffff;
   --text-color: #2B2D42;
-  --primary-color: #8D99AE;
-  --primary: #8D99AE;
+  --primary-color: #666E7D;
+  --primary: #666E7D;
   --secondary-color: #f0f0f0;
   --secondary: #f0f0f0;
-  --accent-color: #8D99AE;
-  --accent: #8D99AE;
+  --accent-color: #666E7D;
+  --accent: #666E7D;
   --input-bg: #FFFFFF;
   --input-border: #BBBBBB;
   --shadow-color: rgba(0, 0, 0, 0.1);
-  --muted-foreground: #717182;
+  --muted-foreground: #5C5C6B;
   --border: #d1d5db;
   --background: #F7F6F2;
   --foreground: #2B2D42;
@@ -158,7 +158,7 @@
   --destructive: #d4183d;
   --destructive-foreground: #FFFFFF;
   --input: transparent;
-  --ring: #8D99AE;
+  --ring: #666E7D;
   --radius: 0.625rem;
 }
 
@@ -176,7 +176,7 @@
   --input-bg: #F3F1F5;
   --input-border: #BBBBBB;
   --shadow-color: rgba(0, 0, 0, 0.15);
-  --muted-foreground: #717182;
+  --muted-foreground: #5C5C6B;
   --border: #d1c4e9;
   --background: #F3F1F5;
   --foreground: #333333;
@@ -202,7 +202,7 @@
   --primary-color: #FCA311;
   --primary: #FCA311;
   --secondary-color: #F77F00;
-  --secondary: #F77F00;
+  --secondary: #2A2A33;
   --accent-color: #F77F00;
   --accent: #F77F00;
   --input-bg: #2C2C2C;
@@ -240,7 +240,7 @@
   --input-bg: #FCF8E8;
   --input-border: #B8B8A8;
   --shadow-color: rgba(0, 0, 0, 0.2);
-  --muted-foreground: #717182;
+  --muted-foreground: #5C5C6B;
   --border: #c9d5b8;
   --background: #FCF8E8;
   --foreground: #2F2F2F;
@@ -293,6 +293,18 @@
   a:hover:not([class*="bg-primary"]):not([class*="text-primary-foreground"]),
   .link:hover:not([class*="bg-primary"]):not([class*="text-primary-foreground"]) {
     color: var(--primary-color);
+  }
+}
+
+/* WCAG 2.3.3: animações CSS (animate-ping, transições, hover:scale) mínimas para quem pede menos movimento. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 

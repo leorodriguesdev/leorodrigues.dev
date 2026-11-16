@@ -64,7 +64,7 @@ const Experience = () => {
                 <h3 className="text-2xl font-semibold text-[var(--text-color)]">
                   {experiences[0].title}
                 </h3>
-                <div className="flex items-center text-sm text-gray-500">
+                <div className="flex items-center text-sm text-muted-foreground">
                   <Calendar className="mr-2" size={16} />
                   <span>{experiences[0].duration}</span>
                 </div>
@@ -113,7 +113,7 @@ const Experience = () => {
                   <h3 className="text-2xl font-semibold text-[var(--text-color)]">
                     {experiences[1].title}
                   </h3>
-                  <div className="flex items-center text-sm text-gray-500">
+                  <div className="flex items-center text-sm text-muted-foreground">
                     <Calendar className="mr-2" size={16} />
                     <span>{experiences[1].duration}</span>
                   </div>
@@ -158,7 +158,7 @@ const Experience = () => {
                     <h3 className="text-2xl font-semibold text-[var(--text-color)]">
                       {experience.title}
                     </h3>
-                    <div className="flex items-center text-sm text-gray-500">
+                    <div className="flex items-center text-sm text-muted-foreground">
                       <Calendar className="mr-2" size={16} />
                       <span>{experience.duration}</span>
                     </div>
@@ -201,7 +201,7 @@ const Experience = () => {
           {experiences.length > 1 && (
             <button
               onClick={toggleShowAll}
-              className="bg-[var(--primary-color)] text-white px-6 py-3 rounded-full font-semibold hover:bg-opacity-90 hover:scale-105 hover:shadow-lg hover:shadow-[var(--primary-color)]/30 hover:-translate-y-1 transition-all duration-300 transform"
+              className="bg-primary text-primary-foreground px-6 py-3 rounded-full font-semibold hover:bg-opacity-90 hover:scale-105 hover:shadow-lg hover:shadow-[var(--primary-color)]/30 hover:-translate-y-1 transition-all duration-300 transform"
               aria-expanded={showAll}
             >
               {showAll ? t("showLess") : t("showMore")}

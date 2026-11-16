@@ -55,8 +55,8 @@ const Education = () => {
                 <h3 className="text-2xl font-semibold text-[var(--text-color)]">
                   {educationData[0].title}
                 </h3>
-                <span className="block text-sm text-gray-500">{educationData[0].institution}</span>
-                <span className="block text-sm text-gray-500">{educationData[0].year}</span>
+                <span className="block text-sm text-muted-foreground">{educationData[0].institution}</span>
+                <span className="block text-sm text-muted-foreground">{educationData[0].year}</span>
               </div>
             </div>
             <p className="mt-4 text-lg leading-relaxed text-[var(--text-color)]">
@@ -89,8 +89,8 @@ const Education = () => {
                   <h3 className="text-2xl font-semibold text-[var(--text-color)]">
                     {educationData[1].title}
                   </h3>
-                  <span className="block text-sm text-gray-500">{educationData[1].institution}</span>
-                  <span className="block text-sm text-gray-500">{educationData[1].year}</span>
+                  <span className="block text-sm text-muted-foreground">{educationData[1].institution}</span>
+                  <span className="block text-sm text-muted-foreground">{educationData[1].year}</span>
                 </div>
               </div>
               <p className="mt-4 text-lg leading-relaxed text-[var(--text-color)]">
@@ -117,8 +117,8 @@ const Education = () => {
                     <h3 className="text-2xl font-semibold text-[var(--text-color)]">
                       {education.title}
                     </h3>
-                    <span className="block text-sm text-gray-500">{education.institution}</span>
-                    <span className="block text-sm text-gray-500">{education.year}</span>
+                    <span className="block text-sm text-muted-foreground">{education.institution}</span>
+                    <span className="block text-sm text-muted-foreground">{education.year}</span>
                   </div>
                 </div>
                 <p className="mt-4 text-lg leading-relaxed text-[var(--text-color)]">
@@ -143,7 +143,7 @@ const Education = () => {
           {educationData.length > 1 && (
             <button
               onClick={toggleShowAll}
-              className="bg-[var(--primary-color)] text-white px-6 py-3 rounded-full font-semibold hover:bg-opacity-90 hover:scale-105 hover:shadow-lg hover:shadow-[var(--primary-color)]/30 hover:-translate-y-1 transition-all duration-300 transform"
+              className="bg-primary text-primary-foreground px-6 py-3 rounded-full font-semibold hover:bg-opacity-90 hover:scale-105 hover:shadow-lg hover:shadow-[var(--primary-color)]/30 hover:-translate-y-1 transition-all duration-300 transform"
               aria-expanded={showAll}
             >
               {showAll ? t("showLess") : t("showMore")}

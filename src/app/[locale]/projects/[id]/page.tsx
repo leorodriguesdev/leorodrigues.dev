@@ -10,7 +10,6 @@ import ProjectDetailClient from "./ProjectDetailClient";
 
 type PageProps = {
   params: Promise<{ locale: string; id: string }>;
-  searchParams: Promise<{ title?: string }>;
 };
 
 function projectPath(locale: string, id: string): string {
@@ -26,9 +25,8 @@ export function generateStaticParams() {
   );
 }
 
-export default async function Page({ params, searchParams }: PageProps) {
+export default async function Page({ params }: PageProps) {
   const { locale, id } = await params;
-  const resolvedSearchParams = await searchParams;
   setRequestLocale(locale);
 
   const projectId = Number(id);
@@ -43,7 +41,6 @@ export default async function Page({ params, searchParams }: PageProps) {
     notFound();
   }
 
-  const titleFromUrl = resolvedSearchParams?.title;
   const canonical = `https://leorodrigues.dev${projectPath(locale, id)}`;
 
   const creativeWork = {
@@ -69,7 +66,7 @@ export default async function Page({ params, searchParams }: PageProps) {
   return (
     <>
       <JsonLd data={[creativeWork, breadcrumb]} />
-      <ProjectDetailClient project={project} titleFromUrl={titleFromUrl} />
+      <ProjectDetailClient project={project} />
     </>
   );
 }

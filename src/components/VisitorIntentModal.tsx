@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion } from "motion/react";
 import { X, Briefcase, Code2, ArrowRight } from "lucide-react";
+import * as Dialog from "@radix-ui/react-dialog";
 import { Drawer } from "vaul";
 import { useMediaQuery } from "react-responsive";
 import { useTranslations } from "next-intl";
@@ -76,6 +77,7 @@ function IntentOptionCard({
 
   return (
     <motion.button
+      type="button"
       onClick={onSelect}
       whileHover={{ scale: 1.02, y: -4 }}
       whileTap={{ scale: 0.98 }}
@@ -179,21 +181,6 @@ export function VisitorIntentModal({ intent, setIntent }: VisitorIntentModalProp
     <p className="text-xs text-muted-foreground pt-2 sm:pt-4 px-2">{t("footerNote")}</p>
   );
 
-  const desktopHeading = (
-    <div className="px-2">
-      <h2 className="text-xl sm:text-3xl md:text-4xl font-bold mb-2 text-foreground">{t("title")}</h2>
-      <p className="text-sm sm:text-base text-muted-foreground">{t("subtitle")}</p>
-    </div>
-  );
-
-  const desktopContent = (
-    <div className="space-y-4 sm:space-y-6">
-      {desktopHeading}
-      {optionsGrid}
-      {footerNote}
-    </div>
-  );
-
   if (mounted && isMobile) {
     return (
       <Drawer.Root open={showModal} onOpenChange={handleOpenChange}>
@@ -235,37 +222,42 @@ export function VisitorIntentModal({ intent, setIntent }: VisitorIntentModalProp
     );
   }
 
+  // Radix Dialog: role="dialog", aria-modal, título/descrição ligados, foco preso,
+  // retorno de foco ao fechar, Esc e clique fora fecham (A11Y-01).
   return (
-    <AnimatePresence>
-      {showModal && (
-        <>
+    <Dialog.Root open={showModal} onOpenChange={handleOpenChange}>
+      <Dialog.Portal>
+        <Dialog.Overlay className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100]" />
+        <Dialog.Content className="fixed left-1/2 top-1/2 z-[100] w-[calc(100%-2rem)] max-w-4xl max-h-[90vh] -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-2xl focus:outline-none">
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100]"
-            onClick={handleClose}
-          />
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4 overflow-y-auto"
-            onClick={(e) => e.stopPropagation()}
+            className="bg-card border border-border rounded-2xl p-4 sm:p-6 md:p-8 relative shadow-2xl"
           >
-            <div className="bg-card border border-border rounded-2xl p-4 sm:p-6 md:p-8 max-w-4xl w-full relative shadow-2xl my-auto mt-20 sm:mt-24">
+            <Dialog.Close asChild>
               <button
-                onClick={handleClose}
-                className="absolute top-2 right-2 sm:top-4 sm:right-4 p-2 text-muted-foreground hover:text-foreground hover:bg-secondary rounded-lg transition-colors z-10"
+                type="button"
+                className="absolute top-2 right-2 sm:top-4 sm:right-4 p-2 text-muted-foreground hover:text-foreground hover:bg-secondary rounded-lg transition-colors z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 aria-label={t("close")}
               >
                 <X size={20} />
               </button>
-              <div className="text-center">{desktopContent}</div>
+            </Dialog.Close>
+            <div className="text-center space-y-4 sm:space-y-6">
+              <div className="px-2">
+                <Dialog.Title className="text-xl sm:text-3xl md:text-4xl font-bold mb-2 text-foreground">
+                  {t("title")}
+                </Dialog.Title>
+                <Dialog.Description className="text-sm sm:text-base text-muted-foreground">
+                  {t("subtitle")}
+                </Dialog.Description>
+              </div>
+              {optionsGrid}
+              {footerNote}
             </div>
           </motion.div>
-        </>
-      )}
-    </AnimatePresence>
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
   );
 }

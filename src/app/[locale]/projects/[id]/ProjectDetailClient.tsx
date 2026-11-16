@@ -13,14 +13,7 @@ import { useAnalytics } from '@/hooks/useAnalytics';
 import { SafeImage } from '@/components/SafeImage';
 import { useProjects } from '@/hooks/useProjects';
 
-export default function ProjectDetailClient({ 
-  project, 
-  titleFromUrl 
-}: { 
-  project: Project; 
-  titleFromUrl?: string; 
-}) {
-  const displayTitle = titleFromUrl || project.title;
+export default function ProjectDetailClient({ project }: { project: Project }) {
   const { trackProjectView, trackOutboundLink, trackProjectClick } = useAnalytics();
   const t = useTranslations('projectDetail');
   const tList = useTranslations('projectsList');
@@ -96,7 +89,7 @@ export default function ProjectDetailClient({
                     </div>
                   )}
                   <h1 className="text-3xl md:text-4xl tracking-tight">
-                    {displayTitle}
+                    {project.title}
                   </h1>
                 </div>
                 <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
@@ -184,7 +177,7 @@ export default function ProjectDetailClient({
       >
         <ImageGallery
           images={project.images?.length ? project.images : [project.image]}
-          projectTitle={displayTitle}
+          projectTitle={project.title}
         />
           </motion.div>
 
@@ -263,7 +256,7 @@ export default function ProjectDetailClient({
                 {otherProjects.map((otherProject) => (
                   <Link
                     key={otherProject.id}
-                    href={`/projects/${otherProject.id}?title=${encodeURIComponent(otherProject.title)}`}
+                    href={`/projects/${otherProject.id}`}
                     onClick={() => trackProjectClick(otherProject.id, otherProject.title)}
                     className="group p-6 bg-card border border-border rounded-lg hover:border-primary transition-colors"
                   >

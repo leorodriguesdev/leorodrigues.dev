@@ -44,7 +44,10 @@ const Navbar = () => {
 
       const scrollToHash = () => {
         if (!hash) return;
-        document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        document
+          .getElementById(hash)
+          ?.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
       };
 
       if (pathname !== "/" && pathname !== "") {

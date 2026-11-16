@@ -2,6 +2,7 @@
 
 import { ReactNode, useEffect, useLayoutEffect, useState } from "react";
 import { Palette } from "lucide-react";
+import { MotionConfig } from "motion/react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { useAnalytics } from "@/hooks/useAnalytics";
@@ -94,7 +95,7 @@ export default function ThemeProvider({ children }: ThemeProviderProps) {
         <button
           type="button"
           onClick={() => setIsSelectorVisible(!isSelectorVisible)}
-          className="absolute -left-10 top-1/2 transform -translate-y-1/2 bg-[--primary-color] text-white p-3 rounded-l-full focus:outline-none"
+          className="absolute -left-10 top-1/2 transform -translate-y-1/2 bg-primary text-primary-foreground p-3 rounded-l-full focus:outline-none"
           aria-label={t("openSelector")}
         >
           <span className="absolute h-6 w-6 top-3 left-0">
@@ -121,7 +122,7 @@ export default function ThemeProvider({ children }: ThemeProviderProps) {
                   flex items-center text-xs p-1 w-full
                   rounded-lg transition-colors
                   ${activeTheme === themeOption.id
-                    ? "bg-[--primary-color] text-white border-2 hover:bg-[--primary-color]"
+                    ? "bg-primary text-primary-foreground border-2 hover:bg-primary"
                     : "bg-[--bg-color] text-[--text-color] hover:bg-[--secondary-color] hover:text-white border-2"
                   }
                 `}
@@ -139,7 +140,8 @@ export default function ThemeProvider({ children }: ThemeProviderProps) {
           </div>
         </div>
       </div>
-      {children}
+      {/* Respeita "reduzir movimento" do sistema: desliga transform/layout das animações do motion. */}
+      <MotionConfig reducedMotion="user">{children}</MotionConfig>
     </div>
   );
 }

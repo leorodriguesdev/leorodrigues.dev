@@ -32,6 +32,7 @@ export default function AboutPageClient() {
                 src="/avatar.png"
                 alt={t('avatarAlt')}
                 fill
+                sizes="128px"
                 className="object-left-top object-cover"
                 priority
               />

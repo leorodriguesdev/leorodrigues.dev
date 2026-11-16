@@ -19,12 +19,24 @@ type Props = {
   projectTitle: string;
 };
 
+const LIGHTBOX_IMAGE_WIDTH = 1920;
+
+/**
+ * O lightbox usa a tag de imagem nativa: sem isso, baixaria o PNG original (alguns com 10 MB+).
+ * Imagens locais passam pelo otimizador do Next (WebP/AVIF redimensionado); SVG e URLs externas não.
+ */
+function optimizedImageUrl(src: string): string {
+  if (!src.startsWith("/") || src.endsWith(".svg")) return src;
+  return `/_next/image?url=${encodeURIComponent(src)}&w=${LIGHTBOX_IMAGE_WIDTH}&q=75`;
+}
+
 export default function ImageGallery({ images, projectTitle }: Props) {
   const t = useTranslations("gallery");
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
 
-  const slides = images.map((src) => ({ src }));
+  // `download` mantém o arquivo original para o botão de download do lightbox.
+  const slides = images.map((src) => ({ src: optimizedImageUrl(src), download: src }));
 
   // Função para determinar o layout baseado no número de imagens
   const getLayoutClass = (index: number, total: number) => {
