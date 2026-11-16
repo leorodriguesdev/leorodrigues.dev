@@ -274,11 +274,6 @@
     font-family: var(--font-geist-mono), ui-monospace, monospace;
   }
 
-  button, .btn-primary {
-    background-color: var(--primary-color);
-    color: var(--text-color);
-  }
-
   input {
     background-color: var(--input-bg);
     border-color: var(--input-border);

@@ -165,7 +165,7 @@ const Navbar = () => {
             <LanguageSwitcher />
             <button
               type="button"
-              className="p-2 border border-border rounded-lg text-foreground hover:border-primary hover:text-secondary transition-all"
+              className="p-2 border border-border rounded-lg text-foreground hover:border-primary hover:text-primary transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label={t("toggleMenu")}
             >
