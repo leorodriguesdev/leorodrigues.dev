@@ -4,6 +4,7 @@ import { getMessages, getTranslations, setRequestLocale } from "next-intl/server
 import { notFound } from "next/navigation";
 import { audiowide, geistMono, geistSans } from "@/app/fonts";
 import ThemeProvider from "@/app/theme/ThemeProvider";
+import { DEFAULT_THEME, themeInitScript } from "@/app/theme/themes";
 import "@/styles/globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -108,7 +109,10 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className="theme-figmaNeon" suppressHydrationWarning>
+    <html lang={locale} className={`theme-${DEFAULT_THEME}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${audiowide.variable} min-h-screen bg-background text-foreground antialiased`}
       >

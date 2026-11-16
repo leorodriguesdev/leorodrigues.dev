@@ -5,15 +5,6 @@ import { track } from "@vercel/analytics";
 export const GA_MEASUREMENT_ID =
   process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "";
 
-// Inicializar GA4
-export const pageview = (url: string) => {
-  if (typeof window !== "undefined" && window.gtag) {
-    window.gtag("config", GA_MEASUREMENT_ID, {
-      page_path: url,
-    });
-  }
-};
-
 // Event tracking
 export const event = ({
   action,

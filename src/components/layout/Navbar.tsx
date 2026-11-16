@@ -1,12 +1,14 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { motion } from "motion/react";
 import { AlignJustify, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useVisitorIntent } from "@/hooks/useVisitorIntent";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+
+const HASH_SECTION_IDS = ["skills", "contact"] as const;
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -40,40 +42,61 @@ const Navbar = () => {
       e.preventDefault();
       const [, hash] = path.split("#");
 
+      const scrollToHash = () => {
+        if (!hash) return;
+        document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
+      };
+
       if (pathname !== "/" && pathname !== "") {
         router.push(path);
-        setTimeout(() => {
-          const element = document.querySelector(hash ? `#${hash}` : "");
-          if (element) {
-            element.scrollIntoView({ behavior: "smooth" });
-          }
-        }, 100);
+        setTimeout(scrollToHash, 100);
       } else {
-        const element = document.querySelector(hash ? `#${hash}` : "");
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
+        scrollToHash();
       }
       setMobileMenuOpen(false);
     }
   };
 
+  const isHome = pathname === "/" || pathname === "";
+  const [activeSection, setActiveSection] = useState<string | null>(null);
+
+  // Seção ativa = âncora cujo topo está na metade superior da viewport.
+  // Calculado via IntersectionObserver (nunca no render), para funcionar no SSR.
+  useEffect(() => {
+    if (!isHome) {
+      setActiveSection(null);
+      return;
+    }
+
+    const sectionIds = HASH_SECTION_IDS.filter((id) => document.getElementById(id));
+    if (sectionIds.length === 0) return;
+
+    const visible = new Set<string>();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) visible.add(entry.target.id);
+          else visible.delete(entry.target.id);
+        }
+        setActiveSection(sectionIds.find((id) => visible.has(id)) ?? null);
+      },
+      { rootMargin: "0px 0px -50% 0px" }
+    );
+
+    for (const id of sectionIds) {
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
+    }
+
+    return () => observer.disconnect();
+  }, [isHome, intent]);
+
   const isActive = (path: string, hash?: boolean) => {
     if (hash) {
-      if (pathname === "/" || pathname === "") {
-        const hashValue = path.split("#")[1];
-        if (hashValue) {
-          const element = document.querySelector(`#${hashValue}`);
-          if (element) {
-            const rect = element.getBoundingClientRect();
-            return rect.top >= 0 && rect.top <= window.innerHeight / 2;
-          }
-        }
-      }
-      return false;
+      return isHome && activeSection === path.split("#")[1];
     }
     if (path === "/") {
-      return pathname === "/" || pathname === "";
+      return isHome;
     }
     return pathname === path || pathname.startsWith(path + "/");
   };

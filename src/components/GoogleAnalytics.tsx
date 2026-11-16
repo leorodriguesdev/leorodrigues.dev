@@ -1,25 +1,13 @@
-"use client";
+import Script from "next/script";
+import { GA_MEASUREMENT_ID } from "@/lib/analytics";
 
 /**
- * Etapa C (i18n): mantém `next/navigation` de propósito — `pathname` reflete a
- * URL real (incl. `/en`, `/es`), alinhado a `window.location.pathname` no gtag.
+ * Um único `page_view` por página: o `config` envia o da carga inicial e a
+ * "Medição otimizada" do GA4 (alterações de página por histórico do navegador)
+ * cobre as navegações client-side do App Router. Sem tracking manual de rota,
+ * não há `useSearchParams` (e, portanto, nenhum bailout de renderização no servidor).
  */
-import Script from 'next/script';
-import { usePathname, useSearchParams } from 'next/navigation';
-import { useEffect } from 'react';
-import { GA_MEASUREMENT_ID, pageview } from '@/lib/analytics';
-
 export default function GoogleAnalytics() {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-
-  useEffect(() => {
-    if (GA_MEASUREMENT_ID) {
-      const url = pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : '');
-      pageview(url);
-    }
-  }, [pathname, searchParams]);
-
   if (!GA_MEASUREMENT_ID) {
     return null;
   }
@@ -38,13 +26,10 @@ export default function GoogleAnalytics() {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${GA_MEASUREMENT_ID}', {
-              page_path: window.location.pathname,
-            });
+            gtag('config', '${GA_MEASUREMENT_ID}');
           `,
         }}
       />
     </>
   );
 }
-
