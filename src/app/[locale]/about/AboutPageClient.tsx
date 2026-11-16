@@ -23,8 +23,8 @@ export default function AboutPageClient() {
         <div className="container mx-auto max-w-5xl px-6">
           {/* Header */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ y: 20 }}
+            animate={{ y: 0 }}
             className="text-center space-y-6 mb-20"
           >
             <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border-2 border-primary/20 overflow-hidden relative">

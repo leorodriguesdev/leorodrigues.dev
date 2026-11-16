@@ -79,8 +79,8 @@ export default function ServicesPageClient() {
         <div className="container mx-auto max-w-6xl px-6">
           {/* Header */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ y: 20 }}
+            animate={{ y: 0 }}
             className="text-center space-y-6 mb-20"
           >
             <h1 className="text-4xl md:text-5xl tracking-tight">

@@ -31,8 +31,8 @@ export function CommercialHome() {
       <section className="min-h-screen flex items-center justify-center px-6 pt-20">
         <div className="container mx-auto max-w-6xl">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ y: 20 }}
+            animate={{ y: 0 }}
             transition={{ duration: 0.5 }}
             className="text-center space-y-6"
           >
@@ -48,8 +48,8 @@ export function CommercialHome() {
             </motion.div>
 
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ y: 20 }}
+              animate={{ y: 0 }}
               transition={{ delay: 0.3 }}
               className="text-5xl md:text-7xl tracking-tight"
             >
@@ -58,8 +58,8 @@ export function CommercialHome() {
             </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ y: 20 }}
+              animate={{ y: 0 }}
               transition={{ delay: 0.4 }}
               className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto"
             >
