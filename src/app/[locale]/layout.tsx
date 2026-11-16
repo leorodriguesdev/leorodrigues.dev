@@ -10,13 +10,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { routing } from "@/i18n/routing";
-import { absoluteUrl, languageAlternates } from "@/lib/siteUrls";
-
-const ogLocales: Record<string, string> = {
-  pt: "pt_BR",
-  en: "en_US",
-  es: "es_ES",
-};
+import { OG_IMAGE_URL, OG_LOCALES, TWITTER_HANDLE } from "@/lib/pageMetadata";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -33,9 +27,9 @@ export async function generateMetadata({
   const titleDefault = t("rootTitle");
   const description = t("rootDescription");
   const keywords = (t.raw("rootKeywords") as string[]) ?? [];
-  const homePath = "/";
-  const canonical = absoluteUrl(locale, homePath);
 
+  // Sem `alternates`/`openGraph.url` aqui: canonical e hreflang são definidos por rota
+  // (`buildPageMetadata`), senão toda página herdaria o canonical da home.
   return {
     metadataBase: new URL("https://leorodrigues.dev"),
     title: {
@@ -60,14 +54,13 @@ export async function generateMetadata({
     },
     openGraph: {
       type: "website",
-      locale: ogLocales[locale] ?? "pt_BR",
-      url: canonical,
+      locale: OG_LOCALES[locale] ?? "pt_BR",
       siteName: t("siteName"),
       title: titleDefault,
       description: t("ogDescription"),
       images: [
         {
-          url: "https://leorodrigues.dev/print.png",
+          url: OG_IMAGE_URL,
           width: 1200,
           height: 630,
           alt: t("ogImageAlt"),
@@ -78,13 +71,9 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: t("twitterTitle"),
       description: t("twitterDescription"),
-      images: ["https://leorodrigues.dev/print.png"],
-      creator: "@leorodriguesdev",
-      site: "@leorodriguesdev",
-    },
-    alternates: {
-      canonical,
-      languages: languageAlternates(homePath),
+      images: [OG_IMAGE_URL],
+      creator: TWITTER_HANDLE,
+      site: TWITTER_HANDLE,
     },
     verification: {
       google: "MCCPSESPM5MMVGw-lXb_pL40db1Z6VMT",

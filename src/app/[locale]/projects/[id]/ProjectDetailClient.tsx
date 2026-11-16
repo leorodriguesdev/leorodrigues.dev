@@ -9,7 +9,6 @@ import Footer from '@/components/layout/Footer';
 import ImageGallery from './components/ImagesGallery';
 import type { Project } from '@/data/projectsData';
 import { Link } from '@/i18n/navigation';
-import { SEO } from '@/components/SEO';
 import { useAnalytics } from '@/hooks/useAnalytics';
 import { SafeImage } from '@/components/SafeImage';
 import { useProjects } from '@/hooks/useProjects';
@@ -57,12 +56,6 @@ export default function ProjectDetailClient({
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
-      <SEO
-        title={`${displayTitle} - Léo Rodrigues Portfolio`}
-        description={project.description}
-        keywords={project.techStack.join(", ")}
-        type="article"
-      />
 
       <div className="pt-24 pb-16">
         <div className="container mx-auto max-w-5xl px-6">
