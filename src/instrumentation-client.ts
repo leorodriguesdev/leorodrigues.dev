@@ -1,17 +1,13 @@
 // instrumentation-client.ts
 import * as Sentry from "@sentry/nextjs";
+import { sentryBaseOptions } from "@/lib/sentryOptions";
 
 Sentry.init({
-  dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
-  tracesSampleRate: 1.0,
-  environment: process.env.NODE_ENV,
-  enabled: process.env.NODE_ENV === "production",
-  // Configurações adicionais
+  ...sentryBaseOptions,
   beforeSend(event, hint) {
-    // Filtrar erros conhecidos ou não críticos
+    // Ignorar erros de rede conhecidos (conexão do visitante), que não são bugs do site.
     if (event.exception) {
       const error = hint.originalException;
-      // Ignorar erros de rede conhecidos
       if (error instanceof Error && error.message.includes("NetworkError")) {
         return null;
       }
