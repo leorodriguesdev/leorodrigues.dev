@@ -47,6 +47,14 @@ updates:
         update-types: ["version-update:semver-major"]
       - dependency-name: "tailwindcss"
         update-types: ["version-update:semver-major"]
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
+      # 1.x remove ícones de marca (Github, Linkedin) usados no site.
+      - dependency-name: "lucide-react"
+        update-types: ["version-update:semver-major"]
+      # 3.x exige Tailwind v4; atualizar junto com a migração do Tailwind.
+      - dependency-name: "tailwind-merge"
+        update-types: ["version-update:semver-major"]
 
   - package-ecosystem: github-actions
     directory: "/"
