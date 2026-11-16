@@ -8,7 +8,8 @@ import {
   Code2, 
   ArrowRight, 
   CheckCircle2,
-  MessageCircle
+  MessageCircle,
+  RefreshCcw
 } from "lucide-react";
 import { Stats } from "@/components/Stats";
 import { Testimonials } from "@/components/Testimonials";
@@ -28,13 +29,14 @@ export function CommercialHome() {
   return (
     <>
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center px-6 pt-20">
+      <section className="relative flex min-h-[88svh] items-center justify-center overflow-hidden px-6 pb-16 pt-28 md:pb-20">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-1/4 -z-10 mx-auto h-72 max-w-4xl rounded-full bg-primary/10 blur-[120px]" />
         <div className="container mx-auto max-w-6xl">
           <motion.div
             initial={{ y: 20 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-center space-y-6"
+            className="mx-auto max-w-5xl space-y-6 text-center"
           >
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
@@ -51,9 +53,9 @@ export function CommercialHome() {
               initial={{ y: 20 }}
               animate={{ y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-5xl md:text-7xl tracking-tight"
+              className="text-4xl leading-[1.08] tracking-tight sm:text-5xl md:text-7xl"
             >
-              {t("heroLine1")} <span className="text-primary font-audiowide">{t("heroAccent")}</span>{" "}
+              {t("heroLine1")} <span className="text-primary">{t("heroAccent")}</span>{" "}
               {t("heroLine2")}
             </motion.h1>
 
@@ -61,7 +63,7 @@ export function CommercialHome() {
               initial={{ y: 20 }}
               animate={{ y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto"
+              className="mx-auto max-w-3xl text-lg leading-relaxed text-muted-foreground md:text-2xl"
             >
               {t("heroSubtitle")} <span className="text-primary">{t("heroSubtitleAccent")}</span>
             </motion.p>
@@ -70,12 +72,12 @@ export function CommercialHome() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6"
+              className="flex flex-col items-stretch justify-center gap-3 pt-5 sm:flex-row sm:items-center sm:gap-4"
             >
               <a
                 href="#contact"
                 onClick={() => trackCtaClick("quote", "hero")}
-                className="px-8 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all hover:scale-105 flex items-center gap-2 font-medium shadow-lg shadow-primary/20"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-3.5 font-medium text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:scale-[1.02] hover:bg-primary/90"
               >
                 {t("ctaQuote")}
                 <ArrowRight size={20} />
@@ -83,27 +85,30 @@ export function CommercialHome() {
               <Link
                 href="/services"
                 onClick={() => trackCtaClick("services", "hero")}
-                className="px-8 py-3 border border-border rounded-lg hover:bg-secondary transition-colors"
+                className="inline-flex items-center justify-center rounded-lg border border-border px-8 py-3.5 transition-colors hover:bg-secondary"
               >
                 {t("ctaServices")}
               </Link>
             </motion.div>
 
+            <p className="text-sm text-muted-foreground">{t("heroTrustLine")}</p>
+
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
-              className="flex gap-4 justify-center pt-8"
+              className="flex justify-center pt-2"
             >
               <a
                 href="https://wa.me/555194389658"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackWhatsApp("hero")}
-                className="p-3 border border-border rounded-lg hover:border-primary hover:text-primary transition-colors"
+                className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm text-muted-foreground transition-colors hover:border-primary hover:text-primary"
                 aria-label={t("whatsappAria")}
               >
-                <MessageCircle size={24} />
+                <MessageCircle size={18} />
+                <span>WhatsApp</span>
               </a>
             </motion.div>
           </motion.div>
@@ -128,7 +133,7 @@ export function CommercialHome() {
             className="space-y-12"
           >
             <div className="text-center space-y-4">
-              <h2 className="text-4xl md:text-5xl tracking-tight font-audiowide">
+              <h2 className="text-4xl md:text-5xl tracking-tight">
                 {t("whatIDevTitle")} <span className="text-primary">{t("whatIDevAccent")}</span>
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
@@ -274,8 +279,73 @@ export function CommercialHome() {
         </div>
       </section>
 
+      {/* Modernization Spotlight */}
+      <section className="bg-secondary/30 px-6 py-24 md:py-32">
+        <div className="container mx-auto max-w-6xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-center"
+          >
+            <div className="space-y-6">
+              <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">{t("modernizeEyebrow")}</p>
+              <h2 className="text-4xl md:text-5xl tracking-tight">
+                {t("modernizeTitle")} <span className="text-primary">{t("modernizeAccent")}</span>
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-xl">{t("modernizeSubtitle")}</p>
+              <div className="flex flex-wrap gap-3 pt-2">
+                {[t("modernizeSignal1"), t("modernizeSignal2"), t("modernizeSignal3")].map((signal) => (
+                  <span key={signal} className="rounded-full border border-border bg-background px-3 py-2 text-sm text-muted-foreground">
+                    {signal}
+                  </span>
+                ))}
+              </div>
+              <div className="pt-4">
+                <Link
+                  href="/services/modernization"
+                  onClick={() => trackCtaClick("modernization_details", "services_preview")}
+                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground shadow-lg shadow-primary/15 transition-all hover:gap-3 hover:bg-primary/90"
+                >
+                  {t("modernizeCta")}
+                  <ArrowRight size={18} />
+                </Link>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-card p-6 shadow-lg shadow-primary/5">
+              <div className="mb-6 flex items-center justify-between">
+                <div>
+                  <p className="text-sm text-muted-foreground">{t("modernizePanelLabel")}</p>
+                  <h3 className="text-2xl font-semibold">{t("modernizePanelTitle")}</h3>
+                </div>
+                <div className="rounded-full bg-primary/10 p-3 text-primary">
+                  <RefreshCcw size={22} />
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                {[
+                  { label: t("modernizeMetric1"), value: t("modernizeValue1") },
+                  { label: t("modernizeMetric2"), value: t("modernizeValue2") },
+                  { label: t("modernizeMetric3"), value: t("modernizeValue3") },
+                ].map((item) => (
+                  <div key={item.label} className="flex items-start gap-3 rounded-xl border border-border/70 bg-background/70 p-4">
+                    <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-primary" />
+                    <div className="space-y-1">
+                      <p className="text-xs uppercase tracking-wide text-muted-foreground">{item.label}</p>
+                      <p className="font-medium">{item.value}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* How It Works Section */}
-      <section className="py-32 px-6 bg-secondary/30">
+      <section className="py-32 px-6 bg-background">
         <div className="container mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -284,7 +354,7 @@ export function CommercialHome() {
             className="text-center space-y-12"
           >
             <div className="space-y-4">
-              <h2 className="text-4xl md:text-5xl tracking-tight font-audiowide">
+              <h2 className="text-4xl md:text-5xl tracking-tight">
                 {t("howTitle")} <span className="text-primary">{t("howAccent")}</span>
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -323,7 +393,7 @@ export function CommercialHome() {
             viewport={{ once: true }}
             className="space-y-4"
           >
-            <h2 className="text-4xl md:text-5xl tracking-tight font-audiowide">
+            <h2 className="text-4xl md:text-5xl tracking-tight">
                 {t("investTitle")} <span className="text-primary">{t("investAccent")}</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">

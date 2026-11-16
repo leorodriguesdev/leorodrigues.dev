@@ -115,17 +115,9 @@ export async function GET() {
     });
   } catch (error) {
     console.error('Error fetching GitHub stats:', error);
-    // Retornar valores padrão em caso de erro
-    return NextResponse.json({
-      publicRepos: 0,
-      followers: 0,
-      following: 0,
-      totalStars: 0,
-      totalForks: 0,
-      ownReposCount: 0,
-      linesOfCode: 50,
-      suffix: 'K',
-      rawLines: 50000,
-    });
+    return NextResponse.json(
+      { error: "GitHub stats are currently unavailable" },
+      { status: 502 }
+    );
   }
 }

@@ -2,16 +2,11 @@ export const THEME_IDS = [
   "figmaNeon",
   "dark",
   "light",
-  "minimalBlue",
-  "pastel",
-  "purpleMono",
-  "darkYellow",
-  "retroGreen",
 ] as const;
 
 export type ThemeId = (typeof THEME_IDS)[number];
 
-export const DEFAULT_THEME: ThemeId = "figmaNeon";
+export const DEFAULT_THEME: ThemeId = "dark";
 
 export const THEME_STORAGE_KEY = "theme";
 

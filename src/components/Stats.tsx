@@ -2,57 +2,35 @@
 
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { getYearsOfExperience } from "@/lib/experience";
 
 interface StatItemProps {
-  end: number;
+  end: number | null;
   label: string;
+  locale: string;
   suffix?: string;
   prefix?: string;
-  duration?: number;
 }
 
-function StatItem({ end, label, suffix = "", prefix = "", duration = 2 }: StatItemProps) {
-  const [count, setCount] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
-  const hasDecimal = end % 1 !== 0;
+// Refresh from GitHub's rolling one-year contribution count.
+const GITHUB_CONTRIBUTIONS_LAST_YEAR = 2461;
 
-  useEffect(() => {
-    if (!isVisible) return;
-
-    let startTime: number | null = null;
-    const animate = (currentTime: number) => {
-      if (!startTime) startTime = currentTime;
-      const progress = Math.min((currentTime - startTime) / (duration * 1000), 1);
-      
-      if (hasDecimal) {
-        // Para valores decimais, mostrar com 1 casa decimal
-        const current = progress * end;
-        setCount(Math.round(current * 10) / 10);
-      } else {
-        setCount(Math.floor(progress * end));
-      }
-      
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      } else {
-        // Garantir valor final exato
-        setCount(end);
-      }
-    };
-
-    requestAnimationFrame(animate);
-  }, [end, duration, isVisible, hasDecimal]);
-
-  const displayValue = hasDecimal ? count.toFixed(1) : count;
+function StatItem({ end, label, locale, suffix = "", prefix = "" }: StatItemProps) {
+  const hasDecimal = end !== null && end % 1 !== 0;
+  const displayValue = end === null
+    ? "—"
+    : new Intl.NumberFormat(locale, {
+        useGrouping: "always",
+        minimumFractionDigits: hasDecimal ? 1 : 0,
+        maximumFractionDigits: hasDecimal ? 1 : 0,
+      }).format(end);
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      onViewportEnter={() => setIsVisible(true)}
       className="text-center p-6 bg-card border border-border rounded-lg hover:border-primary transition-colors"
     >
       <div className="text-4xl md:text-5xl mb-2">
@@ -71,6 +49,8 @@ interface StatsProps {
 
 export function Stats({ variant = 'commercial' }: StatsProps) {
   const t = useTranslations("stats");
+  const locale = useLocale();
+  const [commercialRepoCount, setCommercialRepoCount] = useState<number | null>(null);
   const [githubStats, setGithubStats] = useState({
     linesOfCode: { value: 50, suffix: 'K' },
     publicRepos: 0,
@@ -94,7 +74,8 @@ export function Stats({ variant = 'commercial' }: StatsProps) {
             followers: data.followers || 0,
           });
         })
-        .catch(() => {
+        .catch((error: unknown) => {
+          console.error("Failed to load GitHub stats:", error);
           // Manter valores padrão em caso de erro
           setGithubStats({
             linesOfCode: { value: 50, suffix: 'K' },
@@ -104,20 +85,22 @@ export function Stats({ variant = 'commercial' }: StatsProps) {
           });
         });
     } else {
-      // Para versão comercial, buscar apenas linhas de código
       fetch('/api/github-stats')
-        .then(res => res.json())
-        .then(data => {
-          setGithubStats(prev => ({
-            ...prev,
-            linesOfCode: {
-              value: data.linesOfCode || 50, // Manter decimal se houver
-              suffix: data.suffix || 'K'
-            },
-          }));
+        .then((res) => {
+          if (!res.ok) {
+            throw new Error(`GitHub stats request failed with status ${res.status}`);
+          }
+          return res.json();
         })
-        .catch(() => {
-          // Manter valor padrão
+        .then(data => {
+          if (typeof data.publicRepos !== "number") {
+            throw new Error("GitHub stats response did not include the public repository count");
+          }
+          setCommercialRepoCount(data.publicRepos);
+        })
+        .catch((error: unknown) => {
+          console.error("Failed to load GitHub public repository count:", error);
+          setCommercialRepoCount(null);
         });
     }
   }, [variant]);
@@ -129,24 +112,28 @@ export function Stats({ variant = 'commercial' }: StatsProps) {
         <StatItem 
           end={githubStats.publicRepos} 
           label={t("repos")}
+          locale={locale}
           suffix="+"
           key={`repos-${githubStats.publicRepos}`}
         />
         <StatItem 
           end={githubStats.linesOfCode.value} 
           label={t("lines")}
+          locale={locale}
           suffix={githubStats.linesOfCode.suffix}
           key={`lines-${githubStats.linesOfCode.value}`}
         />
         <StatItem 
           end={githubStats.totalStars} 
           label={t("stars")}
+          locale={locale}
           suffix="+"
           key={`stars-${githubStats.totalStars}`}
         />
         <StatItem 
           end={githubStats.followers} 
           label={t("followers")}
+          locale={locale}
           suffix="+"
           key={`followers-${githubStats.followers}`}
         />
@@ -154,18 +141,27 @@ export function Stats({ variant = 'commercial' }: StatsProps) {
     );
   }
 
-  // Versão Commercial: Estatísticas atuais
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-      <StatItem end={getYearsOfExperience()} label={t("years")} suffix="+" />
-      <StatItem end={97} label={t("completed")} suffix="+" />
-      <StatItem 
-        end={githubStats.linesOfCode.value} 
-        label={t("lines")}
-        suffix={githubStats.linesOfCode.suffix}
-        key={`lines-${githubStats.linesOfCode.value}`}
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6">
+      <StatItem
+        end={getYearsOfExperience()}
+        label={t("years")}
+        locale={locale}
+        suffix="+"
+        key={`years-${getYearsOfExperience()}`}
       />
-      <StatItem end={99} label={t("satisfaction")} suffix="%" />
+      <StatItem
+        end={commercialRepoCount}
+        label={t("repos")}
+        locale={locale}
+        key={`repos-commercial-${commercialRepoCount}`}
+      />
+      <StatItem
+        end={GITHUB_CONTRIBUTIONS_LAST_YEAR}
+        label={t("contributionsLastYear")}
+        locale={locale}
+        key={`contributions-${GITHUB_CONTRIBUTIONS_LAST_YEAR}`}
+      />
     </div>
   );
 }

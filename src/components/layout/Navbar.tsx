@@ -3,36 +3,50 @@
 import React, { useEffect, useState } from "react";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { motion } from "motion/react";
-import { AlignJustify, X } from "lucide-react";
+import { AlignJustify, Moon, Sun, X } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useVisitorIntent } from "@/hooks/useVisitorIntent";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
-const HASH_SECTION_IDS = ["skills", "contact"] as const;
+const HASH_SECTION_IDS = ["contact"] as const;
 
 const Navbar = () => {
   const pathname = usePathname();
   const router = useRouter();
   const t = useTranslations("nav");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { intent } = useVisitorIntent();
+  const [isDarkTheme, setIsDarkTheme] = useState(true);
 
-  const baseNavItems = [
+  const navItems = [
     { nameKey: "home" as const, path: "/", hash: false },
-    { nameKey: "about" as const, path: "/about", hash: false },
-    { nameKey: "skills" as const, path: "/#skills", hash: true },
+    { nameKey: "services" as const, path: "/services", hash: false },
+    { nameKey: "modernization" as const, path: "/services/modernization", hash: false },
     { nameKey: "projects" as const, path: "/projects", hash: false },
+    { nameKey: "about" as const, path: "/about", hash: false },
     { nameKey: "contact" as const, path: "/#contact", hash: true },
   ];
 
-  const navItems =
-    intent === "portfolio"
-      ? baseNavItems
-      : [
-          ...baseNavItems.slice(0, 2),
-          { nameKey: "services" as const, path: "/services", hash: false },
-          ...baseNavItems.slice(2),
-        ];
+  useEffect(() => {
+    const root = document.documentElement;
+    const detectedDark = root.classList.contains("theme-dark") || (!root.classList.contains("theme-light") && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    setIsDarkTheme(detectedDark);
+  }, []);
+
+  const applyTheme = (nextTheme: "light" | "dark") => {
+    const root = document.documentElement;
+    const themeIds = ["figmaNeon", "dark", "light"];
+
+    for (const themeId of themeIds) {
+      root.classList.remove(`theme-${themeId}`);
+    }
+
+    root.classList.add(`theme-${nextTheme}`);
+    localStorage.setItem("theme", nextTheme);
+    setIsDarkTheme(nextTheme === "dark");
+  };
+
+  const toggleTheme = () => {
+    applyTheme(isDarkTheme ? "light" : "dark");
+  };
 
   const handleHashClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
@@ -63,8 +77,6 @@ const Navbar = () => {
   const isHome = pathname === "/" || pathname === "";
   const [activeSection, setActiveSection] = useState<string | null>(null);
 
-  // Seção ativa = âncora cujo topo está na metade superior da viewport.
-  // Calculado via IntersectionObserver (nunca no render), para funcionar no SSR.
   useEffect(() => {
     if (!isHome) {
       setActiveSection(null);
@@ -92,7 +104,7 @@ const Navbar = () => {
     }
 
     return () => observer.disconnect();
-  }, [isHome, intent]);
+  }, [isHome]);
 
   const isActive = (path: string, hash?: boolean) => {
     if (hash) {
@@ -158,10 +170,30 @@ const Navbar = () => {
                 </Link>
               ))}
             </div>
-            <LanguageSwitcher />
+            <div className="flex items-center gap-3">
+              <button
+                type="button"
+                onClick={toggleTheme}
+                aria-label={isDarkTheme ? "Modo claro" : "Modo escuro"}
+                aria-pressed={isDarkTheme}
+                className="inline-flex items-center justify-center h-10 w-10 rounded-full border border-border bg-background text-foreground hover:border-primary hover:text-primary transition-colors"
+              >
+                {isDarkTheme ? <Sun size={18} /> : <Moon size={18} />}
+              </button>
+              <LanguageSwitcher />
+            </div>
           </div>
 
           <div className="flex items-center gap-2 md:hidden">
+            <button
+              type="button"
+              onClick={toggleTheme}
+              aria-label={isDarkTheme ? "Modo claro" : "Modo escuro"}
+              aria-pressed={isDarkTheme}
+              className="inline-flex items-center justify-center h-10 w-10 rounded-full border border-border bg-background text-foreground hover:border-primary hover:text-primary transition-colors"
+            >
+              {isDarkTheme ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
             <LanguageSwitcher />
             <button
               type="button"

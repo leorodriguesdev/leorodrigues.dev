@@ -2,20 +2,40 @@
 
 import { motion } from 'motion/react';
 import Image from 'next/image';
-import { Mail } from 'lucide-react';
+import { ArrowRight, Code2, Mail, ShieldCheck, Users } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import Experience from '@/components/sections/Experience';
-import Education from '@/components/sections/Education';
 import { useAnalytics } from '@/hooks/useAnalytics';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { getYearsOfExperience } from '@/lib/experience';
+import { Link } from '@/i18n/navigation';
 
 export default function AboutPageClient() {
   const t = useTranslations('about');
   const years = getYearsOfExperience();
   const { trackEmail } = useAnalytics();
+
+  const principles = [
+    {
+      title: t('principle1Title'),
+      description: t('principle1Desc'),
+      icon: Users,
+    },
+    {
+      title: t('principle2Title'),
+      description: t('principle2Desc'),
+      icon: ShieldCheck,
+    },
+    {
+      title: t('principle3Title'),
+      description: t('principle3Desc'),
+      icon: Code2,
+    },
+  ];
+
+  const stack = ["Next.js", "React", "React Native", "Node.js", "TypeScript", "PostgreSQL", "Expo", "Tailwind CSS"];
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
@@ -23,7 +43,6 @@ export default function AboutPageClient() {
 
       <div className="pb-16">
         <div className="container mx-auto max-w-5xl px-6">
-          {/* Header */}
           <motion.div
             initial={{ y: 20 }}
             animate={{ y: 0 }}
@@ -46,80 +65,110 @@ export default function AboutPageClient() {
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 {t('heroSubtitle')}
               </p>
-              <div className="flex gap-4 justify-center pt-4">
-                {/* <a
-                  href="/cv.pdf"
-                  download
-                  onClick={() => trackDownload('CV-LeoRodrigues.pdf')}
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 hover:text-primary-foreground transition-all hover:scale-105 font-medium shadow-lg shadow-primary/20"
-                >
-                  <Download size={20} />
-                  Download CV
-                </a> */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
                 <a
                   href="mailto:contato@leorodrigues.dev"
-                  onClick={() => trackEmail("about_hero")}
-                  className="inline-flex items-center gap-2 px-6 py-3 border border-border rounded-lg hover:border-primary hover:text-primary transition-colors"
+                  onClick={() => trackEmail('about_hero')}
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-border rounded-lg hover:border-primary hover:text-primary transition-colors"
                 >
                   <Mail size={20} />
                   {t('contactBtn')}
                 </a>
+                <Link
+                  href="/services"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all"
+                >
+                  {t('servicesBtn')}
+                  <ArrowRight size={18} />
+                </Link>
               </div>
             </div>
-            </motion.div>
+          </motion.div>
 
-          {/* Bio */}
-          <motion.div
+          <motion.section
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
             className="mb-20 p-8 bg-secondary/50 border border-border rounded-lg"
           >
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              {t.rich('bioP1', {
-                years,
-                strong: (chunks) => <strong>{chunks}</strong>,
-                span: (chunks) => <span className="text-primary">{chunks}</span>,
-              })}
-            </p>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              {t.rich('bioP2', {
-                span: (chunks) => <span className="text-primary">{chunks}</span>,
-              })}
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              {t.rich('bioP3', {
-                strong: (chunks) => <strong>{chunks}</strong>,
-              })}
-            </p>
-            <p className="text-sm text-muted-foreground mt-6 italic">
-              {t('quote')}
-              <br />
-              {t('quoteAuthor')}
-            </p>
-          </motion.div>
-
-          {/* Experience Section */}
-            <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-20"
-          >
-            <div id="experience" className="scroll-mt-24">
-              <Experience />
+            <div className="mb-6">
+              <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">{t('whoWeAreEyebrow')}</p>
+              <h2 className="mt-3 text-3xl md:text-4xl tracking-tight">{t('whoWeAreTitle')}</h2>
             </div>
-          </motion.div>
+            <p className="text-muted-foreground leading-relaxed text-lg">
+              {t('whoWeAreText')}
+            </p>
+          </motion.section>
 
-          {/* Education Section */}
-          <motion.div
+          <motion.section
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="mb-20"
           >
-        <Education />
-          </motion.div>
+            <div className="mb-8 text-center">
+              <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">{t('principlesEyebrow')}</p>
+              <h2 className="mt-3 text-3xl md:text-4xl tracking-tight">{t('principlesTitle')}</h2>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              {principles.map(({ title, description, icon: Icon }) => (
+                <div key={title} className="bg-card border border-border rounded-lg p-6">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                    <Icon size={24} />
+                  </div>
+                  <h3 className="mb-3 text-xl font-semibold">{title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{description}</p>
+                </div>
+              ))}
+            </div>
+          </motion.section>
+
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-20"
+          >
+            <div className="mb-8 text-center">
+              <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">{t('stackEyebrow')}</p>
+              <h2 className="mt-3 text-3xl md:text-4xl tracking-tight">{t('stackTitle')}</h2>
+            </div>
+            <div className="flex flex-wrap justify-center gap-3">
+              {stack.map((tech) => (
+                <span
+                  key={tech}
+                  className="rounded-full border border-border bg-secondary px-4 py-2 text-sm text-foreground"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </motion.section>
+
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-20"
+          >
+            <div className="grid md:grid-cols-[180px_1fr] items-center gap-8 rounded-lg border border-border bg-card p-8">
+              <div className="relative h-44 w-44 overflow-hidden rounded-full border-2 border-primary/20 bg-gradient-to-br from-primary/15 to-primary/5">
+                <Image
+                  src="/avatar.png"
+                  alt={t('founderName')}
+                  fill
+                  className="object-cover object-left-top"
+                  sizes="176px"
+                />
+              </div>
+              <div>
+                <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">{t('founderEyebrow')}</p>
+                <h3 className="mt-3 text-3xl font-semibold">{t('founderName')}</h3>
+                <p className="mt-2 text-lg text-primary">{t('founderRole')}</p>
+                <p className="mt-4 text-muted-foreground leading-relaxed">{t('founderBio')}</p>
+              </div>
+            </div>
+          </motion.section>
         </div>
       </div>
 

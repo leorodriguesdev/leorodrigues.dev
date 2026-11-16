@@ -1,11 +1,12 @@
 {
   "nav": {
     "home": "Inicio",
-    "about": "Sobre mí",
+    "about": "Empresa",
     "skills": "Habilidades",
-    "projects": "Proyectos",
+    "projects": "Casos",
     "contact": "Contacto",
     "services": "Servicios",
+    "modernization": "Modernización",
     "toggleMenu": "Abrir menú"
   },
   "languageSwitcher": {

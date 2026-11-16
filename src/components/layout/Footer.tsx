@@ -1,38 +1,15 @@
 "use client";
 
 import React from "react";
-import { Link, useRouter, usePathname } from "@/i18n/navigation";
-import { Github, Linkedin, Mail, RefreshCw } from "lucide-react";
+import { Link } from "@/i18n/navigation";
+import { Github, Linkedin, Mail } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useVisitorIntent } from "@/hooks/useVisitorIntent";
 import { useAnalytics } from "@/hooks/useAnalytics";
 
 const Footer = () => {
-  const { intent, setIntent } = useVisitorIntent();
   const { trackEmail } = useAnalytics();
-  const router = useRouter();
-  const pathname = usePathname();
   const t = useTranslations("footer");
   const tNav = useTranslations("nav");
-
-  const handleSwitchVersion = () => {
-    const currentIntent = intent || "commercial";
-    const newIntent = currentIntent === "portfolio" ? "commercial" : "portfolio";
-    // Store compartilhado: home e Navbar já re-renderizam com a nova versão, sem reload.
-    setIntent(newIntent, "footer");
-    if (pathname === "/" || pathname === "") {
-      window.scrollTo({ top: 0 });
-    } else {
-      router.push("/");
-    }
-  };
-
-  const getNextIntent = () => {
-    const currentIntent = intent || "commercial";
-    return currentIntent === "portfolio" ? "commercial" : "portfolio";
-  };
-
-  const isHome = pathname === "/" || pathname === "";
 
   return (
     <footer className="py-12 px-6 border-t border-border bg-background">
@@ -55,6 +32,12 @@ const Footer = () => {
                 className="block text-muted-foreground hover:text-primary transition-colors"
               >
                 {tNav("home")}
+              </Link>
+              <Link
+                href="/services"
+                className="block text-muted-foreground hover:text-primary transition-colors"
+              >
+                {tNav("services")}
               </Link>
               <Link
                 href="/about"
@@ -80,10 +63,10 @@ const Footer = () => {
           <div className="space-y-3">
             <h4 className="text-primary font-medium">{t("servicesTitle")}</h4>
             <div className="space-y-2 text-sm text-muted-foreground">
-              <p>{t("serviceWeb")}</p>
-              <p>{t("serviceConsulting")}</p>
-              <p>{t("serviceUiux")}</p>
-              <p>{t("serviceSeo")}</p>
+              <Link href="/services" className="block hover:text-primary transition-colors">{t("serviceWeb")}</Link>
+              <Link href="/services" className="block hover:text-primary transition-colors">{t("serviceConsulting")}</Link>
+              <Link href="/services" className="block hover:text-primary transition-colors">{t("serviceUiux")}</Link>
+              <Link href="/services/modernization" className="block hover:text-primary transition-colors">{t("serviceSeo")}</Link>
             </div>
           </div>
 
@@ -108,17 +91,6 @@ const Footer = () => {
               >
                 <Linkedin size={20} />
               </a>
-              {/* Twitter/X oculto
-              <a
-                href="https://x.com/leorodriguesdev"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 border border-border rounded hover:border-primary hover:text-primary transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter size={20} />
-              </a>
-              */}
               <a
                 href="mailto:contato@leorodrigues.dev"
                 onClick={() => trackEmail("footer")}
@@ -132,23 +104,9 @@ const Footer = () => {
         </div>
 
         <div className="pt-8 border-t border-border">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-muted-foreground text-center md:text-left">
-              {t("rights", { year: new Date().getFullYear() })}
-            </p>
-            {isHome && (
-              <button
-                type="button"
-                onClick={handleSwitchVersion}
-                className="inline-flex items-center gap-2 px-4 py-2 text-sm bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all font-medium"
-              >
-                <RefreshCw size={16} />
-                {getNextIntent() === "portfolio"
-                  ? t("switchToPortfolio")
-                  : t("switchToCommercial")}
-              </button>
-            )}
-          </div>
+          <p className="text-sm text-muted-foreground text-center md:text-left">
+            {t("rights", { year: new Date().getFullYear() })}
+          </p>
         </div>
       </div>
     </footer>
