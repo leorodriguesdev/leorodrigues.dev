@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
+import { JsonLd } from "@/components/JsonLd";
 import { buildPageMetadata } from "@/lib/pageMetadata";
+import {
+  personSchema,
+  professionalServiceSchema,
+  websiteSchema,
+} from "@/lib/structuredData";
 import HomePageClient from "./HomePageClient";
 
 type PageProps = {
@@ -21,5 +27,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function HomePage({ params }: PageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return <HomePageClient />;
+  const schemas = await Promise.all([
+    personSchema(locale),
+    websiteSchema(locale),
+    professionalServiceSchema(locale),
+  ]);
+
+  return (
+    <>
+      <JsonLd data={schemas} />
+      <HomePageClient />
+    </>
+  );
 }

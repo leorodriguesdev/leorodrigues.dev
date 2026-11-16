@@ -3,7 +3,6 @@
 import { motion, AnimatePresence } from "motion/react";
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import { StructuredData } from '@/components/StructuredData';
 import { VisitorIntentModal } from '@/components/VisitorIntentModal';
 import { PortfolioHome } from '@/components/sections/PortfolioHome';
 import { CommercialHome } from '@/components/sections/CommercialHome';
@@ -17,11 +16,6 @@ export default function HomePageClient() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <StructuredData type="Person" data={{}} />
-      <StructuredData type="WebSite" data={{}} />
-      <StructuredData type="ProfessionalService" data={{}} />
-      <StructuredData type="LocalBusiness" data={{}} />
-      
       <VisitorIntentModal intent={intent} setIntent={setIntent} />
       
       <Navbar />

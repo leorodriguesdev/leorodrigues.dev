@@ -14,7 +14,6 @@ import {
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
-import { StructuredData } from '@/components/StructuredData';
 import Contact from '@/components/sections/Contact';
 import { Link } from "@/i18n/navigation";
 import { useAnalytics } from '@/hooks/useAnalytics';
@@ -75,19 +74,6 @@ export default function ServicesPageClient() {
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
       <Breadcrumbs />
-      <StructuredData
-        type="ProfessionalService"
-        data={{
-          name: t("structuredName"),
-          provider: {
-            "@type": "Person",
-            name: "Léo Rodrigues",
-            url: "https://leorodrigues.dev"
-          },
-          serviceType: t.raw("structuredServiceTypes") as string[],
-          areaServed: "BR"
-        }}
-      />
 
       <div className="pb-16">
         <div className="container mx-auto max-w-6xl px-6">

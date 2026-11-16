@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
+import { JsonLd } from "@/components/JsonLd";
 import { buildPageMetadata } from "@/lib/pageMetadata";
+import {
+  breadcrumbLabel,
+  breadcrumbSchema,
+} from "@/lib/structuredData";
 import SearchConsolePageClient from "./SearchConsolePageClient";
 
 type PageProps = {
@@ -20,5 +25,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function SearchConsolePage({ params }: PageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return <SearchConsolePageClient />;
+  const schemas = [
+    await breadcrumbSchema(locale, [
+      { name: await breadcrumbLabel(locale, "search-console"), path: "/search-console" },
+    ]),
+  ];
+
+  return (
+    <>
+      <JsonLd data={schemas} />
+      <SearchConsolePageClient />
+    </>
+  );
 }

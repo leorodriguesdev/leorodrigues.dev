@@ -1,10 +1,8 @@
 "use client";
 
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
-import { routing } from "@/i18n/routing";
 import { Home, ChevronRight } from "lucide-react";
-import { StructuredData } from "./StructuredData";
 
 const ROUTE_SEGMENTS = new Set([
   "about",
@@ -13,18 +11,7 @@ const ROUTE_SEGMENTS = new Set([
   "search-console",
 ]);
 
-function toAbsoluteUrl(locale: string, pathname: string): string {
-  const base = "https://leorodrigues.dev";
-  const path = pathname === "/" ? "" : pathname;
-  if (locale === routing.defaultLocale) {
-    return `${base}${path || "/"}`;
-  }
-  if (!path) {
-    return `${base}/${locale}/`;
-  }
-  return `${base}/${locale}${path.startsWith("/") ? path : `/${path}`}`;
-}
-
+/** Trilha visual; o JSON-LD `BreadcrumbList` é gerado no servidor em cada `page.tsx`. */
 interface BreadcrumbItem {
   name: string;
   href: string;
@@ -32,7 +19,6 @@ interface BreadcrumbItem {
 
 export function Breadcrumbs() {
   const pathname = usePathname();
-  const locale = useLocale();
   const t = useTranslations("breadcrumbs");
 
   const segments = pathname.split("/").filter(Boolean);
@@ -56,22 +42,12 @@ export function Breadcrumbs() {
     }),
   ];
 
-  const structuredData = {
-    itemListElement: items.map((item, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      name: item.name,
-      item: toAbsoluteUrl(locale, item.href === "/" ? "/" : item.href),
-    })),
-  };
-
   if (items.length <= 1) {
     return null;
   }
 
   return (
     <>
-      <StructuredData type="BreadcrumbList" data={structuredData} />
       <nav
         aria-label={t("navAria")}
         className="container mx-auto max-w-6xl px-6 py-4 pt-24"

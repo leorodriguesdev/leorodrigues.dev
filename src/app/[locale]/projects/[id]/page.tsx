@@ -4,7 +4,8 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import projectsBase from "@/data/projectsBase.json";
 import { getProjects } from "@/lib/getProjects";
 import { routing } from "@/i18n/routing";
-import { StructuredData } from "@/components/StructuredData";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbLabel, breadcrumbSchema } from "@/lib/structuredData";
 import ProjectDetailClient from "./ProjectDetailClient";
 
 type PageProps = {
@@ -45,28 +46,29 @@ export default async function Page({ params, searchParams }: PageProps) {
   const titleFromUrl = resolvedSearchParams?.title;
   const canonical = `https://leorodrigues.dev${projectPath(locale, id)}`;
 
+  const creativeWork = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: project.title,
+    description: project.description,
+    dateCreated: project.date,
+    creator: { "@id": "https://leorodrigues.dev/#person" },
+    ...(project.sourceCodeUrl && { codeRepository: project.sourceCodeUrl }),
+    ...(project.links?.website && { sameAs: project.links.website }),
+    keywords: project.techStack.join(", "),
+    image: project.image.startsWith("http")
+      ? project.image
+      : `https://leorodrigues.dev${project.image}`,
+    url: canonical,
+  };
+  const breadcrumb = await breadcrumbSchema(locale, [
+    { name: await breadcrumbLabel(locale, "projects"), path: "/projects" },
+    { name: project.title, path: `/projects/${id}` },
+  ]);
+
   return (
     <>
-      <StructuredData
-        type="CreativeWork"
-        data={{
-          name: project.title,
-          description: project.description,
-          dateCreated: project.date,
-          creator: {
-            "@type": "Person",
-            name: "Léo Rodrigues",
-            url: "https://leorodrigues.dev",
-          },
-          ...(project.links?.website && { url: project.links.website }),
-          ...(project.sourceCodeUrl && { codeRepository: project.sourceCodeUrl }),
-          keywords: project.techStack.join(", "),
-          image: project.image.startsWith("http")
-            ? project.image
-            : `https://leorodrigues.dev${project.image}`,
-          url: canonical,
-        }}
-      />
+      <JsonLd data={[creativeWork, breadcrumb]} />
       <ProjectDetailClient project={project} titleFromUrl={titleFromUrl} />
     </>
   );
@@ -114,7 +116,8 @@ export async function generateMetadata({
     : `https://leorodrigues.dev${project.image}`;
 
   return {
-    title,
+    // `projectMetaSuffix` já inclui a marca; sem `absolute` o template do layout a repetiria.
+    title: { absolute: title },
     description,
     openGraph: {
       title: project.title,

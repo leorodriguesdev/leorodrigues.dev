@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
+import { JsonLd } from "@/components/JsonLd";
 import { buildPageMetadata } from "@/lib/pageMetadata";
+import {
+  breadcrumbLabel,
+  breadcrumbSchema,
+} from "@/lib/structuredData";
 import ProjectsPageClient from "./ProjectsPageClient";
 
 type PageProps = {
@@ -21,5 +26,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function ProjectsPage({ params }: PageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return <ProjectsPageClient />;
+  const schemas = [
+    await breadcrumbSchema(locale, [
+      { name: await breadcrumbLabel(locale, "projects"), path: "/projects" },
+    ]),
+  ];
+
+  return (
+    <>
+      <JsonLd data={schemas} />
+      <ProjectsPageClient />
+    </>
+  );
 }
