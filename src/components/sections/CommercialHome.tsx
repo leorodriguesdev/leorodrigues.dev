@@ -29,7 +29,7 @@ export function CommercialHome() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative flex min-h-[88svh] items-center justify-center overflow-hidden px-6 pb-16 pt-28 md:pb-20">
+      <section className="relative flex min-h-0 items-center justify-center overflow-hidden px-6 pb-16 pt-28 sm:min-h-[88svh] md:pb-20">
         <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-1/4 -z-10 mx-auto h-72 max-w-4xl rounded-full bg-primary/10 blur-[120px]" />
         <div className="container mx-auto max-w-6xl">
           <motion.div
@@ -53,10 +53,9 @@ export function CommercialHome() {
               initial={{ y: 20 }}
               animate={{ y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-4xl leading-[1.08] tracking-tight sm:text-5xl md:text-7xl"
+              className="text-3xl leading-[1.08] tracking-tight sm:text-5xl md:text-7xl"
             >
-              {t("heroLine1")} <span className="text-primary">{t("heroAccent")}</span>{" "}
-              {t("heroLine2")}
+              {t("heroLine1")} <span className="text-primary">{t("heroAccent")}</span>
             </motion.h1>
 
             <motion.p
@@ -91,13 +90,13 @@ export function CommercialHome() {
               </Link>
             </motion.div>
 
-            <p className="text-sm text-muted-foreground">{t("heroTrustLine")}</p>
+            <p className="hidden text-sm text-muted-foreground sm:block">{t("heroTrustLine")}</p>
 
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
-              className="flex justify-center pt-2"
+              className="hidden justify-center pt-2 sm:flex"
             >
               <a
                 href="https://wa.me/555194389658"
