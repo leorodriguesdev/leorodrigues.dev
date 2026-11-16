@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
+import { getYearsOfExperience } from "@/lib/experience";
 
 interface StatItemProps {
   end: number;
@@ -156,7 +157,7 @@ export function Stats({ variant = 'commercial' }: StatsProps) {
   // Versão Commercial: Estatísticas atuais
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-      <StatItem end={7} label={t("years")} suffix="+" />
+      <StatItem end={getYearsOfExperience()} label={t("years")} suffix="+" />
       <StatItem end={97} label={t("completed")} suffix="+" />
       <StatItem 
         end={githubStats.linesOfCode.value} 

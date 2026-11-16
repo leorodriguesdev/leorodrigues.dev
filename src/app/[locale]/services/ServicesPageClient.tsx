@@ -17,9 +17,11 @@ import { Breadcrumbs } from '@/components/Breadcrumbs';
 import Contact from '@/components/sections/Contact';
 import { Link } from "@/i18n/navigation";
 import { useAnalytics } from '@/hooks/useAnalytics';
+import { getYearsOfExperience } from '@/lib/experience';
 
 export default function ServicesPageClient() {
   const t = useTranslations("servicesPage");
+  const years = getYearsOfExperience();
   const { trackCtaClick } = useAnalytics();
   const tc = useTranslations("servicesCards");
   const services = [
@@ -177,10 +179,10 @@ export default function ServicesPageClient() {
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold flex items-center gap-2">
                   <Database className="text-primary" size={24} />
-                  {t("whyExpTitle")}
+                  {t("whyExpTitle", { years })}
                 </h3>
                 <p className="text-muted-foreground">
-                  {t("whyExpDesc")}
+                  {t("whyExpDesc", { years })}
                 </p>
               </div>
               <div className="space-y-4">

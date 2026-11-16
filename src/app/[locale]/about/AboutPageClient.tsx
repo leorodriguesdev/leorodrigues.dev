@@ -10,9 +10,11 @@ import Experience from '@/components/sections/Experience';
 import Education from '@/components/sections/Education';
 import { useAnalytics } from '@/hooks/useAnalytics';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
+import { getYearsOfExperience } from '@/lib/experience';
 
 export default function AboutPageClient() {
   const t = useTranslations('about');
+  const years = getYearsOfExperience();
   const { trackEmail } = useAnalytics();
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -39,7 +41,7 @@ export default function AboutPageClient() {
             </div>
             <div className="space-y-4">
               <h1 className="text-4xl md:text-5xl tracking-tight">
-                {t('heroTitle')} <span className="text-primary">{t('heroAccent')}</span>
+                {t('heroTitle')} <span className="text-primary">{t('heroAccent', { years })}</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 {t('heroSubtitle')}
@@ -75,6 +77,7 @@ export default function AboutPageClient() {
           >
             <p className="text-muted-foreground leading-relaxed mb-4">
               {t.rich('bioP1', {
+                years,
                 strong: (chunks) => <strong>{chunks}</strong>,
                 span: (chunks) => <span className="text-primary">{chunks}</span>,
               })}

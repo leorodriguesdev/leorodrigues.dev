@@ -9,9 +9,11 @@ import Skills from "@/components/sections/Skills";
 import Projects from "@/components/sections/Projects";
 import Contact from "@/components/sections/Contact";
 import { Link } from "@/i18n/navigation";
+import { getYearsOfExperience } from "@/lib/experience";
 
 export function PortfolioHome() {
   const t = useTranslations("portfolioHome");
+  const years = getYearsOfExperience();
   return (
     <>
       {/* Hero Section */}
@@ -52,7 +54,7 @@ export function PortfolioHome() {
               transition={{ delay: 0.4 }}
               className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto"
             >
-              {t("heroSubtitle")}
+              {t("heroSubtitle", { years })}
             </motion.p>
 
             <motion.div

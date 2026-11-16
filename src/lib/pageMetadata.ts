@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { absoluteUrl, languageAlternates } from "@/lib/siteUrls";
+import { getYearsOfExperience } from "@/lib/experience";
 
 export const OG_IMAGE_URL = "https://leorodrigues.dev/print.png";
 export const TWITTER_HANDLE = "@leorodriguesdev";
@@ -36,8 +37,10 @@ export async function buildPageMetadata({
   noIndex = false,
 }: PageMetadataOptions): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: "metadata" });
-  const title = t(titleKey);
-  const description = t(descriptionKey);
+  // Valores ICU disponíveis em qualquer chave de metadata (ex.: "{years}+ anos").
+  const values = { years: getYearsOfExperience() };
+  const title = t(titleKey, values);
+  const description = t(descriptionKey, values);
   const url = absoluteUrl(locale, path);
 
   return {

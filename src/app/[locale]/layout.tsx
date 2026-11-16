@@ -10,11 +10,15 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { routing } from "@/i18n/routing";
+import { getYearsOfExperience } from "@/lib/experience";
 import { OG_IMAGE_URL, OG_LOCALES, TWITTER_HANDLE } from "@/lib/pageMetadata";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
+
+// Regenera as páginas estáticas 1x/dia (ISR): o "{years}+ anos" vira sozinho em 1º de janeiro, sem novo deploy.
+export const revalidate = 86400;
 
 export async function generateMetadata({
   params,
@@ -25,7 +29,8 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "metadata" });
 
   const titleDefault = t("rootTitle");
-  const description = t("rootDescription");
+  const years = getYearsOfExperience();
+  const description = t("rootDescription", { years });
   const keywords = (t.raw("rootKeywords") as string[]) ?? [];
 
   // Sem `alternates`/`openGraph.url` aqui: canonical e hreflang são definidos por rota
@@ -57,7 +62,7 @@ export async function generateMetadata({
       locale: OG_LOCALES[locale] ?? "pt_BR",
       siteName: t("siteName"),
       title: titleDefault,
-      description: t("ogDescription"),
+      description: t("ogDescription", { years }),
       images: [
         {
           url: OG_IMAGE_URL,
@@ -70,7 +75,7 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
       title: t("twitterTitle"),
-      description: t("twitterDescription"),
+      description: t("twitterDescription", { years }),
       images: [OG_IMAGE_URL],
       creator: TWITTER_HANDLE,
       site: TWITTER_HANDLE,
