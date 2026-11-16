@@ -214,7 +214,11 @@
   },
   "servicesPage": {
     "structuredName": "Serviços de Desenvolvimento Mobile e Web",
-    "structuredServiceTypes": ["Desenvolvimento Mobile", "Desenvolvimento Web", "Desenvolvimento Full Stack"],
+    "structuredServiceTypes": [
+      "Desenvolvimento Mobile",
+      "Desenvolvimento Web",
+      "Desenvolvimento Full Stack"
+    ],
     "heroTitle": "Serviços de",
     "heroAccent": "Desenvolvimento",
     "heroSubtitle": "Soluções completas em desenvolvimento mobile, web e full stack. Criando aplicativos, sites e sistemas que impulsionam resultados.",
@@ -262,30 +266,6 @@
     "fullF5": "Integrações de terceiros",
     "fullF6": "Arquitetura escalável"
   },
-  "searchConsole": {
-    "fetchError": "Erro ao buscar status",
-    "unknownError": "Erro desconhecido",
-    "pageTitle": "Status do Google Search Console",
-    "pageSubtitle": "Verificação de acessibilidade das páginas e configuração do Search Console",
-    "statusChecking": "Verificando...",
-    "statusOk": "Acessível",
-    "statusFail": "Não acessível",
-    "overallOk": "Tudo OK",
-    "overallWarn": "Atenção Necessária",
-    "statusLabel": "Status:",
-    "lastCheck": "Última verificação:",
-    "pageChecks": "Verificação de Páginas",
-    "nextSteps": "Próximos Passos",
-    "usefulLinks": "Links Úteis",
-    "linkGscTitle": "Google Search Console",
-    "linkGscDesc": "Acessar dashboard",
-    "linkSitemapTitle": "Sitemap",
-    "linkSitemapDesc": "Ver sitemap.xml",
-    "linkRobotsTitle": "Robots.txt",
-    "linkRobotsDesc": "Ver robots.txt",
-    "linkGuideTitle": "Guia Completo",
-    "linkGuideDesc": "Ver documentação"
-  },
   "globalError": {
     "title": "Algo deu errado!",
     "description": "Um erro inesperado ocorreu. Nossa equipe foi notificada.",
@@ -296,15 +276,7 @@
     "home": "Home",
     "about": "Sobre",
     "projects": "Projetos",
-    "services": "Serviços",
-    "search-console": "Search Console"
-  },
-  "api": {
-    "searchAllOk": "✅ Todas as páginas estão acessíveis. Pronto para enviar sitemap no Google Search Console.",
-    "searchSomeFail": "⚠️ Algumas páginas não estão acessíveis. Verifique antes de enviar sitemap.",
-    "searchRec2": "📋 Acesse https://search.google.com/search-console e adicione a propriedade https://leorodrigues.dev",
-    "searchRec3": "🗺️ Envie o sitemap: sitemap.xml",
-    "searchRec4": "🔍 Solicite indexação das páginas principais manualmente"
+    "services": "Serviços"
   },
   "theme": {
     "openSelector": "Abrir seletor de tema",
@@ -330,49 +302,90 @@
       "title": "Fundador e Desenvolvedor - Leorodrigues.dev LTDA",
       "duration": "2020 - Presente",
       "description": "Fundador de empresa de desenvolvimento de software, atendendo clientes próprios com soluções customizadas em aplicativos mobile e web. Desenvolvimento de projetos end-to-end, desde a concepção até a entrega e manutenção.",
-      "achievements": ["Gestão de projetos", "Desenvolvimento full stack", "Atendimento ao cliente", "React Native", "Kotlin", "Swift", "Node.js"]
+      "achievements": [
+        "Gestão de projetos",
+        "Desenvolvimento full stack",
+        "Atendimento ao cliente",
+        "React Native",
+        "Kotlin",
+        "Swift",
+        "Node.js"
+      ]
     },
     "e1": {
       "title": "Engenheiro de Software Sênior - Raiô Benefícios",
       "duration": "Set 2025 - Presente · 5 meses",
       "description": "Desenvolvedor full stack sênior, com foco em escalabilidade e performance do aplicativo de benefícios corporativos Raiô Benefícios. Com as tecnologias React Native e NodeJS.",
-      "achievements": ["React Native", "Kotlin", "Swift", "Node.js"]
+      "achievements": [
+        "React Native",
+        "Kotlin",
+        "Swift",
+        "Node.js"
+      ]
     },
     "e2": {
       "title": "Desenvolvedor Mobile Sênior - STV Segurança",
       "duration": "Mai 2024 - Presente · 1 ano 9 meses",
       "description": "Desenvolvedor freelancer em aplicativo corporativo para funcionários da empresa, como hub de informações gerais e profissionais com fácil acesso.",
-      "achievements": ["React Native", "Kotlin", "Swift"]
+      "achievements": [
+        "React Native",
+        "Kotlin",
+        "Swift"
+      ]
     },
     "e3": {
       "title": "Desenvolvedor e Analista de Sistemas Pleno - Sistema FIERGS",
       "duration": "Abr 2023 - Set 2025 · 2 anos 6 meses",
       "description": "Analista e desenvolvedor de sistemas pleno. Desenvolvedor web e mobile utilizando React e React Native, também fazendo a sustentação de sistemas legados.",
-      "achievements": ["Desenvolvimento orientado a testes", "JavaScript", "React", "React Native", "Kotlin", "Swift", "21+ competências adicionais"]
+      "achievements": [
+        "Desenvolvimento orientado a testes",
+        "JavaScript",
+        "React",
+        "React Native",
+        "Kotlin",
+        "Swift",
+        "21+ competências adicionais"
+      ]
     },
     "e4": {
       "title": "Desenvolvedor Mobile - IBM (Banco do Brasil)",
       "duration": "Dez 2021 - Mar 2023 · 1 ano 4 meses",
       "description": "Desenvolvimento mobile na conta do Banco do Brasil, com especialização no desenvolvimento do app de investimentos.",
-      "achievements": ["Jest", "Desenvolvimento de front-end", "1+ competência adicional"]
+      "achievements": [
+        "Jest",
+        "Desenvolvimento de front-end",
+        "1+ competência adicional"
+      ]
     },
     "e5": {
       "title": "QA Tester - Sicredi",
       "duration": "Ago 2021 - Nov 2021 · 4 meses",
       "description": "QA em projeto para o banco Sicredi, envolvendo o sistema de carteiras de usuários para respectivos gerentes. Utilizei ferramentas como Kafka, PostgreSQL, RestAssured e Salesforce.",
-      "achievements": ["PostgreSQL", "Salesforce", "Automação de testes"]
+      "achievements": [
+        "PostgreSQL",
+        "Salesforce",
+        "Automação de testes"
+      ]
     },
     "e6": {
       "title": "Desenvolvedor Full Stack - IBM",
       "duration": "Mar 2021 - Ago 2021 · 6 meses",
       "description": "Desenvolvimento full-stack em projeto de controle de estágios na IBM, utilizando Angular, Java com Spring e PostgreSQL.",
-      "achievements": ["Desenvolvimento de front-end", "Java com Spring", "PostgreSQL"]
+      "achievements": [
+        "Desenvolvimento de front-end",
+        "Java com Spring",
+        "PostgreSQL"
+      ]
     },
     "e7": {
       "title": "Suporte ao Cliente - Nitronnews Email Marketing",
       "duration": "Jun 2020 - Mar 2021 · 10 meses",
       "description": "Suporte técnico aos clientes da ferramenta Nitronnews por meio de diversos canais e produção de conteúdo técnico.",
-      "achievements": ["Suporte técnico", "Documentação", "Produção de conteúdo"]
+      "achievements": [
+        "Suporte técnico",
+        "Documentação",
+        "Produção de conteúdo"
+      ]
     }
   },
   "educationItems": {
@@ -381,7 +394,11 @@
       "institution": "UniRitter",
       "year": "Mai 2025 - Jun 2026",
       "description": "Especialista em Inteligência Artificial com os principais tópicos: Aprendizado de máquina, Engenharia, preparação e visualização de dados, Gestão do conhecimento e inteligência competitiva, Redes neurais e aprendizado profundo, Arquiteturas de aprendizagem de máquina na nuvem e nas bordas, Análise de imagem e visão computacional, Processamento de linguagem natural, Experiência de usuário e IA.",
-      "achievements": ["Inteligência artificial", "Aprendizado de máquina", "25+ competências adicionais"]
+      "achievements": [
+        "Inteligência artificial",
+        "Aprendizado de máquina",
+        "25+ competências adicionais"
+      ]
     },
     "ed1": {
       "title": "Especialização em Desenvolvimento de Software com React, React Native e NodeJs",

@@ -266,30 +266,6 @@
     "fullF5": "Integraciones de terceros",
     "fullF6": "Arquitectura escalable"
   },
-  "searchConsole": {
-    "fetchError": "Error al obtener estado",
-    "unknownError": "Error desconocido",
-    "pageTitle": "Estado de Google Search Console",
-    "pageSubtitle": "Verificación de páginas y configuración",
-    "statusChecking": "Verificando...",
-    "statusOk": "Accesible",
-    "statusFail": "No accesible",
-    "overallOk": "Todo bien",
-    "overallWarn": "Atención necesaria",
-    "statusLabel": "Status:",
-    "lastCheck": "Última verificación:",
-    "pageChecks": "Verificación de páginas",
-    "nextSteps": "Próximos pasos",
-    "usefulLinks": "Enlaces útiles",
-    "linkGscTitle": "Google Search Console",
-    "linkGscDesc": "Abrir panel",
-    "linkSitemapTitle": "Sitemap",
-    "linkSitemapDesc": "Ver sitemap.xml",
-    "linkRobotsTitle": "Robots.txt",
-    "linkRobotsDesc": "Ver robots.txt",
-    "linkGuideTitle": "Guía completa",
-    "linkGuideDesc": "Ver documentación"
-  },
   "globalError": {
     "title": "Algo salió mal",
     "description": "Ocurrió un error inesperado. Nuestro equipo fue notificado.",
@@ -300,15 +276,7 @@
     "home": "Inicio",
     "about": "Sobre mí",
     "projects": "Proyectos",
-    "services": "Servicios",
-    "search-console": "Search Console"
-  },
-  "api": {
-    "searchAllOk": "✅ Todas las páginas son accesibles. Listo para enviar el sitemap en Google Search Console.",
-    "searchSomeFail": "⚠️ Algunas páginas no son accesibles. Verifica antes de enviar el sitemap.",
-    "searchRec2": "📋 Abre https://search.google.com/search-console y añade la propiedad https://leorodrigues.dev",
-    "searchRec3": "🗺️ Envía el sitemap: sitemap.xml",
-    "searchRec4": "🔍 Solicita indexación de las páginas principales manualmente"
+    "services": "Servicios"
   },
   "theme": {
     "openSelector": "Abrir selector de tema",

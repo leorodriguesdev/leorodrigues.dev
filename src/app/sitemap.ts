@@ -12,7 +12,6 @@ const STATIC_PATHS: Array<{
   { path: "/about", changeFrequency: "monthly", priority: 0.8 },
   { path: "/services", changeFrequency: "monthly", priority: 0.9 },
   { path: "/projects", changeFrequency: "weekly", priority: 0.9 },
-  { path: "/search-console", changeFrequency: "monthly", priority: 0.5 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

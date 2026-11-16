@@ -7,11 +7,12 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { Drawer } from "vaul";
 import { useMediaQuery } from "react-responsive";
 import { useTranslations } from "next-intl";
-import { VisitorIntent } from "@/hooks/useVisitorIntent";
+import type { VisitorIntent } from "@/hooks/useVisitorIntent";
+import type { IntentSource } from "@/lib/analytics";
 
 interface VisitorIntentModalProps {
   intent: VisitorIntent;
-  setIntent: (intent: VisitorIntent) => void;
+  setIntent: (intent: Exclude<VisitorIntent, null>, source: IntentSource) => void;
 }
 
 const MOBILE_BREAKPOINT = 768;
@@ -147,14 +148,14 @@ export function VisitorIntentModal({ intent, setIntent }: VisitorIntentModalProp
   }, [intent]);
 
   const handleIntentSelect = (selectedIntent: "portfolio" | "commercial") => {
-    setIntent(selectedIntent);
+    setIntent(selectedIntent, "modal");
     setShowModal(false);
   };
 
   const handleClose = () => {
     setShowModal(false);
     if (intent === null) {
-      setIntent("commercial");
+      setIntent("commercial", "modal_dismiss");
     }
   };
 

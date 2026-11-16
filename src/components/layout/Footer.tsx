@@ -18,9 +18,10 @@ const Footer = () => {
   const handleSwitchVersion = () => {
     const currentIntent = intent || "commercial";
     const newIntent = currentIntent === "portfolio" ? "commercial" : "portfolio";
-    setIntent(newIntent);
+    // Store compartilhado: home e Navbar já re-renderizam com a nova versão, sem reload.
+    setIntent(newIntent, "footer");
     if (pathname === "/" || pathname === "") {
-      window.location.reload();
+      window.scrollTo({ top: 0 });
     } else {
       router.push("/");
     }

@@ -266,30 +266,6 @@
     "fullF5": "Third-party integrations",
     "fullF6": "Scalable architecture"
   },
-  "searchConsole": {
-    "fetchError": "Failed to fetch status",
-    "unknownError": "Unknown error",
-    "pageTitle": "Google Search Console status",
-    "pageSubtitle": "Page accessibility checks and Search Console setup",
-    "statusChecking": "Checking...",
-    "statusOk": "Accessible",
-    "statusFail": "Not accessible",
-    "overallOk": "All good",
-    "overallWarn": "Attention needed",
-    "statusLabel": "Status:",
-    "lastCheck": "Last check:",
-    "pageChecks": "Page checks",
-    "nextSteps": "Next steps",
-    "usefulLinks": "Useful links",
-    "linkGscTitle": "Google Search Console",
-    "linkGscDesc": "Open dashboard",
-    "linkSitemapTitle": "Sitemap",
-    "linkSitemapDesc": "View sitemap.xml",
-    "linkRobotsTitle": "Robots.txt",
-    "linkRobotsDesc": "View robots.txt",
-    "linkGuideTitle": "Full guide",
-    "linkGuideDesc": "View documentation"
-  },
   "globalError": {
     "title": "Something went wrong",
     "description": "An unexpected error occurred. Our team has been notified.",
@@ -300,15 +276,7 @@
     "home": "Home",
     "about": "About",
     "projects": "Projects",
-    "services": "Services",
-    "search-console": "Search Console"
-  },
-  "api": {
-    "searchAllOk": "✅ All pages are accessible. Ready to submit the sitemap in Google Search Console.",
-    "searchSomeFail": "⚠️ Some pages are not accessible. Please verify before submitting the sitemap.",
-    "searchRec2": "📋 Open https://search.google.com/search-console and add the property https://leorodrigues.dev",
-    "searchRec3": "🗺️ Submit the sitemap: sitemap.xml",
-    "searchRec4": "🔍 Request indexing for main pages manually"
+    "services": "Services"
   },
   "theme": {
     "openSelector": "Open theme selector",

@@ -54,8 +54,6 @@
     "servicesTitle": "Serviços de Desenvolvimento | Criar Site e App Mobile | Léo Rodrigues",
     "servicesDescription": "Engenharia de software: apps, sites, APIs e integração com bancos de dados. React Native, Next.js, Node.js. Orçamento grátis. 7+ anos de experiência.",
     "servicesKeywords": "engenheiro de software contratar, desenvolvimento full stack, criar app, criar site, API, banco de dados, React Native, Next.js",
-    "searchConsoleTitle": "Status do Google Search Console",
-    "searchConsoleDescription": "Verificação de status e configuração do Google Search Console para leorodrigues.dev",
     "projectNotFoundTitle": "Projeto não encontrado",
     "projectMetaSuffix": "Desenvolvido por Léo Rodrigues",
     "projectTypeMobile": "App Mobile React Native",
@@ -353,30 +351,6 @@
     "fullF5": "Integrações de terceiros",
     "fullF6": "Arquitetura escalável"
   },
-  "searchConsole": {
-    "fetchError": "Erro ao buscar status",
-    "unknownError": "Erro desconhecido",
-    "pageTitle": "Status do Google Search Console",
-    "pageSubtitle": "Verificação de acessibilidade das páginas e configuração do Search Console",
-    "statusChecking": "Verificando...",
-    "statusOk": "Acessível",
-    "statusFail": "Não acessível",
-    "overallOk": "Tudo OK",
-    "overallWarn": "Atenção Necessária",
-    "statusLabel": "Status:",
-    "lastCheck": "Última verificação:",
-    "pageChecks": "Verificação de Páginas",
-    "nextSteps": "Próximos Passos",
-    "usefulLinks": "Links Úteis",
-    "linkGscTitle": "Google Search Console",
-    "linkGscDesc": "Acessar dashboard",
-    "linkSitemapTitle": "Sitemap",
-    "linkSitemapDesc": "Ver sitemap.xml",
-    "linkRobotsTitle": "Robots.txt",
-    "linkRobotsDesc": "Ver robots.txt",
-    "linkGuideTitle": "Guia Completo",
-    "linkGuideDesc": "Ver documentação"
-  },
   "globalError": {
     "title": "Algo deu errado!",
     "description": "Um erro inesperado ocorreu. Nossa equipe foi notificada.",
@@ -387,15 +361,7 @@
     "home": "Home",
     "about": "Sobre",
     "projects": "Projetos",
-    "services": "Serviços",
-    "search-console": "Search Console"
-  },
-  "api": {
-    "searchAllOk": "✅ Todas as páginas estão acessíveis. Pronto para enviar sitemap no Google Search Console.",
-    "searchSomeFail": "⚠️ Algumas páginas não estão acessíveis. Verifique antes de enviar sitemap.",
-    "searchRec2": "📋 Acesse https://search.google.com/search-console e adicione a propriedade https://leorodrigues.dev",
-    "searchRec3": "🗺️ Envie o sitemap: sitemap.xml",
-    "searchRec4": "🔍 Solicite indexação das páginas principais manualmente"
+    "services": "Serviços"
   },
   "theme": {
     "openSelector": "Abrir seletor de tema",
