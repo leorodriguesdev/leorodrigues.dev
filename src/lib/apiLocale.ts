@@ -17,8 +17,6 @@ const byLocale: Record<Locale, typeof ptMessages> = {
 };
 
 export type ApiCopy = {
-  contactSuccess: string;
-  contactError: string;
   searchAllOk: string;
   searchSomeFail: string;
   searchRec2: string;

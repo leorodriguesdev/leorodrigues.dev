@@ -5,9 +5,11 @@ import { Link, useRouter, usePathname } from "@/i18n/navigation";
 import { Github, Linkedin, Mail, RefreshCw } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useVisitorIntent } from "@/hooks/useVisitorIntent";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 const Footer = () => {
   const { intent, setIntent } = useVisitorIntent();
+  const { trackEmail } = useAnalytics();
   const router = useRouter();
   const pathname = usePathname();
   const t = useTranslations("footer");
@@ -118,6 +120,7 @@ const Footer = () => {
               */}
               <a
                 href="mailto:contato@leorodrigues.dev"
+                onClick={() => trackEmail("footer")}
                 className="p-2 border border-border rounded hover:border-primary hover:text-primary transition-colors"
                 aria-label="Email"
               >

@@ -48,7 +48,7 @@ Com uma interface moderna e responsiva, este portfólio destaca meus projetos ma
 - [x] Design responsivo e moderno
 - [x] Seção de habilidades com animações
 - [x] Galeria de projetos interativa
-- [x] Formulário de contato com envio via email
+- [ ] Formulário de contato (removido; contato via e-mail e WhatsApp)
 - [x] Integração com APIs externas
 - [ ] Sistema de autenticação para áreas restritas
 - [ ] Blog integrado para compartilhar artigos
@@ -101,15 +101,16 @@ Siga os passos abaixo para executar este projeto localmente:
 
 4. **Configure as variáveis de ambiente:**
 
-   Crie um arquivo `.env.local` na raiz do projeto e adicione suas credenciais de email para o formulário de contato:
+   Crie um arquivo `.env.local` na raiz do projeto:
 
    ```env
-   EMAIL_USER=seu_email@gmail.com
-   EMAIL_PASS=sua_senha_de_app
-   EMAIL_DESTINATION=destinatario_email@gmail.com
+   NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+   NEXT_PUBLIC_SENTRY_DSN=https://xxx@xxx.ingest.sentry.io/xxx
+   SENTRY_ORG=sua-org
+   SENTRY_PROJECT=seu-projeto
    ```
 
-   > **Nota:** Utilize senhas de aplicativos ou métodos seguros para proteger suas credenciais.
+   > **Nota:** todas são opcionais em desenvolvimento; sem elas, GA e Sentry ficam desativados.
 
 ## 🚀 Rodando a Aplicação
 
@@ -186,10 +187,8 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [React](https://pt-br.reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
-- [Nodemailer](https://nodemailer.com/)
 - [React Hot Toast](https://react-hot-toast.com/)
 - [React Icons](https://react-icons.github.io/react-icons/)
-- [Axios](https://axios-http.com/docs/intro)
 - [PostCSS](https://postcss.org/)
 - [ESLint](https://eslint.org/)
 - [Autoprefixer](https://github.com/postcss/autoprefixer)

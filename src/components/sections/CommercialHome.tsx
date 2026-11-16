@@ -14,9 +14,11 @@ import { Stats } from "@/components/Stats";
 import { Testimonials } from "@/components/Testimonials";
 import Contact from "@/components/sections/Contact";
 import { Link } from "@/i18n/navigation";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 export function CommercialHome() {
   const t = useTranslations("commercialHome");
+  const { trackCtaClick, trackWhatsApp } = useAnalytics();
   const steps = [
     { step: "01", title: t("step1Title"), desc: t("step1Desc") },
     { step: "02", title: t("step2Title"), desc: t("step2Desc") },
@@ -72,6 +74,7 @@ export function CommercialHome() {
             >
               <a
                 href="#contact"
+                onClick={() => trackCtaClick("quote", "hero")}
                 className="px-8 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all hover:scale-105 flex items-center gap-2 font-medium shadow-lg shadow-primary/20"
               >
                 {t("ctaQuote")}
@@ -79,6 +82,7 @@ export function CommercialHome() {
               </a>
               <Link
                 href="/services"
+                onClick={() => trackCtaClick("services", "hero")}
                 className="px-8 py-3 border border-border rounded-lg hover:bg-secondary transition-colors"
               >
                 {t("ctaServices")}
@@ -95,6 +99,7 @@ export function CommercialHome() {
                 href="https://wa.me/555194389658"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsApp("hero")}
                 className="p-3 border border-border rounded-lg hover:border-primary hover:text-primary transition-colors"
                 aria-label={t("whatsappAria")}
               >
@@ -256,8 +261,9 @@ export function CommercialHome() {
             </div>
 
             <div className="text-center pt-8">
-              <a 
+              <a
                 href="#contact"
+                onClick={() => trackCtaClick("quote", "services_preview")}
                 className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all font-medium"
               >
                 {t("ctaQuote")}
@@ -386,6 +392,7 @@ export function CommercialHome() {
           >
             <a 
               href="#contact"
+              onClick={() => trackCtaClick("custom_quote", "pricing")}
               className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all font-medium"
             >
               {t("ctaCustomQuote")}

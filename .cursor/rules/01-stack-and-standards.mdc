@@ -11,7 +11,7 @@ globs:
 - **UI:** **React 18**, **TypeScript 5**, **Tailwind CSS 3** + PostCSS, **Radix UI**, padrão de componentes em `src/components/ui/` (CVA, `tailwind-merge`, `clsx`).
 - **i18n:** **next-intl** (`src/i18n/*`, rotas `src/app/[locale]/`, mensagens em `messages/*.json`).
 - **Observabilidade / deploy:** **@sentry/nextjs**, **@vercel/analytics**, **@vercel/speed-insights**.
-- **Formulários / HTTP:** **react-hook-form**, **axios**, **nodemailer** (API routes).
+- **Formulários / HTTP:** **react-hook-form**; requisições HTTP com `fetch` nativo.
 - **Qualidade:** **ESLint 8** com `eslint-config-next` (`next/core-web-vitals`, `next/typescript`). Não há script de testes (Jest/Vitest/Playwright) no `package.json`.
 
 # Padrões e boas práticas

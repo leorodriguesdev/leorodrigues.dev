@@ -381,8 +381,6 @@
     "search-console": "Search Console"
   },
   "api": {
-    "contactSuccess": "¡Correo enviado con éxito!",
-    "contactError": "Error al enviar el correo.",
     "searchAllOk": "✅ Todas las páginas son accesibles. Listo para enviar el sitemap en Google Search Console.",
     "searchSomeFail": "⚠️ Algunas páginas no son accesibles. Verifica antes de enviar el sitemap.",
     "searchRec2": "📋 Abre https://search.google.com/search-console y añade la propiedad https://leorodrigues.dev",

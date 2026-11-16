@@ -16,10 +16,13 @@ import Footer from '@/components/layout/Footer';
 import { SEO } from '@/components/SEO';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { StructuredData } from '@/components/StructuredData';
+import Contact from '@/components/sections/Contact';
 import { Link } from "@/i18n/navigation";
+import { useAnalytics } from '@/hooks/useAnalytics';
 
 export default function ServicesPage() {
   const t = useTranslations("servicesPage");
+  const { trackCtaClick } = useAnalytics();
   const tc = useTranslations("servicesCards");
   const tMeta = useTranslations("metadata");
   const services = [
@@ -160,6 +163,7 @@ export default function ServicesPage() {
                     </div>
                     <a
                       href="#contact"
+                      onClick={() => trackCtaClick(`quote_${service.id}`, "services_card")}
                       className="inline-flex items-center gap-2 text-primary hover:gap-3 transition-all text-sm font-medium"
                     >
                       {t("requestQuote")}
@@ -237,6 +241,7 @@ export default function ServicesPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
               <a
                 href="#contact"
+                onClick={() => trackCtaClick("contact", "services_cta")}
                 className="px-8 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all hover:scale-105 flex items-center gap-2 font-medium shadow-lg shadow-primary/20 justify-center"
               >
                 {t("ctaContact")}
@@ -252,6 +257,8 @@ export default function ServicesPage() {
           </motion.div>
         </div>
       </div>
+
+      <Contact />
 
       <Footer />
     </div>

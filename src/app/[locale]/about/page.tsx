@@ -62,7 +62,7 @@ export default function AboutPage() {
                 </a> */}
                 <a
                   href="mailto:contato@leorodrigues.dev"
-                  onClick={trackEmail}
+                  onClick={() => trackEmail("about_hero")}
                   className="inline-flex items-center gap-2 px-6 py-3 border border-border rounded-lg hover:border-primary hover:text-primary transition-colors"
                 >
                   <Mail size={20} />

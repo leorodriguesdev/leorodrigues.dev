@@ -23,8 +23,15 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Audit production dependencies
+        run: npm audit --omit=dev --audit-level=high
+
       - name: Merge locale messages
         run: npm run messages:merge
+
+      # Os JSON gerados são versionados: falha se messages/parts|partials divergirem deles.
+      - name: Check locale messages are in sync
+        run: git diff --exit-code -- messages/
 
       - name: Lint
         run: npm run lint

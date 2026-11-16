@@ -1,7 +1,12 @@
 "use client";
 
 import { useCallback } from "react";
-import { event } from "@/lib/analytics";
+import {
+  event,
+  trackCtaClick as sendCtaClick,
+  trackLead,
+  type TrackingLocation,
+} from "@/lib/analytics";
 
 export const useAnalytics = () => {
   const trackEvent = useCallback(
@@ -25,13 +30,20 @@ export const useAnalytics = () => {
     [trackEvent]
   );
 
-  const trackEmail = useCallback(() => {
-    trackEvent("click", "email", "contato@leorodrigues.dev");
-  }, [trackEvent]);
+  const trackEmail = useCallback((location: TrackingLocation) => {
+    trackLead("email", location);
+  }, []);
 
-  const trackWhatsApp = useCallback(() => {
-    trackEvent("click", "whatsapp", "contact");
-  }, [trackEvent]);
+  const trackWhatsApp = useCallback((location: TrackingLocation) => {
+    trackLead("whatsapp", location);
+  }, []);
+
+  const trackCtaClick = useCallback(
+    (ctaId: string, location: TrackingLocation) => {
+      sendCtaClick(ctaId, location);
+    },
+    []
+  );
 
   const trackProjectView = useCallback(
     (projectTitle: string) => {
@@ -67,6 +79,7 @@ export const useAnalytics = () => {
     trackOutboundLink,
     trackEmail,
     trackWhatsApp,
+    trackCtaClick,
     trackProjectView,
     trackThemeChange,
     trackSocialLink,
