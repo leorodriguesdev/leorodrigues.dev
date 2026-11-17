@@ -1,8 +1,4 @@
-export const THEME_IDS = [
-  "figmaNeon",
-  "dark",
-  "light",
-] as const;
+export const THEME_IDS = ["dark", "light"] as const;
 
 export type ThemeId = (typeof THEME_IDS)[number];
 
@@ -14,6 +10,20 @@ export function isThemeId(value: unknown): value is ThemeId {
   return (
     typeof value === "string" && (THEME_IDS as readonly string[]).includes(value)
   );
+}
+
+/** Aplica o tema no <html> (variáveis CSS valem também para portais) e salva a escolha. */
+export function applyThemeToDocument(theme: ThemeId) {
+  const root = document.documentElement;
+  for (const id of THEME_IDS) {
+    root.classList.remove(`theme-${id}`);
+  }
+  root.classList.add(`theme-${theme}`);
+  try {
+    localStorage.setItem(THEME_STORAGE_KEY, theme);
+  } catch {
+    // Armazenamento indisponível (modo privado): o tema vale só para esta sessão.
+  }
 }
 
 /**

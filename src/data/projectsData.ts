@@ -5,6 +5,8 @@ export interface Project {
   id: number;
   title: string;
   type: "website" | "mobile" | "api";
+  /** Trabalho para cliente/produto exibido na vitrine; projetos de estudo ficam fora (e com noindex). */
+  showcase?: boolean;
   description: string;
   image: string;
   images?: string[];

@@ -35,7 +35,7 @@ export default function ProjectDetailClient({ project }: { project: Project }) {
   }, [project.title, trackProjectView]);
 
   const otherProjects = allProjects
-    .filter((p) => p.id !== project.id)
+    .filter((p) => p.showcase && p.id !== project.id)
     .sort((a, b) => b.id - a.id)
     .slice(0, 2);
 

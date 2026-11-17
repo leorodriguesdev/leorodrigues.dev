@@ -3,6 +3,8 @@ import { absoluteUrl } from "@/lib/siteUrls";
 
 const SITE_URL = "https://leorodrigues.dev";
 const PERSON_ID = `${SITE_URL}/#person`;
+const ORGANIZATION_ID = `${SITE_URL}/#organization`;
+const COMPANY_NAME = "Léo Rodrigues Dev";
 const CONTACT_EMAIL = "contato@leorodrigues.dev";
 const SAME_AS = [
   "https://github.com/leorodriguesdev",
@@ -29,6 +31,26 @@ const PERSON_KNOWS_ABOUT = [
 
 type Schema = Record<string, unknown>;
 
+/** A empresa (Léo Rodrigues Dev); o fundador é a `Person` referenciada por @id. */
+export async function organizationSchema(locale: string): Promise<Schema> {
+  const t = await getTranslations({ locale, namespace: "structuredData" });
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": ORGANIZATION_ID,
+    name: COMPANY_NAME,
+    alternateName: "leorodrigues.dev",
+    url: SITE_URL,
+    logo: `${SITE_URL}/print.png`,
+    description: t("organizationDescription"),
+    email: CONTACT_EMAIL,
+    foundingDate: "2018",
+    founder: { "@id": PERSON_ID },
+    areaServed: { "@type": "Country", name: t("countryBrasil") },
+    sameAs: SAME_AS,
+  };
+}
+
 export async function personSchema(locale: string): Promise<Schema> {
   const t = await getTranslations({ locale, namespace: "structuredData" });
   return {
@@ -43,6 +65,7 @@ export async function personSchema(locale: string): Promise<Schema> {
     email: CONTACT_EMAIL,
     sameAs: SAME_AS,
     knowsAbout: PERSON_KNOWS_ABOUT,
+    worksFor: { "@id": ORGANIZATION_ID },
   };
 }
 
@@ -55,7 +78,7 @@ export async function websiteSchema(locale: string): Promise<Schema> {
     description: t("websiteDescription"),
     url: absoluteUrl(locale, "/"),
     inLanguage: locale,
-    author: { "@id": PERSON_ID },
+    publisher: { "@id": ORGANIZATION_ID },
   };
 }
 
@@ -77,14 +100,14 @@ export async function professionalServiceSchema(
     url: absoluteUrl(locale, overrides.path ?? "/"),
     email: CONTACT_EMAIL,
     image: `${SITE_URL}/print.png`,
-    provider: { "@id": PERSON_ID },
-    founder: { "@id": PERSON_ID },
+    provider: { "@id": ORGANIZATION_ID },
     areaServed: { "@type": "Country", name: t("countryBrasil") },
     serviceType: overrides.serviceType ?? [
       t("serviceWeb"),
       t("serviceMobile"),
       t("serviceFull"),
       t("serviceConsulting"),
+      t("serviceModernization"),
     ],
     sameAs: SAME_AS,
   };

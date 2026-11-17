@@ -29,7 +29,8 @@ export function CommercialHome() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative flex min-h-0 items-center justify-center overflow-hidden px-6 pb-16 pt-28 sm:min-h-[88svh] md:pb-20">
+      {/* Desktop: ocupa a tela toda; pt = altura da navbar fixa + respiro, pb = mesmo respiro, então o conteúdo fica centralizado na área visível abaixo da navbar. */}
+      <section className="relative flex min-h-0 items-center justify-center overflow-hidden px-6 pb-16 pt-28 sm:min-h-svh sm:pb-12">
         <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-1/4 -z-10 mx-auto h-72 max-w-4xl rounded-full bg-primary/10 blur-[120px]" />
         <div className="container mx-auto max-w-6xl">
           <motion.div

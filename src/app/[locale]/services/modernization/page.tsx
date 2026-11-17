@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { JsonLd } from "@/components/JsonLd";
 import { buildPageMetadata } from "@/lib/pageMetadata";
-import { breadcrumbSchema, professionalServiceSchema } from "@/lib/structuredData";
+import {
+  breadcrumbLabel,
+  breadcrumbSchema,
+  professionalServiceSchema,
+} from "@/lib/structuredData";
 import ModernizationPageClient from "./ModernizationPageClient";
 
 type PageProps = {
@@ -24,19 +28,16 @@ export default async function ModernizationPage({ params }: PageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
 
+  const t = await getTranslations({ locale, namespace: "modernizationPage" });
   const schemas = await Promise.all([
     professionalServiceSchema(locale, {
-      name: "Modernização de Sistemas",
-      serviceType: [
-        "Modernização de sistemas",
-        "Refatoração de software",
-        "Desenvolvimento web",
-        "Desenvolvimento mobile",
-      ],
+      name: t("structuredName"),
+      serviceType: t.raw("structuredServiceTypes") as string[],
       path: "/services/modernization",
     }),
     breadcrumbSchema(locale, [
-      { name: "Modernização", path: "/services/modernization" },
+      { name: await breadcrumbLabel(locale, "services"), path: "/services" },
+      { name: t("breadcrumb"), path: "/services/modernization" },
     ]),
   ]);
 

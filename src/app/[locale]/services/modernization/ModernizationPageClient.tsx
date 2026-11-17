@@ -193,22 +193,22 @@ export default function ModernizationPageClient() {
                   </div>
                   <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
                     <div className="rounded-xl border border-dashed border-primary/40 bg-secondary/40 p-6">
-                      <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Antes / depois</p>
+                      <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">{t("caseLabels.beforeAfter")}</p>
                       <div className="mt-5 h-44 rounded-lg bg-gradient-to-br from-primary/10 via-secondary to-background flex items-center justify-center text-sm text-muted-foreground">
-                        Modernização em andamento
+                        {t("caseLabels.inProgress")}
                       </div>
                     </div>
                     <div className="space-y-4">
                       <div>
-                        <p className="text-sm font-medium uppercase tracking-wide text-primary">Problema</p>
+                        <p className="text-sm font-medium uppercase tracking-wide text-primary">{t("caseLabels.problem")}</p>
                         <p className="mt-2 text-muted-foreground">{caseStudy.problem}</p>
                       </div>
                       <div>
-                        <p className="text-sm font-medium uppercase tracking-wide text-primary">O que fizemos</p>
+                        <p className="text-sm font-medium uppercase tracking-wide text-primary">{t("caseLabels.what")}</p>
                         <p className="mt-2 text-muted-foreground">{caseStudy.what}</p>
                       </div>
                       <div>
-                        <p className="text-sm font-medium uppercase tracking-wide text-primary">Resultado</p>
+                        <p className="text-sm font-medium uppercase tracking-wide text-primary">{t("caseLabels.result")}</p>
                         <p className="mt-2 text-muted-foreground">{caseStudy.result}</p>
                       </div>
                     </div>

@@ -491,6 +491,7 @@
   {
     "id": 23,
     "type": "mobile",
+    "showcase": true,
     "image": "/projects/edimedApp/login.png",
     "images": [
       "/projects/edimedApp/splash-.png",
@@ -519,6 +520,7 @@
   {
     "id": 24,
     "type": "website",
+    "showcase": true,
     "image": "/projects/AgendaPro/home.png",
     "images": [
       "/projects/AgendaPro/home.png",
@@ -639,6 +641,7 @@
   {
     "id": 29,
     "type": "website",
+    "showcase": true,
     "image": "/projects/agendAI/home.png",
     "images": [
       "/projects/agendAI/hero.png",
@@ -670,6 +673,7 @@
   {
     "id": 30,
     "type": "website",
+    "showcase": true,
     "image": "/projects/onstart/home.png",
     "images": [
       "/projects/onstart/home.png",
@@ -692,6 +696,7 @@
   {
     "id": 31,
     "type": "website",
+    "showcase": true,
     "image": "/projects/coelhotattoo013/home.png",
     "images": [
       "/projects/coelhotattoo013/home.png",
@@ -714,6 +719,7 @@
   {
     "id": 32,
     "type": "website",
+    "showcase": true,
     "image": "/projects/eletelsat/home.png",
     "images": [
       "/projects/eletelsat/home.png",
@@ -742,6 +748,7 @@
   {
     "id": 33,
     "type": "mobile",
+    "showcase": true,
     "image": "/projects/stv-elo/stv-elo.png",
     "images": [
       "/projects/stv-elo/stv-elo.png"

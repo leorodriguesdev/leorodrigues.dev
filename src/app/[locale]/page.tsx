@@ -3,6 +3,7 @@ import { setRequestLocale } from "next-intl/server";
 import { JsonLd } from "@/components/JsonLd";
 import { buildPageMetadata } from "@/lib/pageMetadata";
 import {
+  organizationSchema,
   personSchema,
   professionalServiceSchema,
   websiteSchema,
@@ -28,6 +29,7 @@ export default async function HomePage({ params }: PageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
   const schemas = await Promise.all([
+    organizationSchema(locale),
     personSchema(locale),
     websiteSchema(locale),
     professionalServiceSchema(locale),

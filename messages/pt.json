@@ -55,7 +55,7 @@
     "servicesDescription": "Engenharia de software: apps, sites, APIs e integração com bancos de dados. React Native, Next.js, Node.js. Orçamento grátis. {years}+ anos de experiência.",
     "servicesKeywords": "engenheiro de software contratar, desenvolvimento full stack, criar app, criar site, API, banco de dados, React Native, Next.js",
     "modernizationTitle": "Modernização de Sistemas | Refatoração e Evolução Digital | Léo Rodrigues",
-    "modernizationDescription": "Modernizamos sites, apps e sistemas legados sem parar a operação. Planejamos migração, refatoração e adoção de IA onde houver valor para o negócio.",
+    "modernizationDescription": "Modernizamos sites, apps e sistemas antigos ou desatualizados, sem parar a operação. Planejamos migração, refatoração e adoção de IA onde houver valor para o negócio.",
     "modernizationKeywords": "modernização de sistemas, refatorar site antigo, atualizar app legado, modernização de software, sistemas defasados, migrar sistema web, inteligência artificial, automação com IA",
     "projectNotFoundTitle": "Projeto não encontrado",
     "projectMetaSuffix": "Desenvolvido por Léo Rodrigues",
@@ -73,7 +73,6 @@
   "nav": {
     "home": "Início",
     "about": "Empresa",
-    "skills": "Habilidades",
     "projects": "Cases",
     "contact": "Contato",
     "services": "Serviços",
@@ -89,32 +88,11 @@
     }
   },
   "footer": {
-    "tagline": "Engenheiro de Software criando produtos mobile, web, APIs e dados com foco em qualidade e performance.",
-    "quickLinks": "Links Rápidos",
+    "tagline": "Desenvolvemos sites, apps e sistemas sob medida e modernizamos o que ficou para trás, com foco em qualidade e resultado.",
+    "quickLinks": "Links rápidos",
     "servicesTitle": "Serviços",
-    "serviceWeb": "Desenvolvimento Web",
-    "serviceConsulting": "Consultoria Técnica",
-    "serviceUiux": "UI/UX Design",
-    "serviceSeo": "Otimização SEO",
-    "social": "Social",
-    "rights": "© {year} Leorodrigues.dev - Todos os direitos reservados | Desenvolvido com React & Next.js",
-    "switchToPortfolio": "Ver versão Portfólio",
-    "switchToCommercial": "Ver versão Comercial"
-  },
-  "visitorIntent": {
-    "title": "Olá! Como posso te ajudar?",
-    "subtitle": "Escolha a opção que melhor descreve sua necessidade",
-    "footerNote": "Você pode mudar essa escolha a qualquer momento",
-    "close": "Fechar",
-    "portfolioTitle": "Portfólio",
-    "portfolioSubtitle": "Engenheiro de Software para sua equipe técnica",
-    "portfolioDescription": "Estou procurando um desenvolvedor para trabalhar na minha equipe ou projeto",
-    "portfolioCta": "Ver Portfólio",
-    "commercialTitle": "Comercial",
-    "commercialSubtitle": "Apps e sites para sua empresa",
-    "commercialDescription": "Quero desenvolver um site ou aplicativo para meu negócio",
-    "commercialCta": "Ver Serviços",
-    "badgePopular": "Mais Popular"
+    "social": "Redes",
+    "rights": "© {year} Léo Rodrigues Dev · Todos os direitos reservados"
   },
   "projectsList": {
     "title": "Meus",
@@ -155,7 +133,7 @@
   "about": {
     "avatarAlt": "Leonardo Rodrigues",
     "heroTitle": "Uma empresa de desenvolvimento de software",
-    "heroAccent": "desde {years} no mercado",
+    "heroAccent": "com {years} anos de mercado",
     "heroSubtitle": "Criamos sites, apps e sistemas que ajudam negócios a vender melhor, operar com menos atrito e evoluir com segurança.",
     "contactBtn": "Contato",
     "servicesBtn": "Nossos serviços",
@@ -202,59 +180,9 @@
     "subtitle": "Vamos criar algo incrível juntos. Entre em contato para discutir seu próximo projeto e receber uma consultoria gratuita.",
     "whatsapp": "WhatsApp"
   },
-  "skills": {
-    "title": "Habilidades e Tecnologias",
-    "subtitle": "Tecnologias e ferramentas que utilizo para transformar ideias em projetos de alta qualidade.",
-    "expertise": "Expertise",
-    "reactDesc": "Tecnologia para criar sites e sistemas interativos com alto desempenho, garantindo uma ótima experiência para os usuários.",
-    "nextDesc": "Expande o React para gerar páginas rápidas e seguras. Ideal para sites de negócios que precisam de boa performance e SEO.",
-    "rnDesc": "Permite criar aplicativos móveis (Android/iOS) usando a mesma base do React, agilizando o lançamento de apps para o seu negócio.",
-    "expoDesc": "Facilita o desenvolvimento de aplicativos sem configurações complicadas, acelerando a publicação e as atualizações dos apps.",
-    "jsDesc": "Linguagem fundamental que garante a parte interativa do site ou sistema, tornando-o mais dinâmico e atraente.",
-    "nodeDesc": "Permite criar servidores e APIs robustos para atender múltiplos usuários simultaneamente, sem lentidão ou travamentos.",
-    "tsDesc": "Versão mais organizada do JavaScript, ajudando a evitar erros e manter seu projeto estável à medida que cresce.",
-    "tailwindDesc": "Ferramenta de design que agiliza a criação de layouts atraentes e responsivos, adequados a qualquer tamanho de tela."
-  },
-  "experience": {
-    "title": "Experiência Profissional",
-    "subtitle": "Uma jornada repleta de desafios e aprendizado, em constante evolução no mundo da tecnologia.",
-    "achievements": "Conquistas:",
-    "showMore": "Ver Mais Experiências",
-    "showLess": "Ver Menos"
-  },
-  "education": {
-    "title": "Educação e Certificações",
-    "subtitle": "Formação acadêmica e certificações que fortalecem minhas habilidades e conhecimentos na área de tecnologia.",
-    "showMore": "Ver Mais Educação",
-    "showLess": "Ver Menos"
-  },
-  "portfolioHome": {
-    "badge": "Disponível para contratação",
-    "heroTitle": "Engenheiro",
-    "heroAccent": "de Software",
-    "heroTitleEnd": "",
-    "heroSubtitle": "{years}+ anos em aplicativos, web, backend e banco de dados. Stack: React Native, Expo, Next.js, Node.js e TypeScript. Pronto para integrar sua equipe e entregar com qualidade.",
-    "ctaPortfolio": "Ver Portfólio Completo",
-    "ctaAbout": "Sobre Mim",
-    "whyTitle": "Por Que Escolher",
-    "whyAccent": "Meu Trabalho?",
-    "whySubtitle": "Compromisso com excelência, inovação e resultados mensuráveis",
-    "cardQualityTitle": "Código de Qualidade",
-    "cardQualityDesc": "Código limpo, maintível e bem documentado seguindo as melhores práticas da indústria. TypeScript e testes automatizados são padrão.",
-    "cardPerfTitle": "Performance Otimizada",
-    "cardPerfDesc": "Aplicações rápidas com Core Web Vitals otimizados, SEO avançado e acessibilidade garantida. Seu site vai ranquear bem no Google.",
-    "cardCommTitle": "Comunicação Clara",
-    "cardCommDesc": "Atualizações frequentes, feedback constante e transparência total durante todo o desenvolvimento do projeto."
-  },
-  "projectsSection": {
-    "title": "Projetos em",
-    "titleAccent": "Destaque",
-    "subtitle": "Alguns dos projetos que desenvolvi recentemente",
-    "viewAll": "Ver Todos os Projetos"
-  },
   "commercialHome": {
     "badge": "Consultoria estratégica",
-    "heroLine1": "Sistemas, apps e sites",
+    "heroLine1": "Sites, apps e sistemas",
     "heroAccent": "que geram resultado",
     "heroSubtitle": "Modernizamos processos e criamos tecnologia",
     "heroSubtitleAccent": " para sua empresa crescer.",
@@ -266,10 +194,10 @@
     "whatIDevAccent": "Desenvolvemos",
     "whatIDevSubtitle": "Estratégia, design e desenvolvimento para negócios que precisam crescer com clareza e velocidade.",
     "modernizeEyebrow": "Modernização",
-    "modernizeTitle": "Transforme sistemas legados em",
+    "modernizeTitle": "Transforme sistemas antigos em",
     "modernizeAccent": "crescimento real",
     "modernizeSubtitle": "Se sua plataforma está lenta, frágil ou difícil de evoluir, a gente ajuda a modernizar a base sem interromper o negócio e avalia onde IA e automação podem gerar valor.",
-    "modernizeSignal1": "Código legado",
+    "modernizeSignal1": "Código difícil de manter",
     "modernizeSignal2": "Lançamentos lentos",
     "modernizeSignal3": "Bloqueios de negócio",
     "modernizeCta": "Ver modernização",
@@ -344,7 +272,7 @@
     "breadcrumb": "Modernização",
     "heroTitle": "Modernização de",
     "heroAccent": "sistemas",
-    "heroSubtitle": "Atualizamos sites, apps e sistemas legados para ganhar desempenho, clareza e escalabilidade sem interromper a operação.",
+    "heroSubtitle": "Atualizamos sites, apps e sistemas desatualizados para ganhar desempenho, clareza e escalabilidade sem interromper a operação.",
     "diagnosisLabel": "Abordagem",
     "assessmentTitle": "Evolução com prioridade",
     "assessmentItems": [
@@ -365,7 +293,7 @@
     "whatTitle": "O que modernizamos",
     "whatItems": [
       "Sites institucionais e landing pages",
-      "Apps mobile legados e evolução de produto",
+      "Apps mobile antigos e evolução de produto",
       "Sistemas web e internos",
       "APIs, integrações e banco de dados"
     ],
@@ -393,14 +321,21 @@
       },
       {
         "name": "Plural",
-        "problem": "O produto havia sido adaptado para mobile e precisava ganhar estrutura para crescer em web e operação comercial.",
-        "what": "Estruturamos uma nova base, alinhamos a experiência e transformamos o ecossistema em uma solução mais consistente para uso real.",
+        "problem": "Um sistema pensado para mobile tinha sido adaptado às pressas para a web, sem atender bem nenhum dos dois canais nem os diferentes serviços da empresa.",
+        "what": "Criamos um ecossistema novo, com um projeto adequado para cada serviço, em vez de forçar uma única solução para tudo.",
         "result": "A operação ganhou uma plataforma mais clara, escalável e melhor preparada para novos serviços e equipes."
       }
     ],
     "finalCta": "Seu sistema precisa evoluir?",
     "finalSubtitle": "Vamos diagnosticar o que está travando seu produto e criar uma modernização com segurança, clareza e foco em crescimento.",
-    "contactButton": "Falar com a equipe"
+    "contactButton": "Falar com a equipe",
+    "caseLabels": {
+      "beforeAfter": "Antes / depois",
+      "inProgress": "Modernização em andamento",
+      "problem": "Problema",
+      "what": "O que fizemos",
+      "result": "Resultado"
+    }
   },
   "servicesPage": {
     "structuredName": "Serviços de Desenvolvimento Mobile e Web",
@@ -434,7 +369,7 @@
   },
   "servicesCards": {
     "modernizationTitle": "Modernização de Sistemas",
-    "modernizationDesc": "Modernizamos sites, apps e sistemas legados sem interromper a operação, avaliando oportunidades de IA e automação que façam sentido para o negócio.",
+    "modernizationDesc": "Modernizamos sites, apps e sistemas que ficaram para trás, sem interromper a operação, avaliando oportunidades de IA e automação que façam sentido para o negócio.",
     "modernizationF1": "Diagnóstico de produto e tecnologia",
     "modernizationF2": "Plano de migração incremental",
     "modernizationF3": "Refatoração sem parar o negócio",
@@ -472,10 +407,11 @@
   },
   "breadcrumbs": {
     "navAria": "Trilha de navegação",
-    "home": "Home",
-    "about": "Sobre",
-    "projects": "Projetos",
-    "services": "Serviços"
+    "home": "Início",
+    "about": "Empresa",
+    "projects": "Cases",
+    "services": "Serviços",
+    "modernization": "Modernização"
   },
   "theme": {
     "openSelector": "Abrir seletor de tema",
@@ -483,140 +419,18 @@
   },
   "structuredData": {
     "websiteName": "Leorodrigues.dev",
-    "personJobTitle": "Engenheiro de Software",
+    "personJobTitle": "Fundador e responsável técnico",
     "personDescription": "Engenheiro de Software com experiência em mobile, web, APIs e banco de dados. React Native, Expo, Next.js, Node.js e TypeScript. Produtos modernos, rápidos e escaláveis.",
-    "websiteDescription": "Portfolio profissional de Léo Rodrigues — Engenheiro de Software (mobile, web, backend e dados) com React Native, Expo, Next.js e TypeScript",
+    "websiteDescription": "Site da Léo Rodrigues Dev: desenvolvimento de sites, apps, sistemas sob medida e modernização de sistemas.",
     "professionalServiceName": "Desenvolvimento Full Stack",
     "serviceWeb": "Desenvolvimento Web",
     "serviceMobile": "Desenvolvimento Mobile",
     "serviceFull": "Desenvolvimento Full Stack",
     "serviceConsulting": "Consultoria em Desenvolvimento",
-    "localBusinessName": "Léo Rodrigues - Engenheiro de Software",
-    "localBusinessDescription": "Engenheiro de Software: aplicativos, sites, APIs e integração com bancos de dados. React Native, Expo, Next.js, Node.js e TypeScript.",
     "countryBrasil": "Brasil",
-    "servicesOfferedName": "Serviços de desenvolvimento de software"
-  },
-  "experienceItems": {
-    "e0": {
-      "title": "Fundador e Desenvolvedor - Leorodrigues.dev LTDA",
-      "duration": "2020 - Presente",
-      "description": "Fundador de empresa de desenvolvimento de software, atendendo clientes próprios com soluções customizadas em aplicativos mobile e web. Desenvolvimento de projetos end-to-end, desde a concepção até a entrega e manutenção.",
-      "achievements": [
-        "Gestão de projetos",
-        "Desenvolvimento full stack",
-        "Atendimento ao cliente",
-        "React Native",
-        "Kotlin",
-        "Swift",
-        "Node.js"
-      ]
-    },
-    "e1": {
-      "title": "Engenheiro de Software Sênior - Raiô Benefícios",
-      "duration": "Set 2025 - Presente · 5 meses",
-      "description": "Desenvolvedor full stack sênior, com foco em escalabilidade e performance do aplicativo de benefícios corporativos Raiô Benefícios. Com as tecnologias React Native e NodeJS.",
-      "achievements": [
-        "React Native",
-        "Kotlin",
-        "Swift",
-        "Node.js"
-      ]
-    },
-    "e2": {
-      "title": "Desenvolvedor Mobile Sênior - STV Segurança",
-      "duration": "Mai 2024 - Presente · 1 ano 9 meses",
-      "description": "Desenvolvedor freelancer em aplicativo corporativo para funcionários da empresa, como hub de informações gerais e profissionais com fácil acesso.",
-      "achievements": [
-        "React Native",
-        "Kotlin",
-        "Swift"
-      ]
-    },
-    "e3": {
-      "title": "Desenvolvedor e Analista de Sistemas Pleno - Sistema FIERGS",
-      "duration": "Abr 2023 - Set 2025 · 2 anos 6 meses",
-      "description": "Analista e desenvolvedor de sistemas pleno. Desenvolvedor web e mobile utilizando React e React Native, também fazendo a sustentação de sistemas legados.",
-      "achievements": [
-        "Desenvolvimento orientado a testes",
-        "JavaScript",
-        "React",
-        "React Native",
-        "Kotlin",
-        "Swift",
-        "21+ competências adicionais"
-      ]
-    },
-    "e4": {
-      "title": "Desenvolvedor Mobile - IBM (Banco do Brasil)",
-      "duration": "Dez 2021 - Mar 2023 · 1 ano 4 meses",
-      "description": "Desenvolvimento mobile na conta do Banco do Brasil, com especialização no desenvolvimento do app de investimentos.",
-      "achievements": [
-        "Jest",
-        "Desenvolvimento de front-end",
-        "1+ competência adicional"
-      ]
-    },
-    "e5": {
-      "title": "QA Tester - Sicredi",
-      "duration": "Ago 2021 - Nov 2021 · 4 meses",
-      "description": "QA em projeto para o banco Sicredi, envolvendo o sistema de carteiras de usuários para respectivos gerentes. Utilizei ferramentas como Kafka, PostgreSQL, RestAssured e Salesforce.",
-      "achievements": [
-        "PostgreSQL",
-        "Salesforce",
-        "Automação de testes"
-      ]
-    },
-    "e6": {
-      "title": "Desenvolvedor Full Stack - IBM",
-      "duration": "Mar 2021 - Ago 2021 · 6 meses",
-      "description": "Desenvolvimento full-stack em projeto de controle de estágios na IBM, utilizando Angular, Java com Spring e PostgreSQL.",
-      "achievements": [
-        "Desenvolvimento de front-end",
-        "Java com Spring",
-        "PostgreSQL"
-      ]
-    },
-    "e7": {
-      "title": "Suporte ao Cliente - Nitronnews Email Marketing",
-      "duration": "Jun 2020 - Mar 2021 · 10 meses",
-      "description": "Suporte técnico aos clientes da ferramenta Nitronnews por meio de diversos canais e produção de conteúdo técnico.",
-      "achievements": [
-        "Suporte técnico",
-        "Documentação",
-        "Produção de conteúdo"
-      ]
-    }
-  },
-  "educationItems": {
-    "ed0": {
-      "title": "Pós-graduação Lato Sensu - Especialização, Inteligência Artificial",
-      "institution": "UniRitter",
-      "year": "Mai 2025 - Jun 2026",
-      "description": "Especialista em Inteligência Artificial com os principais tópicos: Aprendizado de máquina, Engenharia, preparação e visualização de dados, Gestão do conhecimento e inteligência competitiva, Redes neurais e aprendizado profundo, Arquiteturas de aprendizagem de máquina na nuvem e nas bordas, Análise de imagem e visão computacional, Processamento de linguagem natural, Experiência de usuário e IA.",
-      "achievements": [
-        "Inteligência artificial",
-        "Aprendizado de máquina",
-        "25+ competências adicionais"
-      ]
-    },
-    "ed1": {
-      "title": "Especialização em Desenvolvimento de Software com React, React Native e NodeJs",
-      "institution": "Rocketseat",
-      "year": "2023",
-      "description": "Me especializei em desenvolvimento de aplicações modernas e de alta performance, com um foco prático em todo o processo de criação. No front-end, desenvolvi interfaces interativas e responsivas com React, enquanto no desenvolvimento de aplicações móveis, utilizei React Native para proporcionar uma experiência nativa e fluida. No back-end, aprofundei meus conhecimentos em Node.js, criando APIs escaláveis e seguras, o que me capacitou a construir soluções completas e inovadoras."
-    },
-    "ed2": {
-      "title": "Tecnólogo, Análise e Desenvolvimento de Sistemas",
-      "institution": "Universidade Estácio de Sá",
-      "year": "2022",
-      "description": "Concluí o curso superior em Análise e Desenvolvimento de Sistemas, onde aprendi a dominar conceitos avançados de desenvolvimento com uma ênfase prática em aplicações web com React. Esta formação me permitiu adquirir uma base técnica sólida para arquitetar, desenvolver e manter sistemas eficientes e robustos, sempre alinhados às boas práticas e inovações do mercado."
-    },
-    "ed3": {
-      "title": "Curso Técnico em Programação Web",
-      "institution": "IFRS - Instituto Federal do Rio Grande do Sul",
-      "year": "2020",
-      "description": "Realizei minha formação técnica em Programação Web, onde desenvolvi habilidades fundamentais para criar projetos completos. Aprendi linguagens de programação, banco de dados e princípios de segurança da informação. Também explorei o uso de recursos visuais, como imagens, vídeos e animações, aliados ao domínio de HTML, CSS e outras tecnologias essenciais para desenvolver interfaces atraentes e experiências web de alto nível."
-    }
+    "servicesOfferedName": "Serviços de desenvolvimento de software",
+    "organizationDescription": "Empresa de desenvolvimento de software: sites, aplicativos, sistemas sob medida e modernização de sistemas antigos, com React, React Native, Next.js e Node.js.",
+    "serviceModernization": "Modernização de Sistemas"
   },
   "testimonialItems": {
     "t0": {
@@ -637,6 +451,11 @@
       "company": "FIERGS",
       "content": "Se tivesse que resumir em uma palavra como é trabalhar com o Leonardo, seria parceria. Leo tem um olhar afiado para produto e negócio, e sempre leva o trabalho do designer a sério: respeita, recebe feedbacks com maturidade e faz questão de incluir minhas considerações. Sua comunicação é assertiva, consegue alinhar ideias com clareza e a colaboração acontece de verdade. Além da competência técnica, contribui para um ambiente leve, produtivo e centrado em resultado."
     }
+  },
+  "notFound": {
+    "title": "Página não encontrada",
+    "description": "A página que você tentou acessar não existe ou foi movida.",
+    "back": "Voltar para a home"
   },
   "projects": {
     "items": {

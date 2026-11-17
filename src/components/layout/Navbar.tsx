@@ -6,6 +6,7 @@ import { motion } from "motion/react";
 import { AlignJustify, Moon, Sun, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { applyThemeToDocument, type ThemeId } from "@/app/theme/themes";
 
 const HASH_SECTION_IDS = ["contact"] as const;
 
@@ -31,16 +32,8 @@ const Navbar = () => {
     setIsDarkTheme(detectedDark);
   }, []);
 
-  const applyTheme = (nextTheme: "light" | "dark") => {
-    const root = document.documentElement;
-    const themeIds = ["figmaNeon", "dark", "light"];
-
-    for (const themeId of themeIds) {
-      root.classList.remove(`theme-${themeId}`);
-    }
-
-    root.classList.add(`theme-${nextTheme}`);
-    localStorage.setItem("theme", nextTheme);
+  const applyTheme = (nextTheme: ThemeId) => {
+    applyThemeToDocument(nextTheme);
     setIsDarkTheme(nextTheme === "dark");
   };
 

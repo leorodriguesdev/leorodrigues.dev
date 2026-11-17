@@ -10,6 +10,7 @@ const Footer = () => {
   const { trackEmail } = useAnalytics();
   const t = useTranslations("footer");
   const tNav = useTranslations("nav");
+  const tServices = useTranslations("servicesCards");
 
   return (
     <footer className="py-12 px-6 border-t border-border bg-background">
@@ -25,7 +26,7 @@ const Footer = () => {
           </div>
 
           <div className="space-y-3">
-            <h4 className="text-primary font-medium">{t("quickLinks")}</h4>
+            <h2 className="text-primary font-medium">{t("quickLinks")}</h2>
             <div className="space-y-2 text-sm">
               <Link
                 href="/"
@@ -38,6 +39,12 @@ const Footer = () => {
                 className="block text-muted-foreground hover:text-primary transition-colors"
               >
                 {tNav("services")}
+              </Link>
+              <Link
+                href="/services/modernization"
+                className="block text-muted-foreground hover:text-primary transition-colors"
+              >
+                {tNav("modernization")}
               </Link>
               <Link
                 href="/about"
@@ -61,17 +68,17 @@ const Footer = () => {
           </div>
 
           <div className="space-y-3">
-            <h4 className="text-primary font-medium">{t("servicesTitle")}</h4>
+            <h2 className="text-primary font-medium">{t("servicesTitle")}</h2>
             <div className="space-y-2 text-sm text-muted-foreground">
-              <Link href="/services" className="block hover:text-primary transition-colors">{t("serviceWeb")}</Link>
-              <Link href="/services" className="block hover:text-primary transition-colors">{t("serviceConsulting")}</Link>
-              <Link href="/services" className="block hover:text-primary transition-colors">{t("serviceUiux")}</Link>
-              <Link href="/services/modernization" className="block hover:text-primary transition-colors">{t("serviceSeo")}</Link>
+              <Link href="/services" className="block hover:text-primary transition-colors">{tServices("webTitle")}</Link>
+              <Link href="/services" className="block hover:text-primary transition-colors">{tServices("mobileTitle")}</Link>
+              <Link href="/services" className="block hover:text-primary transition-colors">{tServices("fullTitle")}</Link>
+              <Link href="/services/modernization" className="block hover:text-primary transition-colors">{tServices("modernizationTitle")}</Link>
             </div>
           </div>
 
           <div className="space-y-3">
-            <h4 className="text-primary font-medium">{t("social")}</h4>
+            <h2 className="text-primary font-medium">{t("social")}</h2>
             <div className="flex gap-3">
               <a
                 href="https://github.com/leorodriguesdev"

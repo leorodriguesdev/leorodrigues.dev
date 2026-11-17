@@ -116,6 +116,8 @@ export async function generateMetadata({
     // `projectMetaSuffix` já inclui a marca; sem `absolute` o template do layout a repetiria.
     title: { absolute: title },
     description,
+    // Projetos de estudo continuam acessíveis por URL, mas fora do índice (vitrine = só `showcase`).
+    ...(project.showcase ? {} : { robots: { index: false, follow: true } }),
     openGraph: {
       title: project.title,
       description: project.description,

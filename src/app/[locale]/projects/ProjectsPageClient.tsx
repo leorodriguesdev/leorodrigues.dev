@@ -18,7 +18,7 @@ type FilterOption = 'all' | 'website' | 'mobile' | 'api';
 export default function ProjectsPageClient() {
   const t = useTranslations('projectsList');
   const format = useFormatter();
-  const projectsData = useProjects();
+  const projectsData = useProjects().filter((p) => p.showcase);
 
   const [filter, setFilter] = useState<FilterOption>('all');
   const [selectedTag, setSelectedTag] = useState<string | null>(null);

@@ -64,25 +64,6 @@ export const trackCtaClick = (ctaId: string, location: TrackingLocation) => {
   track("cta_click", { cta: ctaId, location });
 };
 
-/** Como a intenção foi definida: escolha no modal, modal fechado sem escolha ou troca pelo footer. */
-export type IntentSource = "modal" | "modal_dismiss" | "footer";
-
-/**
- * Persona do visitante (portfólio × comercial), para segmentar o funil.
- * Registrar `visitor_intent` como dimensão personalizada (escopo usuário) no GA4.
- */
-export const trackIntentSelection = (
-  intent: "portfolio" | "commercial",
-  source: IntentSource
-) => {
-  if (typeof window === "undefined") return;
-  if (window.gtag) {
-    window.gtag("set", "user_properties", { visitor_intent: intent });
-    window.gtag("event", "select_intent", { intent, method: source });
-  }
-  track("select_intent", { intent, method: source });
-};
-
 // Tipos TypeScript
 declare global {
   interface Window {

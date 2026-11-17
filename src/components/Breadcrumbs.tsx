@@ -8,6 +8,7 @@ const ROUTE_SEGMENTS = new Set([
   "about",
   "projects",
   "services",
+  "modernization",
 ]);
 
 /** Trilha visual; o JSON-LD `BreadcrumbList` é gerado no servidor em cada `page.tsx`. */
@@ -28,7 +29,7 @@ export function Breadcrumbs() {
       const href = `/${segments.slice(0, index + 1).join("/")}`;
       let name: string;
       if (ROUTE_SEGMENTS.has(segment)) {
-        name = t(segment as "about" | "projects" | "services");
+        name = t(segment as "about" | "projects" | "services" | "modernization");
       } else if (/^\d+$/.test(segment)) {
         name = segment;
       } else {

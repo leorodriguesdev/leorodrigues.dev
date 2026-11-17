@@ -48,16 +48,6 @@ export default function AboutPageClient() {
             animate={{ y: 0 }}
             className="text-center space-y-6 mb-20"
           >
-            <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border-2 border-primary/20 overflow-hidden relative">
-              <Image
-                src="/avatar.png"
-                alt={t('avatarAlt')}
-                fill
-                sizes="128px"
-                className="object-left-top object-cover"
-                priority
-              />
-            </div>
             <div className="space-y-4">
               <h1 className="text-4xl md:text-5xl tracking-tight">
                 {t('heroTitle')} <span className="text-primary">{t('heroAccent', { years })}</span>
